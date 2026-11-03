@@ -41,15 +41,16 @@ def _draw(ax, core, b, traj, particles=True):
     mean, _ = core.pf.estimate()
     ax.plot(*mean[b, :2], "x", color="white", ms=10, mew=2, zorder=7)
     ax.set_xlim(0, cfg.width * cfg.cell); ax.set_ylim(0, cfg.height * cfg.cell)
-    ax.set_aspect("equal"); ax.legend(loc="upper right", fontsize=6)
+    ax.set_aspect("equal"); ax.legend(loc="lower left", fontsize=6, framealpha=0.85)
     return im
 
 
 def render_frame(core, b: int, traj=None) -> np.ndarray:
-    fig, ax = plt.subplots(figsize=(5, 5), dpi=100)
+    fig, ax = plt.subplots(figsize=(5.6, 5), dpi=100)
     im = _draw(ax, core, b, traj)
     fig.colorbar(im, ax=ax, fraction=0.046, label="dose rate [Gy/h]")
-    ax.set_title(f"t={core.t[b]}  err={core.err[b]:.2f} m")
+    ax.set_title(f"step {core.t[b]}   estimate error {core.err[b]:.2f} m", fontsize=10)
+    fig.tight_layout()
     fig.canvas.draw()
     img = np.asarray(fig.canvas.buffer_rgba())[..., :3].copy()
     plt.close(fig)
