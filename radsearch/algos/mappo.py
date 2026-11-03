@@ -41,6 +41,9 @@ class AlgoConfig:
     cost_version: str = "A"            # A | B
     cost_limit: float | None = None    # default: 0.75 (A) / 0.05 (B)
     cost_kappa: float = 0.0            # version B: extra per-step dose cost
+    # version B: the RQ1 target "no robot violates in >= 95 % of episodes" is a
+    # team-level chance constraint; per-robot limits d/N guarantee it (union bound, D19)
+    team_chance_split: bool = True
     lambda_sharing: str = "per_robot"  # per_robot | shared   (E4 ablation)
     lambda_mode: str = "gd"            # gd | pid
     lambda_lr: float = 0.05
@@ -80,10 +83,11 @@ class AlgoConfig:
     wandb_project: str = "dose-budgeted-marl"
     init_checkpoint: str | None = None  # warm start (e.g. from MAPPO)
 
-    def limit(self):
-        if self.cost_limit is not None:
-            return self.cost_limit
-        return 0.75 if self.cost_version == "A" else 0.05
+    def limit(self, n_agents: int = 1):
+        d = self.cost_limit if self.cost_limit is not None else (0.75 if self.cost_version == "A" else 0.05)
+        if self.cost_version == "B" and self.team_chance_split:
+            d = d / n_agents
+        return d
 
 
 # ------------------------------------------------------------------- networks
@@ -160,11 +164,12 @@ class Lagrange:
 
     def __init__(self, n, cfg: AlgoConfig):
         self.cfg = cfg
+        self.n_agents = n
         self.lam = np.full(n, cfg.lambda_init, float)
         self.integral = np.zeros(n); self.prev = np.zeros(n)
 
-    def update(self, Jc: np.ndarray, valid: np.ndarray):
-        c, d = self.cfg, self.cfg.limit()
+    def update(self, Jc: np.ndarray, valid: np.ndarray, n_agents: int | None = None):
+        c, d = self.cfg, self.cfg.limit(n_agents or int(valid.sum()) or 1)
         if c.lambda_sharing == "shared":
             if not valid.any():
                 return
@@ -391,7 +396,7 @@ class MAPPOTrainer:
                 Jc = np.array([e["cost"] for e in eps if e["n_agents"] == N]).mean(0)
                 Jfull = np.zeros(self.base_env_cfg.max_agents); Jfull[:N] = Jc
                 valid = np.zeros(self.base_env_cfg.max_agents, bool); valid[:N] = True
-                self.lagr.update(Jfull, valid)
+                self.lagr.update(Jfull, valid, N)
             self.updates += 1
             if eps and self.updates % cfg.log_every == 0:
                 log = dict(env_steps=self.env_steps, updates=self.updates, stage=self.stage,

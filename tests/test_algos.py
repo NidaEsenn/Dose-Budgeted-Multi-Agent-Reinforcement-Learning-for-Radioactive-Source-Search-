@@ -47,3 +47,11 @@ def test_train_resume_and_eval(tmp_path, method, version, shield):
     pol = load_policy(str(tmp_path / "checkpoints" / "final.pt"))
     eps = run_episodes(pol, ecfg, [1, 2])
     assert len(eps) == 2 and all(e is not None for e in eps)
+
+
+def test_version_b_team_chance_split():
+    """Per-robot limit d/N bounds P(any robot violates) by d (union bound)."""
+    cfg = AlgoConfig(cost_version="B", cost_limit=0.05)
+    assert cfg.limit(4) == pytest.approx(0.0125)
+    assert AlgoConfig(cost_version="B", team_chance_split=False).limit(4) == pytest.approx(0.05)
+    assert AlgoConfig(cost_version="A").limit(4) == pytest.approx(0.75)
