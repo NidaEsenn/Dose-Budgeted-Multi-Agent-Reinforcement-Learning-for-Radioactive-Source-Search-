@@ -226,8 +226,45 @@ standardised separately.
 Time-left is in every observation and in the critic state, so the problem is
 Markov and bootstrapping past the limit is unnecessary.
 
-## D18 — Sanity training results (this container)
+## D18 — Sanity training results (this container, 1 seed — not paper results)
 
-See the end of this file, updated after the runs; full curves in
-`docs/results/`. They are single-seed smoke tests of the pipeline, **not**
-results for the paper.
+Main setting at **0.1 Gy**, same 200 test episodes for every method
+(`docs/results/sanity01/`; curves in `learning_curves.png`). MAPPO ran 300 k
+env steps, MAPPO-L (B) 150 k (λ lr = 1.0, per-robot limit 0.05).
+
+| method | success [Wilson 95%] | violation [Wilson 95%] | median error (m) | max dose/budget | steps |
+|---|---|---|---|---|---|
+| random | 0.44 [0.37, 0.51] | 0.065 [0.038, 0.108] | 1.26 | 0.18 | 85 |
+| perimeter | 0.83 [0.78, 0.88] | 0.075 [0.046, 0.120] | 0.32 | 0.27 | 20 |
+| approach | 0.92 [0.87, 0.95] | 0.470 [0.402, 0.539] | 0.28 | 0.95 | 28 |
+| greedy (β = 1) | 0.88 [0.82, 0.91] | 0.100 [0.066, 0.149] | 0.29 | 0.30 | 16 |
+| shielded greedy | 0.81 [0.75, 0.86] | 0.020 [0.008, 0.050] | 0.31 | 0.19 | 16 |
+| MAPPO | 0.85 [0.79, 0.89] | 0.090 [0.058, 0.138] | 0.32 | 0.35 | 27 |
+| MAPPO-L (B) | 0.76 [0.70, 0.81] | 0.070 [0.042, 0.114] | 0.46 | 0.24 | 29 |
+
+Readings:
+* The pipeline learns: MAPPO success 0.46 → 0.85, episode length 80 → 25 steps.
+* **AC-4 not yet shown**: MAPPO beats random clearly but only ties perimeter on
+  success (CIs overlap) and is slower (27 vs 20 steps). Needs the full 2 M-step
+  budget and 10 seeds.
+* **AC-3 not met at 0.1 Gy**: unconstrained MAPPO violates 9–12 %, not ≥ 30 %.
+  Learned search is efficient and ends early, so it rarely needs to sit near
+  the source. Next calibration candidates: 0.05 Gy, or longer `confident_sigma`
+  requirements; decide with the advisor whether AC-3's 30 % is the right bar.
+* **Version A** at 0.75 never activated λ in the 0.3 Gy run: the expected dose
+  fraction (~0.1) is dominated by low-activity episodes, while violations come
+  from the heavy high-activity tail. An expectation constraint cannot control a
+  tail probability — version B is the formulation that matches RQ1.
+* The shielded greedy baseline is the one to beat on safety (2 % violation at
+  81 % success).
+
+## D19 — Version B limit split across robots (union bound)
+
+In the run above λ stayed ≈ 0.02: each robot's own violation rate (~2.5 %) was
+below its 0.05 limit, while P(*any* robot violates) was ~7–10 %. RQ1's target
+("every robot within budget in ≥ 95 % of episodes") is a **team** chance
+constraint; per-robot limits of d allow up to N·d at team level. Since
+P(∪ᵢ violateᵢ) ≤ Σᵢ P(violateᵢ), per-robot limits **d/N** guarantee the team
+target. Default now `team_chance_split: true` (0.05/4 = 0.0125 for 4 robots);
+the λ learning rate for version B must also match the indicator cost's scale
+(lr ≈ 1.0, not 0.05). Both changes still need a training run to confirm.

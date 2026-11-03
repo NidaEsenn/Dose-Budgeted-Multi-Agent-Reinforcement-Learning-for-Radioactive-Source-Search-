@@ -91,6 +91,16 @@ Status: **done** = implemented and covered by a test or a recorded run;
 | FR-REL-01 public code, MIT, README | ready | LICENSE, README (repository visibility is the author's call) |
 | FR-REL-02..04 | open | after experiments |
 | NFR-01 reproducibility | done | seed tests |
-| NFR-02 unit tests gate batches | done | 54 tests; SLURM task 1 runs pytest |
+| NFR-02 unit tests gate batches | done | 55 tests; SLURM task 1 runs pytest |
 | NFR-03 < 12 h per run | on track | ~210 env-steps/s on 4 CPUs → 2 M env steps ≈ 2.6 h (D5) |
 | NFR-04 environment freeze | process | tag `env-v1.0` at week 8 |
+
+## Acceptance criteria
+| ID | Status | Evidence |
+|---|---|---|
+| AC-1 API + unit tests | met | 55 tests pass |
+| AC-2 PF localises with random robots, empty room | met | tempered PF 100 % success (D3) |
+| AC-3 MAPPO violates ≥ 30 % | **not met** | 9 % at 0.1 Gy (D18); recalibrate |
+| AC-4 MAPPO beats random & perimeter | partial | beats random; ties perimeter (1 seed, 300 k steps) |
+| AC-5 λ converge | pending | needs version B with d/N split (D19) |
+| AC-6, AC-7 | pending | HPC runs |
