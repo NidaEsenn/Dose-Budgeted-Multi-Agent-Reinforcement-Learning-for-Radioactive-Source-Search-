@@ -74,3 +74,23 @@ def test_pf_reproducible():
         pf.update(np.array([[[3.5, 3.5]]]), np.array([[2000.0]]), np.ones((1, 1)))
         out.append(pf.estimate()[0])
     np.testing.assert_array_equal(out[0], out[1])
+
+
+def test_fused_lognormal_loglik_matches_physics():
+    rng = np.random.default_rng(5)
+    iso, det = P.Isotope.from_constants("Cs-137"), P.Detector.from_constants()
+    rects, mu, nrect = _geom(2, 2, rng)
+    src, logA = rng.uniform(0, 20, (2, 30, 2)), rng.uniform(12, 14, (2, 30))
+    rob = rng.uniform(0, 20, (2, 3, 2)); counts = rng.integers(0, 1e5, (2, 3)).astype(float)
+    act = np.ones((2, 3))
+    tau = _tau_bpn_py(src, rob, rects, mu, nrect, det.height)
+    lam = P.expected_counts(src[:, :, None], 10 ** logA[..., None], rob[:, None], iso, det, 10.0, tau)
+    ref = P.measurement_loglik(counts[:, None], lam, 0.2).sum(-1)
+    np.testing.assert_allclose(loglik_bp(src, logA, rob, counts, act, rects, mu, nrect, iso, det, 10.0, 0.2),
+                               ref, rtol=1e-9)
+
+
+def test_model_error_is_mean_preserving():
+    rng = np.random.default_rng(0)
+    lam = np.full(200000, 1e4)
+    assert P.apply_model_error(rng, lam, 0.3).mean() == pytest.approx(1e4, rel=0.01)

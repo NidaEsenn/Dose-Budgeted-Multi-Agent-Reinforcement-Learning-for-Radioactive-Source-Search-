@@ -1,0 +1,5 @@
+defaults:
+  - mappo
+name: mappo_penalty_b${algo.penalty_beta}
+method: mappo_penalty
+penalty_beta: 1.0

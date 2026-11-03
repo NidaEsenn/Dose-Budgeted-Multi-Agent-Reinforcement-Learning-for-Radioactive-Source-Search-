@@ -1,0 +1,7 @@
+defaults:
+  - mappo
+name: mappo_lag_b
+method: mappo_lag
+cost_version: B
+cost_limit: 0.05
+cost_kappa: 0.01

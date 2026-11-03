@@ -43,19 +43,24 @@ class EnvConfig:
     start_mode: str = "door"
     min_source_dist: float = 5.0
     # physics (FR-PHY-06)
-    isotope: str = "Cs-137"
+    isotope: str = "Co-60"            # calibrated main setting (D7)
     activity_TBq: tuple = (1.0, 100.0)  # log-uniform
     dose_air_attenuation: bool = True
     detector: dict = field(default_factory=dict)   # overrides of physics_constants.yaml
+    # multiplicative model error (docs/DESIGN_DECISIONS.md D6): "none" | "iid" | "field"
+    model_error: str = "field"
+    model_error_sigma: float = 0.3
+    model_error_length: float = 3.0            # correlation length of the "field" mode [m]
+    pf_model_sigma: float | None = None        # PF assumption; default = model_error_sigma
     # time (FR-ENV-05)
     step_time: float = 10.0
     dwell_fraction: float = 1.0
     max_steps: int = 200
     # budgets (FR-BUD-01/02)
-    budget_base_Gy: float = 1.0
+    budget_base_Gy: float = 0.3         # AC-3 calibration (D7); re-check with MAPPO
     budget_base_range: tuple | None = None   # log-uniform per episode if set
     budget_ratio: tuple = (1.0,)              # cycled over robots, normalised to mean 1
-    shuffle_budgets: bool = True
+    shuffle_budgets: bool = False             # fixed robot<->budget map: per-robot lambda (D9)
     retire: bool = True
     budget_ref_Gy: float = 2.0                # observation normaliser
     # estimator
@@ -114,7 +119,8 @@ class RadSearchCore:
         self.logA_range = (np.log10(cfg.activity_TBq[0] * P.TBQ), np.log10(cfg.activity_TBq[1] * P.TBQ))
         self.pf = ParticleFilter(self.B, cfg.n_particles, self.iso, self.det, self.dwell,
                                  logA_range=cfg.pf_logA_range or self.logA_range,
-                                 variant=cfg.pf_variant, max_stages=cfg.pf_max_stages)
+                                 variant=cfg.pf_variant, max_stages=cfg.pf_max_stages,
+                                 model_sigma=self._pf_sigma())
         self._slot_rng = [np.random.default_rng(s) for s in np.random.SeedSequence(seed).spawn(self.B)]
         self.K = cfg.n_obstacles if np.isscalar(cfg.n_obstacles) else cfg.n_obstacles[1]
         self.K = max(int(self.K), 1)
@@ -133,8 +139,26 @@ class RadSearchCore:
         self.max_rate_map = np.ones(B); self.max_rate_visited = np.zeros((B, N))
         self.first_hit = -np.ones(B, np.int64); self.ep_return = np.zeros(B)
         self.ep_seed = np.zeros(B, np.int64)
+        self.min_dist = np.zeros(B)
         self.obs_dim = len(self._agent_obs_names())
         self.state_dim = self._state_dim()
+
+    def _pf_sigma(self):
+        cfg = self.cfg
+        if cfg.pf_model_sigma is not None:
+            return cfg.pf_model_sigma
+        return 0.0 if cfg.model_error == "none" else cfg.model_error_sigma
+
+    def _sample_field(self, rng):
+        """Standard-normal Gaussian random field on the cell grid (FFT filter)."""
+        cfg = self.cfg
+        W, H = cfg.width, cfg.height
+        n = rng.standard_normal((2 * W, 2 * H))
+        kx = np.fft.fftfreq(2 * W, d=cfg.cell)[:, None]
+        ky = np.fft.fftfreq(2 * H, d=cfg.cell)[None, :]
+        filt = np.exp(-2 * (np.pi * cfg.model_error_length) ** 2 * (kx ** 2 + ky ** 2))
+        f = np.real(np.fft.ifft2(np.fft.fft2(n) * np.sqrt(filt)))[:W, :H]
+        return (f - f.mean()) / (f.std() + 1e-12)
 
     # ---------------------------------------------------------------- reset
     def reset_env(self, b: int, seed: int | None = None, layout: Layout | None = None,
@@ -168,12 +192,16 @@ class RadSearchCore:
         self.pf.reset(b, lay.occ, cfg.cell, r_pf)
         self._meas_rng = getattr(self, "_meas_rng", [None] * self.B)
         self._meas_rng[b] = r_meas
+        self._field = getattr(self, "_field", np.zeros((self.B, cfg.width, cfg.height)))
+        if cfg.model_error == "field":
+            self._field[b] = self._sample_field(np.random.default_rng(r_meas.integers(2 ** 62)))
         # true dose-rate field over free cells: cowardice metric + renderer
         free_xy = lay.cell_center(lay.free_cells)
         rates = self.true_dose_rate(b, free_xy)
         self.max_rate_map[b] = rates.max()
         self.last_rate[b] = self.true_dose_rate(b, self.robot_xy()[b])
         self.max_rate_visited[b] = self.last_rate[b]
+        self.min_dist[b] = np.linalg.norm(self.robot_xy()[b] - self.src[b], axis=1).min()
         mean, _ = self.pf.estimate()
         self.err[b] = np.linalg.norm(mean[b, :2] - self.src[b])
         return rng
@@ -229,6 +257,8 @@ class RadSearchCore:
         self.dose += d_step
         self.last_rate = np.where(acting, rate, self.last_rate)
         self.max_rate_visited = np.maximum(self.max_rate_visited, np.where(acting, rate, 0))
+        dsrc = np.linalg.norm(xy - self.src[:, None], axis=-1)
+        self.min_dist = np.minimum(self.min_dist, np.where(acting, dsrc, np.inf).min(1))
         newly = acting & ~self.violated & (self.dose >= self.budget)
         self.violated |= newly
         self.violation_step = np.where(newly, self.t[:, None], self.violation_step)
@@ -237,6 +267,12 @@ class RadSearchCore:
         # 3. measurement by robots that acted this step
         lam = P.expected_counts(self.src[:, None], 10 ** self.logA[:, None], xy, self.iso, self.det,
                                 self.dwell, tau)
+        if cfg.model_error == "iid":
+            lam = np.stack([P.apply_model_error(self._meas_rng[b], lam[b], cfg.model_error_sigma)
+                            for b in range(B)])
+        elif cfg.model_error == "field":
+            z = self._field[np.arange(B)[:, None], self.cells[..., 0], self.cells[..., 1]]
+            lam = P.apply_model_error(None, lam, cfg.model_error_sigma, field=z)
         counts = np.stack([self._meas_rng[b].poisson(lam[b]) for b in range(B)]).astype(float)
         self.last_counts = np.where(acting, counts, self.last_counts)
         self.pf.update(xy, counts, acting)
@@ -292,7 +328,7 @@ class RadSearchCore:
             any_violation=bool(self.violated[b].any()), max_dose=float(self.dose[b].max()),
             team_dose=float(self.dose[b].sum()),
             max_rate_frac=float(self.max_rate_visited[b].max() / max(self.max_rate_map[b], 1e-30)),
-            ret=float(self.ep_return[b]), confident=confident, truncated=truncated,
+            min_source_dist=float(self.min_dist[b]), ret=float(self.ep_return[b]), confident=confident, truncated=truncated,
             door=list(lay.door),
         )
 

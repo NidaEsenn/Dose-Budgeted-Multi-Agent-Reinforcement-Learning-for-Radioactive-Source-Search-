@@ -1,0 +1,122 @@
+[
+ {
+  "model": "none:0",
+  "policy": "perimeter",
+  "success": 0.625,
+  "err": 0.6464341655302697,
+  "steps": 7.041666666666667,
+  "violation": 0.0,
+  "max_dose_frac": 0.0004992731343683277,
+  "min_dist": 9.752663434497197
+ },
+ {
+  "model": "none:0",
+  "policy": "approach",
+  "success": 0.6458333333333334,
+  "err": 0.7156556165736827,
+  "steps": 8.645833333333334,
+  "violation": 0.0,
+  "max_dose_frac": 0.0005262757204083595,
+  "min_dist": 7.802730740781398
+ },
+ {
+  "model": "none:0",
+  "policy": "greedy",
+  "success": 0.6666666666666666,
+  "err": 0.5100466933636152,
+  "steps": 6.166666666666667,
+  "violation": 0.0,
+  "max_dose_frac": 0.0004998228492542026,
+  "min_dist": 9.170321136739263
+ },
+ {
+  "model": "iid:0.2",
+  "policy": "perimeter",
+  "success": 0.9166666666666666,
+  "err": 0.19002247715168968,
+  "steps": 19.125,
+  "violation": 0.0,
+  "max_dose_frac": 0.009282128138513231,
+  "min_dist": 3.4024041486008483
+ },
+ {
+  "model": "iid:0.2",
+  "policy": "approach",
+  "success": 0.8958333333333334,
+  "err": 0.18338229961571828,
+  "steps": 32.4375,
+  "violation": 0.020833333333333332,
+  "max_dose_frac": 0.11910796575997241,
+  "min_dist": 0.438782189947574
+ },
+ {
+  "model": "iid:0.2",
+  "policy": "greedy",
+  "success": 0.875,
+  "err": 0.25971956176282907,
+  "steps": 14.145833333333334,
+  "violation": 0.0,
+  "max_dose_frac": 0.01105519798744159,
+  "min_dist": 1.839036428810332
+ },
+ {
+  "model": "field:0.2",
+  "policy": "perimeter",
+  "success": 0.8125,
+  "err": 0.4028758012939423,
+  "steps": 17.770833333333332,
+  "violation": 0.0,
+  "max_dose_frac": 0.006824376525900098,
+  "min_dist": 4.254894544152238
+ },
+ {
+  "model": "field:0.2",
+  "policy": "approach",
+  "success": 0.9375,
+  "err": 0.25265581064266807,
+  "steps": 32.916666666666664,
+  "violation": 0.020833333333333332,
+  "max_dose_frac": 0.12069578666544593,
+  "min_dist": 0.4635681738355189
+ },
+ {
+  "model": "field:0.2",
+  "policy": "greedy",
+  "success": 0.7916666666666666,
+  "err": 0.3055392795367694,
+  "steps": 13.625,
+  "violation": 0.0,
+  "max_dose_frac": 0.006558828169416976,
+  "min_dist": 2.027026692311882
+ },
+ {
+  "model": "field:0.3",
+  "policy": "perimeter",
+  "success": 0.8125,
+  "err": 0.4636059411757856,
+  "steps": 21.104166666666668,
+  "violation": 0.0,
+  "max_dose_frac": 0.0074584170304830555,
+  "min_dist": 3.2875478308619455
+ },
+ {
+  "model": "field:0.3",
+  "policy": "approach",
+  "success": 0.9583333333333334,
+  "err": 0.2461024782864064,
+  "steps": 45.604166666666664,
+  "violation": 0.0625,
+  "max_dose_frac": 0.2106067962128524,
+  "min_dist": 0.39061504014761644
+ },
+ {
+  "model": "field:0.3",
+  "policy": "greedy",
+  "success": 0.875,
+  "err": 0.24336007860690395,
+  "steps": 15.895833333333334,
+  "violation": 0.0,
+  "max_dose_frac": 0.016722498316594964,
+  "min_dist": 0.9222092365829218
+ }
+]

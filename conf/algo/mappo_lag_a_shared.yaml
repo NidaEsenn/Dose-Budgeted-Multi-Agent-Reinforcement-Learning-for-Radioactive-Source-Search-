@@ -1,0 +1,7 @@
+defaults:
+  - mappo
+name: mappo_lag_a_shared
+method: mappo_lag
+cost_version: A
+cost_limit: 0.75
+lambda_sharing: shared

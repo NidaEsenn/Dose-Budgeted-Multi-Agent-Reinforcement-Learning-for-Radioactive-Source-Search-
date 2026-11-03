@@ -1,0 +1,17 @@
+# Entry point for `python -m radsearch.train` (FR-INF-01: every setting lives here).
+defaults:
+  - env: main
+  - algo: mappo_lag_a
+  - _self_
+
+experiment: debug
+seed: 0
+run_dir: runs/${experiment}/${algo.name}/${env.name}/seed${seed}
+eval_after_training: true
+eval_episodes: 1000
+
+hydra:
+  run:
+    dir: ${run_dir}/hydra
+  job:
+    chdir: false

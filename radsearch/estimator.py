@@ -28,12 +28,13 @@ class ParticleFilter:
     def __init__(self, n_envs: int, n_particles: int, iso: P.Isotope, det: P.Detector,
                  dwell_s: float, logA_range=(12.0, 14.0), variant: str = "tempered",
                  ess_frac: float = 0.5, jitter_scale: float = 1.0, max_stages: int = 3,
-                 min_sigma=(0.02, 0.02, 0.005)):
+                 min_sigma=(0.02, 0.02, 0.005), model_sigma: float = 0.0):
         assert variant in ("sir", "rpf", "tempered")
         self.B, self.P = n_envs, n_particles
         self.iso, self.det, self.dwell = iso, det, dwell_s
         self.logA_range = tuple(logA_range)
         self.variant = variant
+        self.model_sigma = model_sigma
         self.ess_frac = ess_frac
         self.jitter_scale = jitter_scale
         self.max_stages = max_stages if variant == "tempered" else 1
@@ -71,7 +72,8 @@ class ParticleFilter:
     def loglik(self, robot_xy, counts, active):
         """(B, P) log-likelihood of one synchronous measurement round."""
         return loglik_bp(self.x[..., :2], self.x[..., 2], robot_xy, counts, active,
-                         self.rects, self.mu, self.nrect, self.iso, self.det, self.dwell)
+                         self.rects, self.mu, self.nrect, self.iso, self.det, self.dwell,
+                         self.model_sigma)
 
     def update(self, robot_xy, counts, active, envs=None):
         """Assimilate counts (B,N) taken at robot_xy (B,N,2); inactive robots ignored."""

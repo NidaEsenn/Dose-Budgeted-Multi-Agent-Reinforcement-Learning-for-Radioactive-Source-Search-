@@ -1,0 +1,5 @@
+defaults:
+  - main
+name: empty
+n_obstacles: 0
+n_agents: 4

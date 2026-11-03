@@ -180,5 +180,29 @@ def poisson_loglik(k, lam) -> np.ndarray:
     return k * np.log(lam) - lam
 
 
+def apply_model_error(rng: np.random.Generator, lam, sigma: float, field=None):
+    """Multiplicative model discrepancy (scatter/buildup, calibration).
+
+    lam * exp(sigma * z - sigma^2 / 2), mean-preserving. ``field`` supplies a
+    spatially correlated z (already standard normal); otherwise z is i.i.d.
+    """
+    if sigma <= 0:
+        return lam
+    z = rng.standard_normal(np.shape(lam)) if field is None else field
+    return lam * np.exp(sigma * z - 0.5 * sigma * sigma)
+
+
+def measurement_loglik(k, lam, sigma: float = 0.0):
+    """Poisson log-lik if sigma == 0, else the log-normal-Poisson approximation
+    log(k+0.5) ~ N(log(lam+0.5), sigma^2 + 1/(lam+0.5)) -- valid for both the
+    low-count (Poisson) and high-count (model-error) regimes."""
+    if sigma <= 0:
+        return poisson_loglik(k, lam)
+    lam = np.maximum(lam, 1e-12)
+    v = sigma * sigma + 1.0 / (lam + 0.5)
+    r = np.log(np.asarray(k) + 0.5) - np.log(lam + 0.5)
+    return -0.5 * r * r / v - 0.5 * np.log(v)
+
+
 GBQ = 1e9
 TBQ = 1e12

@@ -1,0 +1,5 @@
+defaults:
+  - main
+name: no_budget_obs
+obs_budget: false
+n_agents: 4

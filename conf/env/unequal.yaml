@@ -1,0 +1,5 @@
+defaults:
+  - main
+name: unequal
+budget_ratio: [1.0, 2.0, 4.0]
+n_agents: 3

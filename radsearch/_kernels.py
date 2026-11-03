@@ -94,7 +94,7 @@ def tau_bpn(src, det, rects, mu, nrect, height):
 if HAVE_NUMBA:
     @nb.njit(parallel=True, cache=True)
     def _loglik_bp_nb(src, logA, det, counts, active, rects, mu, nrect, height, mu_air,
-                      k_det, r2, fit_m, bkg, dead, dwell):
+                      k_det, r2, fit_m, bkg, dead, dwell, sig2):
         """Fused tau -> expected counts -> Poisson log-lik, summed over robots."""
         B, Pn = src.shape[0], src.shape[1]
         N = det.shape[1]
@@ -150,19 +150,26 @@ if HAVE_NUMBA:
                     if dead > 0.0:
                         rate = rate / (1.0 + rate * dead)
                     lam = max(rate * dwell, 1e-12)
-                    acc += counts[b, n] * np.log(lam) - lam
+                    if sig2 > 0.0:
+                        v = sig2 + 1.0 / (lam + 0.5)
+                        r = np.log(counts[b, n] + 0.5) - np.log(lam + 0.5)
+                        acc += -0.5 * r * r / v - 0.5 * np.log(v)
+                    else:
+                        acc += counts[b, n] * np.log(lam) - lam
                 out[b, p] = acc
         return out
 
 
-def loglik_bp(src, logA, det_xy, counts, active, rects, mu, nrect, iso, det, dwell):
-    """(B,P) Poisson log-likelihood; identical maths to physics.expected_counts."""
+def loglik_bp(src, logA, det_xy, counts, active, rects, mu, nrect, iso, det, dwell,
+              model_sigma: float = 0.0):
+    """(B,P) measurement log-likelihood; identical maths to physics.measurement_loglik."""
     if not HAVE_NUMBA:  # pragma: no cover
         from . import physics as P
         tau = tau_bpn(src, det_xy, rects, mu, nrect, det.height)
         lam = P.expected_counts(src[:, :, None, :], 10.0 ** logA[..., None], det_xy[:, None],
                                 iso, det, dwell, tau)
-        return (P.poisson_loglik(counts[:, None, :], lam) * active[:, None, :]).sum(-1)
+        ll = P.measurement_loglik(counts[:, None, :], lam, model_sigma)
+        return (ll * active[:, None, :]).sum(-1)
     f = np.ascontiguousarray
     return _loglik_bp_nb(f(src, dtype=np.float64), f(logA, dtype=np.float64),
                          f(det_xy, dtype=np.float64), f(counts, dtype=np.float64),
@@ -170,4 +177,4 @@ def loglik_bp(src, logA, det_xy, counts, active, rects, mu, nrect, iso, det, dwe
                          f(mu, dtype=np.float64), f(nrect, dtype=np.int64), float(det.height),
                          float(iso.mu_air), float(iso.photons_per_decay * det.efficiency),
                          float(det.radius ** 2), float(det.fit_m), float(det.background_cps),
-                         float(det.dead_time), float(dwell))
+                         float(det.dead_time), float(dwell), float(model_sigma) ** 2)

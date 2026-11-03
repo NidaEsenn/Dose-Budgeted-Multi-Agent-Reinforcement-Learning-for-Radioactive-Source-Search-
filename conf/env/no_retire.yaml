@@ -1,0 +1,5 @@
+defaults:
+  - main
+name: no_retire
+retire: false
+n_agents: 4
