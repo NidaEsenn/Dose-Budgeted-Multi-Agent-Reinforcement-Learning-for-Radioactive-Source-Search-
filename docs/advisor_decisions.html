@@ -1,0 +1,291 @@
+<title>Three Decisions for the Advisor</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column (~68ch) with full-width tables; a lab-report feel — instrument teal ink, dosimeter amber for warnings. */
+:root {
+  --bg: #f6f7f7;
+  --paper: #ffffff;
+  --ink: #17201f;
+  --muted: #56615f;
+  --rule: #d9dedd;
+  --accent: #0d6b66;
+  --accent-soft: #e2f0ee;
+  --warn: #9a5b00;
+  --warn-soft: #fbf0de;
+  --good: #2c6e2f;
+  --good-soft: #e6f2e3;
+  --bad: #a3342b;
+  --bad-soft: #f8e5e2;
+  --f-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111716; --paper: #172020; --ink: #e5ecea; --muted: #a3b0ad; --rule: #2c3836;
+    --accent: #5cc2b8; --accent-soft: #173431; --warn: #e0a54a; --warn-soft: #33281a;
+    --good: #84c987; --good-soft: #1b2e1c; --bad: #ef8a80; --bad-soft: #3a1f1c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111716; --paper: #172020; --ink: #e5ecea; --muted: #a3b0ad; --rule: #2c3836;
+  --accent: #5cc2b8; --accent-soft: #173431; --warn: #e0a54a; --warn-soft: #33281a;
+  --good: #84c987; --good-soft: #1b2e1c; --bad: #ef8a80; --bad-soft: #3a1f1c;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+}
+main { max-width: 760px; margin: 0 auto; display: grid; gap: 44px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.2rem; }
+p { margin: 0; max-width: 68ch; }
+section { display: grid; gap: 16px; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 20px; color: var(--muted); font-size: 0.9rem; }
+.meta b { color: var(--ink); font-weight: 500; }
+header { display: grid; gap: 14px; border-bottom: 1px solid var(--rule); padding-bottom: 28px; }
+.lede { font-size: 1.12rem; color: var(--ink); }
+.summary { background: var(--accent-soft); border-radius: 6px; padding: 20px 22px; display: grid; gap: 10px; }
+.summary h2 { font-size: 1.25rem; }
+ul.tight { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+dl.glossary { margin: 0; display: grid; grid-template-columns: minmax(150px, 210px) 1fr; border-top: 1px solid var(--rule); }
+dl.glossary dt, dl.glossary dd { margin: 0; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+dl.glossary dt { font-weight: 600; padding-right: 16px; }
+dl.glossary dd { color: var(--ink); min-width: 0; }
+@media (max-width: 560px) {
+  dl.glossary { grid-template-columns: 1fr; }
+  dl.glossary dt { border-bottom: 0; padding-bottom: 0; }
+  dl.glossary dd { padding-top: 4px; }
+}
+.finding { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 22px; display: grid; gap: 14px; }
+.finding-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+.tag { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; white-space: nowrap; }
+.tag.fixed { background: var(--good-soft); color: var(--good); }
+.tag.open { background: var(--warn-soft); color: var(--warn); }
+.tag.untested { background: var(--bad-soft); color: var(--bad); }
+.part { display: grid; grid-template-columns: 118px 1fr; gap: 12px; }
+.part > span { font-family: var(--f-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding-top: 4px; }
+.part > div { min-width: 0; display: grid; gap: 8px; }
+@media (max-width: 560px) { .part { grid-template-columns: 1fr; gap: 2px; } }
+.analogy { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; color: var(--muted); font-style: italic; }
+.ask { background: var(--warn-soft); border-radius: 4px; padding: 12px 14px; }
+.ask b { color: var(--warn); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+tbody tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+tr.learned td { background: var(--accent-soft); }
+.small { font-size: 0.88rem; color: var(--muted); }
+.status { display: inline-block; font-family: var(--f-mono); font-size: 0.78rem; padding: 2px 8px; border-radius: 3px; white-space: nowrap; }
+.s-met { background: var(--good-soft); color: var(--good); }
+.s-part { background: var(--warn-soft); color: var(--warn); }
+.s-not { background: var(--bad-soft); color: var(--bad); }
+.s-wait { background: var(--rule); color: var(--muted); }
+figure { margin: 0; display: grid; gap: 8px; }
+.chart-frame { background: #ffffff; border: 1px solid var(--rule); border-radius: 6px; padding: 10px; overflow-x: auto; }
+.chart-frame img { display: block; width: 100%; min-width: 640px; height: auto; }
+figcaption { font-size: 0.88rem; color: var(--muted); }
+ol.questions { margin: 0; padding-left: 1.4em; display: grid; gap: 14px; }
+ol.questions li::marker { font-family: var(--f-mono); color: var(--accent); }
+code { font-family: var(--f-mono); font-size: 0.86em; background: var(--accent-soft); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { border-top: 1px solid var(--rule); padding-top: 20px; color: var(--muted); font-size: 0.88rem; display: grid; gap: 6px; }
+</style><style>.finding .part{grid-template-columns:118px 1fr} section>h3{margin-top:8px} .ask ol.questions{margin-top:10px} ul.tight ul.tight{margin-top:6px}</style>
+<main>
+<header>
+  <div class="eyebrow">Decision brief · for the advisor meeting</div>
+  <h1>Three Decisions for the Advisor</h1>
+  <div class="meta"><span>Author <b>Nida Esen</b></span><span>Date <b>3 November 2026</b></span><span>Companion to <b>Progress report</b></span></div>
+  <p class="lede">The progress report raised three questions. For each one this brief explains the problem in plain terms, summarizes what the literature and our own data say, compares the options, and gives a recommendation together with the objections a reviewer is likely to raise.</p>
+</header>
+
+<div class="summary">
+  <h2>Recommendations at a glance</h2>
+  <ul class="tight">
+    <li><b>Decision 1, detector error:</b> keep a realistic error model, but justify it with measured instrument tolerances (±20–30%), split it into a calibration part and a scatter part, and report results over a range of error sizes, not just one.</li>
+    <li><b>Decision 2, budgets:</b> don't lower the budget to 0.05 Gy. Narrow the source strength to <b>10–100 TBq</b>, the range of the real incidents the project cites. In our data, every budget violation came from that range.</li>
+    <li><b>Decision 3, main method:</b> make version B (the limit on the <i>chance</i> of going over) the main method, with the team's limit split across robots. This matches an established approach in the literature. Keep version A as a comparison, and add two variants reviewers will ask about.</li>
+  </ul>
+</div>
+
+<!-- ============ DECISION 1 ============ -->
+<section>
+  <div class="eyebrow">Decision 1</div>
+  <h2>Should the simulator include detector error, and how large?</h2>
+
+  <article class="finding">
+    <div class="part"><span>The problem</span><div><p>With a perfect detector, the robots found strong sources from the doorway and never needed to approach them, so there was no trade-off between information and dose. Adding a 30% error that depends on location restored the trade-off: robots that went close succeeded 96% of the time, against 81% for robots that stayed near the walls.</p><p>The danger is that a reviewer says <i>"you invented noise to create the effect you wanted to study."</i> The defence has to be that the error size comes from real measurements.</p></div></div>
+  </article>
+
+  <h3>What the literature says</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Evidence</th><th>What it shows</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Regulator calibration rule for survey meters</td><td>A meter counts as correctly calibrated if it reads within <b>±20%</b> of the true dose rate, and its energy dependence must stay within <b>30%</b>.</td><td><a href="https://www.cnsc-ccsn.gc.ca/eng/nuclear-substances/licensing-class-ii-nuclear-facilities-and-prescribed-equipment/information-class-ii-licensed-facilities/regulatory-expectations-calibration-survey-meters" target="_blank" rel="noopener">CNSC (Canada)</a></td></tr>
+      <tr><td>Tests of real survey instruments</td><td>Energy dependence varied by up to <b>47%</b> for one instrument.</td><td><a href="https://repositorio.ipen.br/bitstreams/6161f546-d235-4669-b5db-ff69c68b81b4/download" target="_blank" rel="noopener">IPEN study</a></td></tr>
+      <tr><td>Room scatter in a Cs-137 calibration facility</td><td>Room scatter changed readings by about <b>12%</b> at 2 m, even in a facility designed to keep scatter low (from a search summary; check the full text). Cluttered accident sites will have more.</td><td><a href="https://www.researchgate.net/publication/281148682_Characterization_of_Cs-137_Beam_for_Calibration_and_Dosimetric_Applications" target="_blank" rel="noopener">Cs-137 beam characterization</a></td></tr>
+      <tr><td>Build-up factor</td><td>The basic formula leaves out scattered photons. The correction ("build-up factor") is defined as actual flux divided by unscattered flux, and it grows with distance and shielding.</td><td><a href="https://www.nrc.gov/docs/ML1126/ML11262A163.pdf" target="_blank" rel="noopener">US NRC training material</a></td></tr>
+      <tr><td>Same detector model, with build-up</td><td>A 2026 robotics paper uses the Wright et al. model (the one in our requirements) and notes that it can be extended with a build-up factor to model scattering.</td><td><a href="https://arxiv.org/pdf/2606.27624" target="_blank" rel="noopener">arXiv 2606.27624</a></td></tr>
+      <tr><td>Statistics framework</td><td>Treating the gap between a simple model and reality as a smooth random field ("model discrepancy") is an established method. Its original paper even uses a nuclear-release example.</td><td><a href="https://eprints.lancs.ac.uk/19300/" target="_blank" rel="noopener">Kennedy &amp; O'Hagan (2001)</a></td></tr>
+      <tr><td>How earlier RL work created difficulty</td><td>RAD-A2C, the main prior paper, used weak sources and varied the signal-to-noise ratio. That route isn't open to us: our strong sources produce very clean signals.</td><td><a href="https://doaj.org/article/e06d695f8b4f4f3ca2dec3372e353451" target="_blank" rel="noopener">Proctor et al. (2021)</a></td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">I found no paper that reports a single "model vs measurement" percentage for robotic source localization. The value has to be argued from the instrument tolerances and scatter measurements above. The 2026 arXiv paper could not be opened from the build environment, so its residuals are unchecked.</p>
+
+  <h3>Reasoning</h3>
+  <ul class="tight">
+    <li><b>The size is defensible.</b> Instrument tolerances of 20–30% and scatter of 12% or more make a combined error of 20–30% reasonable. Our 30% sits at the upper end, so 20% should be the main value and 30% a stress test.</li>
+    <li><b>Our error has the wrong shape in one respect.</b> Real error has two parts that behave differently:
+      <ul class="tight">
+        <li><b>Calibration error:</b> each robot's detector reads consistently a bit high or low, everywhere.</li>
+        <li><b>Scatter error:</b> depends on location and grows <i>with distance</i>, because scattered radiation fills the room roughly evenly while direct radiation falls off quickly.</li>
+      </ul>
+      Our current model uses one location-based error that is the same size everywhere. The physical version makes the case for going close even stronger, and it would be a better story for the paper.</li>
+    <li><b>The estimator currently knows the exact error size.</b> In reality it would have to be guessed. A test where the estimator assumes the wrong size would show the result doesn't depend on that inside knowledge.</li>
+  </ul>
+
+  <h3>Options</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Option</th><th>Good</th><th>Bad</th></tr></thead>
+    <tbody>
+      <tr><td>A. No error (original requirements)</td><td>Simple; follows the requirements exactly</td><td>No trade-off, so the research questions become meaningless</td></tr>
+      <tr><td>B. Current: one location error, 30%</td><td>Already built and tested; creates the trade-off</td><td>A single chosen value is easy to attack; the shape isn't physical</td></tr>
+      <tr><td><b>C. Calibration + distance-dependent scatter, with a sweep over 0–30%</b></td><td>Every number traces to a source; the sweep shows the trade-off appears as soon as error is realistic</td><td>About a day of extra work; a few more experiment runs</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ask"><b>Recommendation: option C.</b> Ask the advisor:
+    <ol class="questions">
+      <li>Is a combined detector and scatter error of about 20% (with 30% as a stress test) acceptable, given the CNSC ±20% rule and the scatter measurements?</li>
+      <li>Should the error-size sweep be a figure in the paper? It answers the "you invented the noise" objection directly.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ DECISION 2 ============ -->
+<section>
+  <div class="eyebrow">Decision 2</div>
+  <h2>How do we make the budgets actually matter?</h2>
+
+  <article class="finding">
+    <div class="part"><span>The problem</span><div><p>Acceptance check AC-3 says a team <i>without</i> a safety rule must go over budget in at least 30% of missions, so the safety method has something to fix. Our team without a safety rule went over in only 9% of missions (95% range 6–14%) at a 0.1 Gy budget. The earlier suggestion was to lower the budget to 0.05 Gy.</p></div></div>
+  </article>
+
+  <h3>What our data says: it depends on source strength</h3>
+  <p>I split the 200 test missions of the trained MAPPO team by source strength:</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Source strength</th><th>Missions</th><th>Some robot over budget</th><th>Found the source</th></tr></thead>
+    <tbody>
+      <tr><td>1–3 TBq</td><td class="num">52</td><td class="num">0%</td><td class="num">83%</td></tr>
+      <tr><td>3–10 TBq</td><td class="num">51</td><td class="num">0%</td><td class="num">92%</td></tr>
+      <tr><td>10–30 TBq</td><td class="num">55</td><td class="num">5% <span class="small">(2–15%)</span></td><td class="num">82%</td></tr>
+      <tr><td>30–100 TBq</td><td class="num">42</td><td class="num"><b>36%</b> <span class="small">(23–51%)</span></td><td class="num">83%</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Ranges in brackets are 95% confidence intervals. Each group is small, so these are indications rather than final numbers.</p>
+  <p><b>Every violation came from sources of 10 TBq or more.</b> Half of all missions use sources weaker than 10 TBq, and in those the budget never matters. They dilute the average. For the strongest sources, the team already goes over budget 36% of the time, so AC-3 is met there.</p>
+
+  <h3>What the literature and the requirements say</h3>
+  <ul class="tight">
+    <li><b>The real incidents cited in the requirements are all strong sources:</b> Goiânia 50.9 TBq, Mexico 111 TBq, Samut Prakan 15.7 TBq. None are below 10 TBq, so 1–10 TBq doesn't represent the motivating cases.</li>
+    <li><b>A 0.05 Gy budget is hard to justify.</b> Fukushima robot cameras and lidar failed at about 120 Gy (<a href="https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2022.862067/pdf" target="_blank" rel="noopener">West et al. 2022</a>), and a small single-board computer tested for robots failed at 111 ± 5.5 Gy (<a href="https://doaj.org/article/f20266ddb61443ddb55f38dbdb0e61b9" target="_blank" rel="noopener">Nuclear Eng. Tech. 2022</a>). That makes 0.05 Gy per mission 0.04% of a lifetime, about 2,400 missions. The requirements' own range, 0.2–2 Gy, is far easier to defend.</li>
+    <li><b>Safe-RL benchmarks don't use a universal threshold.</b> The usual Safety-Gymnasium limit (a cost of 25) was picked for that benchmark, other papers set limits task by task, and published comparisons note that which method "wins" depends strongly on the chosen limit (<a href="https://arxiv.org/pdf/2310.12567" target="_blank" rel="noopener">Safety-Gymnasium</a>; <a href="https://arxiv.org/pdf/2305.09304" target="_blank" rel="noopener">OmniSafe</a>). The 30% in AC-3 is a sensible sanity check, not a standard. What matters is that the limit <i>binds</i>: an unsafe team breaks it clearly, and a safe team can still succeed.</li>
+  </ul>
+
+  <h3>Options</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Option</th><th>Good</th><th>Bad</th></tr></thead>
+    <tbody>
+      <tr><td>A. Lower the budget to 0.05 Gy</td><td>One setting change</td><td>Unrealistic per-mission budget; outside the requirements' 0.2–2 Gy; weak sources still say nothing</td></tr>
+      <tr><td><b>B. Source strength 10–100 TBq (or 10–150, to include Mexico's 111 TBq)</b></td><td>Matches the cited incidents; budgets can stay realistic; our data says this is where violations happen</td><td>Departs from the requirements' 1–100 TBq; needs a quick re-check with a trained team</td></tr>
+      <tr><td>C. Stricter success rule (0.5 m instead of 1 m)</td><td>Forces closer approaches</td><td>Changes a requirement (FR-OBS-05); comparison with RAD-A2C (1.1 m) gets harder</td></tr>
+      <tr><td>D. Rephrase AC-3 as "the limit binds"</td><td>Matches safe-RL practice; avoids an arbitrary 30%</td><td>On its own changes nothing in the simulation</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ask"><b>Recommendation: B plus D.</b> Use 10–100 TBq (keep 1–100 TBq for the generalization tests) and keep budgets inside 0.1–0.3 Gy. Reword AC-3 to: "a team without a safety rule exceeds the 5% target by a clear margin (at least 30% of missions), and a dose-aware baseline still succeeds in at least 70%". Ask the advisor:
+    <ol class="questions">
+      <li>Can the main setting use 10–100 TBq, justified by the cited incidents, instead of 1–100 TBq?</li>
+      <li>Is the reworded AC-3 acceptable?</li>
+    </ol>
+  </div>
+  <p class="small">Before the meeting I can run a short check: train MAPPO on 10–100 TBq at 0.1 and 0.2 Gy and confirm the violation rate. It takes a few hours of compute.</p>
+</section>
+
+<!-- ============ DECISION 3 ============ -->
+<section>
+  <div class="eyebrow">Decision 3</div>
+  <h2>Which safety formulation should be the main method?</h2>
+
+  <article class="finding">
+    <div class="part"><span>The problem</span><div><p>Version A limits the <i>average</i> dose, and it stayed switched off because the many easy missions hide the rare dangerous ones (Decision 2 shows exactly where those are). Version B limits the <i>chance</i> of going over, which is what research question 1 asks. But it was applied per robot, while the goal is for the whole team. The fix gives each robot 5% ÷ 4 = 1.25%.</p></div></div>
+  </article>
+
+  <h3>What the literature says</h3>
+  <ul class="tight">
+    <li><b>Our fix is a recognised method.</b> Chow et al. (<a href="https://jmlr.org/papers/volume18/15-636/15-636.pdf" target="_blank" rel="noopener">JMLR 2018</a>), a standard reference for chance limits in RL, handle a team-wide ("joint") chance limit by limiting the <i>sum</i> of the individual chances. That is exactly what splitting 5% across 4 robots does. They call it conservative: safe, but possibly stricter than necessary.</li>
+    <li><b>How strict depends on overlap.</b> Ono and Williams (<a href="https://skoge.folk.ntnu.no/prost/proceedings/cdc-2008/data/papers/1335.pdf" target="_blank" rel="noopener">CDC 2008</a>) point out that an <i>equal</i> split is extra conservative, and propose "iterative risk allocation": give more of the allowance to the parts that need it most. That is relevant to research question 3, where robots have different budgets.</li>
+    <li><b>Rare yes/no costs are noisy to learn from.</b> A cost that is either 0 or 1, and is 1 in only a few percent of missions, gives a weak, noisy training signal (<a href="https://arxiv.org/html/2601.22993v4" target="_blank" rel="noopener">2026 paper</a>). This is why the requirements allow adding a small per-step dose cost to version B, and why λ needed a larger step size.</li>
+    <li><b>Two alternatives reviewers will know about:</b>
+      <ul class="tight">
+        <li><b>Saute RL</b> (<a href="https://proceedings.mlr.press/v162/sootla22a.html" target="_blank" rel="noopener">ICML 2022</a>) aims for budgets that are <i>never</i> exceeded, by adding the remaining budget to what the agent observes. Our robots already observe their remaining budget, so this is closely related and should at least be discussed.</li>
+        <li><b>CVaR limits</b>, which limit the average of the worst missions (<a href="https://www.researchgate.net/publication/378438766_CVaR-Constrained_Policy_Optimization_for_Safe_Reinforcement_Learning" target="_blank" rel="noopener">CVaR-CPO</a>), sit between versions A and B.</li>
+      </ul></li>
+  </ul>
+
+  <h3>What our data says</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Team</th><th>Chance some robot over budget</th><th>Sum of each robot's chance</th><th>Two or more robots over in the same mission</th></tr></thead>
+    <tbody>
+      <tr><td>MAPPO</td><td class="num">9.0%</td><td class="num">12.0%</td><td class="num">2.0%</td></tr>
+      <tr><td>MAPPO-L, version B</td><td class="num">7.0%</td><td class="num">7.0%</td><td class="num">0.0%</td></tr>
+    </tbody>
+  </table></div>
+  <p>Robots rarely go over budget in the same mission, so the sum is close to the real team figure: at most about a third too high. The split is safe and only mildly too strict.</p>
+
+  <h3>Options</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Option</th><th>Good</th><th>Bad</th></tr></thead>
+    <tbody>
+      <tr><td>A as the main method</td><td>Smooth, easy training signal</td><td>Doesn't control the rare dangerous missions; doesn't match research question 1</td></tr>
+      <tr><td><b>B with the equal split (current)</b></td><td>Guarantees the team goal; matches Chow et al.; keeps one λ per robot as the requirements specify</td><td>Mildly too strict; the training signal is rare and noisy</td></tr>
+      <tr><td>One team-wide limit with one shared λ</td><td>Exactly the team goal, no extra strictness</td><td>Can't tell which robot caused a violation; loses per-robot λ, which research question 3 needs</td></tr>
+      <tr><td>B with adaptive split (risk allocation)</td><td>Less strict; could be a novel contribution for research question 3</td><td>More complex; semester-2 material</td></tr>
+    </tbody>
+  </table></div>
+  <div class="ask"><b>Recommendation:</b> version B with the equal split and a small dose cost as the main method. Keep version A in the paper to show the "rare dangerous missions" effect; that is a result in its own right. Add the single team-wide limit as an ablation (it tests whether per-robot λ helps), and at least a discussion of Saute RL. Ask the advisor:
+    <ol class="questions">
+      <li>Is B with the equal split the right main method?</li>
+      <li>Should Saute RL be a full baseline, or only discussed?</li>
+      <li>Is adaptive risk allocation worth planning for semester 2?</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Limits of this brief</div>
+  <h2>What isn't settled yet</h2>
+  <ul class="tight">
+    <li>The data comes from one training run per method and 200 test missions. The groups by source strength have only 42–55 missions each.</li>
+    <li>No paper was found that states a single "model vs measurement" error for robot localization. The 20–30% value is argued from instrument tolerances and scatter measurements.</li>
+    <li>arXiv and the publisher MDPI could not be opened from the build environment. Some paper details (Wright et al.'s formula, the 2026 robotics paper's results) come from search summaries and should be read in full.</li>
+    <li>The changes recommended here (new error model, 10–100 TBq, team split) still need short training runs to confirm.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Data for the tables: the same 200-mission test set used in the progress report (seeds 10,000,000–10,000,199). The analysis can be re-run from <code>runs/sanity01/*/b0.1/seed0/eval_test.json</code> on branch <code>feature/core-simulator</code>.</p>
+</footer>
+</main>

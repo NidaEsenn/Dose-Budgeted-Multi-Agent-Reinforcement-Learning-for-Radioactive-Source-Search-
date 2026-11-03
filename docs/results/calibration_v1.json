@@ -1,0 +1,178 @@
+[
+ {
+  "policy": "approach",
+  "isotope": "Cs-137",
+  "budget": 0.2,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6458333333333334,
+  "err": 0.7156556165736827,
+  "max_dose_frac": 0.0026313786020417972,
+  "steps": 8.645833333333334
+ },
+ {
+  "policy": "approach",
+  "isotope": "Cs-137",
+  "budget": 0.5,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6458333333333334,
+  "err": 0.7156556165736827,
+  "max_dose_frac": 0.001052551440816719,
+  "steps": 8.645833333333334
+ },
+ {
+  "policy": "approach",
+  "isotope": "Cs-137",
+  "budget": 1.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6458333333333334,
+  "err": 0.7156556165736827,
+  "max_dose_frac": 0.0005262757204083595,
+  "steps": 8.645833333333334
+ },
+ {
+  "policy": "approach",
+  "isotope": "Cs-137",
+  "budget": 2.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6458333333333334,
+  "err": 0.7156556165736827,
+  "max_dose_frac": 0.00026313786020417974,
+  "steps": 8.645833333333334
+ },
+ {
+  "policy": "approach",
+  "isotope": "Co-60",
+  "budget": 0.2,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5713091402335413,
+  "max_dose_frac": 0.009279660377385214,
+  "steps": 6.875
+ },
+ {
+  "policy": "approach",
+  "isotope": "Co-60",
+  "budget": 0.5,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5713091402335413,
+  "max_dose_frac": 0.003711864150954086,
+  "steps": 6.875
+ },
+ {
+  "policy": "approach",
+  "isotope": "Co-60",
+  "budget": 1.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5713091402335413,
+  "max_dose_frac": 0.001855932075477043,
+  "steps": 6.875
+ },
+ {
+  "policy": "approach",
+  "isotope": "Co-60",
+  "budget": 2.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5713091402335413,
+  "max_dose_frac": 0.0009279660377385215,
+  "steps": 6.875
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Cs-137",
+  "budget": 0.2,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5100466933636152,
+  "max_dose_frac": 0.0024991142462710125,
+  "steps": 6.166666666666667
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Cs-137",
+  "budget": 0.5,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5100466933636152,
+  "max_dose_frac": 0.0009996456985084052,
+  "steps": 6.166666666666667
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Cs-137",
+  "budget": 1.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5100466933636152,
+  "max_dose_frac": 0.0004998228492542026,
+  "steps": 6.166666666666667
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Cs-137",
+  "budget": 2.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6666666666666666,
+  "err": 0.5100466933636152,
+  "max_dose_frac": 0.0002499114246271013,
+  "steps": 6.166666666666667
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Co-60",
+  "budget": 0.2,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6875,
+  "err": 0.47201793599923947,
+  "max_dose_frac": 0.010942457012146078,
+  "steps": 5.875
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Co-60",
+  "budget": 0.5,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6875,
+  "err": 0.47201793599923947,
+  "max_dose_frac": 0.004376982804858431,
+  "steps": 5.875
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Co-60",
+  "budget": 1.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6875,
+  "err": 0.47201793599923947,
+  "max_dose_frac": 0.0021884914024292157,
+  "steps": 5.875
+ },
+ {
+  "policy": "greedy",
+  "isotope": "Co-60",
+  "budget": 2.0,
+  "step_time": 10.0,
+  "violation": 0.0,
+  "success": 0.6875,
+  "err": 0.47201793599923947,
+  "max_dose_frac": 0.0010942457012146078,
+  "steps": 5.875
+ }
+]

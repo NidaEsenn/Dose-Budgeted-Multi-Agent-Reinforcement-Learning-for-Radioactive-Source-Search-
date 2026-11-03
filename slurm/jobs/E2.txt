@@ -1,0 +1,170 @@
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.1 algo.name=mappo_lag_a_d0.1 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.25 algo.name=mappo_lag_a_d0.25 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.4 algo.name=mappo_lag_a_d0.4 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.55 algo.name=mappo_lag_a_d0.55 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.75 algo.name=mappo_lag_a_d0.75 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=0.9 algo.name=mappo_lag_a_d0.9 seed=9
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=0
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=1
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=2
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=3
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=4
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=5
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=6
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=7
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=8
+experiment=E2 algo=mappo_lag_a algo.cost_limit=1.0 algo.name=mappo_lag_a_d1.0 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.01 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.03 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.1 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=0.3 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=1.0 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=3.0 seed=9
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=0
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=1
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=2
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=3
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=4
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=5
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=6
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=7
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=8
+experiment=E2 algo=mappo_penalty algo.penalty_beta=10.0 seed=9
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=0
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=1
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=2
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=3
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=4
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=5
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=6
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=7
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=8
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.1 env.name=budget0.1 seed=9
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=0
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=1
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=2
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=3
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=4
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=5
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=6
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=7
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=8
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=0.3 env.name=budget0.3 seed=9
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=0
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=1
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=2
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=3
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=4
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=5
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=6
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=7
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=8
+experiment=E2 algo=mappo_lag_a env.budget_base_Gy=1.0 env.name=budget1.0 seed=9

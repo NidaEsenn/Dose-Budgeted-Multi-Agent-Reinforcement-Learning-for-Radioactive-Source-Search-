@@ -1,0 +1,45 @@
+# Calibrated main setting (docs/DESIGN_DECISIONS.md D6, D7). Every key maps to
+# radsearch.env.EnvConfig; physical constants live in radsearch/physics_constants.yaml.
+name: main
+width: 20
+height: 20
+cell: 1.0
+n_agents: 4
+max_agents: 6
+n_obstacles: [0, 7]
+max_obstacle_size: 4
+materials: [concrete]
+start_mode: door
+min_source_dist: 5.0
+isotope: Co-60
+activity_TBq: [1.0, 100.0]
+dose_air_attenuation: true
+detector: {}
+model_error: field
+model_error_sigma: 0.3
+model_error_length: 3.0
+pf_model_sigma: null
+step_time: 10.0
+dwell_fraction: 1.0
+max_steps: 200
+budget_base_Gy: 0.3
+budget_base_range: null
+budget_ratio: [1.0]
+shuffle_budgets: false
+retire: true
+budget_ref_Gy: 2.0
+n_particles: 2000
+pf_variant: tempered
+pf_max_stages: 3
+pf_logA_range: null
+err_scale: 5.0
+time_penalty: 0.005
+success_bonus: 1.0
+success_radius: 1.0
+dose_penalty_beta: 0.0
+terminate_on_confident: true
+confident_sigma: 0.3
+min_steps: 5
+obs_budget: true
+obs_dose_rate: true
+cowardice_fraction: 0.1

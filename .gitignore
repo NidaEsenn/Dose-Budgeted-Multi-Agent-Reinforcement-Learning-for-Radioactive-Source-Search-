@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+outputs/
+runs/
+wandb/
+multirun/
+*.egg-info/
+.venv/
