@@ -1,0 +1,38 @@
+[
+ {
+  "policy": "perimeter",
+  "success": 0.84,
+  "violation": 0.195,
+  "stranded": 0.09,
+  "steps": 20.1,
+  "closest": 3.6,
+  "median_violation_step": 14.0
+ },
+ {
+  "policy": "greedy,beta=1.0",
+  "success": 0.865,
+  "violation": 0.31,
+  "stranded": 0.16,
+  "steps": 15.6,
+  "closest": 1.2,
+  "median_violation_step": 15.0
+ },
+ {
+  "policy": "shielded_greedy,beta=1.0",
+  "success": 0.81,
+  "violation": 0.105,
+  "stranded": 0.09,
+  "steps": 15.4,
+  "closest": 1.8,
+  "median_violation_step": 20.0
+ },
+ {
+  "policy": "shielded_greedy,beta=3.0",
+  "success": 0.825,
+  "violation": 0.09,
+  "stranded": 0.065,
+  "steps": 16.6,
+  "closest": 1.9,
+  "median_violation_step": 22.0
+ }
+]
