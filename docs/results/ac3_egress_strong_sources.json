@@ -1,0 +1,50 @@
+[
+ {
+  "policy": "mappo_sanity_0.1Gy.pt",
+  "budget": 0.1,
+  "success": 0.84,
+  "violation": 0.3,
+  "stranded": 0.11,
+  "steps": 24.4
+ },
+ {
+  "policy": "mappo_sanity_0.1Gy.pt",
+  "budget": 0.2,
+  "success": 0.85,
+  "violation": 0.15,
+  "stranded": 0.03,
+  "steps": 25.6
+ },
+ {
+  "policy": "mappo_sanity_0.1Gy.pt",
+  "budget": 0.3,
+  "success": 0.87,
+  "violation": 0.1,
+  "stranded": 0.01,
+  "steps": 26.6
+ },
+ {
+  "policy": "baseline:greedy,beta=0",
+  "budget": 0.1,
+  "success": 0.86,
+  "violation": 0.35,
+  "stranded": 0.12,
+  "steps": 13.9
+ },
+ {
+  "policy": "baseline:greedy,beta=0",
+  "budget": 0.2,
+  "success": 0.88,
+  "violation": 0.17,
+  "stranded": 0.05,
+  "steps": 13.9
+ },
+ {
+  "policy": "baseline:greedy,beta=0",
+  "budget": 0.3,
+  "success": 0.88,
+  "violation": 0.12,
+  "stranded": 0.03,
+  "steps": 13.9
+ }
+]

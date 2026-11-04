@@ -311,3 +311,50 @@ A fix to try: randomise motion speed and tracking error during training
 **Known issue.** With `MUJOCO_GL=osmesa` set, `torch.optim.Adam` segfaults
 (native-library clash, independent of import order). Only the rendering
 script sets it, and only on headless Linux.
+
+## D21 — Safe exit, predicted-dose observation, strong sources, 0.1 Gy
+
+**Problem.** In the sanity runs ~4 in 10 robots that approached a strong
+source were stranded next to it: the mission ended when the source was found,
+so a robot that spent its whole budget on the last step cost the team
+nothing. Robots also approached equally close whatever the source strength.
+
+**Decision (agreed with the author: option b).** A robot is only safe if it
+can still get out. When a mission ends, every robot still in the field drives
+back to the door; that exit dose is added to its dose, and a robot that would
+exceed its budget is **stranded** and counts as a violation (cost A gets the
+exit dose, cost B the indicator at the final step). `egress_required: false`
+restores the old rule.
+
+**Exit-route computation — options compared.** (a) Dijkstra on dose (the
+lowest-dose route of any length) per environment per step: exact but a
+Python heap loop every step. (b) **Shortest route to the door, picking the
+lowest-dose one among equally short routes**, computed level by level with
+vectorised array operations over the whole batch. Chosen: (b). In a
+20 × 20 m room detours rarely pay, and (b) adds little cost to a step.
+
+**New observation** (`obs_predicted_dose`, +6 features): the predicted step
+dose for each of the 5 moves and the estimated exit dose, both divided by
+the remaining budget. They are computed from the team's *estimate* (posterior
+mean), never the true source, so a real robot could compute them. Old
+checkpoints keep their layout (`LearnedPolicy.with_pred`).
+
+**Strong sources and budget.** Main setting now 10–100 TBq (all violations
+came from ≥ 10 TBq; the cited incidents are 15.7–111 TBq). AC-3 re-check
+with the old MAPPO model under the new rules, 100 missions
+(`docs/results/ac3_egress_strong_sources.json`):
+
+| Policy | budget | success | some robot over budget | stranded |
+|---|---|---|---|---|
+| MAPPO (old model) | 0.1 Gy | 84 % | **30 %** | 11 % |
+| MAPPO (old model) | 0.2 Gy | 85 % | 15 % | 3 % |
+| MAPPO (old model) | 0.3 Gy | 87 % | 10 % | 1 % |
+| greedy, no dose term | 0.1 Gy | 86 % | 35 % | 12 % |
+
+**0.1 Gy** is the only level meeting AC-3 (≥ 30 %); it is below the PRD's
+0.2–2 Gy range, which must be flagged to the advisor. Re-check with a model
+trained under the new rules.
+
+Tests: `tests/test_egress.py` (exit cost along shortest/lowest-dose route,
+stranding, switch-off, estimate = truth when the estimate is exact,
+observation layout, old checkpoints still run).

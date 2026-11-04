@@ -24,7 +24,7 @@ import numpy as np
 from . import physics as P
 from ._kernels import tau_bpn
 from .estimator import ParticleFilter
-from .world import MOVES, N_ACTIONS, Layout, generate_layout, sample_source
+from .world import MOVES, N_ACTIONS, Layout, bfs_distances, generate_layout, sample_source
 
 COUNT_NORM = np.log1p(1e7)
 
@@ -44,7 +44,7 @@ class EnvConfig:
     min_source_dist: float = 5.0
     # physics (FR-PHY-06)
     isotope: str = "Co-60"            # calibrated main setting (D7)
-    activity_TBq: tuple = (1.0, 100.0)  # log-uniform
+    activity_TBq: tuple = (10.0, 100.0)  # log-uniform; strong sources, where budgets bind (D21)
     dose_air_attenuation: bool = True
     detector: dict = field(default_factory=dict)   # overrides of physics_constants.yaml
     # multiplicative model error (docs/DESIGN_DECISIONS.md D6): "none" | "iid" | "field"
@@ -57,7 +57,7 @@ class EnvConfig:
     dwell_fraction: float = 1.0
     max_steps: int = 200
     # budgets (FR-BUD-01/02)
-    budget_base_Gy: float = 0.3         # AC-3 calibration (D7); re-check with MAPPO
+    budget_base_Gy: float = 0.1         # AC-3 with egress + strong sources (D21)
     budget_base_range: tuple | None = None   # log-uniform per episode if set
     budget_ratio: tuple = (1.0,)              # cycled over robots, normalised to mean 1
     shuffle_budgets: bool = False             # fixed robot<->budget map: per-robot lambda (D9)
@@ -80,6 +80,11 @@ class EnvConfig:
     # observation switches (ablations, E4)
     obs_budget: bool = True
     obs_dose_rate: bool = True
+    # D21: a robot must be able to drive back to the door when the mission ends;
+    # its exit dose is added, and a robot that would exceed its budget is stranded.
+    egress_required: bool = True
+    # D21: predicted step dose for each move + estimated exit dose, from the team estimate
+    obs_predicted_dose: bool = True
     cowardice_fraction: float = 0.1
 
 
@@ -105,6 +110,23 @@ def _free_run_lengths(occ: np.ndarray) -> np.ndarray:
         out[x, :, 3] = run
         run = np.where(occ[x, :], 0, run + 1)
     return out
+
+
+def exit_costs(step_dose: np.ndarray, door_dist: np.ndarray) -> np.ndarray:
+    """Dose [Gy] to drive from every cell to the door, (B,W,H).
+
+    Follows a shortest route (grid BFS distance to the door) and, among equally
+    short routes, the one with the least dose. A robot accrues the step dose of
+    every cell it enters; the door cell itself costs 0. Unreachable/occupied
+    cells get +inf. Vectorised over the batch, one pass per BFS level.
+    """
+    cost = np.where(door_dist == 0, 0.0, np.inf)
+    maxd = int(door_dist.max()) if door_dist.size else 0
+    for k in range(1, maxd + 1):
+        v = np.pad(step_dose + cost, ((0, 0), (1, 1), (1, 1)), constant_values=np.inf)
+        m = np.minimum(np.minimum(v[:, 2:, 1:-1], v[:, :-2, 1:-1]), np.minimum(v[:, 1:-1, 2:], v[:, 1:-1, :-2]))
+        cost = np.where(door_dist == k, m, cost)
+    return cost
 
 
 class RadSearchCore:
@@ -140,6 +162,11 @@ class RadSearchCore:
         self.first_hit = -np.ones(B, np.int64); self.ep_return = np.zeros(B)
         self.ep_seed = np.zeros(B, np.int64)
         self.min_dist = np.zeros(B)
+        self.door_dist = -np.ones((B, cfg.width, cfg.height), np.int64)
+        self.exit_true = np.zeros((B, cfg.width, cfg.height))
+        self.exit_dose = np.zeros((B, N)); self.stranded = np.zeros((B, N), bool)
+        gx, gy = np.meshgrid(np.arange(cfg.width), np.arange(cfg.height), indexing="ij")
+        self._cell_xy = (np.stack([gx.ravel(), gy.ravel()], -1) + 0.5) * cfg.cell   # (W*H, 2)
         self.obs_dim = len(self._agent_obs_names())
         self.state_dim = self._state_dim()
 
@@ -200,6 +227,10 @@ class RadSearchCore:
         free_xy = lay.cell_center(lay.free_cells)
         rates = self.true_dose_rate(b, free_xy)
         self.max_rate_map[b] = rates.max()
+        self.door_dist[b] = bfs_distances(lay.occ, lay.door)
+        all_rates = self.true_dose_rate(b, self._cell_xy).reshape(cfg.width, cfg.height)
+        self.exit_true[b] = exit_costs(P.step_dose(all_rates, cfg.step_time)[None], self.door_dist[b:b + 1])[0]
+        self.exit_dose[b] = 0.0; self.stranded[b] = False
         self.last_rate[b] = self.true_dose_rate(b, self.robot_xy()[b])
         self.max_rate_visited[b] = self.last_rate[b]
         self.min_dist[b] = np.linalg.norm(self.robot_xy()[b] - self.src[b], axis=1).min()
@@ -314,6 +345,19 @@ class RadSearchCore:
         # 5. costs (FR-ALG-03/04), normalised by each robot's budget
         cost_dose = d_step / self.budget
         cost_violation = newly.astype(float)
+        # 6. egress (D21): robots still in the field must drive back to the door
+        if cfg.egress_required and done.any():
+            ix = np.flatnonzero(done)
+            ex = self.exit_true[ix[:, None], self.cells[ix, :, 0], self.cells[ix, :, 1]] * self.active[ix]
+            ex = np.where(np.isfinite(ex), ex, 0.0)
+            self.exit_dose[ix] = ex
+            self.dose[ix] += ex
+            strand = self.active[ix] & ~self.violated[ix] & (self.dose[ix] >= self.budget[ix])
+            self.stranded[ix] = strand
+            self.violated[ix] |= strand
+            self.violation_step[ix] = np.where(strand, self.t[ix, None], self.violation_step[ix])
+            cost_dose[ix] += ex / self.budget[ix]
+            cost_violation[ix] += strand
 
         episodes = []
         out_obs_final = None
@@ -346,6 +390,8 @@ class RadSearchCore:
             team_dose=float(self.dose[b].sum()),
             max_rate_frac=float(self.max_rate_visited[b].max() / max(self.max_rate_map[b], 1e-30)),
             min_source_dist=float(self.min_dist[b]), ret=float(self.ep_return[b]), confident=confident, truncated=truncated,
+            exit_dose=self.exit_dose[b].tolist(), stranded=self.stranded[b].tolist(),
+            any_stranded=bool(self.stranded[b].any()),
             door=list(lay.door),
         )
 
@@ -356,12 +402,27 @@ class RadSearchCore:
         names += ["est_dx", "est_dy", "est_x", "est_y", "est_sx", "est_sy", "est_logA", "est_slogA"]
         for j in range(self.cfg.max_agents - 1):
             names += [f"tm{j}_{k}" for k in ("present", "dx", "dy", "active", "budget", "remaining")]
+        if self.cfg.obs_predicted_dose:
+            names += [f"pred_dose_{d}" for d in ("u", "d", "l", "r", "stay")] + ["exit_reserve"]
         return names
+
+    def estimated_fields(self):
+        """Step dose [Gy] and exit dose [Gy] per cell, (B,W,H) each, from the
+        team's *estimate* (posterior mean) -- deployable, never the truth."""
+        cfg = self.cfg
+        mean, _ = self.pf.estimate()
+        M = self._cell_xy.shape[0]
+        cells = np.broadcast_to(self._cell_xy, (self.B, M, 2))
+        tau = tau_bpn(mean[:, None, :2], cells, self.rects, self.mu, self.nrect, self.det.height)[:, 0]
+        rate = P.dose_rate(mean[:, None, :2], 10 ** mean[:, None, 2] / P.GBQ, cells, self.iso,
+                           self.det.height, tau, cfg.dose_air_attenuation)
+        step = P.step_dose(rate, cfg.step_time).reshape(self.B, cfg.width, cfg.height)
+        return step, exit_costs(step, self.door_dist)
 
     def _state_dim(self):
         return 6 * self.cfg.max_agents + 3 + 6 + 1
 
-    def observe(self):
+    def observe(self, with_pred: bool | None = None):
         """Per-agent observations (B,N,obs_dim) and centralised state (B,N,state_dim).
 
         The state (critic input, FR-OBS-02) holds every robot's status, the
@@ -405,7 +466,20 @@ class RadSearchCore:
             ry = np.take_along_axis(rel[..., 1], order, -1) / H
             tm[:, :, :N - 1] = np.stack([np.ones_like(rx), rx, ry, g(self.active.astype(float)),
                                          g(bud), g(remaining)], -1)
-        obs = np.concatenate([own, prox, est, tm.reshape(B, N, -1)], -1).astype(np.float32)
+        parts = [own, prox, est, tm.reshape(B, N, -1)]
+        if cfg.obs_predicted_dose if with_pred is None else with_pred:
+            from .shield import candidate_cells
+            step, exitc = self.estimated_fields()
+            rem = np.maximum(self.budget - self.dose, 1e-9)
+            cand = candidate_cells(self)                                       # (B,N,5,2)
+            pred = step[np.arange(B)[:, None, None], cand[..., 0], cand[..., 1]] / rem[..., None]
+            ex = exitc[np.arange(B)[:, None], self.cells[..., 0], self.cells[..., 1]] / rem
+            feat = np.concatenate([pred, ex[..., None]], -1)
+            feat = np.clip(np.nan_to_num(feat, nan=3.0, posinf=3.0), 0, 3) / 3.0
+            if not cfg.obs_budget:
+                feat = np.zeros_like(feat)
+            parts.append(feat)
+        obs = np.concatenate(parts, -1).astype(np.float32)
         # centralised state
         st = np.zeros((B, M, 6))
         st[:, :N] = np.stack([xy[..., 0] / W, xy[..., 1] / H, self.active.astype(float),

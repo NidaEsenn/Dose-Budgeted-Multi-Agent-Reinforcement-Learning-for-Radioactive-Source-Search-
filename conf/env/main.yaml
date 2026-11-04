@@ -12,7 +12,7 @@ materials: [concrete]
 start_mode: door
 min_source_dist: 5.0
 isotope: Co-60
-activity_TBq: [1.0, 100.0]
+activity_TBq: [10.0, 100.0]
 dose_air_attenuation: true
 detector: {}
 model_error: field
@@ -22,7 +22,7 @@ pf_model_sigma: null
 step_time: 10.0
 dwell_fraction: 1.0
 max_steps: 200
-budget_base_Gy: 0.3
+budget_base_Gy: 0.1
 budget_base_range: null
 budget_ratio: [1.0]
 shuffle_budgets: false
@@ -42,4 +42,6 @@ confident_sigma: 0.3
 min_steps: 5
 obs_budget: true
 obs_dose_rate: true
+egress_required: true
+obs_predicted_dose: true
 cowardice_fraction: 0.1

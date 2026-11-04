@@ -10,8 +10,9 @@ from .mappo import ActorCritic
 
 class LearnedPolicy:
     def __init__(self, net: ActorCritic, deterministic: bool = True, shield: DoseShield | None = None,
-                 seed: int = 0, name: str = "learned"):
+                 seed: int = 0, name: str = "learned", with_pred: bool = False):
         self.net, self.det, self.shield, self.name = net, deterministic, shield, name
+        self.with_pred = with_pred   # observation layout the policy was trained with
         self.gen = torch.Generator().manual_seed(seed)
 
     def reset(self, core, b):
@@ -19,7 +20,7 @@ class LearnedPolicy:
 
     @torch.no_grad()
     def act(self, core):
-        obs, _ = core.observe()
+        obs, _ = core.observe(with_pred=self.with_pred)
         mask = core.action_mask()
         if self.shield is not None:
             mask &= self.shield.mask(core)
@@ -38,4 +39,5 @@ def load_policy(path: str, deterministic: bool = True, seed: int = 0) -> Learned
     net.load_state_dict(ck["net"])
     net.eval()
     shield = DoseShield(a["shield_quantile"], a["shield_horizon"], seed=seed) if a["shield"] else None
-    return LearnedPolicy(net, deterministic, shield, seed, name=a["method"])
+    return LearnedPolicy(net, deterministic, shield, seed, name=a["method"],
+                         with_pred=bool(e.get("obs_predicted_dose", False)))

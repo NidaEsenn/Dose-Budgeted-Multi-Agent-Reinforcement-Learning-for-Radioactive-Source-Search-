@@ -55,6 +55,7 @@ def episode_metrics(episodes: list[dict], cowardice_fraction: float = 0.1) -> di
         cowardice_rate=cow,
         risk_sharing_mean=float(np.nanmean(rs)) if np.isfinite(rs).any() else float("nan"),
         steps_mean=float(np.mean([e["steps"] for e in episodes])),
+        stranded_rate=float(np.mean([e.get("any_stranded", False) for e in episodes])),
         return_mean=float(np.mean([e["ret"] for e in episodes])),
     )
 
