@@ -267,6 +267,7 @@ class MAPPOTrainer:
         self.core = RadSearchCore(ecfg, self.cfg.n_envs, seed=self.cfg.seed * 1000 + k)
         self.obs, self.state = self.core.reset_all()
         self.ep_cost = np.zeros((self.cfg.n_envs, ecfg.n_agents))
+        self.ep_viol = np.zeros((self.cfg.n_envs, ecfg.n_agents))
         print(f"[trainer] curriculum stage {k}: " + json.dumps({k2: v for k2, v in stages[k].items()}))
 
     # ---------------------------------------------------------------- costs
@@ -293,6 +294,7 @@ class MAPPOTrainer:
             out = self.core.step(a.numpy())
             cost = self._cost(out)
             self.ep_cost += cost * out["acting"]
+            self.ep_viol += out["cost_violation"] * out["acting"]
             # agent-level terminal: env done, or this robot retired this step
             term = out["done"][:, None] | (out["acting"] & ~out["active"])
             # out["active"] is post-reset for done envs; done covers those
@@ -302,8 +304,10 @@ class MAPPOTrainer:
                 buf[k].append(torch.as_tensor(np.asarray(val)) if not torch.is_tensor(val) else val)
             for ep, b in zip(out["episodes"], np.flatnonzero(out["done"])):
                 ep["cost"] = self.ep_cost[b].tolist()
+                ep["viol_count"] = self.ep_viol[b].tolist()
                 self.ep_buffer.append(ep)
                 self.ep_cost[b] = 0.0
+                self.ep_viol[b] = 0.0
             self.obs, self.state = out["obs"], out["state"]
             self.env_steps += B
         v_last, c_last = self.net.values(torch.as_tensor(self.obs), torch.as_tensor(self.state))
@@ -393,7 +397,11 @@ class MAPPOTrainer:
             eps = self.ep_buffer; self.ep_buffer = []
             N = self.env_cfg.n_agents
             if self.constrained and eps:
-                Jc = np.array([e["cost"] for e in eps if e["n_agents"] == N]).mean(0)
+                # Version B: the multiplier tracks the violation *probability* only; the
+                # optional kappa * dose term shapes the cost advantage but would make
+                # the limit unreachable if it entered J_c (D22).
+                key = "viol_count" if cfg.cost_version == "B" else "cost"
+                Jc = np.array([e[key] for e in eps if e["n_agents"] == N]).mean(0)
                 Jfull = np.zeros(self.base_env_cfg.max_agents); Jfull[:N] = Jc
                 valid = np.zeros(self.base_env_cfg.max_agents, bool); valid[:N] = True
                 self.lagr.update(Jfull, valid, N)

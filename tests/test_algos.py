@@ -55,3 +55,12 @@ def test_version_b_team_chance_split():
     assert cfg.limit(4) == pytest.approx(0.0125)
     assert AlgoConfig(cost_version="B", team_chance_split=False).limit(4) == pytest.approx(0.05)
     assert AlgoConfig(cost_version="A").limit(4) == pytest.approx(0.75)
+
+
+def test_version_b_lambda_uses_violations_not_dose_shaping(tmp_path):
+    """With kappa > 0 and no violations, lambda must not grow (D22)."""
+    ecfg = EnvConfig(n_particles=200, max_steps=20, budget_base_Gy=100.0)   # budgets never bind
+    acfg = AlgoConfig(method="mappo_lag", cost_version="B", cost_kappa=1.0, lambda_lr=1.0,
+                      n_envs=4, rollout_len=32, total_env_steps=4 * 32 * 3, run_dir=str(tmp_path))
+    tr = MAPPOTrainer(ecfg, acfg).train()
+    assert np.allclose(tr.lagr.lam, 0.0)
