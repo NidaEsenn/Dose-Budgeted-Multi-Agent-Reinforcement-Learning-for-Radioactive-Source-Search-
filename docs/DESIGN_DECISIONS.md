@@ -268,3 +268,46 @@ P(∪ᵢ violateᵢ) ≤ Σᵢ P(violateᵢ), per-robot limits **d/N** guarantee
 target. Default now `team_chance_split: true` (0.05/4 = 0.0125 for 4 robots);
 the λ learning rate for version B must also match the indicator cost's scale
 (lr ≈ 1.0, not 0.05). Both changes still need a training run to confirm.
+
+## D20 — 3-D simulation: MuJoCo for motion, one shared radiation model
+
+**Options compared** (for robotics credibility and the semester-2 path):
+
+| Simulator | Robotics relevance | Usable here | Verdict |
+|---|---|---|---|
+| ROS 2 + Gazebo Harmonic | industry standard; real-robot route | no (ROS package servers blocked) | exporter now, bridge on a local machine (`docs/ROS2_GAZEBO.md`) |
+| NVIDIA Isaac Sim / Lab | GPU-scale RL | no GPU | optional later |
+| **MuJoCo 3.17** | standard in robot learning | yes (pip wheel, OSMesa rendering) | **built** |
+| PyBullet | declining maintenance | source build only | rejected |
+
+**Integration choice.** (a) A second, separate 3-D simulator would duplicate
+the radiation physics and drift from the training model. (b) **MuJoCo
+simulates only robot motion** (slide-joint bases with velocity motors,
+contacts with walls, obstacles and each other); dose, counts and the particle
+filter come from `RadSearchCore.step(..., xy_override=positions)`. Chosen:
+(b). The detector sits on a mast at 0.3 m, the same height the physics uses.
+
+**Checks** (`tests/test_sim3d.py`): MuJoCo's ray cast and our slab clipping
+agree on blocked paths for > 200 random pairs; robots reach the next cell in
+one step at 0.5 m/s; robots collide instead of overlapping; with perfect
+tracking a 3-D mission reproduces the 2-D doses; exported Gazebo worlds are
+valid SDF 1.9 with every obstacle.
+
+**Sim-to-sim transfer** (`scripts/eval_3d_transfer.py`, MAPPO sanity model,
+0.1 Gy, the same 30 test missions; `docs/results/sim3d_transfer.json`):
+
+| Robot motion | success | some robot over budget | steps | mean tracking error |
+|---|---|---|---|---|
+| grid (2-D) | 93 % | 10 % | 17.8 | 0 |
+| MuJoCo, 0.5 m/s | 93 % | 10 % | 17.8 | 0.07 m |
+| MuJoCo, 0.15 m/s | 90 % | 10 % | 17.4 | 0.09 m |
+| MuJoCo, 0.08 m/s | 83 % | 10 % | 26.0 | 0.53 m |
+
+The grid-trained policy transfers as long as the robot can keep pace with
+its 10-s decisions. Below that, success drops and missions take ~45 % longer.
+A fix to try: randomise motion speed and tracking error during training
+(domain randomisation). 30 missions per row: indications only.
+
+**Known issue.** With `MUJOCO_GL=osmesa` set, `torch.optim.Adam` segfaults
+(native-library clash, independent of import order). Only the rendering
+script sets it, and only on headless Linux.

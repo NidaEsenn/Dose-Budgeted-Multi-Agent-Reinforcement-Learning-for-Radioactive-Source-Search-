@@ -184,6 +184,7 @@ class RadSearchCore:
         self.logA[b] = r_src.uniform(*self.logA_range) if logA is None else logA
         self.budget[b] = self._sample_budgets(r_bud) if budgets is None else budgets
         self.cells[b] = lay.start_cells
+        self.cont_xy = None
         self.dose[b] = 0.0; self.active[b] = True; self.violated[b] = False
         self.violation_step[b] = -1; self.t[b] = 0; self.first_hit[b] = -1; self.ep_return[b] = 0.0
         self.last_counts[b] = 0.0
@@ -225,6 +226,8 @@ class RadSearchCore:
 
     # --------------------------------------------------------------- physics
     def robot_xy(self):
+        if getattr(self, "cont_xy", None) is not None:
+            return self.cont_xy
         return (self.cells + 0.5) * self.cfg.cell
 
     def true_dose_rate(self, b: int, xy: np.ndarray) -> np.ndarray:
@@ -235,8 +238,14 @@ class RadSearchCore:
                            tau, self.cfg.dose_air_attenuation)
 
     # ------------------------------------------------------------------ step
-    def step(self, actions: np.ndarray):
-        """actions (B,N) int. Returns a dict of arrays; finished episodes in ``episodes``."""
+    def step(self, actions: np.ndarray, xy_override: np.ndarray | None = None):
+        """actions (B,N) int. Returns a dict of arrays; finished episodes in ``episodes``.
+
+        ``xy_override`` (B,N,2): continuous robot positions reached by an external
+        motion simulator (e.g. the MuJoCo 3-D world). Dose, counts and the
+        estimator then use these real positions; the grid cell is updated to the
+        cell the robot actually stands in.
+        """
         cfg = self.cfg
         B, N = self.B, self.N
         acting = self.active.copy()
@@ -248,6 +257,14 @@ class RadSearchCore:
         bi = np.arange(B)[:, None]
         blocked = self.occ[bi, nxt[..., 0], nxt[..., 1]]
         self.cells = np.where(blocked[..., None], self.cells, nxt)
+        if xy_override is not None:
+            xy_override = np.asarray(xy_override, dtype=np.float64)
+            c = np.floor(xy_override / cfg.cell).astype(np.int64)
+            c[..., 0] = np.clip(c[..., 0], 0, cfg.width - 1)
+            c[..., 1] = np.clip(c[..., 1], 0, cfg.height - 1)
+            free = ~self.occ[bi, c[..., 0], c[..., 1]]
+            self.cells = np.where(free[..., None], c, self.cells)
+            self.cont_xy = xy_override.copy()
         xy = self.robot_xy()
         # 2. dose (truth)
         tau = tau_bpn(self.src[:, None], xy, self.rects, self.mu, self.nrect, self.det.height)[:, 0]

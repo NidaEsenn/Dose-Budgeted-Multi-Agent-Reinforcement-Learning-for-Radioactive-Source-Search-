@@ -42,6 +42,25 @@ filter's guesses, and each line is a robot's path with "dose / budget" in the
 legend. A faded robot marker means it exceeded its budget and was retired.
 Pre-rendered examples are in [`docs/examples/`](docs/examples/).
 
+## 3-D simulation (MuJoCo) and Gazebo
+
+The same missions can run with robots that physically drive between cells
+(MuJoCo rigid-body dynamics, motor limits, collisions). Radiation and the
+estimator are unchanged and are evaluated at the robots' real positions.
+
+```bash
+pip install -e ".[sim3d]"
+python scripts/demo3d.py --policy models/mappo_sanity_0.1Gy.pt --seed 72            # GIF + still
+python scripts/demo3d.py --policy models/mappo_sanity_0.1Gy.pt --seed 72 --viewer   # interactive window (desktop)
+python scripts/eval_3d_transfer.py --policy models/mappo_sanity_0.1Gy.pt --episodes 30
+python -m radsearch.sim3d.sdf_export --seed 10000072 --out mission72.sdf             # Gazebo world
+```
+
+Examples: [`docs/examples/mappo_mission72_3d.gif`](docs/examples/mappo_mission72_3d.gif).
+ROS 2 / Gazebo setup and the planned bridge: [`docs/ROS2_GAZEBO.md`](docs/ROS2_GAZEBO.md).
+Never export `MUJOCO_GL=osmesa` in a training job: with it set, PyTorch's
+optimizer crashes. `demo3d.py` sets it by itself on headless Linux.
+
 ## Install (cluster / exact versions)
 
 ```bash

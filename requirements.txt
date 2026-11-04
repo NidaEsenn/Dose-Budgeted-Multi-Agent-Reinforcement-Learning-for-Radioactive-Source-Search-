@@ -13,3 +13,4 @@ rliable==1.2.0
 wandb==0.31.0
 pytest==9.2.0
 pillow==12.3.0
+mujoco==3.17.0

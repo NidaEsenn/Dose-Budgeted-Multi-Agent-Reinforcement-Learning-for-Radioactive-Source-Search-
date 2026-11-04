@@ -15,6 +15,7 @@ dependencies = ["numpy", "scipy", "numba", "torch", "pettingzoo", "gymnasium", "
 
 [project.optional-dependencies]
 dev = ["pytest", "wandb", "pillow"]
+sim3d = ["mujoco>=3.1", "pillow"]
 
 [tool.setuptools.packages.find]
 include = ["radsearch*"]

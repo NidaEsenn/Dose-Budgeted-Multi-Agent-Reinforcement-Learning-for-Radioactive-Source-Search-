@@ -18,7 +18,7 @@ Status: **done** = implemented and covered by a test or a recorded run;
 | FR-ENV-08 heat map + trajectory animation | done | `radsearch/render.py`, `test_render` |
 | FR-ENV-09 random / 1 m grid source placement | done | `world.sample_source`, `world.source_grid`, `evaluate.evaluate_grid` |
 | FR-ENV-10 curriculum | done | `AlgoConfig.curriculum` (stages override any EnvConfig field) |
-| FR-ENV-11 continuous motion | open | semester 2 |
+| FR-ENV-11 continuous motion | partial | MuJoCo 3-D motion layer (`radsearch/sim3d`, D20); policy still decides on the grid |
 
 ## Physics (PHY)
 | ID | Status | Where / evidence |
@@ -91,7 +91,7 @@ Status: **done** = implemented and covered by a test or a recorded run;
 | FR-REL-01 public code, MIT, README | ready | LICENSE, README (repository visibility is the author's call) |
 | FR-REL-02..04 | open | after experiments |
 | NFR-01 reproducibility | done | seed tests |
-| NFR-02 unit tests gate batches | done | 55 tests; SLURM task 1 runs pytest |
+| NFR-02 unit tests gate batches | done | 60 tests; SLURM task 1 runs pytest |
 | NFR-03 < 12 h per run | on track | ~210 env-steps/s on 4 CPUs → 2 M env steps ≈ 2.6 h (D5) |
 | NFR-04 environment freeze | process | tag `env-v1.0` at week 8 |
 

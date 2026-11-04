@@ -1,0 +1,30 @@
+[
+ {
+  "setting": "grid (2-D)",
+  "success": 0.9333333333333333,
+  "violation": 0.1,
+  "steps": 17.8,
+  "track_err_mean": 0.0
+ },
+ {
+  "setting": "MuJoCo 3-D, 0.5 m/s",
+  "success": 0.9333333333333333,
+  "violation": 0.1,
+  "steps": 17.8,
+  "track_err_mean": 0.07006797315898569
+ },
+ {
+  "setting": "MuJoCo 3-D, 0.15 m/s",
+  "success": 0.9,
+  "violation": 0.1,
+  "steps": 17.433333333333334,
+  "track_err_mean": 0.08675588746766405
+ },
+ {
+  "setting": "MuJoCo 3-D, 0.08 m/s",
+  "success": 0.8333333333333334,
+  "violation": 0.1,
+  "steps": 26.0,
+  "track_err_mean": 0.5309677397075541
+ }
+]
