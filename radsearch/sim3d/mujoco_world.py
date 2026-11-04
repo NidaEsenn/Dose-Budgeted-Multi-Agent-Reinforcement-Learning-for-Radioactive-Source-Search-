@@ -62,7 +62,7 @@ def build_mjcf(core, b: int = 0, texture_path: str | None = None, show_source: b
     parts = [f'''<mujoco model="radsearch">
   <compiler angle="radian"/>
   <option timestep="0.01" gravity="0 0 -9.81"/>
-  <visual><global offwidth="1280" offheight="960"/><quality shadowsize="4096"/>
+  <visual><global offwidth="1920" offheight="1200"/><quality shadowsize="4096"/>
     <headlight ambient="0.45 0.45 0.45" diffuse="0.5 0.5 0.5"/></visual>
   <asset>{tex}
     <material name="concrete" rgba="0.62 0.64 0.65 1"/>

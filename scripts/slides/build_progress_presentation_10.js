@@ -1,7 +1,7 @@
 const pptxgen = require("pptxgenjs");
 const { applyTheme } = require("/root/.claude/skills/synced/02812373-138d-4a58-874b-33e46fa50871_5ae0fb7b-f204-4157-8b07-59d0450a2433/pptx/scripts/apply_theme.js");
 
-const [OUT, IMG72_2D, IMG72_3D, IMG44_3D] = process.argv.slice(2);
+const [OUT, IMG72_2D, IMG72_3D, IMG44_3D, STILLS] = process.argv.slice(2);
 
 const HEX = { ink: "17201F", muted: "56615F", teal: "0D6B66", red: "A3342B", amber: "9A5B00",
   tealSoft: "E2F0EE", redSoft: "F8E5E2", amberSoft: "FBF0DE", ground: "EEF1F0", rule: "D9DEDD", white: "FFFFFF" };
@@ -92,9 +92,9 @@ pres.addSection({ title: "Problem" });
   s.addText("Can a robot team learn to find a lost radioactive source without any robot exceeding its own radiation budget?", { placeholder: "body" });
   s.addText([{ text: "Nida Esen", options: { bold: true, color: C.text1, breakLine: true } },
              { text: "Advisor: Prof. [Name] · Northeastern University · November 2026" }], { placeholder: "meta" });
-  s.addImage({ path: IMG72_3D, x: 6.95, y: 1.45, w: 5.85, h: 4.39, objectName: "3D mission render",
+  s.addImage({ path: IMG72_3D, x: 6.95, y: 1.45, w: 5.85, h: 3.66, objectName: "3D mission render",
     altText: "3D render of a simulated mission: a room with concrete obstacles, robots, and the floor coloured by radiation dose rate." });
-  txt(s, "Simulated mission in the MuJoCo 3D world. Floor colour: true dose rate.", { x: 6.95, y: 5.95, w: 5.85, h: 0.35, fontSize: 11, color: C.text2 }, "Image caption");
+  txt(s, "MuJoCo 3D world: a robot approaches the source (glow). Floor colour: true dose rate.", { x: 6.95, y: 5.2, w: 5.85, h: 0.35, fontSize: 11, color: C.text2 }, "Image caption");
   s.addNotes("One-sentence opener: this thesis asks whether a team of robots can learn to find a strong radioactive source while every robot stays within its own radiation budget.");
 }
 { // 2 the problem we're solving (visual)
@@ -271,26 +271,29 @@ pres.addSection({ title: "Findings" });
   caveat(s, "Early numbers: one short training run per method, 200 test missions. They show the system works; they are not final results.");
   s.addNotes("All violations come from sources above 10 TBq. Below 10 TBq the budget never matters. That is why the main experiments should focus on strong sources.");
 }
-{ // 11 mission 72
+{ // 9 mission 72 (2D map + 3D strip)
   const s = content("Findings", "Example · mission 72, 72 TBq", "One step too far: a robot strands itself on the last move");
-  s.addImage({ path: IMG72_2D, x: X0, y: TOP - 0.05, w: 5.2, h: 4.64, objectName: "Mission 72 map",
+  s.addImage({ path: IMG72_2D, x: X0, y: TOP - 0.05, w: 4.5, h: 4.02, objectName: "Mission 72 map",
     altText: "Mission 72 top view: the red robot walks straight up onto the source and is retired with 0.62 Gy against a 0.10 Gy budget." });
-  const H = { bold: true, color: C.text2, fontSize: 12, fill: { color: C.background2 } };
-  s.addTable([
-    [{ text: "RED ROBOT", options: H }, { text: "DISTANCE", options: H }, { text: "BUDGET USED", options: H }],
-    ["Steps 1–18", "15 → 3.2 m", "33%"], ["Step 19", "2.2 m", "47%"], ["Step 20", "1.2 m", "95%"],
-    ["Step 21", "0.2 m", "619%"].map((t) => ({ text: t, options: { bold: true, color: C.accent2, fill: { color: C.accent5 } } })),
-  ], { x: 6.3, y: TOP, w: 6.43, colW: [2.3, 2.1, 2.03], fontSize: 15, color: C.text1, rowH: 0.46,
-    border: { type: "solid", color: HEX.rule, pt: 0.75 }, margin: [0.06, 0.12, 0.06, 0.12], objectName: "Mission 72 table" });
-  card(s, 6.3, 4.35, 6.43, 1.95, C.accent6, null, "Root cause box");
+  txt(s, "Top view: robot paths over the true dose rate. Green star: source.", { x: X0, y: 5.95, w: 4.5, h: 0.4, fontSize: 11, color: C.text2 });
+  const strip = [["19", "2.2 m from the source", "47% of budget used", C.accent3],
+                 ["20", "1.2 m from the source", "95% of budget used", C.accent2],
+                 ["21", "on the source", "619%: retired", C.accent2]];
+  const x1 = 5.45, sw = (12.73 - x1 - 0.3) / 3, sh = sw / 1.6;
+  strip.forEach(([st, dist, used, col], i) => {
+    const x = x1 + i * (sw + 0.15);
+    s.addImage({ path: `${STILLS}/mission72_step${st}_closeup_crop.png`, x, y: TOP, w: sw, h: sh, objectName: nm("Mission 72 3D still"),
+      altText: `3D close-up of mission 72 at step ${st}: the red robot ${dist}.` });
+    txt(s, `Step ${st}`, { x, y: TOP + sh + 0.1, w: sw, h: 0.35, fontSize: 15, bold: true, color: col });
+    txt(s, `${dist}\n${used}`, { x, y: TOP + sh + 0.45, w: sw, h: 0.6, fontSize: 13, color: C.text1 });
+  });
+  card(s, x1, 4.75, 12.73 - x1, 1.6, C.accent6, null, "Root cause box");
   s.addText([
     { text: "Why: ", options: { bold: true, color: C.accent3 } },
     { text: "the mission ends as soon as the source is found, so a robot that strands itself on the final step costs the team almost nothing. The robot follows the rules we gave it.", options: { color: C.text1 } },
-  ], { isTextBox: true, objectName: "Root cause text", x: 6.6, y: 4.35, w: 5.85, h: 1.95, fontSize: 16, valign: "middle", margin: 0 });
-  txt(s, "Colours: true dose rate. Green star: source. White ×: team estimate.", { x: X0, y: 6.5, w: 5.2, h: 0.3, fontSize: 11, color: C.text2 });
-  s.addNotes("Slow approach for 18 steps, then two steps burn most of the budget. At 95% used it steps onto the source and absorbs six times its budget in ten seconds. The mission still counts as a success, which is the real problem.");
+  ], { isTextBox: true, objectName: "Root cause text", x: x1 + 0.3, y: 4.75, w: 12.73 - x1 - 0.6, h: 1.6, fontSize: 15, valign: "middle", margin: 0 });
+  s.addNotes("Left: the paths seen from above. Right: the same red robot in the 3D world. At step 20 it has used 95% of its budget, yet it steps onto the source and takes six times its budget in ten seconds. The mission still counts as a success.");
 }
-
 pres.addSection({ title: "Plan" });
 { // 10 stuck + next
   const s = content("Plan", "Open problems and next steps", "Where we are stuck, and what comes next");
