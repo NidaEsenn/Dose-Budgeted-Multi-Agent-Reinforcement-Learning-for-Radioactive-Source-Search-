@@ -85,6 +85,7 @@ Fill in the advisor's name and the real start date. Add SLURM only after running
 | 21-slide presentation (with backup) | `docs/progress_presentation.pptx` |
 | Project overview (web) | `docs/project_overview.html` |
 | Decision brief for the advisor | `docs/advisor_decisions.html` |
+| Decision log (Turkish, start → current decisions) | [Claude doc](https://claude.ai/artifact/VwwRwrpWm4DoecbmFTY2P5) |
 | Abstract drafts per venue | [Claude doc](https://claude.ai/artifact/7N77MofsyEFnAkqPiHwXBv) |
 | Design decisions with measurements | `docs/DESIGN_DECISIONS.md` |
 | Requirement-by-requirement status | `docs/REQUIREMENTS_TRACE.md` |
