@@ -474,6 +474,7 @@ greedy + withdraw, 300 missions):
 | 1.0 | 0.47 m | 0.97 | 76 % | 7.0 % | 6 % | 90 % |
 | 0.3 | 0.3 m | 0.99 (64 particles) | 74 % | 3.0 % | 14 % | 64 % |
 | 0.5 | 0.47 m | 0.99 (64 particles) | 69 % | 2.3 % | 13 % | 82 % |
+| 0.7 | 0.47 m | 0.99 (64 particles) | 65 % | 0.3 % | 11 % | 86 % |
 
 (0.47 m = the σ at which the 90 % region fits inside the 1 m success radius.)
 
