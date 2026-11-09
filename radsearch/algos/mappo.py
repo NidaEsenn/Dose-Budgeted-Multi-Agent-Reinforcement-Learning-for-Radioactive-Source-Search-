@@ -30,7 +30,17 @@ import torch
 import torch.nn as nn
 
 from ..env import EnvConfig, RadSearchCore
-from ..shield import DoseShield
+from ..shield import DoseShield, ReserveShield
+
+
+def make_shield(a, seed=0):
+    """a: AlgoConfig or its dict."""
+    g = (lambda k, d=None: a.get(k, d)) if isinstance(a, dict) else (lambda k, d=None: getattr(a, k, d))
+    if not g("shield"):
+        return None
+    if g("shield_type", "dose") == "reserve":
+        return ReserveShield(g("shield_margin", 1.0), g("shield_quantile", 0.97), seed=seed)
+    return DoseShield(g("shield_quantile"), g("shield_horizon"), seed=seed)
 from ..world import N_ACTIONS
 
 
@@ -54,8 +64,10 @@ class AlgoConfig:
     pid_kd: float = 0.0
     penalty_beta: float = 0.0          # mappo_penalty only
     shield: bool = False
+    shield_type: str = "dose"          # dose (FR-ALG-07) | reserve (constraint C mask, needs withdraw)
     shield_quantile: float = 0.95
     shield_horizon: int = 3
+    shield_margin: float = 1.0
     # PPO
     n_envs: int = 16
     rollout_len: int = 64
@@ -238,7 +250,7 @@ class MAPPOTrainer:
         cparams = list(self.net.critic.parameters()) + (list(self.net.ccritic.parameters()) if self.constrained else [])
         self.opt_c = torch.optim.Adam(cparams, lr=cfg.lr_critic, eps=1e-5)
         self.lagr = Lagrange(M, cfg)
-        self.shield = DoseShield(cfg.shield_quantile, cfg.shield_horizon, seed=cfg.seed) if cfg.shield else None
+        self.shield = make_shield(cfg, seed=cfg.seed)
         self.env_steps, self.updates = 0, 0
         self.ep_buffer = []
         os.makedirs(os.path.join(cfg.run_dir, "checkpoints"), exist_ok=True)

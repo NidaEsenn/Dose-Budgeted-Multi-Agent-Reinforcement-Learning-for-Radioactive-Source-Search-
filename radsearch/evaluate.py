@@ -44,7 +44,8 @@ def make_policy(spec: str, seed: int = 0):
         kw = {k: float(v) for k, v in (x.split("=") for x in kv)}
         return make_baseline(name, **kw)
     from .algos.policy import load_policy
-    return load_policy(spec, seed=seed)
+    path, _, shield = spec.partition("@")       # e.g. runs/x/final.pt@reserve
+    return load_policy(path, seed=seed, shield_override=shield or None)
 
 
 def evaluate_policy(policy, cfg: EnvConfig, n_episodes=1000, seed_base=TEST_SEED_BASE, batch=16,

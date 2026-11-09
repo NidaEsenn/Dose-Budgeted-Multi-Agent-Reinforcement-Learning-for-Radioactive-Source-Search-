@@ -139,3 +139,30 @@ class ReserveWithdraw:
                               > self.margin * core.budget)
         act[over] = 5
         return act
+
+
+class ReserveShield:
+    """Constraint C as an action mask (K0.2, Karar 3): a move is allowed only if
+
+        dose_so_far + step_dose(next cell) + exit_dose(next cell) <= margin * budget,
+
+    predicted with the q-quantile over posterior particles (or the posterior mean).
+    Withdraw is always allowed, so the mask is never empty and a robot whose
+    every move is unsafe can only leave. Masking keeps PPO on-policy.
+    """
+
+    def __init__(self, margin: float = 1.0, quantile: float = 0.97, mode: str = "quantile",
+                 n_samples: int = 32, seed: int = 0):
+        self._pred = ReserveWithdraw(None, margin, mode, quantile, n_samples, seed)
+        self.margin = margin
+
+    def mask(self, core, pred=None) -> np.ndarray:
+        m = core.action_mask().copy()
+        if core.n_actions <= N_ACTIONS:
+            return m
+        tot = self._pred.predicted(core)                                   # (B,N,5)
+        safe = core.dose[..., None] + np.nan_to_num(tot, nan=np.inf) <= self.margin * core.budget[..., None]
+        m[..., :N_ACTIONS] &= safe
+        m[~core.active] = False
+        m[~core.active, 4] = True
+        return m

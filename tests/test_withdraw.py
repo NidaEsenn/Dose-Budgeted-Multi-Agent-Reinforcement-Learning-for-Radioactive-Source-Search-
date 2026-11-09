@@ -104,3 +104,15 @@ def test_old_five_action_checkpoint_runs_in_withdraw_env():
     core = _core()
     a = pol.act(core)
     assert a.max() < WITHDRAW
+
+
+def test_reserve_shield_mask_never_empty_and_allows_withdraw():
+    from radsearch.shield import ReserveShield
+    core = _core()
+    core.budget[:] = 1e-12            # every move unsafe
+    m = ReserveShield().mask(core)
+    assert m.shape == (2, 3, 6)
+    assert m[..., 5].all() and not m[..., :5].any()
+    core.budget[:] = 1e3              # every move safe
+    m = ReserveShield().mask(core)
+    assert m.all()
