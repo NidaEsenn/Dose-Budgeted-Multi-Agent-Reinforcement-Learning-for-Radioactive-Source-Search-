@@ -108,7 +108,7 @@ class ReserveWithdraw:
 
     def __init__(self, base, margin: float = 1.0, mode: str = "quantile", quantile: float = 0.9,
                  n_samples: int = 32, seed: int = 0):
-        self.base, self.margin, self.mode, self.q, self.S = base, margin, mode, quantile, n_samples
+        self.base, self.margin, self.mode, self.q, self.S = base, margin, mode, quantile, int(n_samples)
         self.rng = np.random.default_rng(seed)
         self.name = f"{getattr(base, 'name', type(base).__name__)}+withdraw[{mode}]"
 
