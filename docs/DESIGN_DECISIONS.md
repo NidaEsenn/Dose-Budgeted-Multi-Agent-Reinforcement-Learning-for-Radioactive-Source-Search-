@@ -486,3 +486,15 @@ for safety. **No setting improves both**: the rule moves along a
 safety–success frontier. Decision: keep σ = 0.3 / 0.3 m / q = 0.97 as the
 reference rule; report the overconfidence as a finding. The research test
 for Karar 3 is whether a learned, coordinated team moves this frontier out.
+
+## D25 — Low initial withdraw probability
+
+A smoke run with the withdraw action showed a random initial team leaving
+within ~9 steps (1/6 chance per robot per step), so episodes were too short
+to explore. The withdraw logit now starts at −3 (≈ 1 % per step,
+`AlgoConfig.withdraw_logit_init`); the policy can still learn to raise it.
+Episode length in the first updates went from ~9 to 35–74 steps.
+
+Note: with potential shaping the logged return includes the constant
+`−Φ(s₀) = initial error / 5 m` per episode; compare success, violations and
+time, not raw return, across shaping modes.

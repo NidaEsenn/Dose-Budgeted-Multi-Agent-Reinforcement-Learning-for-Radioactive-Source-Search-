@@ -68,6 +68,9 @@ class AlgoConfig:
     shield_quantile: float = 0.95
     shield_horizon: int = 3
     shield_margin: float = 1.0
+    # initial logit of the withdraw action (others start at ~0): -3 -> ~1 % per step, so a
+    # random initial team does not leave within a few steps and starve exploration (D25)
+    withdraw_logit_init: float = -3.0
     # PPO
     n_envs: int = 16
     rollout_len: int = 64
@@ -138,11 +141,15 @@ class ValueNorm(nn.Module):
 
 
 class ActorCritic(nn.Module):
-    def __init__(self, obs_dim, state_dim, max_agents, hidden, cost_critic=True, n_actions=N_ACTIONS):
+    def __init__(self, obs_dim, state_dim, max_agents, hidden, cost_critic=True, n_actions=N_ACTIONS,
+                 withdraw_logit_init=0.0):
         super().__init__()
         self.M = max_agents
         self.n_actions = n_actions
         self.actor = mlp(obs_dim + max_agents, hidden, n_actions, out_gain=0.01)
+        if n_actions > N_ACTIONS:
+            with torch.no_grad():
+                self.actor[-1].bias[N_ACTIONS:] = withdraw_logit_init
         self.critic = mlp(state_dim + obs_dim + max_agents, hidden, 1)
         self.vnorm = ValueNorm()
         self.has_cost = cost_critic
@@ -242,7 +249,8 @@ class MAPPOTrainer:
         self._set_stage(0.0)
         M = self.base_env_cfg.max_agents
         self.net = ActorCritic(self.core.obs_dim, self.core.state_dim, M, cfg.hidden,
-                               cost_critic=self.constrained, n_actions=self.core.n_actions)
+                               cost_critic=self.constrained, n_actions=self.core.n_actions,
+                               withdraw_logit_init=cfg.withdraw_logit_init)
         if self.base_env_cfg.shaping == "potential":
             assert abs(self.base_env_cfg.shaping_gamma - cfg.gamma) < 1e-9, \
                 "potential shaping needs env.shaping_gamma == algo.gamma (K1.2)"

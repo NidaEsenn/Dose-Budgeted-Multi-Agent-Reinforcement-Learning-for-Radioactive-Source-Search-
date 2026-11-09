@@ -40,3 +40,4 @@ wandb_mode: offline
 wandb_project: dose-budgeted-marl
 init_checkpoint: null
 team_chance_split: true
+withdraw_logit_init: -3.0

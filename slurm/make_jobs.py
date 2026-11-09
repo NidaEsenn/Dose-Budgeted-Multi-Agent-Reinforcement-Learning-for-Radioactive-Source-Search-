@@ -43,9 +43,16 @@ def e4():
             yield f"experiment=E4 algo=mappo_lag_a algo.cost_limit={m} algo.name=margin{m} seed={s}"
 
 
+def p1():
+    """Karar 3 pilot (D22-D24 rules, withdraw on): does a learned team beat the
+    reference rule (greedy + withdraw, 84 % success / 4.3 % violations)?"""
+    for algo, s in itertools.product(["mappo", "mappo_reserve", "mappo_lag_b"], range(3)):
+        yield f"experiment=P1 algo={algo} seed={s}"
+
+
 if __name__ == "__main__":
     os.makedirs("slurm/jobs", exist_ok=True)
-    for name, gen in dict(E1=e1, E2=e2, E3=e3, E4=e4).items():
+    for name, gen in dict(P1=p1, E1=e1, E2=e2, E3=e3, E4=e4).items():
         lines = list(gen())
         with open(f"slurm/jobs/{name}.txt", "w") as f:
             f.write("\n".join(lines) + "\n")

@@ -4,3 +4,4 @@ name: mappo_lag_a
 method: mappo_lag
 cost_version: A
 cost_limit: 0.75
+withdraw_logit_init: -3.0

@@ -3,3 +3,4 @@ defaults:
 name: mappo_penalty_b${algo.penalty_beta}
 method: mappo_penalty
 penalty_beta: 1.0
+withdraw_logit_init: -3.0

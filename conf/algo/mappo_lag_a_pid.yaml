@@ -5,3 +5,4 @@ method: mappo_lag
 cost_version: A
 cost_limit: 0.75
 lambda_mode: pid
+withdraw_logit_init: -3.0

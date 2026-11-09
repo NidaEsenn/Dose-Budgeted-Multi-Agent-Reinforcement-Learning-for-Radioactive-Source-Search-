@@ -1,0 +1,9 @@
+experiment=P1 algo=mappo seed=0
+experiment=P1 algo=mappo seed=1
+experiment=P1 algo=mappo seed=2
+experiment=P1 algo=mappo_reserve seed=0
+experiment=P1 algo=mappo_reserve seed=1
+experiment=P1 algo=mappo_reserve seed=2
+experiment=P1 algo=mappo_lag_b seed=0
+experiment=P1 algo=mappo_lag_b seed=1
+experiment=P1 algo=mappo_lag_b seed=2
