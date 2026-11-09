@@ -61,27 +61,29 @@ T = len(dose) - 1
 t = np.arange(T + 1) * cfg.step_time / 60          # minutes
 
 # ---- figure 1: dose trace of the withdrawing robot
-fig, ax = plt.subplots(figsize=(11, 5.6), dpi=200)
+fig, ax = plt.subplots(figsize=(9.5, 5.6), dpi=220)
+plt.rcParams.update({"font.size": 17})
+ax.tick_params(labelsize=16)
 B = core.budget[0, r]
 ax.axhline(B, color=RED, ls="--", lw=2.2)
-ax.text(t[0], B * 1.015, f"Budget {B:.1f} Gy", color=RED, fontsize=14, fontweight="bold", va="bottom")
+ax.text(t[0], B * 1.015, f"Budget {B:.1f} Gy", color=RED, fontsize=17, fontweight="bold", va="bottom")
 tp = t[:wstep + 1]
 pp = pred[:wstep + 1]
 ax.fill_between(tp, dose[:wstep + 1], np.minimum(pp, B * 1.1), color=ORANGE, alpha=0.25, lw=0)
 pp = np.minimum(pp, B * 1.1)
-ax.plot(tp, pp, color=ORANGE, lw=2.4, ls=(0, (5, 2)), label="Used + predicted next step + exit (97th percentile)")
+ax.plot(tp, pp, color=ORANGE, lw=2.4, ls=(0, (5, 2)), label="Checked: used + next step + exit")
 # dose up to the withdraw decision, the exit dose as a vertical jump, then flat
 td = np.r_[t[:wstep + 1], t[wstep], t[-1]]
 dd = np.r_[dose[:wstep + 1], dose[wstep + 1], dose[-1]]
-ax.plot(td, dd, color=INK, lw=3, label="Dose actually received (true field)")
-ax.annotate("prediction would exceed\nthe budget: withdraw", xy=(t[wstep], B * 1.0), xytext=(t[wstep] - 1.25, B * 0.72),
-            color=ORANGE, fontsize=13, fontweight="bold", arrowprops=dict(arrowstyle="->", color=ORANGE, lw=1.8))
+ax.plot(td, dd, color=INK, lw=3, label="Dose received (true field)")
+ax.annotate("prediction would exceed\nthe budget: withdraw", xy=(t[wstep], B * 1.0), xytext=(0.15, B * 0.42),
+            color=ORANGE, fontsize=16, fontweight="bold", arrowprops=dict(arrowstyle="->", color=ORANGE, lw=1.8))
 ax.axvline(t[wstep], color=BLUE, lw=2)
-ax.text(t[wstep] + 0.06, dose[wstep + 1] + B * 0.04, "exit dose added,\nrobot is out", color=BLUE, fontsize=13, fontweight="bold")
-ax.set_xlabel("Mission time (min)  ·  one decision every 10 s")
-ax.set_ylabel("Cumulative dose (Gy)")
+ax.text(t[wstep] + 0.06, dose[wstep + 1] + B * 0.04, "exit dose added,\nrobot is out", color=BLUE, fontsize=16, fontweight="bold")
+ax.set_xlabel("Mission time (min) · one decision every 10 s", fontsize=17)
+ax.set_ylabel("Cumulative dose (Gy)", fontsize=17)
 ax.set_ylim(0, B * 1.12); ax.set_xlim(0, t[-1] + 0.1)
-ax.legend(loc="upper left", bbox_to_anchor=(0.0, 0.80), frameon=False, fontsize=12)
+ax.legend(loc="upper left", bbox_to_anchor=(0.0, 0.80), frameon=False, fontsize=15)
 fig.tight_layout(); fig.savefig("docs/figures/dose_trace.png"); plt.close(fig)
 
 # ---- figure 2: particle snapshots
