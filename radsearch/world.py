@@ -19,8 +19,9 @@ import numpy as np
 
 # action id -> (dx, dy). 4 = stay-and-measure (FR-ENV-04)
 MOVES = np.array([[0, 1], [0, -1], [-1, 0], [1, 0], [0, 0]], dtype=np.int64)
-ACTION_NAMES = ["up", "down", "left", "right", "stay"]
-N_ACTIONS = 5
+ACTION_NAMES = ["up", "down", "left", "right", "stay", "withdraw"]
+N_ACTIONS = 5          # movement actions; the optional withdraw action (K0.1) is index 5
+WITHDRAW = 5
 
 
 @dataclass

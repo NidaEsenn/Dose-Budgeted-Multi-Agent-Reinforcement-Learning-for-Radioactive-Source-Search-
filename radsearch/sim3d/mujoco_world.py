@@ -131,7 +131,7 @@ class MujocoWorld:
         c = self.core
         cell = c.cfg.cell
         cur = np.floor(self.positions() / cell).astype(int)
-        nxt = cur + MOVES[np.asarray(actions)]
+        nxt = cur + MOVES[np.minimum(np.asarray(actions), len(MOVES) - 1)]   # withdraw = stay
         tgt = []
         for i in range(c.N):
             x, y = nxt[i]

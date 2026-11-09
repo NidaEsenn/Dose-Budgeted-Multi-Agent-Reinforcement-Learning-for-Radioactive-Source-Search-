@@ -24,7 +24,7 @@ import numpy as np
 from . import physics as P
 from ._kernels import tau_bpn
 from .estimator import ParticleFilter
-from .world import MOVES, N_ACTIONS, Layout, bfs_distances, generate_layout, sample_source
+from .world import MOVES, N_ACTIONS, WITHDRAW, Layout, bfs_distances, generate_layout, sample_source
 
 COUNT_NORM = np.log1p(1e7)
 
@@ -68,7 +68,14 @@ class EnvConfig:
     pf_variant: str = "tempered"
     pf_max_stages: int = 3
     pf_logA_range: tuple | None = None        # default: training activity range
-    # reward (FR-OBS-03..05)
+    # reward (FR-OBS-03..05; K1.1-K1.3)
+    # shaping: "potential" = gamma*Phi(s') - Phi(s) with Phi(terminal) = 0 (Ng et al. 1999:
+    # leaves the optimal policy unchanged, so the objective is success / wrong declaration /
+    # time only); "diff" = legacy Phi(s') - Phi(s) without gamma or terminal reset.
+    shaping: str = "potential"
+    shaping_target: str = "error"           # error (A, uses the truth: training only) | uncertainty (B)
+    shaping_gamma: float = 0.99             # must equal the trainer's gamma
+    wrong_declare_penalty: float = 1.0      # confident declaration with error >= success_radius
     err_scale: float = 5.0
     time_penalty: float = 0.005
     success_bonus: float = 1.0
@@ -85,6 +92,10 @@ class EnvConfig:
     egress_required: bool = True
     # D21: predicted step dose for each move + estimated exit dose, from the team estimate
     obs_predicted_dose: bool = True
+    # K0.1: action 5 = withdraw. The robot drives out along the least-dose shortest route,
+    # accrues that (true) exit dose at once, stops measuring and stays out; it still shares
+    # the team outcome. A withdrawal that pushes it over budget counts as stranded.
+    withdraw_action: bool = True
     cowardice_fraction: float = 0.1
 
 
@@ -110,6 +121,11 @@ def _free_run_lengths(occ: np.ndarray) -> np.ndarray:
         out[x, :, 3] = run
         run = np.where(occ[x, :], 0, run + 1)
     return out
+
+
+def _pos_logdet(cov) -> float:
+    """log det of the 2-D position covariance (information metric, K1.1)."""
+    return float(np.linalg.slogdet(cov[:2, :2] + 1e-9 * np.eye(2))[1])
 
 
 def exit_costs(step_dose: np.ndarray, door_dist: np.ndarray) -> np.ndarray:
@@ -165,6 +181,9 @@ class RadSearchCore:
         self.door_dist = -np.ones((B, cfg.width, cfg.height), np.int64)
         self.exit_true = np.zeros((B, cfg.width, cfg.height))
         self.exit_dose = np.zeros((B, N)); self.stranded = np.zeros((B, N), bool)
+        self.withdrawn = np.zeros((B, N), bool); self.withdraw_step = -np.ones((B, N), np.int64)
+        self.n_actions = N_ACTIONS + int(cfg.withdraw_action)
+        self.phi = np.zeros(B)
         gx, gy = np.meshgrid(np.arange(cfg.width), np.arange(cfg.height), indexing="ij")
         self._cell_xy = (np.stack([gx.ravel(), gy.ravel()], -1) + 0.5) * cfg.cell   # (W*H, 2)
         self.obs_dim = len(self._agent_obs_names())
@@ -231,12 +250,25 @@ class RadSearchCore:
         all_rates = self.true_dose_rate(b, self._cell_xy).reshape(cfg.width, cfg.height)
         self.exit_true[b] = exit_costs(P.step_dose(all_rates, cfg.step_time)[None], self.door_dist[b:b + 1])[0]
         self.exit_dose[b] = 0.0; self.stranded[b] = False
+        self.withdrawn[b] = False; self.withdraw_step[b] = -1
         self.last_rate[b] = self.true_dose_rate(b, self.robot_xy()[b])
         self.max_rate_visited[b] = self.last_rate[b]
         self.min_dist[b] = np.linalg.norm(self.robot_xy()[b] - self.src[b], axis=1).min()
-        mean, _ = self.pf.estimate()
+        mean, cov = self.pf.estimate()
         self.err[b] = np.linalg.norm(mean[b, :2] - self.src[b])
+        self.logdet0 = getattr(self, "logdet0", np.zeros(self.B))
+        self.logdet0[b] = _pos_logdet(cov[b])
+        self.phi[b] = self._potential(mean[b:b + 1], cov[b:b + 1], b)[0]
         return rng
+
+    def _potential(self, mean, cov, b=slice(None)):
+        """Shaping potential Phi = -(error or posterior spread) / err_scale, (B,)."""
+        cfg = self.cfg
+        if cfg.shaping_target == "uncertainty":
+            e = np.sqrt(np.clip(np.trace(cov[:, :2, :2], axis1=1, axis2=2), 0, None))
+        else:
+            e = np.linalg.norm(mean[:, :2] - self.src[b], axis=1)
+        return -e / cfg.err_scale
 
     def _sample_budgets(self, rng):
         cfg = self.cfg
@@ -279,9 +311,30 @@ class RadSearchCore:
         """
         cfg = self.cfg
         B, N = self.B, self.N
-        acting = self.active.copy()
+        actions = np.asarray(actions)
+        acting = self.active.copy()                       # robots that decide this step
+        wd = acting & (actions == WITHDRAW) if cfg.withdraw_action else np.zeros_like(acting)
+        acting_field = acting & ~wd                       # robots that stay in the field
+        # 0. withdrawal (K0.1): true exit dose from the current cell, then out for good
+        newly_wd_viol = np.zeros_like(acting)
+        if wd.any():
+            bi0 = np.arange(B)[:, None]
+            ex = self.exit_true[bi0, self.cells[..., 0], self.cells[..., 1]]
+            ex = np.where(wd & np.isfinite(ex), ex, 0.0)
+            self.exit_dose += ex
+            self.dose += ex
+            self.withdrawn |= wd
+            self.withdraw_step = np.where(wd, self.t[:, None], self.withdraw_step)
+            self.active &= ~wd
+            newly_wd_viol = wd & ~self.violated & (self.dose >= self.budget)
+            self.stranded |= newly_wd_viol
+            self.violated |= newly_wd_viol
+            self.violation_step = np.where(newly_wd_viol, self.t[:, None], self.violation_step)
+            wd_dose = ex
+        else:
+            wd_dose = np.zeros((B, N))
         # 1. motion (moves into walls/obstacles leave the robot in place)
-        mv = MOVES[np.asarray(actions)] * acting[..., None]
+        mv = MOVES[np.minimum(actions, N_ACTIONS - 1)] * acting_field[..., None]
         nxt = self.cells + mv
         inb = (nxt[..., 0] >= 0) & (nxt[..., 0] < cfg.width) & (nxt[..., 1] >= 0) & (nxt[..., 1] < cfg.height)
         nxt = np.where(inb[..., None], nxt, self.cells)
@@ -294,20 +347,20 @@ class RadSearchCore:
             c[..., 0] = np.clip(c[..., 0], 0, cfg.width - 1)
             c[..., 1] = np.clip(c[..., 1], 0, cfg.height - 1)
             free = ~self.occ[bi, c[..., 0], c[..., 1]]
-            self.cells = np.where(free[..., None], c, self.cells)
+            self.cells = np.where(free[..., None] & acting_field[..., None], c, self.cells)
             self.cont_xy = xy_override.copy()
         xy = self.robot_xy()
         # 2. dose (truth)
         tau = tau_bpn(self.src[:, None], xy, self.rects, self.mu, self.nrect, self.det.height)[:, 0]
         rate = P.dose_rate(self.src[:, None], 10 ** self.logA[:, None] / P.GBQ, xy, self.iso,
                            self.det.height, tau, cfg.dose_air_attenuation)
-        d_step = P.step_dose(rate, cfg.step_time) * acting
+        d_step = P.step_dose(rate, cfg.step_time) * acting_field
         self.dose += d_step
-        self.last_rate = np.where(acting, rate, self.last_rate)
-        self.max_rate_visited = np.maximum(self.max_rate_visited, np.where(acting, rate, 0))
+        self.last_rate = np.where(acting_field, rate, self.last_rate)
+        self.max_rate_visited = np.maximum(self.max_rate_visited, np.where(acting_field, rate, 0))
         dsrc = np.linalg.norm(xy - self.src[:, None], axis=-1)
-        self.min_dist = np.minimum(self.min_dist, np.where(acting, dsrc, np.inf).min(1))
-        newly = acting & ~self.violated & (self.dose >= self.budget)
+        self.min_dist = np.minimum(self.min_dist, np.where(acting_field, dsrc, np.inf).min(1))
+        newly = acting_field & ~self.violated & (self.dose >= self.budget)
         self.violated |= newly
         self.violation_step = np.where(newly, self.t[:, None], self.violation_step)
         if cfg.retire:
@@ -322,16 +375,22 @@ class RadSearchCore:
             z = self._field[np.arange(B)[:, None], self.cells[..., 0], self.cells[..., 1]]
             lam = P.apply_model_error(None, lam, cfg.model_error_sigma, field=z)
         counts = np.stack([self._meas_rng[b].poisson(lam[b]) for b in range(B)]).astype(float)
-        self.last_counts = np.where(acting, counts, self.last_counts)
-        self.pf.update(xy, counts, acting)
+        self.last_counts = np.where(acting_field, counts, self.last_counts)
+        self.pf.update(xy, counts, acting_field)
         # 4. reward
         mean, cov = self.pf.estimate()
         err = np.linalg.norm(mean[:, :2] - self.src, axis=1)
         self.t += 1
-        reward = (self.err - err) / cfg.err_scale - cfg.time_penalty
+        phi = self._potential(mean, cov)
+        if cfg.shaping == "diff":
+            shaping = (self.err - err) / cfg.err_scale if cfg.shaping_target == "error" else phi - self.phi
+        else:
+            shaping = cfg.shaping_gamma * phi - self.phi       # Phi(terminal) = 0 below
+        reward = shaping - cfg.time_penalty
         if cfg.dose_penalty_beta > 0:
-            reward -= cfg.dose_penalty_beta * (d_step / self.budget).sum(1)
+            reward -= cfg.dose_penalty_beta * ((d_step + wd_dose) / self.budget).sum(1)
         self.err = err
+        self.phi = phi
         hit = (err < cfg.success_radius) & (self.first_hit < 0)
         self.first_hit = np.where(hit, self.t, self.first_hit)
         sigma = np.sqrt(np.clip(np.linalg.eigvalsh(cov[:, :2, :2])[:, -1], 0, None))
@@ -341,10 +400,15 @@ class RadSearchCore:
         done = confident | all_retired | truncated
         success = done & (err < cfg.success_radius)
         reward = reward + cfg.success_bonus * success
+        wrong = confident & (err >= cfg.success_radius)
+        reward = reward - cfg.wrong_declare_penalty * wrong
+        if cfg.shaping == "potential":
+            reward = reward - np.where(done, cfg.shaping_gamma * phi, 0.0)
         self.ep_return += reward
         # 5. costs (FR-ALG-03/04), normalised by each robot's budget
-        cost_dose = d_step / self.budget
-        cost_violation = newly.astype(float)
+        cost_dose = (d_step + wd_dose) / self.budget
+        cost_violation = (newly | newly_wd_viol).astype(float)
+        newly_retired = newly | newly_wd_viol
         # 6. egress (D21): robots still in the field must drive back to the door
         if cfg.egress_required and done.any():
             ix = np.flatnonzero(done)
@@ -358,14 +422,19 @@ class RadSearchCore:
             self.violation_step[ix] = np.where(strand, self.t[ix, None], self.violation_step[ix])
             cost_dose[ix] += ex / self.budget[ix]
             cost_violation[ix] += strand
+            newly_retired[ix] |= strand
 
         episodes = []
         out_obs_final = None
         if done.any():
             for b in np.flatnonzero(done):
                 episodes.append(self.episode_info(b, bool(confident[b]), bool(truncated[b])))
+        # trainer masks: a withdrawn robot no longer acts (no policy loss) but still
+        # shares the team outcome (value targets continue); a robot over budget is terminal.
+        in_mission = (acting | (self.withdrawn & ~wd)) & ~(self.violated & ~newly_retired)
         out = dict(reward=reward, cost_dose=cost_dose, cost_violation=cost_violation,
-                   acting=acting, done=done, truncated=truncated & ~confident & ~all_retired,
+                   acting=acting, done=done, withdraw=wd, in_mission=in_mission,
+                   term_agent=done[:, None] | newly_retired, truncated=truncated & ~confident & ~all_retired,
                    episodes=episodes, counts=counts, dose_step=d_step)
         if self.autoreset and done.any():
             for b in np.flatnonzero(done):
@@ -377,12 +446,24 @@ class RadSearchCore:
     def episode_info(self, b, confident=False, truncated=False) -> dict:
         mean, cov = self.pf.estimate()
         lay = self.layouts[b]
+        # K1.3: posterior calibration at the end of the mission. maha2 is the squared
+        # Mahalanobis distance of the true source under the 2-D position posterior;
+        # chi2(2) quantiles: 50% -> 1.386, 90% -> 4.605.
+        S = cov[b, :2, :2] + 1e-9 * np.eye(2)
+        dv = self.src[b] - mean[b, :2]
+        maha2 = float(dv @ np.linalg.solve(S, dv))
+        success = bool(self.err[b] < self.cfg.success_radius)
         return dict(
+            maha2=maha2, covered50=maha2 <= 1.386, covered90=maha2 <= 4.605,
+            pos_sigma=float(np.sqrt(max(np.linalg.eigvalsh(S)[-1], 0.0))),
+            logdet0=float(self.logdet0[b]), logdet=_pos_logdet(cov[b]),
+            wrong_declare=bool(confident and not success),
+            withdrawn=self.withdrawn[b].tolist(),
             seed=int(self.ep_seed[b]), steps=int(self.t[b]), n_agents=self.N,
             n_obstacles=int(self.nrect[b]), source=self.src[b].tolist(),
             activity_TBq=float(10 ** self.logA[b] / P.TBQ),
             estimate=mean[b].tolist(), error=float(self.err[b]),
-            success=bool(self.err[b] < self.cfg.success_radius),
+            success=success,
             time_to_localize=int(self.first_hit[b]) if self.first_hit[b] > 0 else int(self.cfg.max_steps),
             budget=self.budget[b].tolist(), dose=self.dose[b].tolist(),
             violated=self.violated[b].tolist(), violation_step=self.violation_step[b].tolist(),
@@ -391,6 +472,7 @@ class RadSearchCore:
             max_rate_frac=float(self.max_rate_visited[b].max() / max(self.max_rate_map[b], 1e-30)),
             min_source_dist=float(self.min_dist[b]), ret=float(self.ep_return[b]), confident=confident, truncated=truncated,
             exit_dose=self.exit_dose[b].tolist(), stranded=self.stranded[b].tolist(),
+            withdraw_step=self.withdraw_step[b].tolist(),
             any_stranded=bool(self.stranded[b].any()),
             door=list(lay.door),
         )
@@ -420,7 +502,7 @@ class RadSearchCore:
         return step, exit_costs(step, self.door_dist)
 
     def _state_dim(self):
-        return 6 * self.cfg.max_agents + 3 + 6 + 1
+        return 6 * self.cfg.max_agents + 3 + 6 + 1 + (self.cfg.max_agents if self.cfg.withdraw_action else 0)
 
     def observe(self, with_pred: bool | None = None):
         """Per-agent observations (B,N,obs_dim) and centralised state (B,N,state_dim).
@@ -490,12 +572,16 @@ class RadSearchCore:
                                mean[:, :2] / np.array([W, H]), ((mean[:, 2] - lA0) / lAw)[:, None],
                                std[:, :2] / np.array([W, H]), (std[:, 2] / lAw)[:, None],
                                tl[:, None]], -1)
+        if cfg.withdraw_action:
+            wdf = np.zeros((B, M)); wdf[:, :N] = self.withdrawn
+            glob = np.concatenate([glob, wdf], -1)
         state = np.repeat(glob[:, None], N, 1).astype(np.float32)
         return obs, state
 
     def action_mask(self):
-        """(B,N,5): retired robots may only 'stay'. Moves into walls are legal no-ops."""
-        m = np.ones((self.B, self.N, N_ACTIONS), bool)
+        """(B,N,n_actions): retired/withdrawn robots may only 'stay'. Moves into walls
+        are legal no-ops; withdraw is always allowed for robots in the field."""
+        m = np.ones((self.B, self.N, self.n_actions), bool)
         m[~self.active] = False
         m[~self.active, 4] = True
         return m

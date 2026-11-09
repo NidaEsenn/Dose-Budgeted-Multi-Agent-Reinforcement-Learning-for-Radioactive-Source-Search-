@@ -57,6 +57,29 @@ def episode_metrics(episodes: list[dict], cowardice_fraction: float = 0.1) -> di
         steps_mean=float(np.mean([e["steps"] for e in episodes])),
         stranded_rate=float(np.mean([e.get("any_stranded", False) for e in episodes])),
         return_mean=float(np.mean([e["ret"] for e in episodes])),
+        **_calibration_metrics(episodes),
+    )
+
+
+def _calibration_metrics(episodes: list[dict]) -> dict:
+    """K1.3 / K1.1: declaration quality, posterior calibration, information per dose."""
+    if not episodes or "maha2" not in episodes[0]:
+        return {}
+    conf = np.array([e["confident"] for e in episodes])
+    wrong = np.array([e["wrong_declare"] for e in episodes])
+    info = np.array([0.5 * (e["logdet0"] - e["logdet"]) for e in episodes])   # nats
+    team = np.array([e["team_dose"] for e in episodes])
+    return dict(
+        declare_rate=float(conf.mean()),
+        wrong_declare_rate=float(wrong.mean()),
+        wrong_given_declare=float(wrong[conf].mean()) if conf.any() else float("nan"),
+        coverage50=float(np.mean([e["covered50"] for e in episodes])),
+        coverage90=float(np.mean([e["covered90"] for e in episodes])),
+        coverage90_declared=float(np.mean([e["covered90"] for e, c in zip(episodes, conf) if c]))
+        if conf.any() else float("nan"),
+        info_gain_mean=float(info.mean()),
+        info_per_Gy=float(info.sum() / max(team.sum(), 1e-12)),
+        withdraw_rate=float(np.mean([any(e.get("withdrawn", [])) for e in episodes])),
     )
 
 

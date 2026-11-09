@@ -358,3 +358,103 @@ trained under the new rules.
 Tests: `tests/test_egress.py` (exit cost along shortest/lowest-dose route,
 stranding, switch-off, estimate = truth when the estimate is exact,
 observation layout, old checkpoints still run).
+
+## D22 — Withdraw action (K0.1)
+
+**Problem.** Under D21 no strategy, learned or hand-written, kept violations
+under 5 %: a robot near a 100 TBq source spends a 0.1 Gy budget in about
+4 minutes and could not leave before the mission ended.
+
+**Options.** (a) larger budget only; (b) a withdraw action; (c) both.
+Chosen: (b), budget unchanged for now (`withdraw_action: true`, action 5).
+
+**Model.** The robot drives to the door along the D21 route and receives that
+*true* exit dose at once, without spending decision steps (simplification:
+it takes no measurements on the way out, which is conservative for the
+estimate). It then stays out: inactive, no dose, no measurements. A
+withdrawal that pushes it over budget is counted as stranded and a violation.
+If every robot is out, the mission ends.
+
+**Training.** A withdrawn robot is not a terminal agent: it shares the team
+outcome, so its value target keeps following the team return (`in_mission`
+mask for the critic), while its policy loss stops (it no longer acts). Only a
+robot that goes over budget is terminal (`term_agent`). Without this, a
+robot that withdraws would lose its share of the later success bonus and
+learn that withdrawing is bad.
+
+**Compatibility.** Old 5-action checkpoints run in the 6-action env and never
+withdraw (`ActorCritic.n_actions`). `conf/env/legacy_v2.yaml` reproduces the
+old rules.
+
+**Rule-based reference (constraint C, K0.2).** `ReserveWithdraw` wraps any
+policy: if `dose + step_dose(next cell) + exit_dose(next cell) > margin ×
+budget`, the robot withdraws now. Predictions come from the posterior mean
+(`mode=mean`) or the q-quantile over 32 posterior particles (`mode=quantile`).
+Baseline names: `greedy+withdraw`, `greedy+withdraw_mean`, keys `wd_margin`,
+`wd_quantile`.
+
+## D23 — Objective, shaping and declaration (K1.1–K1.3)
+
+**Objective (K1.1).** The return is the task outcome only: +1 for a correct
+declaration (error < 1 m), −1 for a wrong confident declaration, −0.005 per
+step. Information gain is a metric (`info_gain_mean`, `info_per_Gy`), not a
+reward: information peaks where dose peaks, and an information reward also
+pays for confident-but-wrong posteriors.
+
+**Shaping (K1.2).** `F = γ Φ(s') − Φ(s)`, `Φ = −error / 5 m`, `Φ(terminal) = 0`
+(Ng et al. 1999). The discounted sum of `F` over any episode is `−Φ(s₀)`, so
+the shaping speeds up learning without changing the optimal policy
+(`tests/test_withdraw.py::test_potential_shaping_telescopes`). The trainer
+asserts `env.shaping_gamma == algo.gamma`. The old form (`Φ(s') − Φ(s)`, no
+terminal reset) also rewarded the final error itself; kept as
+`shaping: diff`. Ablation B uses the posterior spread instead of the true
+error (`conf/env/shaping_uncertainty.yaml`).
+
+**Declaration (K1.3).** The team still declares by rule (largest posterior
+σ < 0.3 m after ≥ 5 steps); per-robot stopping is the learned withdraw
+action. New end-of-mission metrics: `wrong_declare_rate`, coverage of the
+50 % / 90 % posterior regions (`coverage50`, `coverage90`, from the squared
+Mahalanobis distance of the true source).
+
+**Measured before the change** (old rules, 300 test missions):
+
+| Policy | success | wrong declaration | 90 % region contains source |
+|---|---|---|---|
+| MAPPO (v2 model) | 86 % | 13 % | 61 % |
+| MAPPO-L B (sanity model) | 78 % | 19 % | 52 % |
+| greedy | 85 % | 15 % | 65 % |
+| perimeter | 84 % | 16 % | 59 % |
+| approach | 87 % | 4 % | 84 % |
+
+The filter is **overconfident**: its 90 % region holds the source only
+52–65 % of the time (84 % for "approach", which measures from close by).
+Likely cause: the filter treats the spatially correlated model error
+(D6 "field") as independent per measurement, so repeated nearby readings
+look like more evidence than they are. This matters twice: wrong
+declarations end missions early, and any safety rule that trusts the
+posterior inherits the bias (motivates `mode=quantile` and an open
+decision on calibration).
+
+**AC-3 re-check with withdraw** (300 test missions, 0.1 Gy, 10–100 TBq,
+`docs/results/ac3_withdraw.json`; without withdraw: greedy 85 % success,
+31 % violations):
+
+| Policy | success | violations [95 % CI] | stranded | some robot withdrew |
+|---|---|---|---|---|
+| greedy + withdraw (q = 0.9, margin 1.0) | 83 % | 9.0 % [6.3, 12.8] | 3.0 % | 40 % |
+| greedy + withdraw (q = 0.9, margin 0.9) | 82 % | **4.3 %** [2.5, 7.3] | 2.3 % | 41 % |
+| greedy + withdraw (q = 0.97, margin 1.0) | 84 % | **4.3 %** [2.5, 7.3] | 1.3 % | 48 % |
+| greedy + withdraw (posterior mean, margin 1.0) | 84 % | 14.7 % [11.1, 19.1] | 5.7 % | 28 % |
+| greedy + withdraw (posterior mean, margin 0.8) | 84 % | 8.7 % [6.0, 12.4] | 2.3 % | 39 % |
+| perimeter + withdraw (q = 0.9) | 81 % | **4.3 %** [2.5, 7.3] | 1.0 % | 23 % |
+| perimeter + withdraw (posterior mean) | 82 % | 7.7 % [5.2, 11.2] | 2.0 % | 18 % |
+| approach + withdraw (q = 0.9) | 74 % | 9.0 % [6.3, 12.8] | 2.3 % | 77 % |
+
+Findings. (1) With withdraw, ≤ 5 % is reachable at a cost of 1–3 points of
+success; AC-3 now holds (unsafe team ~30 %, safe rule ~4 %). (2) The
+particle-quantile rule beats the posterior-mean rule at every margin,
+consistent with the overconfident filter. (3) The remaining violations are
+mostly in-field (a single step's dose larger than predicted), not
+stranding. (4) The safe rule is strong: a learned method has little room
+on success alone at this setting; its headroom is in speed, wrong
+declarations, team dose and harder settings (to decide, Karar 3).

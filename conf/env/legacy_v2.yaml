@@ -1,0 +1,7 @@
+# Rules before K0.1/K1.x (no withdraw, legacy shaping, no wrong-declaration penalty):
+# reproduces the v2 results in docs/DESIGN_DECISIONS.md.
+defaults: [main]
+name: legacy_v2
+shaping: diff
+wrong_declare_penalty: 0.0
+withdraw_action: false

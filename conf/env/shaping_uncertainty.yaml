@@ -1,0 +1,4 @@
+# K1.2 ablation B: shaping on posterior spread instead of true error.
+defaults: [main]
+name: shaping_uncertainty
+shaping_target: uncertainty

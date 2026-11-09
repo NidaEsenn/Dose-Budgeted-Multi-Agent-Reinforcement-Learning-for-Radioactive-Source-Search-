@@ -67,6 +67,75 @@ class DoseShield:
         if none.any():
             best = np.argmin(qd, -1)
             allowed[none] = np.eye(N_ACTIONS, dtype=bool)[best[none]]
-        allowed &= core.action_mask()
         allowed[~core.active] = np.eye(N_ACTIONS, dtype=bool)[4]
-        return allowed
+        if core.n_actions > N_ACTIONS:           # withdraw is never blocked by the shield
+            allowed = np.concatenate([allowed, core.active[..., None]], -1)
+        return allowed & core.action_mask()
+
+
+def predictive_fields(core, n_samples: int = 32, rng=None):
+    """Step dose and exit dose [Gy] per cell under ``n_samples`` posterior particles,
+    each (B,S,W,H). Deployable: uses the particle filter, never the true source."""
+    from .env import exit_costs
+    cfg = core.cfg
+    B, S = core.B, n_samples
+    rng = rng or np.random.default_rng(0)
+    parts = np.stack([core.pf.subsample(b, S, rng) for b in range(B)])            # (B,S,3)
+    cells = core._cell_xy                                                           # (M,2)
+    M = cells.shape[0]
+    det = np.broadcast_to(cells, (B * S, M, 2))
+    src = parts.reshape(B * S, 1, 3)
+    rep = lambda x: np.repeat(x, S, 0)
+    tau = tau_bpn(src[..., :2], det, rep(core.rects), rep(core.mu), rep(core.nrect), core.det.height)[:, 0]
+    rate = P.dose_rate(src[..., :2], 10 ** src[..., 2] / P.GBQ, det, core.iso, core.det.height, tau,
+                       cfg.dose_air_attenuation)
+    step = P.step_dose(rate, cfg.step_time).reshape(B * S, cfg.width, cfg.height)
+    exitc = exit_costs(step, rep(core.door_dist))
+    shp = (B, S, cfg.width, cfg.height)
+    return step.reshape(shp), exitc.reshape(shp)
+
+
+class ReserveWithdraw:
+    """Wrap any policy with the per-step constraint C (K0.2):
+
+        dose_so_far + step_dose(next cell) + exit_dose(next cell) <= margin * budget.
+
+    If the base policy's chosen move would break it, the robot withdraws now
+    (action 5) instead. ``mode="mean"`` predicts with the posterior mean,
+    ``mode="quantile"`` with the q-quantile over posterior particles (robust to an
+    overconfident filter). Needs ``EnvConfig.withdraw_action``.
+    """
+
+    def __init__(self, base, margin: float = 1.0, mode: str = "quantile", quantile: float = 0.9,
+                 n_samples: int = 32, seed: int = 0):
+        self.base, self.margin, self.mode, self.q, self.S = base, margin, mode, quantile, n_samples
+        self.rng = np.random.default_rng(seed)
+        self.name = f"{getattr(base, 'name', type(base).__name__)}+withdraw[{mode}]"
+
+    def reset(self, core, b):
+        if hasattr(self.base, "reset"):
+            self.base.reset(core, b)
+
+    def predicted(self, core):
+        """(B,N,5) predicted step+exit dose for every candidate move."""
+        if self.mode == "mean":
+            step, exitc = core.estimated_fields()
+            tot = (step + exitc)[:, None]                                    # (B,1,W,H)
+        else:
+            step, exitc = predictive_fields(core, self.S, self.rng)
+            with np.errstate(invalid="ignore"):                               # inf on occupied cells
+                tot = np.quantile(step + exitc, self.q, axis=1)[:, None]    # (B,1,W,H)
+        cand = candidate_cells(core)                                          # (B,N,5,2)
+        bi = np.arange(core.B)[:, None, None]
+        return tot[bi, 0, cand[..., 0], cand[..., 1]]
+
+    def act(self, core):
+        act = np.asarray(self.base.act(core)).copy()
+        if core.n_actions <= N_ACTIONS:
+            return act
+        pred = self.predicted(core)
+        chosen = np.take_along_axis(pred, np.minimum(act, N_ACTIONS - 1)[..., None], -1)[..., 0]
+        over = core.active & (core.dose + np.nan_to_num(chosen, nan=np.inf, posinf=np.inf)
+                              > self.margin * core.budget)
+        act[over] = 5
+        return act

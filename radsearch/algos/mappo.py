@@ -126,10 +126,11 @@ class ValueNorm(nn.Module):
 
 
 class ActorCritic(nn.Module):
-    def __init__(self, obs_dim, state_dim, max_agents, hidden, cost_critic=True):
+    def __init__(self, obs_dim, state_dim, max_agents, hidden, cost_critic=True, n_actions=N_ACTIONS):
         super().__init__()
         self.M = max_agents
-        self.actor = mlp(obs_dim + max_agents, hidden, N_ACTIONS, out_gain=0.01)
+        self.n_actions = n_actions
+        self.actor = mlp(obs_dim + max_agents, hidden, n_actions, out_gain=0.01)
         self.critic = mlp(state_dim + obs_dim + max_agents, hidden, 1)
         self.vnorm = ValueNorm()
         self.has_cost = cost_critic
@@ -148,6 +149,7 @@ class ActorCritic(nn.Module):
     def dist(self, obs, mask=None):
         logits = self.actor(self.actor_in(obs))
         if mask is not None:
+            mask = mask[..., :self.n_actions]   # 5-action checkpoints in a 6-action env never withdraw
             logits = logits.masked_fill(~mask, -1e9)
         return torch.distributions.Categorical(logits=logits)
 
@@ -228,7 +230,10 @@ class MAPPOTrainer:
         self._set_stage(0.0)
         M = self.base_env_cfg.max_agents
         self.net = ActorCritic(self.core.obs_dim, self.core.state_dim, M, cfg.hidden,
-                               cost_critic=self.constrained)
+                               cost_critic=self.constrained, n_actions=self.core.n_actions)
+        if self.base_env_cfg.shaping == "potential":
+            assert abs(self.base_env_cfg.shaping_gamma - cfg.gamma) < 1e-9, \
+                "potential shaping needs env.shaping_gamma == algo.gamma (K1.2)"
         self.opt_a = torch.optim.Adam(self.net.actor.parameters(), lr=cfg.lr_actor, eps=1e-5)
         cparams = list(self.net.critic.parameters()) + (list(self.net.ccritic.parameters()) if self.constrained else [])
         self.opt_c = torch.optim.Adam(cparams, lr=cfg.lr_critic, eps=1e-5)
@@ -280,7 +285,7 @@ class MAPPOTrainer:
     @torch.no_grad()
     def collect(self):
         T, B, N = self.cfg.rollout_len, self.cfg.n_envs, self.env_cfg.n_agents
-        buf = {k: [] for k in ("obs", "state", "act", "logp", "amask", "acting", "rew", "cost",
+        buf = {k: [] for k in ("obs", "state", "act", "logp", "amask", "acting", "vmask", "rew", "cost",
                                "term", "v", "c")}
         for t in range(T):
             amask = self.core.action_mask()
@@ -295,11 +300,13 @@ class MAPPOTrainer:
             cost = self._cost(out)
             self.ep_cost += cost * out["acting"]
             self.ep_viol += out["cost_violation"] * out["acting"]
-            # agent-level terminal: env done, or this robot retired this step
-            term = out["done"][:, None] | (out["acting"] & ~out["active"])
-            # out["active"] is post-reset for done envs; done covers those
+            # agent-level terminal: env done, or this robot went over budget this step.
+            # A withdrawn robot is NOT terminal: it stops acting (no policy loss) but its
+            # value keeps tracking the team outcome it shares (vmask).
+            term = out["term_agent"]
             for k, val in (("obs", obs_t), ("state", st_t), ("act", a), ("logp", d.log_prob(a)),
-                           ("amask", am_t), ("acting", out["acting"]), ("rew", out["reward"]),
+                           ("amask", am_t), ("acting", out["acting"]), ("vmask", out["in_mission"]),
+                           ("rew", out["reward"]),
                            ("cost", cost), ("term", term), ("v", v), ("c", c)):
                 buf[k].append(torch.as_tensor(np.asarray(val)) if not torch.is_tensor(val) else val)
             for ep, b in zip(out["episodes"], np.flatnonzero(out["done"])):
@@ -335,6 +342,7 @@ class MAPPOTrainer:
         rew = buf["rew"][..., None].expand(-1, -1, N).float()
         adv_r, ret_r = self._gae(rew, buf["v"], buf["v_last"], buf["term"], self.net.vnorm)
         mask = buf["acting"].float()
+        vmask = buf["vmask"].float()
         if self.constrained:
             adv_c, ret_c = self._gae(buf["cost"].float(), buf["c"], buf["c_last"], buf["term"], self.net.cnorm)
         m = mask.bool()
@@ -345,9 +353,10 @@ class MAPPOTrainer:
             adv = (adv_r_n - lam * adv_c_n) / (1.0 + lam)
         else:
             adv = adv_r_n
-        self.net.vnorm.update(ret_r[m])
+        vm = vmask.bool()
+        self.net.vnorm.update(ret_r[vm])
         if self.constrained:
-            self.net.cnorm.update(ret_c[m])
+            self.net.cnorm.update(ret_c[vm])
         tr = self.net.vnorm.normalize(ret_r)
         tc = self.net.cnorm.normalize(ret_c) if self.constrained else None
         flat = lambda x: x.reshape(-1, *x.shape[3:]) if x.dim() > 3 else x.reshape(-1)
@@ -360,7 +369,7 @@ class MAPPOTrainer:
             for mb in np.array_split(idx_all, cfg.minibatches):
                 sel = lambda x: x.reshape(T * B, *x.shape[2:])[mb]
                 obs, st, act, oldlp = sel(buf["obs"]), sel(buf["state"]), sel(buf["act"]), sel(buf["logp"])
-                am, mk, A = sel(buf["amask"]), sel(mask), sel(adv)
+                am, mk, A, vk = sel(buf["amask"]), sel(mask), sel(adv), sel(vmask)
                 d = self.net.dist(obs, am)
                 lp = d.log_prob(act)
                 ratio = torch.exp(lp - oldlp)
@@ -373,8 +382,9 @@ class MAPPOTrainer:
                 nn.utils.clip_grad_norm_(self.net.actor.parameters(), cfg.max_grad_norm)
                 self.opt_a.step()
                 v, c = self.net.values(obs, st)
-                vl = (((v - sel(tr)) ** 2) * mk).sum() / denom
-                cl = (((c - sel(tc)) ** 2) * mk).sum() / denom if self.constrained else torch.zeros(())
+                vden = vk.sum().clamp(min=1.0)
+                vl = (((v - sel(tr)) ** 2) * vk).sum() / vden
+                cl = (((c - sel(tc)) ** 2) * vk).sum() / vden if self.constrained else torch.zeros(())
                 self.opt_c.zero_grad()
                 (cfg.value_coef * (vl + cl)).backward()
                 nn.utils.clip_grad_norm_(list(self.net.critic.parameters()) +
@@ -437,7 +447,8 @@ class MAPPOTrainer:
                         env_steps=self.env_steps, updates=self.updates,
                         np_rng=np.random.get_state(), torch_rng=torch.get_rng_state(),
                         env_cfg=asdict(self.base_env_cfg), algo_cfg=asdict(self.cfg),
-                        obs_dim=self.core.obs_dim, state_dim=self.core.state_dim), tmp)
+                        obs_dim=self.core.obs_dim, state_dim=self.core.state_dim,
+                        n_actions=self.core.n_actions), tmp)
         os.replace(tmp, path)  # atomic: a killed job never leaves a corrupt checkpoint
 
     def load(self, path, weights_only=False):

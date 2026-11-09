@@ -12,7 +12,6 @@ from gymnasium import spaces
 from pettingzoo import ParallelEnv
 
 from .env import EnvConfig, RadSearchCore
-from .world import N_ACTIONS
 
 
 class RadSearchParallelEnv(ParallelEnv):
@@ -35,7 +34,7 @@ class RadSearchParallelEnv(ParallelEnv):
 
     @functools.lru_cache(maxsize=None)
     def action_space(self, agent):
-        return spaces.Discrete(N_ACTIONS)
+        return spaces.Discrete(self.core.n_actions)
 
     def state(self):
         _, st = self.core.observe()

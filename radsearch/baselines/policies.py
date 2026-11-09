@@ -146,9 +146,9 @@ class GreedyInfoPolicy:
             I = np.log(lam).var(1)
         remaining = np.maximum(core.budget - core.dose, 1e-6)
         score = I - self.beta * dose.mean(1) / remaining[..., None]
-        allowed = core.action_mask()
+        allowed = core.action_mask()[..., :N_ACTIONS]
         if self.shield is not None:
-            allowed &= self.shield.mask(core, dose)
+            allowed &= self.shield.mask(core, dose)[..., :N_ACTIONS]
         score = np.where(allowed, score, -np.inf)
         from ..shield import candidate_cells
         cand = candidate_cells(core)
@@ -167,7 +167,15 @@ class GreedyInfoPolicy:
 
 
 def make_baseline(name: str, **kw):
+    """``name`` may end in ``+withdraw`` (posterior-quantile reserve rule) or
+    ``+withdraw_mean``; keys ``wd_margin``, ``wd_quantile`` configure it."""
     name = name.lower()
+    if "+withdraw" in name:
+        from ..shield import ReserveWithdraw
+        base_name, wd = name.split("+", 1)
+        wkw = {k[3:]: kw.pop(k) for k in list(kw) if k.startswith("wd_")}
+        mode = "mean" if wd == "withdraw_mean" else "quantile"
+        return ReserveWithdraw(make_baseline(base_name, **kw), mode=mode, **wkw)
     if name == "random":
         return RandomPolicy(**kw)
     if name == "approach":

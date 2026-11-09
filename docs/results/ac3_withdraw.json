@@ -1,0 +1,141 @@
+{
+ "note": "AC-3 re-check with the withdraw action (D22): 300 test missions, 0.1 Gy, 10-100 TBq, egress required. Baselines wrapped with ReserveWithdraw.",
+ "results": {
+  "baseline:greedy+withdraw": {
+   "success_rate": 0.8266666666666667,
+   "violation_rate": 0.09,
+   "violation_ci": [
+    0.06259022560547936,
+    0.12777701079864834
+   ],
+   "stranded_rate": 0.03,
+   "withdraw_rate": 0.4033333333333333,
+   "wrong_declare_rate": 0.15,
+   "coverage90": 0.5933333333333334,
+   "error_median": 0.3846572179220724,
+   "team_dose_mean": 0.11119667125948775,
+   "info_per_Gy": 65.70791508232037,
+   "steps_mean": 17.733333333333334,
+   "cowardice_rate": 0.8269230769230769
+  },
+  "baseline:greedy+withdraw,wd_margin=0.9": {
+   "success_rate": 0.8233333333333334,
+   "violation_rate": 0.043333333333333335,
+   "violation_ci": [
+    0.025496448084407246,
+    0.07271746563401146
+   ],
+   "stranded_rate": 0.023333333333333334,
+   "withdraw_rate": 0.41333333333333333,
+   "wrong_declare_rate": 0.15666666666666668,
+   "coverage90": 0.62,
+   "error_median": 0.3940802879995679,
+   "team_dose_mean": 0.10268434554133243,
+   "info_per_Gy": 71.21509290062572,
+   "steps_mean": 17.773333333333333,
+   "cowardice_rate": 0.9056603773584906
+  },
+  "baseline:greedy+withdraw_mean": {
+   "success_rate": 0.8433333333333334,
+   "violation_rate": 0.14666666666666667,
+   "violation_ci": [
+    0.11110518744033696,
+    0.19116251222500888
+   ],
+   "stranded_rate": 0.056666666666666664,
+   "withdraw_rate": 0.28,
+   "wrong_declare_rate": 0.15,
+   "coverage90": 0.6366666666666667,
+   "error_median": 0.36790048521262164,
+   "team_dose_mean": 0.11765519304312187,
+   "info_per_Gy": 63.18005518416831,
+   "steps_mean": 17.336666666666666,
+   "cowardice_rate": 0.8297872340425532
+  },
+  "baseline:greedy+withdraw_mean,wd_margin=0.8": {
+   "success_rate": 0.84,
+   "violation_rate": 0.08666666666666667,
+   "violation_ci": [
+    0.05982889751804311,
+    0.12395595869424827
+   ],
+   "stranded_rate": 0.023333333333333334,
+   "withdraw_rate": 0.38666666666666666,
+   "wrong_declare_rate": 0.14,
+   "coverage90": 0.6366666666666667,
+   "error_median": 0.36790048521262164,
+   "team_dose_mean": 0.10961688371613185,
+   "info_per_Gy": 67.0158372640005,
+   "steps_mean": 17.426666666666666,
+   "cowardice_rate": 0.9166666666666666
+  },
+  "baseline:perimeter+withdraw": {
+   "success_rate": 0.8133333333333334,
+   "violation_rate": 0.043333333333333335,
+   "violation_ci": [
+    0.025496448084407246,
+    0.07271746563401146
+   ],
+   "stranded_rate": 0.01,
+   "withdraw_rate": 0.23,
+   "wrong_declare_rate": 0.16666666666666666,
+   "coverage90": 0.57,
+   "error_median": 0.41506021028616247,
+   "team_dose_mean": 0.06766136668940731,
+   "info_per_Gy": 109.1236835182039,
+   "steps_mean": 27.273333333333333,
+   "cowardice_rate": 0.8928571428571429
+  },
+  "baseline:approach+withdraw": {
+   "success_rate": 0.7366666666666667,
+   "violation_rate": 0.09,
+   "violation_ci": [
+    0.06259022560547936,
+    0.12777701079864834
+   ],
+   "stranded_rate": 0.023333333333333334,
+   "withdraw_rate": 0.77,
+   "wrong_declare_rate": 0.03666666666666667,
+   "coverage90": 0.81,
+   "error_median": 0.5132304488405277,
+   "team_dose_mean": 0.20130832218419145,
+   "info_per_Gy": 28.107954442030632,
+   "steps_mean": 22.35,
+   "cowardice_rate": 0.6582278481012658
+  },
+  "baseline:greedy+withdraw,wd_quantile=0.97": {
+   "success_rate": 0.8433333333333334,
+   "violation_rate": 0.043333333333333335,
+   "violation_ci": [
+    0.025496448084407246,
+    0.07271746563401146
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "withdraw_rate": 0.4766666666666667,
+   "wrong_declare_rate": 0.12,
+   "coverage90": 0.63,
+   "error_median": 0.38692513170503107,
+   "team_dose_mean": 0.10216421703360701,
+   "info_per_Gy": 71.07961949042381,
+   "steps_mean": 18.0,
+   "cowardice_rate": 0.8723404255319149
+  },
+  "baseline:perimeter+withdraw_mean": {
+   "success_rate": 0.82,
+   "violation_rate": 0.07666666666666666,
+   "violation_ci": [
+    0.051627611786607464,
+    0.1124101038501748
+   ],
+   "stranded_rate": 0.02,
+   "withdraw_rate": 0.18,
+   "wrong_declare_rate": 0.16666666666666666,
+   "coverage90": 0.5666666666666667,
+   "error_median": 0.3976139807901006,
+   "team_dose_mean": 0.07170032873670634,
+   "info_per_Gy": 103.17468950191528,
+   "steps_mean": 25.786666666666665,
+   "cowardice_rate": 0.8703703703703703
+  }
+ }
+}

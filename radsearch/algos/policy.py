@@ -35,7 +35,7 @@ def load_policy(path: str, deterministic: bool = True, seed: int = 0) -> Learned
     ck = torch.load(path, weights_only=False)
     a = ck["algo_cfg"]; e = ck["env_cfg"]
     net = ActorCritic(ck["obs_dim"], ck["state_dim"], e["max_agents"], a["hidden"],
-                      cost_critic=a["method"] == "mappo_lag")
+                      cost_critic=a["method"] == "mappo_lag", n_actions=ck.get("n_actions", 5))
     net.load_state_dict(ck["net"])
     net.eval()
     shield = DoseShield(a["shield_quantile"], a["shield_horizon"], seed=seed) if a["shield"] else None
