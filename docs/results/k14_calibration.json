@@ -1,0 +1,357 @@
+{
+ "note": "K1.4: filter calibration (pf_model_sigma) and declaration threshold (confident_sigma), greedy +/- ReserveWithdraw, 300 test missions, 0.1 Gy, 10-100 TBq.",
+ "pf_sigma_sweep": [
+  {
+   "pf_model_sigma": 0.3,
+   "results": {
+    "baseline:greedy": {
+     "success_rate": 0.8466666666666667,
+     "violation_rate": 0.31333333333333335,
+     "violation_ci": [
+      0.2634843975598553,
+      0.36790231169730847
+     ],
+     "stranded_rate": 0.16333333333333333,
+     "withdraw_rate": 0.0,
+     "declare_rate": 0.9866666666666667,
+     "wrong_declare_rate": 0.14666666666666667,
+     "coverage50": 0.35,
+     "coverage90": 0.6466666666666666,
+     "error_median": 0.3075508337490255,
+     "team_dose_mean": 0.12708284282114793,
+     "steps_mean": 15.6
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.9": {
+     "success_rate": 0.8266666666666667,
+     "violation_rate": 0.09,
+     "violation_ci": [
+      0.06259022560547936,
+      0.12777701079864834
+     ],
+     "stranded_rate": 0.03,
+     "withdraw_rate": 0.4033333333333333,
+     "declare_rate": 0.89,
+     "wrong_declare_rate": 0.15,
+     "coverage50": 0.3333333333333333,
+     "coverage90": 0.5933333333333334,
+     "error_median": 0.3846572179220724,
+     "team_dose_mean": 0.11119667125948775,
+     "steps_mean": 17.733333333333334
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.97": {
+     "success_rate": 0.8433333333333334,
+     "violation_rate": 0.043333333333333335,
+     "violation_ci": [
+      0.025496448084407246,
+      0.07271746563401146
+     ],
+     "stranded_rate": 0.013333333333333334,
+     "withdraw_rate": 0.4766666666666667,
+     "declare_rate": 0.8166666666666667,
+     "wrong_declare_rate": 0.12,
+     "coverage50": 0.35,
+     "coverage90": 0.63,
+     "error_median": 0.38692513170503107,
+     "team_dose_mean": 0.10216421703360701,
+     "steps_mean": 18.0
+    }
+   }
+  },
+  {
+   "pf_model_sigma": 0.5,
+   "results": {
+    "baseline:greedy": {
+     "success_rate": 0.9233333333333333,
+     "violation_rate": 0.5566666666666666,
+     "violation_ci": [
+      0.5000873808268701,
+      0.6118130824343481
+     ],
+     "stranded_rate": 0.26666666666666666,
+     "withdraw_rate": 0.0,
+     "declare_rate": 0.94,
+     "wrong_declare_rate": 0.07,
+     "coverage50": 0.6633333333333333,
+     "coverage90": 0.8866666666666667,
+     "error_median": 0.19826395065134716,
+     "team_dose_mean": 0.19991315127007195,
+     "steps_mean": 19.266666666666666
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.9": {
+     "success_rate": 0.8666666666666667,
+     "violation_rate": 0.13,
+     "violation_ci": [
+      0.09657536941275233,
+      0.17278042929341172
+     ],
+     "stranded_rate": 0.03,
+     "withdraw_rate": 0.6266666666666667,
+     "declare_rate": 0.6433333333333333,
+     "wrong_declare_rate": 0.07,
+     "coverage50": 0.56,
+     "coverage90": 0.8233333333333334,
+     "error_median": 0.29427373665285717,
+     "team_dose_mean": 0.1501451579909259,
+     "steps_mean": 24.833333333333332
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.97": {
+     "success_rate": 0.83,
+     "violation_rate": 0.06666666666666667,
+     "violation_ci": [
+      0.043567515545158274,
+      0.10072305951611496
+     ],
+     "stranded_rate": 0.006666666666666667,
+     "withdraw_rate": 0.6766666666666666,
+     "declare_rate": 0.5933333333333334,
+     "wrong_declare_rate": 0.09666666666666666,
+     "coverage50": 0.5233333333333333,
+     "coverage90": 0.8066666666666666,
+     "error_median": 0.3425820158056576,
+     "team_dose_mean": 0.13341954056856675,
+     "steps_mean": 24.963333333333335
+    }
+   }
+  },
+  {
+   "pf_model_sigma": 0.7,
+   "results": {
+    "baseline:greedy": {
+     "success_rate": 0.9166666666666666,
+     "violation_rate": 0.68,
+     "violation_ci": [
+      0.6252238889196531,
+      0.7302246414395104
+     ],
+     "stranded_rate": 0.25,
+     "withdraw_rate": 0.0,
+     "declare_rate": 0.8,
+     "wrong_declare_rate": 0.056666666666666664,
+     "coverage50": 0.72,
+     "coverage90": 0.9033333333333333,
+     "error_median": 0.19259566526701888,
+     "team_dose_mean": 0.25504730834511363,
+     "steps_mean": 24.086666666666666
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.9": {
+     "success_rate": 0.8733333333333333,
+     "violation_rate": 0.15666666666666668,
+     "violation_ci": [
+      0.11990681678878562,
+      0.2021080234520693
+     ],
+     "stranded_rate": 0.016666666666666666,
+     "withdraw_rate": 0.7333333333333333,
+     "declare_rate": 0.4766666666666667,
+     "wrong_declare_rate": 0.04,
+     "coverage50": 0.6466666666666666,
+     "coverage90": 0.8733333333333333,
+     "error_median": 0.3159997481128951,
+     "team_dose_mean": 0.17596748022209296,
+     "steps_mean": 28.413333333333334
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.97": {
+     "success_rate": 0.8233333333333334,
+     "violation_rate": 0.09666666666666666,
+     "violation_ci": [
+      0.06815029481828931,
+      0.13538170196951116
+     ],
+     "stranded_rate": 0.0,
+     "withdraw_rate": 0.7866666666666666,
+     "declare_rate": 0.4,
+     "wrong_declare_rate": 0.03,
+     "coverage50": 0.66,
+     "coverage90": 0.9233333333333333,
+     "error_median": 0.3540388346505746,
+     "team_dose_mean": 0.1525950040624727,
+     "steps_mean": 28.87
+    }
+   }
+  },
+  {
+   "pf_model_sigma": 1.0,
+   "results": {
+    "baseline:greedy": {
+     "success_rate": 0.92,
+     "violation_rate": 0.8,
+     "violation_ci": [
+      0.7510710762322137,
+      0.8413431410330587
+     ],
+     "stranded_rate": 0.22666666666666666,
+     "withdraw_rate": 0.0,
+     "declare_rate": 0.63,
+     "wrong_declare_rate": 0.03333333333333333,
+     "coverage50": 0.78,
+     "coverage90": 0.94,
+     "error_median": 0.19053294319430253,
+     "team_dose_mean": 0.3141323960653237,
+     "steps_mean": 32.26
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.9": {
+     "success_rate": 0.8066666666666666,
+     "violation_rate": 0.19,
+     "violation_ci": [
+      0.14963485033440665,
+      0.23820379182481183
+     ],
+     "stranded_rate": 0.0,
+     "withdraw_rate": 0.82,
+     "declare_rate": 0.30666666666666664,
+     "wrong_declare_rate": 0.04,
+     "coverage50": 0.68,
+     "coverage90": 0.8766666666666667,
+     "error_median": 0.3355790752047976,
+     "team_dose_mean": 0.2065668708079705,
+     "steps_mean": 34.556666666666665
+    },
+    "baseline:greedy+withdraw,wd_quantile=0.97": {
+     "success_rate": 0.77,
+     "violation_rate": 0.08666666666666667,
+     "violation_ci": [
+      0.05982889751804311,
+      0.12395595869424827
+     ],
+     "stranded_rate": 0.0,
+     "withdraw_rate": 0.8366666666666667,
+     "declare_rate": 0.23,
+     "wrong_declare_rate": 0.03333333333333333,
+     "coverage50": 0.68,
+     "coverage90": 0.9166666666666666,
+     "error_median": 0.4279802139559037,
+     "team_dose_mean": 0.16645828951551234,
+     "steps_mean": 36.60666666666667
+    }
+   }
+  }
+ ],
+ "declaration_sweep": [
+  {
+   "pf_model_sigma": 0.7,
+   "confident_sigma": 0.47,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.97",
+   "metrics": {
+    "success_rate": 0.7866666666666666,
+    "violation_rate": 0.06666666666666667,
+    "violation_ci": [
+     0.043567515545158274,
+     0.10072305951611496
+    ],
+    "stranded_rate": 0.01,
+    "withdraw_rate": 0.64,
+    "declare_rate": 0.6133333333333333,
+    "wrong_declare_rate": 0.08666666666666667,
+    "coverage90": 0.8666666666666667,
+    "error_median": 0.4412237012319594,
+    "team_dose_mean": 0.12359031297798746,
+    "steps_mean": 23.613333333333333
+   }
+  },
+  {
+   "pf_model_sigma": 0.5,
+   "confident_sigma": 0.47,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.97",
+   "metrics": {
+    "success_rate": 0.7966666666666666,
+    "violation_rate": 0.06,
+    "violation_ci": [
+     0.038286369524692054,
+     0.09283944515290843
+    ],
+    "stranded_rate": 0.01,
+    "withdraw_rate": 0.49333333333333335,
+    "declare_rate": 0.8066666666666666,
+    "wrong_declare_rate": 0.14,
+    "coverage90": 0.8,
+    "error_median": 0.4601749111174712,
+    "team_dose_mean": 0.09903664844154174,
+    "steps_mean": 17.566666666666666
+   }
+  },
+  {
+   "pf_model_sigma": 1.0,
+   "confident_sigma": 0.47,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.97",
+   "metrics": {
+    "success_rate": 0.7566666666666667,
+    "violation_rate": 0.07,
+    "violation_ci": [
+     0.046236944827176336,
+     0.10463601042593323
+    ],
+    "stranded_rate": 0.006666666666666667,
+    "withdraw_rate": 0.7366666666666667,
+    "declare_rate": 0.44333333333333336,
+    "wrong_declare_rate": 0.06333333333333334,
+    "coverage90": 0.9033333333333333,
+    "error_median": 0.4790594090183934,
+    "team_dose_mean": 0.13753909280945248,
+    "steps_mean": 25.503333333333334
+   }
+  },
+  {
+   "pf_model_sigma": 0.7,
+   "confident_sigma": 0.47,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.99,wd_n_samples=64",
+   "metrics": {
+    "success_rate": 0.6466666666666666,
+    "violation_rate": 0.0033333333333333335,
+    "violation_ci": [
+     0.0005886577218511581,
+     0.018636693694531237
+    ],
+    "stranded_rate": 0.0,
+    "withdraw_rate": 0.81,
+    "declare_rate": 0.47333333333333333,
+    "wrong_declare_rate": 0.10666666666666667,
+    "coverage90": 0.8566666666666667,
+    "error_median": 0.6100432431274514,
+    "team_dose_mean": 0.09067708907600555,
+    "steps_mean": 25.07
+   }
+  },
+  {
+   "pf_model_sigma": 0.3,
+   "confident_sigma": 0.3,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.99,wd_n_samples=64",
+   "metrics": {
+    "success_rate": 0.74,
+    "violation_rate": 0.03,
+    "violation_ci": [
+     0.01586185380943231,
+     0.05602253914164096
+    ],
+    "stranded_rate": 0.01,
+    "withdraw_rate": 0.68,
+    "declare_rate": 0.71,
+    "wrong_declare_rate": 0.14333333333333334,
+    "coverage90": 0.6433333333333333,
+    "error_median": 0.47581987912216395,
+    "team_dose_mean": 0.0862325858831503,
+    "steps_mean": 18.39666666666667
+   }
+  },
+  {
+   "pf_model_sigma": 0.5,
+   "confident_sigma": 0.47,
+   "policy": "baseline:greedy+withdraw,wd_quantile=0.99,wd_n_samples=64",
+   "metrics": {
+    "success_rate": 0.6866666666666666,
+    "violation_rate": 0.023333333333333334,
+    "violation_ci": [
+     0.011347660299125234,
+     0.04737197226827532
+    ],
+    "stranded_rate": 0.006666666666666667,
+    "withdraw_rate": 0.7,
+    "declare_rate": 0.63,
+    "wrong_declare_rate": 0.13333333333333333,
+    "coverage90": 0.8233333333333334,
+    "error_median": 0.5330539838353647,
+    "team_dose_mean": 0.07527436471852221,
+    "steps_mean": 19.863333333333333
+   }
+  }
+ ]
+}

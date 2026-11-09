@@ -458,3 +458,30 @@ mostly in-field (a single step's dose larger than predicted), not
 stranding. (4) The safe rule is strong: a learned method has little room
 on success alone at this setting; its headroom is in speed, wrong
 declarations, team dose and harder settings (to decide, Karar 3).
+
+## D24 — Filter calibration does not help the safe rule (K1.4)
+
+Sweep of the filter's assumed model error `pf_model_sigma` and the
+declaration threshold `confident_sigma` (`docs/results/k14_calibration.json`,
+greedy + withdraw, 300 missions):
+
+| Filter σ | declare when σ < | withdraw quantile | success | violations | wrong declaration | 90 % coverage |
+|---|---|---|---|---|---|---|
+| 0.3 (current) | 0.3 m | 0.97 | **84 %** | **4.3 %** | 12 % | 63 % |
+| 0.5 | 0.3 m | 0.97 | 83 % | 6.7 % | 10 % | 81 % |
+| 0.7 | 0.3 m | 0.97 | 82 % | 9.7 % | 3 % | 92 % |
+| 0.7 | 0.47 m | 0.97 | 79 % | 6.7 % | 9 % | 87 % |
+| 1.0 | 0.47 m | 0.97 | 76 % | 7.0 % | 6 % | 90 % |
+| 0.3 | 0.3 m | 0.99 (64 particles) | 74 % | 3.0 % | 14 % | 64 % |
+| 0.5 | 0.47 m | 0.99 (64 particles) | 69 % | 2.3 % | 13 % | 82 % |
+
+(0.47 m = the σ at which the 90 % region fits inside the 1 m success radius.)
+
+Calibrating the filter (σ ≈ 0.7) fixes coverage and cuts wrong declarations,
+but the team declares later, spends more steps near its budget, and
+violations rise; violations are almost all in-field (one step's true dose
+above the prediction), not stranding. A more pessimistic rule trades success
+for safety. **No setting improves both**: the rule moves along a
+safety–success frontier. Decision: keep σ = 0.3 / 0.3 m / q = 0.97 as the
+reference rule; report the overconfidence as a finding. The research test
+for Karar 3 is whether a learned, coordinated team moves this frontier out.
