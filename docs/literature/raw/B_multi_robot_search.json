@@ -1,0 +1,783 @@
+[
+ {
+  "title": "Multi-Agent Deep Reinforcement Learning for Radiation Localization",
+  "authors": "Totten et al.",
+  "year": 2023,
+  "venue": "PDXScholar (Portland State University), MS thesis",
+  "doi": "10.15760/etd.3652",
+  "openalex_id": "W4387007317",
+  "url": "https://doi.org/10.15760/etd.3652",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "CTDE",
+   "PPO",
+   "gamma",
+   "obstacles"
+  ],
+  "summary": "Thesis developing multi-agent deep RL for localizing orphaned gamma sources in unknown, obstructed environments with weak Poisson signals (basis of the RAD-TEAM line of work).",
+  "relation": "Closest MARL baseline for team radiation search; optimizes localization speed/accuracy only—no per-robot cumulative dose budget, exit reserve or safety layer.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "PSOPF-MATD3: A multi-agent collaborative radioactive source search strategy",
+  "authors": "Huo et al.",
+  "year": 2025,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2025.103945",
+  "openalex_id": "W4414711375",
+  "url": "https://doi.org/10.1016/j.net.2025.103945",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "MATD3",
+   "PSO",
+   "particle-filter",
+   "collision-avoidance"
+  ],
+  "summary": "Combines a particle-swarm-optimized particle filter (shared source estimate) with multi-agent TD3 so agents learn collaborative search and collision avoidance.",
+  "relation": "Very close architecture (shared PF + MARL policy); uses off-policy MATD3 rather than MAPPO and does not impose per-robot dose budgets, exit reserve or uncertainty-aware masking.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Heterogeneity: A multi-robot radioactive source search technique",
+  "authors": "Huo et al.",
+  "year": 2026,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2025.106223",
+  "openalex_id": "W7117886691",
+  "url": "https://doi.org/10.1016/j.pnucene.2025.106223",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "particle-filter",
+   "multi-robot",
+   "radioresistance"
+  ],
+  "summary": "Multi-robot radioactive source search exploiting robot heterogeneity; OpenAlex keywords include particle filter, path planning and radioresistance (no abstract returned).",
+  "relation": "Most relevant for unequal radiation tolerance across robots; rule/planner based, not learned, and (from available metadata) no explicit cumulative dose budget with guaranteed exit.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "A heterogeneous robot collaborative search method for radioactive sources",
+  "authors": "Ling et al.",
+  "year": 2024,
+  "venue": "Annals of Nuclear Energy",
+  "doi": "10.1016/j.anucene.2024.111145",
+  "openalex_id": "W4405367297",
+  "url": "https://doi.org/10.1016/j.anucene.2024.111145",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "multi-robot",
+   "Riemannian-manifold",
+   "cooperative-search"
+  ],
+  "summary": "Cooperative search for radioactive sources by heterogeneous robot teams for nuclear emergency response, with planning formulated on Riemannian manifolds (keywords; no abstract returned).",
+  "relation": "Same group as 'Heterogeneity'; heterogeneous team coordination is hand-designed, not MARL, and dose budgets/exit are not reported in metadata.",
+  "relevance": 3,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Multi-robot cooperative search for radioactive sources based on particle swarm optimization particle filter",
+  "authors": "Luo et al.",
+  "year": 2023,
+  "venue": "Intelligence & Robotics",
+  "doi": "10.20517/ir.2023.38",
+  "openalex_id": "W4390114068",
+  "url": "https://doi.org/10.20517/ir.2023.38",
+  "cluster": "B",
+  "topics": [
+   "PSO",
+   "particle-filter",
+   "PSOPF",
+   "multi-robot"
+  ],
+  "summary": "Each robot is a mobile observation platform whose latest observations are fused into particle sampling, while PSO moves particles toward high-likelihood regions to fight degeneracy.",
+  "relation": "Provides the PSOPF estimator family the thesis can use as its shared filter; motion is heuristic and dose accumulation of robots is not constrained.",
+  "relevance": 3,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Multi-robot collaborative radioactive source search based on particle fusion and adaptive step size",
+  "authors": "Ling et al.",
+  "year": 2022,
+  "venue": "Annals of Nuclear Energy",
+  "doi": "10.1016/j.anucene.2022.109104",
+  "openalex_id": "W4226499085",
+  "url": "https://doi.org/10.1016/j.anucene.2022.109104",
+  "cluster": "B",
+  "topics": [
+   "particle-filter",
+   "data-fusion",
+   "multi-robot",
+   "adaptive-step"
+  ],
+  "summary": "Multi-robot collaborative search fusing particles from robots' detectors with an adaptive step-size motion rule (keywords; no abstract returned).",
+  "relation": "Early key paper of the SWUST line; rule-based cooperative movement with shared estimate but no per-robot dose budget or withdrawal logic.",
+  "relevance": 3,
+  "cited_by_count": 24
+ },
+ {
+  "title": "Distributed collaboration: Cognitive difference and collaborative decision for multi-robot radioactive source search",
+  "authors": "Luo et al.",
+  "year": 2023,
+  "venue": "Annals of Nuclear Energy",
+  "doi": "10.1016/j.anucene.2023.110210",
+  "openalex_id": "W4388440133",
+  "url": "https://doi.org/10.1016/j.anucene.2023.110210",
+  "cluster": "B",
+  "topics": [
+   "distributed",
+   "multi-robot",
+   "belief-consistency",
+   "reward-function"
+  ],
+  "summary": "Distributed multi-robot source search handling differences in robots' beliefs (cognitive difference) with a collaborative decision rule/reward function to reduce search time (keywords).",
+  "relation": "Relevant to shared vs. local estimate design; optimizes search time, not radiation exposure of robots.",
+  "relevance": 2,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Multi-robot Cooperative Search for Radioactive Sources Based on Improved Particle Swarm Optimization",
+  "authors": "Luo et al.",
+  "year": 2023,
+  "venue": "RAIIC 2023 (IEEE conf.)",
+  "doi": "10.1109/raiic59453.2023.10280919",
+  "openalex_id": "W4387713453",
+  "url": "https://doi.org/10.1109/raiic59453.2023.10280919",
+  "cluster": "B",
+  "topics": [
+   "PSO",
+   "particle-filter",
+   "multi-robot"
+  ],
+  "summary": "Improved-PSO multi-robot search that fuses latest observations into particle sampling to mitigate particle degradation.",
+  "relation": "Conference precursor of PSOPF; heuristic, dose-agnostic.",
+  "relevance": 2,
+  "cited_by_count": 2
+ },
+ {
+  "title": "Radioactive sources search method based on multi-robot and Voronoi partition",
+  "authors": "Yan et al.",
+  "year": 2024,
+  "venue": "Applied Radiation and Isotopes",
+  "doi": "10.1016/j.apradiso.2024.111475",
+  "openalex_id": "W4401668178",
+  "url": "https://doi.org/10.1016/j.apradiso.2024.111475",
+  "cluster": "B",
+  "topics": [
+   "Voronoi",
+   "particle-filter",
+   "multi-robot",
+   "task-allocation"
+  ],
+  "summary": "Multi-robot radioactive source search partitioning the area by Voronoi cells with particle-filter estimation (keywords; no abstract returned).",
+  "relation": "Spatial task allocation alternative to learned coordination; no per-robot dose constraint.",
+  "relevance": 2,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Distributed Active Sensing for Multi-Robot Radiation Source Localization via Spatial-Probabilistic Decoupling",
+  "authors": "Yan et al.",
+  "year": 2026,
+  "venue": "SSRN preprint",
+  "doi": "10.2139/ssrn.7322271",
+  "openalex_id": "W7203986122",
+  "url": "https://doi.org/10.2139/ssrn.7322271",
+  "cluster": "B",
+  "topics": [
+   "active-sensing",
+   "mutual-information",
+   "Voronoi",
+   "particle-filter",
+   "heterogeneous"
+  ],
+  "summary": "Preprint on distributed active sensing for multi-robot radiation localization using Voronoi partitioning, particle filter and mutual information, addressing masking/range ambiguity (keywords).",
+  "relation": "Information-theoretic planner, not RL; recent competitor for estimator-driven coordination without dose budgets.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "An Intelligent Multi-Robot Mobile Measurement System for Active Cooperative Radiation Source Localization via Dynamic Voronoi Partitioning",
+  "authors": "Yan et al.",
+  "year": 2026,
+  "venue": "SSRN preprint",
+  "doi": "10.2139/ssrn.7397321",
+  "openalex_id": "W7161034208",
+  "url": "https://doi.org/10.2139/ssrn.7397321",
+  "cluster": "B",
+  "topics": [
+   "Voronoi",
+   "multi-robot",
+   "epistemic-uncertainty",
+   "false-alarm"
+  ],
+  "summary": "Preprint describing a multi-robot mobile measurement system with dynamic Voronoi partitioning, epistemic uncertainty handling and false-alarm filtering (keywords).",
+  "relation": "Uncertainty-aware but rule-based; no cumulative dose accounting.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Multi-robot Collaborative Source Searching Method Based on Information Exploration and Exploitation",
+  "authors": "Ling et al.",
+  "year": 2026,
+  "venue": "Springer Proceedings in Physics",
+  "doi": "10.1007/978-981-95-3233-9_5",
+  "openalex_id": "W7117985571",
+  "url": "https://doi.org/10.1007/978-981-95-3233-9_5",
+  "cluster": "B",
+  "topics": [
+   "multi-robot",
+   "information-gain",
+   "exploration-exploitation"
+  ],
+  "summary": "Conference paper on multi-robot radioactive source search balancing information exploration and exploitation (title only returned).",
+  "relation": "Information-driven heuristic baseline from the SWUST group; dose-agnostic.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Multi-robot autonomous search for radioactive leakage source based on a CPE-Infotaxis method during nuclear emergency rescue",
+  "authors": "Zhou et al.",
+  "year": 2026,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2026.104388",
+  "openalex_id": "W7156132786",
+  "url": "https://doi.org/10.1016/j.net.2026.104388",
+  "cluster": "B",
+  "topics": [
+   "infotaxis",
+   "multi-robot",
+   "sensor-failure",
+   "Bayesian"
+  ],
+  "summary": "Distributed multi-robot Infotaxis where each robot weights received information by relative-entropy credibility, robust to radiation-induced sensor failures; ~40% faster than Infotaxis.",
+  "relation": "Explicitly motivated by radiation damage to robots (sensor faults) but handles it via belief robustness, not dose budgets or exit reserve.",
+  "relevance": 2,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Radiation source estimation using a connectivity-aware decentralized multi-mobile sensor system",
+  "authors": "Park",
+  "year": 2025,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2025.103840",
+  "openalex_id": "W4413274975",
+  "url": "https://doi.org/10.1016/j.net.2025.103840",
+  "cluster": "B",
+  "topics": [
+   "particle-filter",
+   "decentralized",
+   "entropy",
+   "communication-constraint"
+  ],
+  "summary": "Decentralized mobile agents estimate an unknown source with a particle filter, keep communication connectivity via graph Laplacian estimates and plan with Shannon entropy; success rate rises to 94%.",
+  "relation": "Adds communication constraints to multi-agent PF search; constraints are on connectivity, not cumulative dose.",
+  "relevance": 2,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Target localization using Multi-Agent Deep Reinforcement Learning with Proximal Policy Optimization",
+  "authors": "Alagha et al.",
+  "year": 2022,
+  "venue": "Future Generation Computer Systems",
+  "doi": "10.1016/j.future.2022.06.015",
+  "openalex_id": "W4283768545",
+  "url": "https://doi.org/10.1016/j.future.2022.06.015",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "PPO",
+   "target-localization",
+   "radiation"
+  ],
+  "summary": "Multi-agent deep RL with PPO for cooperative target (radiation) localization by mobile sensing agents in environments with walls.",
+  "relation": "Key MARL-PPO precedent (close to MAPPO); reward is localization performance, no agent exposure budget or safe exit.",
+  "relevance": 3,
+  "cited_by_count": 75
+ },
+ {
+  "title": "Multiagent Deep Reinforcement Learning With Demonstration Cloning for Target Localization",
+  "authors": "Alagha et al.",
+  "year": 2023,
+  "venue": "IEEE Internet of Things Journal",
+  "doi": "10.1109/jiot.2023.3262663",
+  "openalex_id": "W4361029804",
+  "url": "https://doi.org/10.1109/jiot.2023.3262663",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "imitation",
+   "target-localization"
+  ],
+  "summary": "Extends MADRL target localization by cloning demonstrations to speed up learning in environments with obstacles such as walls.",
+  "relation": "Training-efficiency technique for MARL search; no safety/dose constraint.",
+  "relevance": 2,
+  "cited_by_count": 32
+ },
+ {
+  "title": "Adaptive target localization under uncertainty using Multi-Agent Deep Reinforcement Learning with knowledge transfer",
+  "authors": "Alagha et al.",
+  "year": 2024,
+  "venue": "Internet of Things",
+  "doi": "10.1016/j.iot.2024.101447",
+  "openalex_id": "W4404864837",
+  "url": "https://doi.org/10.1016/j.iot.2024.101447",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "uncertainty",
+   "knowledge-transfer"
+  ],
+  "summary": "MADRL localization that handles practical uncertainties such as false alarms when the target is absent or unreachable, using knowledge transfer.",
+  "relation": "Deals with task uncertainty and termination, related to the thesis's withdraw action, but not agent dose safety.",
+  "relevance": 2,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Distributed Decision Making for Electromagnetic Radiation Source Localization Using Multi-Agent Deep Reinforcement Learning",
+  "authors": "Chen et al.",
+  "year": 2025,
+  "venue": "Drones",
+  "doi": "10.3390/drones9030216",
+  "openalex_id": "W4408552255",
+  "url": "https://doi.org/10.3390/drones9030216",
+  "cluster": "B",
+  "topics": [
+   "MARL",
+   "PPO",
+   "UAV-swarm",
+   "RF-source"
+  ],
+  "summary": "MURPPO: distributed PPO with independent decisions and collaborative positioning by multiple UAVs to localize electromagnetic emitters in urban areas.",
+  "relation": "Analogous MARL source localization (RF, not ionizing); no exposure budget.",
+  "relevance": 1,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Sequential Deployment of Mobile Radiation Sensor Network Using Reinforcement Learning in Radioactive Source Search",
+  "authors": "Gu et al.",
+  "year": 2023,
+  "venue": "Nuclear Technology",
+  "doi": "10.1080/00295450.2023.2226914",
+  "openalex_id": "W4385071298",
+  "url": "https://doi.org/10.1080/00295450.2023.2226914",
+  "cluster": "B",
+  "topics": [
+   "RL",
+   "sensor-network",
+   "mobile",
+   "deployment"
+  ],
+  "summary": "RL to sequentially deploy a mobile radiation sensor network under physical and financial constraints for urban source search.",
+  "relation": "Learned placement of a detector network; constraints are resource-based, not cumulative dose per robot.",
+  "relevance": 2,
+  "cited_by_count": 4
+ },
+ {
+  "title": "Cooperation between an unmanned aerial vehicle and an unmanned ground vehicle in highly accurate localization of gamma radiation hotspots",
+  "authors": "Lázna et al.",
+  "year": 2018,
+  "venue": "International Journal of Advanced Robotic Systems",
+  "doi": "10.1177/1729881417750787",
+  "openalex_id": "W2781915269",
+  "url": "https://doi.org/10.1177/1729881417750787",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "UAV-UGV",
+   "field-experiment"
+  ],
+  "summary": "Human operator, UAV (fast aerial survey) and UGV (precise ground localization) cooperate to search and localize gamma hotspots outdoors.",
+  "relation": "Role-based heterogeneous team; motivated by keeping humans out of exposure, but robots' dose not budgeted.",
+  "relevance": 2,
+  "cited_by_count": 73
+ },
+ {
+  "title": "An automated heterogeneous robotic system for radiation surveys: Design and field testing",
+  "authors": "Gábrlík et al.",
+  "year": 2021,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.22010",
+  "openalex_id": "W3037945186",
+  "url": "https://doi.org/10.1002/rob.22010",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "UAV-UGV",
+   "field-testing"
+  ],
+  "summary": "Multirobot (UAV+UGV) system for highly automated radiation surveys, replacing human operators in radiation-exposure missions; field tested.",
+  "relation": "Real-world heterogeneous team reference; scripted mission roles, no learned policy or dose budget.",
+  "relevance": 2,
+  "cited_by_count": 38
+ },
+ {
+  "title": "Experiments in unmanned aerial vehicle/unmanned ground vehicle radiation search",
+  "authors": "Peterson et al.",
+  "year": 2019,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.21867",
+  "openalex_id": "W2922142640",
+  "url": "https://doi.org/10.1002/rob.21867",
+  "cluster": "B",
+  "topics": [
+   "UAV-UGV",
+   "field-experiment",
+   "spectrometer"
+  ],
+  "summary": "Field experiment at Savannah River National Laboratory testing localization algorithms with a hexacopter and a Jackal UGV carrying gamma spectrometers.",
+  "relation": "Multi-robot data fusion for localization; no exposure-aware decision making.",
+  "relevance": 2,
+  "cited_by_count": 45
+ },
+ {
+  "title": "Localization of Ionizing Radiation Sources by Cooperating Micro Aerial Vehicles With Pixel Detectors in Real-Time",
+  "authors": "Štibinger et al.",
+  "year": 2020,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2020.2978456",
+  "openalex_id": "W3009828825",
+  "url": "https://doi.org/10.1109/lra.2020.2978456",
+  "cluster": "B",
+  "topics": [
+   "UAV-swarm",
+   "Timepix",
+   "simulation",
+   "cooperative"
+  ],
+  "summary": "Open-source simulation of Timepix pixel detectors and radiation sources plus cooperative localization by multiple MAVs in real time.",
+  "relation": "Cooperative aerial localization; robots' own dose not considered.",
+  "relevance": 2,
+  "cited_by_count": 28
+ },
+ {
+  "title": "Autonomous localization of multiple ionizing radiation sources using miniature single-layer Compton cameras onboard a group of micro aerial vehicles",
+  "authors": "Werner et al.",
+  "year": 2024,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros58592.2024.10802808",
+  "openalex_id": "W4405787406",
+  "url": "https://doi.org/10.1109/iros58592.2024.10802808",
+  "cluster": "B",
+  "topics": [
+   "UAV-swarm",
+   "Compton-camera",
+   "multi-source"
+  ],
+  "summary": "Group of MAVs with 44 g Compton cameras fuse distributed measurements to localize multiple gamma sources.",
+  "relation": "Directional sensing in a team; no dose budget.",
+  "relevance": 2,
+  "cited_by_count": 4
+ },
+ {
+  "title": "RADRON: Cooperative Localization of Ionizing Radiation Sources by MAVs With Compton Cameras",
+  "authors": "Štibinger et al.",
+  "year": 2026,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2026.3688053",
+  "openalex_id": "W7156366546",
+  "url": "https://doi.org/10.1109/lra.2026.3688053",
+  "cluster": "B",
+  "topics": [
+   "UAV-swarm",
+   "Compton-camera",
+   "cooperative"
+  ],
+  "summary": "Cooperating MAVs fuse single-detector Compton camera measurements to estimate radioactive source position.",
+  "relation": "State-of-the-art cooperative aerial localization; exposure of agents not modeled.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Search and Localization of a Weak Source with a Multi-robot Formation",
+  "authors": "Renzaglia et al.",
+  "year": 2019,
+  "venue": "Journal of Intelligent & Robotic Systems",
+  "doi": "10.1007/s10846-019-01014-0",
+  "openalex_id": "W2924608720",
+  "url": "https://doi.org/10.1007/s10846-019-01014-0",
+  "cluster": "B",
+  "topics": [
+   "formation",
+   "gradient-estimation",
+   "random-walk"
+  ],
+  "summary": "Multi-robot formation search combining correlated random walk exploration and formation-based gradient estimation for a weak signal source under communication constraints (keywords).",
+  "relation": "Formation-based search baseline; targets weak sources (thesis has strong source where dose matters).",
+  "relevance": 2,
+  "cited_by_count": 15
+ },
+ {
+  "title": "HAMSAR: A Hierarchical Adaptive Multi-UAV Framework for Radiation Source Search in Unknown Environments With Multihop Communication and Auction-Based Task Allocation",
+  "authors": "Wu et al.",
+  "year": 2026,
+  "venue": "IEEE Transactions on Aerospace and Electronic Systems",
+  "doi": "10.1109/taes.2026.3733919",
+  "openalex_id": "W7213311459",
+  "url": "https://doi.org/10.1109/taes.2026.3733919",
+  "cluster": "B",
+  "topics": [
+   "UAV-swarm",
+   "auction",
+   "communication",
+   "exploration"
+  ],
+  "summary": "Hierarchical multi-UAV framework using online radiation intensity cues, multihop communication and auction-based allocation for discovering multiple sources in unknown environments.",
+  "relation": "Explicit allocation/exploration architecture; no per-agent dose budget.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Radiation source multi-agent search by drones",
+  "authors": "Moiseev et al.",
+  "year": 2025,
+  "venue": "Nonlinear World",
+  "doi": "10.18127/j20700970-202503-08",
+  "openalex_id": "W7125122126",
+  "url": "https://doi.org/10.18127/j20700970-202503-08",
+  "cluster": "B",
+  "topics": [
+   "UAV-swarm",
+   "particle-fusion",
+   "GM-detector"
+  ],
+  "summary": "Group of UAVs with short-range GM detectors exchange measurements and use particle fusion to improve search efficiency and source estimate accuracy.",
+  "relation": "Multi-drone PF search (coauthor of Ling 2022); dose-agnostic.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Enhancing radioactive environment exploration with bio-inspired swarm robotics: A comparative analysis of Lévy flight and stigmergy methods",
+  "authors": "Ardiny et al.",
+  "year": 2024,
+  "venue": "Robotics and Autonomous Systems",
+  "doi": "10.1016/j.robot.2024.104794",
+  "openalex_id": "W4401864620",
+  "url": "https://doi.org/10.1016/j.robot.2024.104794",
+  "cluster": "B",
+  "topics": [
+   "swarm",
+   "Lévy-flight",
+   "stigmergy",
+   "exploration"
+  ],
+  "summary": "Compares Lévy flight and stigmergy swarm strategies for exploring radioactive environments.",
+  "relation": "Swarm-level heuristic exploration; robots' dose not budgeted.",
+  "relevance": 2,
+  "cited_by_count": 13
+ },
+ {
+  "title": "Smart radiation sensor management",
+  "authors": "Cortez et al.",
+  "year": 2008,
+  "venue": "IEEE Robotics & Automation Magazine",
+  "doi": "10.1109/mra.2008.928590",
+  "openalex_id": "W2135001435",
+  "url": "https://doi.org/10.1109/mra.2008.928590",
+  "cluster": "B",
+  "topics": [
+   "Bayesian",
+   "mobile-robots",
+   "mapping"
+  ],
+  "summary": "Model-driven Bayesian radiation mapping strategies implemented on mobile robots for nuclear search and mapping.",
+  "relation": "Early foundational work on robot-based radiation search; pre-2010 background.",
+  "relevance": 1,
+  "cited_by_count": 50
+ },
+ {
+  "title": "Identification of Low-Level Point Radiation Sources Using a Sensor Network",
+  "authors": "Rao et al.",
+  "year": 2008,
+  "venue": "ACM/IEEE IPSN",
+  "doi": "10.1109/ipsn.2008.19",
+  "openalex_id": "W2151946422",
+  "url": "https://doi.org/10.1109/ipsn.2008.19",
+  "cluster": "B",
+  "topics": [
+   "sensor-network",
+   "triangulation",
+   "SPRT"
+  ],
+  "summary": "Network of radiation sensors estimates location and strength of low-level point sources by geometric triangulation followed by sequential probability ratio test.",
+  "relation": "Static detector network baseline for joint position+strength estimation (thesis estimates position and activity).",
+  "relevance": 2,
+  "cited_by_count": 100
+ },
+ {
+  "title": "Identification of low-level point radioactive sources using a sensor network",
+  "authors": "Chin et al.",
+  "year": 2010,
+  "venue": "ACM Transactions on Sensor Networks",
+  "doi": "10.1145/1807048.1807050",
+  "openalex_id": "W2093332960",
+  "url": "https://doi.org/10.1145/1807048.1807050",
+  "cluster": "B",
+  "topics": [
+   "sensor-network",
+   "localization",
+   "SPRT"
+  ],
+  "summary": "Journal version extending triangulation to N-sensor localization of position and strength, then SPRT detection.",
+  "relation": "Static network; no mobility or dose.",
+  "relevance": 2,
+  "cited_by_count": 54
+ },
+ {
+  "title": "Radioactive source detection by sensor networks",
+  "authors": "Brennan et al.",
+  "year": 2005,
+  "venue": "IEEE Transactions on Nuclear Science",
+  "doi": "10.1109/tns.2005.850487",
+  "openalex_id": "W2160398532",
+  "url": "https://doi.org/10.1109/tns.2005.850487",
+  "cluster": "B",
+  "topics": [
+   "sensor-network",
+   "Bayesian",
+   "moving-source"
+  ],
+  "summary": "Bayesian characterization of detection limits for networks detecting moving radioactive sources.",
+  "relation": "Pre-2010 classic background on detector networks.",
+  "relevance": 1,
+  "cited_by_count": 96
+ },
+ {
+  "title": "Nuclear threat detection with mobile distributed sensor networks",
+  "authors": "Hochbaum et al.",
+  "year": 2009,
+  "venue": "Annals of Operations Research",
+  "doi": "10.1007/s10479-009-0643-z",
+  "openalex_id": "W1986039199",
+  "url": "https://doi.org/10.1007/s10479-009-0643-z",
+  "cluster": "B",
+  "topics": [
+   "mobile-sensor-network",
+   "vehicles"
+  ],
+  "summary": "Multiple vehicle-mounted detectors with known real-time positions are used to detect nuclear threats in urban areas.",
+  "relation": "Mobile network detection background; agents not controlled for exposure.",
+  "relevance": 1,
+  "cited_by_count": 44
+ },
+ {
+  "title": "Localization of a radioactive source in an urban environment using Bayesian Metropolis methods",
+  "authors": "Hite et al.",
+  "year": 2018,
+  "venue": "Nuclear Instruments and Methods in Physics Research A",
+  "doi": "10.1016/j.nima.2018.09.032",
+  "openalex_id": "W2893732295",
+  "url": "https://doi.org/10.1016/j.nima.2018.09.032",
+  "cluster": "B",
+  "topics": [
+   "sensor-network",
+   "MCMC",
+   "urban"
+  ],
+  "summary": "Bayesian MCMC estimation of gamma source location and intensity from a distributed detector network in an urban environment.",
+  "relation": "Posterior over source position and intensity, analogous to the thesis's PF estimate; static sensors.",
+  "relevance": 1,
+  "cited_by_count": 24
+ },
+ {
+  "title": "Machine learning for localization of radioactive sources via a distributed sensor network",
+  "authors": "Abdelhakim",
+  "year": 2023,
+  "venue": "Soft Computing",
+  "doi": "10.1007/s00500-023-08447-8",
+  "openalex_id": "W4377107767",
+  "url": "https://doi.org/10.1007/s00500-023-08447-8",
+  "cluster": "B",
+  "topics": [
+   "sensor-network",
+   "machine-learning"
+  ],
+  "summary": "Supervised ML with feature extraction to detect and localize radioactive sources from a distributed sensor network.",
+  "relation": "Learning-based static network localization; no mobility or dose.",
+  "relevance": 1,
+  "cited_by_count": 19
+ },
+ {
+  "title": "A proposal on multi-agent static path planning strategy for minimizing radiation dose",
+  "authors": "Lee et al.",
+  "year": 2023,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2023.09.012",
+  "openalex_id": "W4386647457",
+  "url": "https://doi.org/10.1016/j.net.2023.09.012",
+  "cluster": "B",
+  "topics": [
+   "dose-aware",
+   "multi-agent",
+   "path-planning",
+   "CBS"
+  ],
+  "summary": "Conflict-based search multi-agent path finding whose objective minimizes cumulative radiation dose, e.g., for evacuating many workers after an NPP accident.",
+  "relation": "Directly multi-agent + cumulative dose (and evacuation/exit), but static known field and no source search or learning; dose minimized, not budgeted per agent.",
+  "relevance": 3,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Towards Expendable Robot Teaming in Extreme Environments",
+  "authors": "Gianni",
+  "year": 2019,
+  "venue": "International Journal of Mechanical Engineering and Robotics Research",
+  "doi": "10.18178/ijmerr.8.6.830-838",
+  "openalex_id": "W3026014783",
+  "url": "https://doi.org/10.18178/ijmerr.8.6.830-838",
+  "cluster": "B",
+  "topics": [
+   "robot-teaming",
+   "nuclear",
+   "expendable",
+   "risk"
+  ],
+  "summary": "Introduces 'expendable robot teaming' for nuclear waste management and decommissioning, where robots can be sacrificed under extreme hazards.",
+  "relation": "Conceptual counterpoint to the thesis's per-robot dose budget and risk sharing (expendable vs. preserved robots).",
+  "relevance": 2,
+  "cited_by_count": 5
+ },
+ {
+  "title": "Multi-Robot Radiation Reconnaissance in the Chornobyl NPP Exclusion Zone",
+  "authors": "Saveliev et al.",
+  "year": 2024,
+  "venue": "Nuclear and Radiation Safety",
+  "doi": "10.32918/nrs.2024.4(104).05",
+  "openalex_id": "W4405726128",
+  "url": "https://doi.org/10.32918/nrs.2024.4(104).05",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "field-deployment",
+   "reconnaissance"
+  ],
+  "summary": "Robotic radiation reconnaissance system of three robot types (UGV carrier and others) for mapping in the Chornobyl Exclusion Zone.",
+  "relation": "Applied heterogeneous team in real high-radiation area; no learned control or dose budgeting.",
+  "relevance": 1,
+  "cited_by_count": 6
+ },
+ {
+  "title": "Radiation Surveys in Active Nuclear Facilities with Heterogeneous Collaborative Mobile Robots",
+  "authors": "Pryor et al.",
+  "year": 2024,
+  "venue": "arXiv preprint",
+  "doi": "10.48550/arxiv.2402.15008",
+  "openalex_id": "W4392181908",
+  "url": "https://doi.org/10.48550/arxiv.2402.15008",
+  "cluster": "B",
+  "topics": [
+   "heterogeneous",
+   "nuclear-facility",
+   "survey"
+  ],
+  "summary": "Robot Radiation Survey System with heterogeneous collaborating mobile robots for routine contamination surveys in active nuclear facilities.",
+  "relation": "Practical multi-robot nuclear deployment; focus on contamination survey, not dose-budgeted search.",
+  "relevance": 1,
+  "cited_by_count": 5
+ }
+]

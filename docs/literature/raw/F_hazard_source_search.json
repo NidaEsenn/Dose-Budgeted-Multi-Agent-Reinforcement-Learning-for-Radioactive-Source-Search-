@@ -1,0 +1,688 @@
+[
+ {
+  "title": "A Multi-robot Control Policy for Information Gathering in the Presence of Unknown Hazards",
+  "authors": "Schwager et al.",
+  "year": 2016,
+  "venue": "Springer Tracts in Advanced Robotics (ISRR)",
+  "doi": "10.1007/978-3-319-29363-9_26",
+  "openalex_id": "W2516604945",
+  "url": "https://doi.org/10.1007/978-3-319-29363-9_26",
+  "cluster": "F",
+  "topics": [
+   "risk-aware",
+   "multi-robot",
+   "hazard-learning",
+   "mutual-information",
+   "Bayesian-filter"
+  ],
+  "summary": "Robots gather information in an environment whose hazards (e.g., radiation, fire, chemicals) can make them fail; recursive Bayesian filters estimate both events and hazards online, and robots follow the gradient of mutual information.",
+  "relation": "Closest formal analogue of 'learning the danger is dangerous': hazard is unknown and learned online, and one MI objective combines avoiding failure with informative sensing; failure is probabilistic, not a cumulative dose budget.",
+  "relevance": 3,
+  "cited_by_count": 102
+ },
+ {
+  "title": "A decentralized control policy for adaptive information gathering in hazardous environments",
+  "authors": "Dames et al.",
+  "year": 2012,
+  "venue": "IEEE Conference on Decision and Control (CDC)",
+  "doi": "10.1109/cdc.2012.6426239",
+  "openalex_id": "W2082875817",
+  "url": "https://doi.org/10.1109/cdc.2012.6426239",
+  "cluster": "F",
+  "topics": [
+   "risk-aware",
+   "multi-robot",
+   "hazard-learning",
+   "mutual-information",
+   "FISST"
+  ],
+  "summary": "Decentralized MI-gradient controller for resource-constrained robots that localize an unknown number of targets while avoiding hazards at unknown positions that cause robot failure, using finite-set statistics and adaptive cell decomposition.",
+  "relation": "Earlier decentralized version of the hazard-aware information-gathering framework; direct precedent for a team trading information against robot loss.",
+  "relevance": 3,
+  "cited_by_count": 45
+ },
+ {
+  "title": "Path-Based Sensors: Paths as Sensors, Bayesian Updates, and Shannon Information Gathering",
+  "authors": "Otte et al.",
+  "year": 2021,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "doi": "10.1109/tase.2021.3067628",
+  "openalex_id": "W3144666729",
+  "url": "https://doi.org/10.1109/tase.2021.3067628",
+  "cluster": "F",
+  "topics": [
+   "robot-destruction",
+   "hazard-learning",
+   "Bayesian",
+   "information-gathering"
+  ],
+  "summary": "Treats whether a robot survives a path as a 'path-based sensor', derives the Bayesian update and expected Shannon information, and plans paths that learn about invisible robot-destroying hazards while also searching for victims.",
+  "relation": "Formalizes the idea that the searcher's own damage/destruction is itself a measurement of the hazard, and that losing a robot destroys future information.",
+  "relevance": 3,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Valuing Attrition in a Fleet of Robots Used as Path-Based Sensors for Gathering Information in a Communications Restricted Environment",
+  "authors": "McGuire et al.",
+  "year": 2024,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros58592.2024.10802088",
+  "openalex_id": "W4405784999",
+  "url": "https://doi.org/10.1109/iros58592.2024.10802088",
+  "cluster": "F",
+  "topics": [
+   "robot-attrition",
+   "multi-robot",
+   "risk-aware",
+   "Bayesian",
+   "information-gathering"
+  ],
+  "summary": "With a finite fleet, Bayesian target and hazard belief maps are updated from agent survival and sensor readings, and paths maximize expected information while accounting for the future information lost when an agent is destroyed.",
+  "relation": "Explicitly values the loss of a team member against information gain, the same structure as preserving robots (exit reserve) versus approaching the source.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "When Information is Worth the Risk: Behavioral Valuation for Hazardous Robotic Exploration",
+  "authors": "Srivastava et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2609.10726",
+  "openalex_id": "W7212309232",
+  "url": "https://doi.org/10.48550/arxiv.2609.10726",
+  "cluster": "F",
+  "topics": [
+   "risk-aware",
+   "exploration-exposure-tradeoff",
+   "information-risk-Pareto",
+   "hazard-mapping"
+  ],
+  "summary": "Studies hazardous exploration (radiation, fire, mines) where informative paths can terminate the robot; introduces a risk-augmented behavioral information objective (Prelec weighting) and shows valuation alone reshapes the information-risk Pareto frontier in failure-truncated experiments.",
+  "relation": "Directly frames 'when is reducing uncertainty worth the risk', the core trade-off of the thesis; single objective with failure truncation rather than a dose budget.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Cooperative Risk-Aware Exploration in Heterogeneous Multi-Robot Systems Using Algorithmic Altruism",
+  "authors": "Butler et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2608.28409",
+  "openalex_id": "W7204852807",
+  "url": "https://doi.org/10.48550/arxiv.2608.28409",
+  "cluster": "F",
+  "topics": [
+   "multi-robot",
+   "risk-aware",
+   "exposure-penalty",
+   "game-theory",
+   "heterogeneous"
+  ],
+  "summary": "Game-theoretic receding-horizon planner where each robot maximizes information gain while penalizing redundant exploration and expected hazard exposure; altruistic relatedness weights make lower-value robots accept more risk.",
+  "relation": "Shows how a team can distribute hazard exposure across members, relevant to allocating dose among robots.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Risk-aware Collection Strategies for Multirobot Foraging in Hazardous Environments",
+  "authors": "Di et al.",
+  "year": 2021,
+  "venue": "ACM Transactions on Autonomous and Adaptive Systems",
+  "doi": "10.1145/3514251",
+  "openalex_id": "W4220669112",
+  "url": "https://doi.org/10.1145/3514251",
+  "cluster": "F",
+  "topics": [
+   "multi-robot",
+   "robot-destruction",
+   "risk-aware",
+   "task-allocation"
+  ],
+  "summary": "Multirobot foraging where hazards can destroy robots; decomposes into task execution and allocation and gives exact and greedy risk-aware algorithms that maximize utility returned before all robots are stopped.",
+  "relation": "Models the team-level consequence of losing robots and returning value before destruction, analogous to robots needing to exit with results.",
+  "relevance": 2,
+  "cited_by_count": 6
+ },
+ {
+  "title": "Bayesian Decentralized Decision-Making for Multi-Robot Systems: Sample-Efficient Estimation of Event Rates",
+  "authors": "Aguirre et al.",
+  "year": 2025,
+  "venue": "IEEE International Symposium on Multi-Robot and Multi-Agent Systems (MRS)",
+  "doi": "10.1109/mrs66243.2025.11357254",
+  "openalex_id": "W7125979262",
+  "url": "https://doi.org/10.1109/mrs66243.2025.11357254",
+  "cluster": "F",
+  "topics": [
+   "swarm",
+   "Bayesian",
+   "exposure-limited",
+   "collective-decision"
+  ],
+  "summary": "A swarm decides which of two areas is safer, each with an unknown Poisson rate of hazardous events, using conjugate Bayesian estimates and confidence to reduce exposure while sampling.",
+  "relation": "Explicitly treats measurement as costly exposure and seeks sample-efficient collective decisions, akin to declaring a source with limited dose.",
+  "relevance": 2,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Resilient Active Information Acquisition With Teams of Robots",
+  "authors": "Schlotfeldt et al.",
+  "year": 2021,
+  "venue": "IEEE Transactions on Robotics",
+  "doi": "10.1109/tro.2021.3082212",
+  "openalex_id": "W3134186763",
+  "url": "https://doi.org/10.1109/tro.2021.3082212",
+  "cluster": "F",
+  "topics": [
+   "multi-robot",
+   "resilience",
+   "active-information-acquisition",
+   "adversarial"
+  ],
+  "summary": "Receding-horizon multi-robot planner (RAIN) that maximizes information while being robust to attacks that disable robots' sensors, with suboptimality bounds via curvature.",
+  "relation": "Robustness of team information gathering to losing members; background for team degradation when robots run out of budget.",
+  "relevance": 1,
+  "cited_by_count": 28
+ },
+ {
+  "title": "Autonomous Multi-Robot Search for a Hazardous Source in a Turbulent Environment",
+  "authors": "Ristic et al.",
+  "year": 2017,
+  "venue": "Sensors",
+  "doi": "10.3390/s17040918",
+  "openalex_id": "W2605414637",
+  "url": "https://doi.org/10.3390/s17040918",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "infotaxis",
+   "multi-robot",
+   "Rao-Blackwellized-PF",
+   "CBRN"
+  ],
+  "summary": "Cognitive (infotaxis) multi-robot search for a toxic atmospheric release with Rao-Blackwellized Bayesian source estimation and scalable formation control under centralized replicated fusion.",
+  "relation": "Direct non-nuclear analogue of shared-belief multi-robot source search; does not model harm to robots.",
+  "relevance": 2,
+  "cited_by_count": 41
+ },
+ {
+  "title": "Cooperative information-driven source search and estimation for multiple agents",
+  "authors": "Park et al.",
+  "year": 2019,
+  "venue": "Information Fusion",
+  "doi": "10.1016/j.inffus.2019.07.007",
+  "openalex_id": "W2963920040",
+  "url": "https://doi.org/10.1016/j.inffus.2019.07.007",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "infotaxis",
+   "multi-agent",
+   "particle-filter",
+   "coordination"
+  ],
+  "summary": "Multiple mobile sensors share minimal data and use a particle filter for source position and release rate; compares non-, passive and negotiated coordination of infotaxis.",
+  "relation": "Close methodological analogue (shared particle filter + information-driven multi-agent search) without exposure cost.",
+  "relevance": 2,
+  "cited_by_count": 66
+ },
+ {
+  "title": "Improved Socialtaxis for information-theoretic source search using cooperative multiple agents in turbulent environments",
+  "authors": "Jang et al.",
+  "year": 2023,
+  "venue": "Expert Systems with Applications",
+  "doi": "10.1016/j.eswa.2023.120033",
+  "openalex_id": "W4362671146",
+  "url": "https://doi.org/10.1016/j.eswa.2023.120033",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "infotaxis",
+   "multi-agent",
+   "Rao-Blackwellized-PF",
+   "decentralized"
+  ],
+  "summary": "Improves Socialtaxis with a continuous Rao-Blackwellized particle filter, a utility using distance to the estimated source to balance exploration/exploitation, sequential greedy decisions and connectivity preservation.",
+  "relation": "Multi-agent information-theoretic source search with an explicit approach-the-source term; baseline for MARL comparisons.",
+  "relevance": 2,
+  "cited_by_count": 12
+ },
+ {
+  "title": "Multi-agent search for source localization in a turbulent medium",
+  "authors": "Hajieghrary et al.",
+  "year": 2016,
+  "venue": "Physics Letters A",
+  "doi": "10.1016/j.physleta.2016.03.013",
+  "openalex_id": "W2297280924",
+  "url": "https://doi.org/10.1016/j.physleta.2016.03.013",
+  "cluster": "F",
+  "topics": [
+   "infotaxis",
+   "multi-agent",
+   "gas-source"
+  ],
+  "summary": "Extends infotaxis to a distributed multi-agent team using relative entropy so that control actions maximize team information gain and speed up source localization.",
+  "relation": "Foundational multi-agent infotaxis paper.",
+  "relevance": 2,
+  "cited_by_count": 66
+ },
+ {
+  "title": "Information-Based Search for an Atmospheric Release Using a Mobile Robot: Algorithm and Experiments",
+  "authors": "Hutchinson et al.",
+  "year": 2018,
+  "venue": "IEEE Transactions on Control Systems Technology",
+  "doi": "10.1109/tcst.2018.2860548",
+  "openalex_id": "W2887271066",
+  "url": "https://doi.org/10.1109/tcst.2018.2860548",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "source-term-estimation",
+   "Bayesian",
+   "information-gain",
+   "experiment"
+  ],
+  "summary": "Joint Bayesian estimation and information-gain planning for source term estimation with a ground robot, accounting for meteorological/dispersion parameter uncertainty and intermittent low-cost sensor readings; first experiments in turbulent conditions.",
+  "relation": "Experimental single-robot analogue of source-term estimation with model-parameter uncertainty.",
+  "relevance": 2,
+  "cited_by_count": 99
+ },
+ {
+  "title": "Entrotaxis as a strategy for autonomous search and source reconstruction in turbulent conditions",
+  "authors": "Hutchinson et al.",
+  "year": 2017,
+  "venue": "Information Fusion",
+  "doi": "10.1016/j.inffus.2017.10.009",
+  "openalex_id": "W2767368842",
+  "url": "https://doi.org/10.1016/j.inffus.2017.10.009",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "entrotaxis",
+   "particle-filter",
+   "infotaxis"
+  ],
+  "summary": "Sequential Monte Carlo estimation of source location and strength with a maximum-entropy-sampling reward (Entrotaxis), compared with infotaxis; faster and cheaper to compute in most scenarios.",
+  "relation": "Alternative information objective for PF-based source search.",
+  "relevance": 1,
+  "cited_by_count": 109
+ },
+ {
+  "title": "A review of source term estimation methods for atmospheric dispersion events using static or mobile sensors",
+  "authors": "Hutchinson et al.",
+  "year": 2016,
+  "venue": "Information Fusion",
+  "doi": "10.1016/j.inffus.2016.11.010",
+  "openalex_id": "W2553399731",
+  "url": "https://doi.org/10.1016/j.inffus.2016.11.010",
+  "cluster": "F",
+  "topics": [
+   "source-term-estimation",
+   "review",
+   "gas-source"
+  ],
+  "summary": "Review of source term estimation methods for atmospheric releases using static sensor networks and mobile sensors (per title; abstract not returned by tool).",
+  "relation": "Survey reference for hazardous-release source estimation outside nuclear.",
+  "relevance": 1,
+  "cited_by_count": 365
+ },
+ {
+  "title": "'Infotaxis' as a strategy for searching without gradients",
+  "authors": "Vergassola et al.",
+  "year": 2007,
+  "venue": "Nature",
+  "doi": "10.1038/nature05464",
+  "openalex_id": "W2046695302",
+  "url": "https://doi.org/10.1038/nature05464",
+  "cluster": "F",
+  "topics": [
+   "infotaxis",
+   "odor-source",
+   "foundational"
+  ],
+  "summary": "Original infotaxis paper: searcher moves to maximize expected information gain about source location from sparse detections.",
+  "relation": "Foundational exploration-exploitation information objective; pre-2010 background.",
+  "relevance": 1,
+  "cited_by_count": 895
+ },
+ {
+  "title": "Searching for a source without gradients: how good is infotaxis and how to beat it",
+  "authors": "Loisy et al.",
+  "year": 2022,
+  "venue": "Proceedings of the Royal Society A",
+  "doi": "10.1098/rspa.2022.0118",
+  "openalex_id": "W4226211339",
+  "url": "https://doi.org/10.1098/rspa.2022.0118",
+  "cluster": "F",
+  "topics": [
+   "infotaxis",
+   "POMDP",
+   "deep-RL",
+   "odor-source"
+  ],
+  "summary": "Characterizes infotaxis performance from 1D to 4D in a POMDP framing and beats it with tree search, value-function heuristics and deep RL, which finds near-optimal policies.",
+  "relation": "Supports using RL over hand-crafted information heuristics for source search.",
+  "relevance": 2,
+  "cited_by_count": 56
+ },
+ {
+  "title": "Multi-source plume tracing via multi-agent reinforcement learning under common UAV-faults",
+  "authors": "Granadeno et al.",
+  "year": 2025,
+  "venue": "Machine Learning with Applications",
+  "doi": "10.1016/j.mlwa.2025.100737",
+  "openalex_id": "W4414937575",
+  "url": "https://doi.org/10.1016/j.mlwa.2025.100737",
+  "cluster": "F",
+  "topics": [
+   "MARL",
+   "gas-source",
+   "UAV",
+   "POMG",
+   "faults"
+  ],
+  "summary": "MARL (LSTM-based action-specific double deep recurrent Q-network) for a sUAS swarm localizing multiple airborne pollution sources in a Gaussian-plume POMG with sensor noise; journal version considers common UAV faults.",
+  "relation": "Closest MARL plume-source paper; agents can fault but no hazard-dose budget.",
+  "relevance": 2,
+  "cited_by_count": 2
+ },
+ {
+  "title": "Multi-Robot gas-source localization based on reinforcement learning",
+  "authors": "Wei et al.",
+  "year": 2012,
+  "venue": "IEEE ROBIO",
+  "doi": "10.1109/robio.2012.6491171",
+  "openalex_id": "W2149987766",
+  "url": "https://doi.org/10.1109/robio.2012.6491171",
+  "cluster": "F",
+  "topics": [
+   "MARL",
+   "gas-source",
+   "multi-robot"
+  ],
+  "summary": "Strategy-sharing multi-agent RL trains multiple robots for gas source localization in large-scale advection-diffusion plume simulations.",
+  "relation": "Early MARL for gas-source search.",
+  "relevance": 1,
+  "cited_by_count": 10
+ },
+ {
+  "title": "Multi-robot gas leakage source localization based on deep reinforcement learning",
+  "authors": "Wu et al.",
+  "year": 2026,
+  "venue": "Engineering Research Express",
+  "doi": "10.1088/2631-8695/ae5d8b",
+  "openalex_id": "W7152715038",
+  "url": "https://doi.org/10.1088/2631-8695/ae5d8b",
+  "cluster": "F",
+  "topics": [
+   "MARL",
+   "gas-source",
+   "DRQN",
+   "POMDP"
+  ],
+  "summary": "Multi-robot DRQN with CNN over image-like states and policy sharing for gas leak source localization as a POMDP, tested with 2-4 robots, obstacles and different wind speeds.",
+  "relation": "Recent multi-robot deep RL gas-source baseline without exposure modeling.",
+  "relevance": 1,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Model-based gas source localization strategy for a cooperative multi-robot system—A probabilistic approach and experimental validation incorporating physical knowledge and model uncertainties",
+  "authors": "Wiedemann et al.",
+  "year": 2019,
+  "venue": "Robotics and Autonomous Systems",
+  "doi": "10.1016/j.robot.2019.03.014",
+  "openalex_id": "W2932019565",
+  "url": "https://doi.org/10.1016/j.robot.2019.03.014",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "multi-robot",
+   "PDE-model",
+   "model-uncertainty",
+   "Bayesian"
+  ],
+  "summary": "Probabilistic PDE-based gas dispersion model with explicit model uncertainties for cooperative multi-robot exploration and gas source localization, with experimental validation (per title; abstract not returned).",
+  "relation": "Explicitly incorporates physics-model uncertainty into multi-robot source estimation, relevant to filter overconfidence under model error.",
+  "relevance": 2,
+  "cited_by_count": 53
+ },
+ {
+  "title": "Probabilistic Multi-Robot Gas Source Localization with Uncalibrated Sensors: A Distributed Estimation Approach",
+  "authors": "Jin et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2608.28214",
+  "openalex_id": "W7204762236",
+  "url": "https://doi.org/10.48550/arxiv.2608.28214",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "multi-robot",
+   "distributed-estimation",
+   "calibration",
+   "sensor-heterogeneity"
+  ],
+  "summary": "Distributed probabilistic framework where each robot estimates a local belief so that heterogeneous, uncalibrated sensors with inconsistent responses can still be fused for source localization.",
+  "relation": "Addresses inconsistent measurement models in shared beliefs, related to model-error-driven overconfidence.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "SniffySquad: Patchiness-Aware Gas Source Localization with Multi-Robot Collaboration",
+  "authors": "Cheng et al.",
+  "year": 2026,
+  "venue": "ACM Transactions on Sensor Networks",
+  "doi": "10.1145/3786599",
+  "openalex_id": "W7126385791",
+  "url": "https://doi.org/10.1145/3786599",
+  "cluster": "F",
+  "topics": [
+   "gas-source",
+   "multi-robot",
+   "real-world",
+   "model-mismatch"
+  ],
+  "summary": "Multi-robot olfaction system that accounts for patchy real-world gas distributions, which break reactive and simplified-plume-model methods that work in idealized simulations.",
+  "relation": "Evidence that simplified dispersion models fail in real spatially structured fields, motivating discrepancy-aware estimation.",
+  "relevance": 2,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Odor Source Localization in Obstacle Regions Using Switching Planning Algorithms with a Switching Framework",
+  "authors": "Luong et al.",
+  "year": 2023,
+  "venue": "Sensors",
+  "doi": "10.3390/s23031140",
+  "openalex_id": "W4317423455",
+  "url": "https://doi.org/10.3390/s23031140",
+  "cluster": "F",
+  "topics": [
+   "odor-source",
+   "exploration-exploitation",
+   "model-free"
+  ],
+  "summary": "OSL robots for hazardous chemical plumes in obstacle regions, where dispersion models are hard to build; switches planners to dynamically balance exploration and exploitation.",
+  "relation": "Motivates exploration/exploitation switching when the plume model is unreliable.",
+  "relevance": 1,
+  "cited_by_count": 10
+ },
+ {
+  "title": "Learning about physical parameters: the importance of model discrepancy",
+  "authors": "Brynjarsdottir et al.",
+  "year": 2014,
+  "venue": "Inverse Problems",
+  "doi": "10.1088/0266-5611/30/11/114007",
+  "openalex_id": "W2025909913",
+  "url": "https://doi.org/10.1088/0266-5611/30/11/114007",
+  "cluster": "F",
+  "topics": [
+   "model-discrepancy",
+   "Gaussian-process",
+   "calibration",
+   "overconfidence"
+  ],
+  "summary": "Shows that calibration ignoring model discrepancy yields biased and over-confident parameter estimates; a GP discrepancy fixes predictions but true parameters are recovered only with realistic priors.",
+  "relation": "Theoretical explanation for the thesis's overconfident particle filter under spatially correlated model error.",
+  "relevance": 3,
+  "cited_by_count": 557
+ },
+ {
+  "title": "Bayesian Calibration of Inexact Computer Models",
+  "authors": "Plumlee",
+  "year": 2016,
+  "venue": "Journal of the American Statistical Association",
+  "doi": "10.1080/01621459.2016.1211016",
+  "openalex_id": "W2497151737",
+  "url": "https://doi.org/10.1080/01621459.2016.1211016",
+  "cluster": "F",
+  "topics": [
+   "model-discrepancy",
+   "Gaussian-process",
+   "calibration",
+   "identifiability"
+  ],
+  "summary": "Proposes a bias prior orthogonal to the gradient of the computer model to resolve the ill-defined parameter and suboptimally broad posterior in Kennedy-O'Hagan calibration.",
+  "relation": "Methodological option for GP discrepancy in the source-location likelihood while keeping the location identifiable.",
+  "relevance": 2,
+  "cited_by_count": 152
+ },
+ {
+  "title": "A Bayesian approach to improved calibration and prediction of groundwater models with structural error",
+  "authors": "Xu et al.",
+  "year": 2015,
+  "venue": "Water Resources Research",
+  "doi": "10.1002/2015wr017912",
+  "openalex_id": "W2170417757",
+  "url": "https://doi.org/10.1002/2015wr017912",
+  "cluster": "F",
+  "topics": [
+   "model-discrepancy",
+   "Gaussian-process",
+   "overconfidence",
+   "structural-error"
+  ],
+  "summary": "Integrates Gaussian process error models into Bayesian calibration of groundwater models; conventional least squares compensates structural error with parameters and gives biased, overconfident predictions.",
+  "relation": "Applied demonstration that GP structural-error terms restore calibrated uncertainty in a spatial transport model.",
+  "relevance": 2,
+  "cited_by_count": 98
+ },
+ {
+  "title": "Risk-Aware Path Planning for Unmanned Aerial Systems in a Spreading Wildfire",
+  "authors": "Aggarwal et al.",
+  "year": 2022,
+  "venue": "Journal of Guidance, Control, and Dynamics",
+  "doi": "10.2514/1.g006365",
+  "openalex_id": "W4288709744",
+  "url": "https://doi.org/10.2514/1.g006365",
+  "cluster": "F",
+  "topics": [
+   "wildfire",
+   "UAV",
+   "risk-aware",
+   "chance-constrained",
+   "evidential-fusion"
+  ],
+  "summary": "Evidential fusion estimates wildfire state and flight-level heat aura under an inaccurate fire model; the UAV visits high-conflict locations and plans chance-constrained paths around a probabilistic keep-out zone.",
+  "relation": "Hazard that damages the vehicle, uncertain hazard model, and information-seeking visits combined with risk constraints.",
+  "relevance": 2,
+  "cited_by_count": 10
+ },
+ {
+  "title": "PDE solution to UAV/UGV trajectory planning problem by spatio-temporal estimation during wildfires",
+  "authors": "Radmanesh et al.",
+  "year": 2021,
+  "venue": "Chinese Journal of Aeronautics",
+  "doi": "10.1016/j.cja.2020.11.002",
+  "openalex_id": "W3119782399",
+  "url": "https://doi.org/10.1016/j.cja.2020.11.002",
+  "cluster": "F",
+  "topics": [
+   "wildfire",
+   "UAV",
+   "UGV",
+   "Kalman-filter",
+   "risk-function"
+  ],
+  "summary": "UAV gathers camera information to estimate and predict wildfire spread with a POD-reduced Kalman filter, and UAV/UGV paths are planned with a PDE method that encodes wildfire threat as a risk function.",
+  "relation": "Heterogeneous team estimating a vehicle-damaging hazard field while planning risk-averse paths.",
+  "relevance": 2,
+  "cited_by_count": 27
+ },
+ {
+  "title": "RESCUER: Development of a Modular Chemical, Biological, Radiological, and Nuclear Robot for Intervention, Sampling, and Situation Awareness",
+  "authors": "Guzman et al.",
+  "year": 2015,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.21588",
+  "openalex_id": "W1511205160",
+  "url": "https://doi.org/10.1002/rob.21588",
+  "cluster": "F",
+  "topics": [
+   "CBRN",
+   "field-robot",
+   "contamination"
+  ],
+  "summary": "Modular CBRN robot for intervention and sampling, designed around the need to decontaminate the robot after contamination in real missions.",
+  "relation": "Practical evidence that CBRN exposure degrades or contaminates the robot itself.",
+  "relevance": 1,
+  "cited_by_count": 61
+ },
+ {
+  "title": "Projected needs for robot-assisted chemical, biological, radiological, or nuclear (CBRN) incidents",
+  "authors": "Murphy et al.",
+  "year": 2012,
+  "venue": "IEEE SSRR",
+  "doi": "10.1109/ssrr.2012.6523881",
+  "openalex_id": "W2136001565",
+  "url": "https://doi.org/10.1109/ssrr.2012.6523881",
+  "cluster": "F",
+  "topics": [
+   "CBRN",
+   "requirements",
+   "UAV",
+   "UGV"
+  ],
+  "summary": "Cognitive work analysis with 20 domain experts, Fukushima lessons and hazmat literature to project how UAVs and UGVs can assist CBRN identification and containment.",
+  "relation": "Operational motivation for robotic CBRN search teams.",
+  "relevance": 1,
+  "cited_by_count": 43
+ },
+ {
+  "title": "Unmanned multi-robot CBRNE reconnaissance with mobile manipulation System description and technical validation",
+  "authors": "Schneider et al.",
+  "year": 2012,
+  "venue": "International Carpathian Control Conference",
+  "doi": "10.1109/carpathiancc.2012.6228724",
+  "openalex_id": "W2101078397",
+  "url": "https://doi.org/10.1109/carpathiancc.2012.6228724",
+  "cluster": "F",
+  "topics": [
+   "CBRN",
+   "multi-robot",
+   "reconnaissance"
+  ],
+  "summary": "Prototype multi-robot CBRNE reconnaissance system with modular sensor suites and a mobile manipulator for sampling in unknown environments.",
+  "relation": "Systems-level example of a multi-robot CBRN team.",
+  "relevance": 1,
+  "cited_by_count": 24
+ },
+ {
+  "title": "Humanitarian demining for the clearance of landmine-affected areas",
+  "authors": "Camacho-Sanchez et al.",
+  "year": 2023,
+  "venue": "Socio-Economic Planning Sciences",
+  "doi": "10.1016/j.seps.2023.101611",
+  "openalex_id": "W4377108209",
+  "url": "https://doi.org/10.1016/j.seps.2023.101611",
+  "cluster": "F",
+  "topics": [
+   "demining",
+   "search-planning",
+   "risk-aware",
+   "optimization"
+  ],
+  "summary": "Decision support model that produces safe and cost-effective mine detection search plans (exact linear methods and a genetic algorithm), since demining carries high risk to deminers and equipment.",
+  "relation": "Search planning where the searcher can be harmed by what it is looking for.",
+  "relevance": 1,
+  "cited_by_count": 31
+ }
+]

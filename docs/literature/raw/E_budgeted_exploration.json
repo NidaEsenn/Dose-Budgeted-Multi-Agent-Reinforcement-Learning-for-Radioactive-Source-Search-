@@ -1,0 +1,851 @@
+[
+ {
+  "title": "Energy-constrained multi-robot exploration for autonomous map building",
+  "authors": "Karumanchi et al.",
+  "year": 2025,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros60139.2025.11247332",
+  "openalex_id": "W4416751350",
+  "url": "https://doi.org/10.1109/iros60139.2025.11247332",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "multi-robot",
+   "exploration",
+   "recharging"
+  ],
+  "summary": "Multi-robot frontier exploration of an unknown map where robots must discover and repeatedly visit charging stations; combines frontier exploration, graph planning and task assignment with recursive-feasibility conditions.",
+  "relation": "Energy is renewable (recharging) and travel cost is deterministic given the map; no non-renewable budget or uncertain field-dependent cost.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Coordinated recharging of mobile robots during exploration",
+  "authors": "Rappaport et al.",
+  "year": 2017,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros.2017.8206600",
+  "openalex_id": "W2773820396",
+  "url": "https://doi.org/10.1109/iros.2017.8206600",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "return-to-base",
+   "recharging",
+   "multi-robot",
+   "exploration"
+  ],
+  "summary": "Compares five policies for robot teams sharing limited charging points while exploring an unknown structured environment, with energy-aware decisions on when to return.",
+  "relation": "Return to base is required but energy is renewable and consumption is known; analogous to an exit-reserve rule without uncertainty in cost.",
+  "relevance": 2,
+  "cited_by_count": 33
+ },
+ {
+  "title": "Energy Autonomy for Robot Systems With Constrained Resources",
+  "authors": "Fouad et al.",
+  "year": 2022,
+  "venue": "IEEE Transactions on Robotics",
+  "doi": "10.1109/tro.2022.3175438",
+  "openalex_id": "W4285148990",
+  "url": "https://doi.org/10.1109/tro.2022.3175438",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "recharging",
+   "multi-robot",
+   "safety-constraint"
+  ],
+  "summary": "Control-barrier-function framework guaranteeing energy sufficiency for battery-powered multi-robot systems that must share limited charging stations while performing missions.",
+  "relation": "Formal guarantee that robots never run out of energy before reaching a charger (a reserve constraint), but energy is renewable and consumption models are known.",
+  "relevance": 2,
+  "cited_by_count": 15
+ },
+ {
+  "title": "Energy-Constrained Coordination of Multi-Robot Teams",
+  "authors": "Setter et al.",
+  "year": 2016,
+  "venue": "IEEE Transactions on Control Systems Technology",
+  "doi": "10.1109/tcst.2016.2599486",
+  "openalex_id": "W2518204235",
+  "url": "https://doi.org/10.1109/tcst.2016.2599486",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "rendezvous",
+   "multi-robot",
+   "heterogeneous-budgets"
+  ],
+  "summary": "Energy-aware rendezvous: robots with different initial battery levels decide where and when to meet so that all retain nonnegative battery at the meeting, solved distributedly.",
+  "relation": "Directly handles unequal per-robot budgets with a hard 'arrive before depletion' constraint, but costs are deterministic and there is no sensing/estimation.",
+  "relevance": 2,
+  "cited_by_count": 46
+ },
+ {
+  "title": "Collaborative Exploration by Energy-Constrained Mobile Robots",
+  "authors": "Das et al.",
+  "year": 2015,
+  "venue": "Lecture Notes in Computer Science (SIROCCO)",
+  "doi": "10.1007/978-3-319-25258-2_25",
+  "openalex_id": "W2296635065",
+  "url": "https://doi.org/10.1007/978-3-319-25258-2_25",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "return-to-base",
+   "multi-robot",
+   "exploration",
+   "theory"
+  ],
+  "summary": "Theoretical study of exploring an unknown tree with agents whose energy bounds the number of edges traversed, so a team is needed and agents must return to the root.",
+  "relation": "Non-renewable per-agent budget that must include the return trip, as in the thesis; but cost is unit edge length, not an uncertain field-dependent dose.",
+  "relevance": 3,
+  "cited_by_count": 25
+ },
+ {
+  "title": "Multirobot Persistent Monitoring: Minimizing Latency and Number of Robots With Recharging Constraints",
+  "authors": "Asghar et al.",
+  "year": 2024,
+  "venue": "IEEE Transactions on Robotics",
+  "doi": "10.1109/tro.2024.3502497",
+  "openalex_id": "W4404520437",
+  "url": "https://doi.org/10.1109/tro.2024.3502497",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "recharging",
+   "persistent-monitoring",
+   "multi-robot"
+  ],
+  "summary": "Multirobot persistent monitoring where robots with discharge time D must visit recharging depots; approximation algorithms minimize latency and team size.",
+  "relation": "Battery is renewable and travel costs are known; addresses how many robots are needed under endurance limits rather than risk allocation.",
+  "relevance": 1,
+  "cited_by_count": 19
+ },
+ {
+  "title": "Energy-Aware Ergodic Search: Continuous Exploration for Multi-Agent Systems with Battery Constraints",
+  "authors": "Seewald et al.",
+  "year": 2024,
+  "venue": "IEEE ICRA",
+  "doi": "10.1109/icra57147.2024.10609871",
+  "openalex_id": "W4401416108",
+  "url": "https://doi.org/10.1109/icra57147.2024.10609871",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "ergodic-search",
+   "multi-robot",
+   "return-to-base"
+  ],
+  "summary": "Ergodic search trajectories for multi-agent systems that incorporate battery dynamics so agents continuously explore while respecting energy limits and returning to recharge.",
+  "relation": "Combines search with energy constraints, but energy is renewable and its consumption does not depend on the unknown field being searched.",
+  "relevance": 2,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Eclares: Energy-Aware Clarity-Driven Ergodic Search",
+  "authors": "Naveed et al.",
+  "year": 2024,
+  "venue": "IEEE ICRA",
+  "doi": "10.1109/icra57147.2024.10611286",
+  "openalex_id": "W4401416725",
+  "url": "https://doi.org/10.1109/icra57147.2024.10611286",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "ergodic-search",
+   "return-to-base",
+   "active-sensing"
+  ],
+  "summary": "Clarity-based information map for ergodic search plus an energy-aware filter that iteratively validates the trajectory so the robot always retains enough energy to return to the charging station.",
+  "relation": "The 'eware' filter is an explicit return-feasibility reserve check (close analogue of exit reserve) but with renewable energy and a known consumption model.",
+  "relevance": 3,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Energy-Constrained Resilient Multirobot Coverage Control",
+  "authors": "Pant et al.",
+  "year": 2026,
+  "venue": "IEEE Transactions on Control Systems Technology",
+  "doi": "10.1109/tcst.2026.3717954",
+  "openalex_id": "W4416508692",
+  "url": "https://doi.org/10.1109/tcst.2026.3717954",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "return-to-base",
+   "coverage",
+   "multi-robot",
+   "team-resilience"
+  ],
+  "summary": "Hybrid coverage/return-to-base/recharge MPC framework with energy guard conditions, plus network reconfiguration so the team stays connected while robots leave to recharge.",
+  "relation": "Similar to 'withdraw while team continues' (team reconfigures when members leave), but robots return after recharge and energy cost is deterministic.",
+  "relevance": 2,
+  "cited_by_count": 2
+ },
+ {
+  "title": "A unified framework for operational range estimation of mobile robots operating on a single discharge to avoid complete immobilization",
+  "authors": "Tiwari et al.",
+  "year": 2018,
+  "venue": "Mechatronics",
+  "doi": "10.1016/j.mechatronics.2018.12.006",
+  "openalex_id": "W2906800373",
+  "url": "https://doi.org/10.1016/j.mechatronics.2018.12.006",
+  "cluster": "E",
+  "topics": [
+   "energy-aware",
+   "return-to-base",
+   "energy-estimation",
+   "single-discharge"
+  ],
+  "summary": "Unified energy-consumption models across robot platforms to estimate operational range online/offline, so a robot on a single discharge can explore while guaranteeing a safe return home.",
+  "relation": "Single non-renewable discharge with guaranteed return is very close to the dose budget + exit reserve; consumption is estimated online but does not depend on the explored field.",
+  "relevance": 3,
+  "cited_by_count": 30
+ },
+ {
+  "title": "Multi-UAV resource constrained online monitoring of large-scale spatio-temporal environment with homing guarantee",
+  "authors": "Tiwari et al.",
+  "year": 2017,
+  "venue": "IEEE IECON",
+  "doi": "10.1109/iecon.2017.8217022",
+  "openalex_id": "W2773579098",
+  "url": "https://doi.org/10.1109/iecon.2017.8217022",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "return-to-base",
+   "multi-robot",
+   "budget"
+  ],
+  "summary": "Bi-objective budget-limited informative path planning for multi-UAV spatio-temporal monitoring with constraints guaranteeing every robot returns to the base station within its operational range.",
+  "relation": "Budgeted multi-robot IPP with an explicit homing constraint (exit reserve); travel cost is known distance, not an uncertain estimate.",
+  "relevance": 3,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Reconstructing a Spatial Field with an Autonomous Robot Under a Budget Constraint",
+  "authors": "Shamshirgaran et al.",
+  "year": 2022,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros47612.2022.9981128",
+  "openalex_id": "W4313135360",
+  "url": "https://doi.org/10.1109/iros47612.2022.9981128",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "budget",
+   "return-to-base",
+   "stochastic-cost",
+   "GP"
+  ],
+  "summary": "GP-based informative sampling for a single robot in a stochastic environment that must reach a preassigned final site before the travel budget is exhausted, using a generative model to predict consumed energy and decide when to end the mission.",
+  "relation": "Very close: budget must cover the trip to a final site and the consumed energy is stochastic/predicted; however the cost uncertainty is not tied to the field being estimated.",
+  "relevance": 3,
+  "cited_by_count": 5
+ },
+ {
+  "title": "Distributed Multi-robot Online Sampling with Budget Constraints",
+  "authors": "Shamshirgaran et al.",
+  "year": 2024,
+  "venue": "IEEE ICRA",
+  "doi": "10.1109/icra57147.2024.10611289",
+  "openalex_id": "W4401414265",
+  "url": "https://doi.org/10.1109/icra57147.2024.10611289",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "budget",
+   "MCTS",
+   "GP"
+  ],
+  "summary": "Online distributed MCTS-based multi-robot sampling where each robot selects its next sampling location considering its remaining travel budget, to reconstruct an unknown scalar field.",
+  "relation": "Per-robot non-renewable travel budget in a team estimating an unknown field; budget spent is distance, not the field value itself.",
+  "relevance": 3,
+  "cited_by_count": 2
+ },
+ {
+  "title": "Multi-Robot Information Gathering Subject to Resource Constraints",
+  "authors": "Newaz et al.",
+  "year": 2021,
+  "venue": "IEEE RO-MAN",
+  "doi": "10.1109/ro-man50785.2021.9515447",
+  "openalex_id": "W3193298703",
+  "url": "https://doi.org/10.1109/ro-man50785.2021.9515447",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "budget",
+   "GMM"
+  ],
+  "summary": "Multi-robot information gathering using a GMM prior of informative regions, computing paths that optimize travel cost subject to energy budgets and replanning online as the model updates.",
+  "relation": "Energy budgets per robot with online model updates; energy cost is travel-based and known.",
+  "relevance": 2,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Efficient Informative Sensing using Multiple Robots",
+  "authors": "Singh et al.",
+  "year": 2009,
+  "venue": "Journal of Artificial Intelligence Research",
+  "doi": "10.1613/jair.2674",
+  "openalex_id": "W2125069195",
+  "url": "https://doi.org/10.1613/jair.2674",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "budget",
+   "submodular",
+   "seminal"
+  ],
+  "summary": "Seminal eSIP approximation algorithm for budget-constrained informative paths maximizing GP mutual information, with sequential allocation extending guarantees to multi-robot teams.",
+  "relation": "Foundational budgeted multi-robot IPP; budget is a known path-length/energy limit and robots are not at risk.",
+  "relevance": 2,
+  "cited_by_count": 342
+ },
+ {
+  "title": "Sampling-based robotic information gathering algorithms",
+  "authors": "Hollinger et al.",
+  "year": 2014,
+  "venue": "The International Journal of Robotics Research",
+  "doi": "10.1177/0278364914533443",
+  "openalex_id": "W2143088799",
+  "url": "https://doi.org/10.1177/0278364914533443",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "budget",
+   "sampling-based",
+   "seminal"
+  ],
+  "summary": "RIG algorithms combine sampling-based motion planning with branch-and-bound to find informative trajectories within a fuel/energy/time budget, with asymptotic optimality.",
+  "relation": "Seminal budgeted information gathering in continuous space; budget is deterministic and no return reserve or uncertain cost.",
+  "relevance": 2,
+  "cited_by_count": 345
+ },
+ {
+  "title": "Randomized algorithm for informative path planning with budget constraints",
+  "authors": "Arora et al.",
+  "year": 2017,
+  "venue": "IEEE ICRA",
+  "doi": "10.1109/icra.2017.7989582",
+  "openalex_id": "W2737130609",
+  "url": "https://doi.org/10.1109/icra.2017.7989582",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "orienteering",
+   "budget"
+  ],
+  "summary": "Randomized Anytime Orienteering (RAOr) for budgeted IPP / correlated orienteering, posing it as CSP plus TSP for fast near-optimal online solutions.",
+  "relation": "Budgeted orienteering with known edge costs; single robot, no risk.",
+  "relevance": 1,
+  "cited_by_count": 36
+ },
+ {
+  "title": "Multi-Robot Informative Path Planning from Regression with Sparse Gaussian Processes",
+  "authors": "Jakkala et al.",
+  "year": 2024,
+  "venue": "IEEE ICRA",
+  "doi": "10.1109/icra57147.2024.10610484",
+  "openalex_id": "W4401413698",
+  "url": "https://doi.org/10.1109/icra57147.2024.10610484",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "GP",
+   "budget"
+  ],
+  "summary": "Sparse-GP gradient-based multi-robot IPP in continuous environments that jointly optimizes informative paths under distance budgets and kinematic limits.",
+  "relation": "Multi-robot IPP with distance budgets; cost is deterministic path length.",
+  "relevance": 1,
+  "cited_by_count": 22
+ },
+ {
+  "title": "Learning a Spatial Field in Minimum Time With a Team of Robots",
+  "authors": "Suryan et al.",
+  "year": 2020,
+  "venue": "IEEE Transactions on Robotics",
+  "doi": "10.1109/tro.2020.2994003",
+  "openalex_id": "W2971952272",
+  "url": "https://doi.org/10.1109/tro.2020.2994003",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "return-to-base",
+   "GP"
+  ],
+  "summary": "Constant-factor approximations for learning a GP field to a posterior-variance threshold, including a multirobot version minimizing time for the last robot to return to the depot.",
+  "relation": "Includes required return to a common depot; objective is time with known travel costs rather than a budget whose consumption depends on the field.",
+  "relevance": 2,
+  "cited_by_count": 31
+ },
+ {
+  "title": "Multi-Robot Path Planning for Mobile Sensing through Deep Reinforcement Learning",
+  "authors": "Wei et al.",
+  "year": 2021,
+  "venue": "IEEE INFOCOM",
+  "doi": "10.1109/infocom42981.2021.9488669",
+  "openalex_id": "W3154784371",
+  "url": "https://doi.org/10.1109/infocom42981.2021.9488669",
+  "cluster": "E",
+  "topics": [
+   "IPP",
+   "multi-robot",
+   "RL",
+   "budget"
+  ],
+  "summary": "Deep RL for multi-robot informative path planning where battery-powered robots have limited travel distances, learning informative paths for parallel data collection.",
+  "relation": "Learning-based budgeted multi-robot IPP; budget is travel distance, not an uncertain field-dependent cost.",
+  "relevance": 2,
+  "cited_by_count": 27
+ },
+ {
+  "title": "The Team Surviving Orienteers problem: routing teams of robots in uncertain environments with survival constraints",
+  "authors": "Jorgensen et al.",
+  "year": 2017,
+  "venue": "Autonomous Robots",
+  "doi": "10.1007/s10514-017-9694-1",
+  "openalex_id": "W2583768145",
+  "url": "https://doi.org/10.1007/s10514-017-9694-1",
+  "cluster": "E",
+  "topics": [
+   "orienteering",
+   "risk-allocation",
+   "attrition",
+   "multi-robot",
+   "survival-constraint"
+  ],
+  "summary": "Routing K robots on a graph whose edges carry survival probabilities to maximize expected visited reward while each robot satisfies a minimum probability of surviving the mission (returning).",
+  "relation": "Core analogue of team risk allocation under robot loss with a per-robot survival constraint; risk per edge is known a priori rather than an estimate updated by sensing.",
+  "relevance": 3,
+  "cited_by_count": 24
+ },
+ {
+  "title": "The Matroid Team Surviving Orienteers problem: Constrained routing of heterogeneous teams with risky traversal",
+  "authors": "Jorgensen et al.",
+  "year": 2017,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros.2017.8206450",
+  "openalex_id": "W2774807875",
+  "url": "https://doi.org/10.1109/iros.2017.8206450",
+  "cluster": "E",
+  "topics": [
+   "orienteering",
+   "risk-allocation",
+   "attrition",
+   "heterogeneous-team"
+  ],
+  "summary": "Extends the TSO to heterogeneous teams under matroid constraints, where each robot may fail when traversing an edge, with approximation guarantees for expected reward.",
+  "relation": "Addresses heterogeneous robots sharing risk (who goes where); survival probabilities are known, not estimated, and resource is not a cumulative budget.",
+  "relevance": 3,
+  "cited_by_count": 28
+ },
+ {
+  "title": "Bi-objective trail-planning for a robot team orienteering in a hazardous environment",
+  "authors": "Simon et al.",
+  "year": 2025,
+  "venue": "PeerJ Computer Science",
+  "doi": "10.7717/peerj-cs.3376",
+  "openalex_id": "W4416455889",
+  "url": "https://doi.org/10.7717/peerj-cs.3376",
+  "cluster": "E",
+  "topics": [
+   "orienteering",
+   "risk-allocation",
+   "attrition",
+   "radiation",
+   "Pareto"
+  ],
+  "summary": "Bi-objective ant colony optimization for robot-team trails on a graph with arc survival probabilities (e.g., radiation, adversaries), producing the Pareto front of expected team reward vs. expected number of surviving robots, incl. a nuclear-plant case.",
+  "relation": "Explicit reward-vs-robot-survival trade-off and radiation hazards; hazards are known per arc and loss is probabilistic rather than a cumulative dose budget.",
+  "relevance": 3,
+  "cited_by_count": 1
+ },
+ {
+  "title": "The hazardous orienteering problem",
+  "authors": "Santini et al.",
+  "year": 2022,
+  "venue": "Networks",
+  "doi": "10.1002/net.22129",
+  "openalex_id": "W4308751215",
+  "url": "https://doi.org/10.1002/net.22129",
+  "cluster": "E",
+  "topics": [
+   "orienteering",
+   "risk",
+   "stochastic"
+  ],
+  "summary": "Orienteering variant where picked-up parcels may trigger a catastrophic event with probability growing with time on board, wiping out all collected profit; MINLP formulation and bounds.",
+  "relation": "Risk accumulates with exposure time (dose-like) and total loss on failure; single vehicle, known risk model, no sensing.",
+  "relevance": 2,
+  "cited_by_count": 11
+ },
+ {
+  "title": "Valuing Attrition in a Fleet of Robots Used as Path-Based Sensors for Gathering Information in a Communications Restricted Environment",
+  "authors": "McGuire et al.",
+  "year": 2024,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros58592.2024.10802088",
+  "openalex_id": "W4405784999",
+  "url": "https://doi.org/10.1109/iros58592.2024.10802088",
+  "cluster": "E",
+  "topics": [
+   "attrition",
+   "active-sensing",
+   "risk-allocation",
+   "bayesian",
+   "multi-robot"
+  ],
+  "summary": "Finite robot fleet searching a hazardous, communications-denied area; robot survival along paths is itself used as a sensor to update hazard and target belief maps, and planning accounts for lost future information when an agent is lost.",
+  "relation": "Very close: hazard map is unknown and estimated online, and losing robots costs future information; resource is binary survival rather than cumulative dose with a return reserve.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Optimization-Based Robot Team Exploration Considering Attrition and Communication Constraints",
+  "authors": "Schack et al.",
+  "year": 2021,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros51168.2021.9636029",
+  "openalex_id": "W4200123137",
+  "url": "https://doi.org/10.1109/iros51168.2021.9636029",
+  "cluster": "E",
+  "topics": [
+   "attrition",
+   "exploration",
+   "multi-robot",
+   "expected-utility"
+  ],
+  "summary": "Team exploration planning that optimizes expected utility accounting for the possibility that robots fail due to environmental hazards, under communication constraints.",
+  "relation": "Explicitly plans for robot loss in a team; failure probabilities are modeled rather than a dose budget that must cover exit.",
+  "relevance": 3,
+  "cited_by_count": 3
+ },
+ {
+  "title": "A Multi-robot Control Policy for Information Gathering in the Presence of Unknown Hazards",
+  "authors": "Schwager et al.",
+  "year": 2016,
+  "venue": "Springer Tracts in Advanced Robotics (ISRR)",
+  "doi": "10.1007/978-3-319-29363-9_26",
+  "openalex_id": "W2516604945",
+  "url": "https://doi.org/10.1007/978-3-319-29363-9_26",
+  "cluster": "E",
+  "topics": [
+   "active-sensing",
+   "attrition",
+   "multi-robot",
+   "mutual-information",
+   "unknown-hazard"
+  ],
+  "summary": "Robots gather information in an environment with unknown hazards (e.g., radiation, fire) that can disable them; Bayesian filters estimate events and hazards online and robots follow the mutual-information gradient, which naturally trades informativeness vs. failure.",
+  "relation": "Cost/risk and information are coupled: the hazard field is unknown and estimated from the same team's observations; failure is probabilistic rather than a cumulative non-renewable budget.",
+  "relevance": 3,
+  "cited_by_count": 102
+ },
+ {
+  "title": "When Information is Worth the Risk: Behavioral Valuation for Hazardous Robotic Exploration",
+  "authors": "Srivastava et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2609.10726",
+  "openalex_id": "W7212309232",
+  "url": "https://doi.org/10.48550/arxiv.2609.10726",
+  "cluster": "E",
+  "topics": [
+   "active-sensing",
+   "attrition",
+   "risk-sensitive",
+   "hazard-mapping"
+  ],
+  "summary": "Hazardous exploration where collecting information can cause robot failure that truncates future sensing; introduces a risk-augmented behavioral information objective (Prelec weighting) yielding conservative-to-aggressive information-risk trade-offs.",
+  "relation": "Directly addresses 'is the information worth the risk' with failure-truncated missions while mapping unknown hazards (incl. radiation); risk is failure probability, not dose budget with exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Cooperative Risk-Aware Exploration in Heterogeneous Multi-Robot Systems Using Algorithmic Altruism",
+  "authors": "Butler et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2608.28409",
+  "openalex_id": "W7204852807",
+  "url": "https://doi.org/10.48550/arxiv.2608.28409",
+  "cluster": "E",
+  "topics": [
+   "risk-allocation",
+   "heterogeneous-team",
+   "game-theory",
+   "exploration",
+   "expendable"
+  ],
+  "summary": "Game-theoretic exploration with Hamilton's-rule-inspired relatedness weights so lower-valued robots accept hazard exposure when it benefits higher-valued teammates, reallocating risk by agent value.",
+  "relation": "Directly addresses 'who takes the risk' in heterogeneous teams; hazard exposure is a penalty rather than a hard cumulative budget with exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Risk-aware Collection Strategies for Multirobot Foraging in Hazardous Environments",
+  "authors": "Di et al.",
+  "year": 2021,
+  "venue": "ACM Transactions on Autonomous and Adaptive Systems",
+  "doi": "10.1145/3514251",
+  "openalex_id": "W4220669112",
+  "url": "https://doi.org/10.1145/3514251",
+  "cluster": "E",
+  "topics": [
+   "risk",
+   "multi-robot",
+   "foraging",
+   "attrition"
+  ],
+  "summary": "Multirobot foraging where robots collecting items in hazardous environments face risks to themselves; proposes risk-aware collection strategies.",
+  "relation": "Team-level risk management in hazardous collection; does not model a cumulative budget that must cover the return trip.",
+  "relevance": 2,
+  "cited_by_count": 6
+ },
+ {
+  "title": "CARE: Cooperative Autonomy for Resilience and Efficiency of robot teams for complete coverage of unknown environments under robot failures",
+  "authors": "Song et al.",
+  "year": 2019,
+  "venue": "Autonomous Robots",
+  "doi": "10.1007/s10514-019-09870-3",
+  "openalex_id": "W2949845527",
+  "url": "https://doi.org/10.1007/s10514-019-09870-3",
+  "cluster": "E",
+  "topics": [
+   "coverage",
+   "multi-robot",
+   "robot-failure",
+   "resilience"
+  ],
+  "summary": "Multi-robot coverage of unknown environments that reallocates work when robots fail unexpectedly, preserving complete coverage.",
+  "relation": "Analogous to the team continuing after a robot withdraws; failures are exogenous rather than chosen withdrawals driven by a budget.",
+  "relevance": 2,
+  "cited_by_count": 59
+ },
+ {
+  "title": "Hierarchical Motion Planning Under Probabilistic Temporal Tasks and Safe-Return Constraints",
+  "authors": "Guo et al.",
+  "year": 2023,
+  "venue": "IEEE Transactions on Automatic Control",
+  "doi": "10.1109/tac.2023.3244884",
+  "openalex_id": "W4320713348",
+  "url": "https://doi.org/10.1109/tac.2023.3244884",
+  "cluster": "E",
+  "topics": [
+   "safe-return",
+   "MDP",
+   "LTL",
+   "return-to-base"
+  ],
+  "summary": "MDP planning under LTL tasks with safe-return constraints requiring a return policy to safe states with high probability; synthesizes outbound and return policies jointly.",
+  "relation": "Formalizes 'always keep a way back' probabilistically, akin to exit reserve, but with no cumulative budget and a known model.",
+  "relevance": 3,
+  "cited_by_count": 10
+ },
+ {
+  "title": "Online Planning of Uncertain MDPs under Temporal Tasks and Safe-Return Constraints",
+  "authors": "Zhang et al.",
+  "year": 2022,
+  "venue": "IEEE CDC",
+  "doi": "10.1109/cdc51059.2022.9993378",
+  "openalex_id": "W4315472128",
+  "url": "https://doi.org/10.1109/cdc51059.2022.9993378",
+  "cluster": "E",
+  "topics": [
+   "safe-return",
+   "MDP",
+   "bayesian",
+   "exploration"
+  ],
+  "summary": "Online planning where the robot explores and updates an uncertain MDP model in a Bayesian way while enforcing that it can always return home with high probability.",
+  "relation": "Model learned online with a safe-return requirement; uncertainty in transitions is coupled to exploration, but no cumulative non-renewable budget.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Heterogeneous Vehicle Routing and Teaming with Gaussian Distributed Energy Uncertainty",
+  "authors": "Fu et al.",
+  "year": 2020,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros45743.2020.9341433",
+  "openalex_id": "W3133434001",
+  "url": "https://doi.org/10.1109/iros45743.2020.9341433",
+  "cluster": "E",
+  "topics": [
+   "stochastic-cost",
+   "energy-aware",
+   "chance-constraint",
+   "heterogeneous-team",
+   "routing"
+  ],
+  "summary": "Stochastic programming for heterogeneous vehicle routing where travel energy costs are estimated by GP regression and handled as chance constraints or recourse costs.",
+  "relation": "Energy cost is uncertain and learned (GP), with chance-constrained budgets for heterogeneous vehicles; the cost field is not the mission's estimation target.",
+  "relevance": 3,
+  "cited_by_count": 11
+ },
+ {
+  "title": "Off-road ground robot path energy cost prediction through probabilistic spatial mapping",
+  "authors": "Quann et al.",
+  "year": 2019,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.21927",
+  "openalex_id": "W2996352010",
+  "url": "https://doi.org/10.1002/rob.21927",
+  "cluster": "E",
+  "topics": [
+   "stochastic-cost",
+   "energy-estimation",
+   "GP"
+  ],
+  "summary": "GP regression maps terrain/position features to power consumption to predict future path energy costs with correlated uncertainty, avoiding overconfidence.",
+  "relation": "Cost along a path is an uncertain spatial estimate built from the robot's own measurements, analogous to dose-rate map uncertainty; no team or return-reserve planning.",
+  "relevance": 2,
+  "cited_by_count": 41
+ },
+ {
+  "title": "Risk-averse traversal of graphs with stochastic and correlated edge costs for safe global planetary mobility",
+  "authors": "Lamarre et al.",
+  "year": 2026,
+  "venue": "Autonomous Robots",
+  "doi": "10.1007/s10514-025-10240-5",
+  "openalex_id": "W4415019110",
+  "url": "https://doi.org/10.1007/s10514-025-10240-5",
+  "cluster": "E",
+  "topics": [
+   "CVaR",
+   "stochastic-cost",
+   "Canadian-traveller",
+   "information-seeking"
+  ],
+  "summary": "Risk-averse Canadian Traveller Problem variant minimizing CVaR of traverse cost with exact AND-OR search; with correlated uncertain regions, information-seeking detours mitigate risk.",
+  "relation": "Cost uncertainty is resolved by observation and detours are taken for information, coupling cost and information; single robot, no budget exhaustion/return.",
+  "relevance": 3,
+  "cited_by_count": 2
+ },
+ {
+  "title": "Energy-Aware Multi-Agent Proximal Policy Optimization with Depletion Safety Constraints for Multi-Robot Coordination",
+  "authors": "Abdelmeguid et al.",
+  "year": 2026,
+  "venue": "Robotics (MDPI)",
+  "doi": "10.3390/robotics15050095",
+  "openalex_id": "W7160656908",
+  "url": "https://doi.org/10.3390/robotics15050095",
+  "cluster": "E",
+  "topics": [
+   "MARL",
+   "energy-aware",
+   "safety-constraint",
+   "action-masking"
+  ],
+  "summary": "EA-MAPPO and SEA-MAPPO treat battery depletion as a safety constraint via energy-augmented observations, predictive action masking and shaped rewards; validated on Robotarium/GTernal robots with zero depletion events.",
+  "relation": "Closest MARL template: budget-as-safety-constraint with predictive masking; energy use is predicted from a learned model, not from an uncertain field being searched, and no exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Energy-Aware Hierarchical Reinforcement Learning Based on the Predictive Energy Consumption Algorithm for Search and Rescue Aerial Robots in Unknown Environments",
+  "authors": "Ramezani et al.",
+  "year": 2024,
+  "venue": "Drones",
+  "doi": "10.3390/drones8070283",
+  "openalex_id": "W4399974979",
+  "url": "https://doi.org/10.3390/drones8070283",
+  "cluster": "E",
+  "topics": [
+   "RL",
+   "energy-aware",
+   "energy-estimation",
+   "search-and-rescue"
+  ],
+  "summary": "Hierarchical RL with an LSTM battery-consumption predictor so the high-level controller sets energy-feasible goals for SAR drones in unknown environments.",
+  "relation": "Learned energy prediction gates goals (similar to masking by remaining budget); single agent, renewable battery.",
+  "relevance": 2,
+  "cited_by_count": 29
+ },
+ {
+  "title": "A Hough transform approach to safety-aware scalar field mapping using Gaussian Processes",
+  "authors": "Qureshi et al.",
+  "year": 2026,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2604.20799",
+  "openalex_id": "W7155401151",
+  "url": "https://doi.org/10.48550/arxiv.2604.20799",
+  "cluster": "E",
+  "topics": [
+   "active-sensing",
+   "safety-constraint",
+   "GP",
+   "unknown-hazard"
+  ],
+  "summary": "Robot maps an unknown scalar field with a GP while avoiding regions whose field value exceeds a safety threshold; high-intensity regions are estimated online (Hough transform) and safe sampling uses probabilistic GP guarantees.",
+  "relation": "The hazard IS the field being estimated (as with radiation intensity); safety is a pointwise threshold rather than a cumulative dose budget with exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Exact and Heuristic Algorithms for Risk-Aware Stochastic Physical Search",
+  "authors": "Brown et al.",
+  "year": 2016,
+  "venue": "Computational Intelligence",
+  "doi": "10.1111/coin.12098",
+  "openalex_id": "W2510507992",
+  "url": "https://doi.org/10.1111/coin.12098",
+  "cluster": "E",
+  "topics": [
+   "stochastic-cost",
+   "budget",
+   "search",
+   "risk"
+  ],
+  "summary": "Agent searches physical locations for an item where travel and stochastic acquisition costs come from one shared budget and costs are revealed on arrival; MILP and branch-and-bound to maximize success probability.",
+  "relation": "Single non-renewable budget shared by moving and searching with costs revealed only on arrival; no return requirement or team.",
+  "relevance": 2,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Learning Risk-Aware Costmaps for Traversability in Challenging Environments",
+  "authors": "Fan et al.",
+  "year": 2021,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2021.3125047",
+  "openalex_id": "W3183399394",
+  "url": "https://doi.org/10.1109/lra.2021.3125047",
+  "cluster": "E",
+  "topics": [
+   "CVaR",
+   "stochastic-cost",
+   "traversability"
+  ],
+  "summary": "Neural network learns the CVaR (tail risk) of traversability costs from data to build risk-aware costmaps, motivated by preserving robot life in caves and subways.",
+  "relation": "CVaR over uncertain per-cell cost, a template for risk-aware dose costmaps; no budget accounting or team.",
+  "relevance": 1,
+  "cited_by_count": 56
+ },
+ {
+  "title": "Risk-Aware Planning and Assignment for Ground Vehicles using Uncertain Perception from Aerial Vehicles",
+  "authors": "Sharma et al.",
+  "year": 2020,
+  "venue": "IEEE/RSJ IROS",
+  "doi": "10.1109/iros45743.2020.9341075",
+  "openalex_id": "W3013804411",
+  "url": "https://doi.org/10.1109/iros45743.2020.9341075",
+  "cluster": "E",
+  "topics": [
+   "CVaR",
+   "risk-allocation",
+   "multi-robot",
+   "assignment",
+   "perception-uncertainty"
+  ],
+  "summary": "Bayesian deep segmentation of aerial imagery yields uncertain traversal costs; CVaR is used for risk-aware multi-robot path planning and assignment.",
+  "relation": "Uncertain, perception-derived costs feed risk-aware team assignment; costs are not consumed from a non-renewable budget and no return is modeled.",
+  "relevance": 2,
+  "cited_by_count": 19
+ }
+]

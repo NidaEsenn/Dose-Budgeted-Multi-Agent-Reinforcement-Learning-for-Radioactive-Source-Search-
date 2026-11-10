@@ -1,0 +1,870 @@
+[
+ {
+  "title": "Energy-Aware Multi-Agent Proximal Policy Optimization with Depletion Safety Constraints for Multi-Robot Coordination",
+  "authors": "Abdelmeguid et al.",
+  "year": 2026,
+  "venue": "Robotics (MDPI)",
+  "doi": "10.3390/robotics15050095",
+  "openalex_id": "W7160656908",
+  "url": "https://doi.org/10.3390/robotics15050095",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "action-masking",
+   "budget-augmentation",
+   "reward-shaping",
+   "resource-aware"
+  ],
+  "summary": "EA-MAPPO adds energy-augmented observations and shaped rewards; SEA-MAPPO adds predictive action masking (learned energy predictor, R2=0.89) to avoid battery depletion, validated on the Robotarium and physical GTernal robots with zero depletion events.",
+  "relation": "Closest architectural analogue: MAPPO + learned per-robot consumption predictor + predictive action mask on a non-renewable resource; differs in that energy cost is not tied to an uncertain belief over a hazard source and no chance-constraint target is set.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Safe multi-agent reinforcement learning for multi-robot control",
+  "authors": "Gu et al.",
+  "year": 2023,
+  "venue": "Artificial Intelligence",
+  "doi": "10.1016/j.artint.2023.103905",
+  "openalex_id": "W4327571609",
+  "url": "https://doi.org/10.1016/j.artint.2023.103905",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "CMDP",
+   "Lagrangian",
+   "benchmark"
+  ],
+  "summary": "Formulates safe MARL as a constrained Markov game with per-agent constraints and proposes MACPO and MAPPO-Lagrangian, plus Safe MAMuJoCo/MARobosuite/MAIG benchmarks.",
+  "relation": "Source of the MAPPO-Lagrangian baseline used in the thesis; per-robot constraints in expectation, which the thesis contrasts with its mission-level chance constraint.",
+  "relevance": 3,
+  "cited_by_count": 167
+ },
+ {
+  "title": "Multi-Agent Constrained Policy Optimisation",
+  "authors": "Gu et al.",
+  "year": 2021,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2110.02793",
+  "openalex_id": "W3203079382",
+  "url": "https://doi.org/10.48550/arxiv.2110.02793",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "CMDP",
+   "Lagrangian"
+  ],
+  "summary": "Preprint introducing MACPO and MAPPO-L with monotonic reward improvement and constraint satisfaction guarantees for cooperative safe MARL.",
+  "relation": "Original preprint of the MAPPO-Lagrangian baseline.",
+  "relevance": 3,
+  "cited_by_count": 71
+ },
+ {
+  "title": "Scalable Constrained Policy Optimization for Safe Multi-agent Reinforcement Learning",
+  "authors": "Zhang et al.",
+  "year": 2024,
+  "venue": "NeurIPS 2024",
+  "doi": "10.52202/079017-4400",
+  "openalex_id": "W4415800527",
+  "url": "https://doi.org/10.52202/079017-4400",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "CMDP",
+   "Lagrangian"
+  ],
+  "summary": "Proposes a scalable constrained policy optimization method for safe MARL, motivated by controlling many agents (e.g., drone swarms, autonomous driving) safely and cooperatively (summary from title and truncated abstract only).",
+  "relation": "State-of-the-art safe-MARL baseline family (expected-cost constraints) relevant to scaling the thesis beyond a few robots.",
+  "relevance": 2,
+  "cited_by_count": 11
+ },
+ {
+  "title": "Provably Efficient Generalized Lagrangian Policy Optimization for Safe Multi-Agent Reinforcement Learning",
+  "authors": "Ding et al.",
+  "year": 2023,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2306.00212",
+  "openalex_id": "W4379252026",
+  "url": "https://doi.org/10.48550/arxiv.2306.00212",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "Lagrangian",
+   "CMDP"
+  ],
+  "summary": "Generalized Lagrangian with upper-confidence exploration for episodic two-player zero-sum constrained Markov games with unknown transitions, achieving sublinear regret and constraint violation.",
+  "relation": "Theoretical safe-MARL Lagrangian reference; shows constraint violation is only controlled on average/sublinearly, unlike the thesis' hard per-step mask.",
+  "relevance": 2,
+  "cited_by_count": 4
+ },
+ {
+  "title": "Decentralized Policy Gradient Descent Ascent for Safe Multi-Agent Reinforcement Learning",
+  "authors": "Lu et al.",
+  "year": 2021,
+  "venue": "AAAI 2021",
+  "doi": "10.1609/aaai.v35i10.17062",
+  "openalex_id": "W3173294282",
+  "url": "https://doi.org/10.1609/aaai.v35i10.17062",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "CMDP",
+   "Lagrangian"
+  ],
+  "summary": "Safe Dec-PG: decentralized primal-dual policy gradient for networked agents each with individual rewards and coupled safety constraints, with convergence rates.",
+  "relation": "Per-agent constraint formulation in MARL solved with primal-dual updates; background for MAPPO-L style approaches.",
+  "relevance": 2,
+  "cited_by_count": 61
+ },
+ {
+  "title": "Safe Multi-Agent Reinforcement Learning via Shielding",
+  "authors": "Elsayed-Aly et al.",
+  "year": 2021,
+  "venue": "AAMAS 2021",
+  "doi": "10.65109/krjr7599",
+  "openalex_id": "W3177394897",
+  "url": "https://doi.org/10.65109/krjr7599",
+  "cluster": "D",
+  "topics": [
+   "MARL",
+   "shielding",
+   "action-masking"
+  ],
+  "summary": "Centralized and factored shields that monitor and correct MARL agents' joint actions to guarantee safety during learning; factored shields scale better with agent count.",
+  "relation": "Direct precedent for a per-agent/factored safety layer in MARL; assumes a known safety model, whereas the thesis' shield uses a learned, belief-dependent dose prediction.",
+  "relevance": 3,
+  "cited_by_count": 79
+ },
+ {
+  "title": "Safe Reinforcement Learning via Shielding",
+  "authors": "Alshiekh et al.",
+  "year": 2018,
+  "venue": "AAAI 2018",
+  "doi": "10.1609/aaai.v32i1.11797",
+  "openalex_id": "W2751422670",
+  "url": "https://doi.org/10.1609/aaai.v32i1.11797",
+  "cluster": "D",
+  "topics": [
+   "shielding",
+   "action-masking"
+  ],
+  "summary": "Introduces shields synthesized from temporal-logic specifications that block or correct unsafe actions of an RL agent (preemptive and post-posed shielding).",
+  "relation": "Seminal shielding paper; the thesis' dose mask is a preemptive shield with a probabilistic (quantile) rather than formal model.",
+  "relevance": 3,
+  "cited_by_count": 70
+ },
+ {
+  "title": "Safe Exploration in Continuous Action Spaces",
+  "authors": "Dalal et al.",
+  "year": 2018,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.1801.08757",
+  "openalex_id": "W2784465508",
+  "url": "https://doi.org/10.48550/arxiv.1801.08757",
+  "cluster": "D",
+  "topics": [
+   "safety-layer",
+   "safe-exploration"
+  ],
+  "summary": "Adds a safety layer that analytically corrects actions using a learned linear model of single-step constraint cost, achieving near-zero violations during training.",
+  "relation": "Seminal 'safety layer' with a learned one-step cost model, the closest single-agent analogue to predicting next-step dose and filtering actions.",
+  "relevance": 3,
+  "cited_by_count": 550
+ },
+ {
+  "title": "Provably Safe Reinforcement Learning: Conceptual Analysis, Survey, and Benchmarking",
+  "authors": "Krasowski et al.",
+  "year": 2022,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2205.06750",
+  "openalex_id": "W7005340630",
+  "url": "https://doi.org/10.48550/arxiv.2205.06750",
+  "cluster": "D",
+  "topics": [
+   "action-masking",
+   "safety-layer",
+   "shielding",
+   "survey"
+  ],
+  "summary": "Categorizes provably safe RL into action replacement, projection and masking, benchmarks them, and finds that adding a penalty when the safety verifier intervenes improves training.",
+  "relation": "Taxonomy that places the thesis' dose mask (masking) and withdraw action (replacement); supports adding an intervention penalty.",
+  "relevance": 3,
+  "cited_by_count": 29
+ },
+ {
+  "title": "A Closer Look at Invalid Action Masking in Policy Gradient Algorithms",
+  "authors": "Huang & Ontanon",
+  "year": 2022,
+  "venue": "FLAIRS-35",
+  "doi": "10.32473/flairs.v35i.130584",
+  "openalex_id": "W3037164854",
+  "url": "https://doi.org/10.32473/flairs.v35i.130584",
+  "cluster": "D",
+  "topics": [
+   "action-masking"
+  ],
+  "summary": "Shows invalid-action masking yields a valid policy gradient and greatly improves PPO performance in large discrete action spaces.",
+  "relation": "Justifies the gradient correctness of applying a state-dependent mask inside MAPPO.",
+  "relevance": 2,
+  "cited_by_count": 633
+ },
+ {
+  "title": "SAUTE RL: Almost Surely Safe Reinforcement Learning Using State Augmentation",
+  "authors": "Sootla et al.",
+  "year": 2022,
+  "venue": "arXiv (ICML 2022)",
+  "doi": "10.48550/arxiv.2202.06558",
+  "openalex_id": "W4226355781",
+  "url": "https://doi.org/10.48550/arxiv.2202.06558",
+  "cluster": "D",
+  "topics": [
+   "budget-augmentation",
+   "CMDP",
+   "chance-constraint"
+  ],
+  "summary": "Augments the state with the remaining safety budget and reshapes the objective so that constraints are satisfied almost surely; plug-and-play with any RL algorithm.",
+  "relation": "Formal basis for feeding remaining dose budget into the robot observation and for treating budget exhaustion as terminal.",
+  "relevance": 3,
+  "cited_by_count": 27
+ },
+ {
+  "title": "Reinforcement Learning with Almost Sure Constraints",
+  "authors": "Castellano et al.",
+  "year": 2021,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2112.05198",
+  "openalex_id": "W4226111120",
+  "url": "https://doi.org/10.48550/arxiv.2112.05198",
+  "cluster": "D",
+  "topics": [
+   "budget-augmentation",
+   "CMDP",
+   "chance-constraint"
+  ],
+  "summary": "Shows stationary policies are insufficient for probability-one constraints and endows the controller with a budget state; the minimal safe budget is a fixed point of a Bellman-like operator, learnable from samples.",
+  "relation": "Theoretical underpinning of 'dose so far + required exit dose <= budget' as a minimal-budget/viability condition.",
+  "relevance": 3,
+  "cited_by_count": 6
+ },
+ {
+  "title": "Effects of Safety State Augmentation on Safe Exploration",
+  "authors": "Sootla et al.",
+  "year": 2022,
+  "venue": "arXiv (NeurIPS 2022)",
+  "doi": "10.48550/arxiv.2206.02675",
+  "openalex_id": "W4306175886",
+  "url": "https://doi.org/10.48550/arxiv.2206.02675",
+  "cluster": "D",
+  "topics": [
+   "budget-augmentation",
+   "safe-exploration"
+  ],
+  "summary": "Simmer: augments state with a safety state whose initial value is the safety budget and schedules that budget during training, improving safety and stabilizing Lagrangian training.",
+  "relation": "Suggests budget curricula as an alternative remedy to MAPPO-L timidity.",
+  "relevance": 3,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Responsive Safety in Reinforcement Learning by PID Lagrangian Methods",
+  "authors": "Stooke et al.",
+  "year": 2020,
+  "venue": "arXiv (ICML 2020)",
+  "doi": "10.48550/arxiv.2007.03964",
+  "openalex_id": "W3041244724",
+  "url": "https://doi.org/10.48550/arxiv.2007.03964",
+  "cluster": "D",
+  "topics": [
+   "Lagrangian",
+   "CMDP"
+  ],
+  "summary": "Shows Lagrangian multiplier dynamics oscillate and overshoot, and adds proportional and derivative terms to the dual update to reduce violations and oscillation.",
+  "relation": "Key reference for diagnosing why MAPPO-Lagrangian became timid/unstable and for a PID-Lagrangian ablation.",
+  "relevance": 3,
+  "cited_by_count": 152
+ },
+ {
+  "title": "Model-Based Chance-Constrained Reinforcement Learning via Separated Proportional-Integral Lagrangian",
+  "authors": "Peng et al.",
+  "year": 2022,
+  "venue": "IEEE TNNLS",
+  "doi": "10.1109/tnnls.2022.3175595",
+  "openalex_id": "W3195860693",
+  "url": "https://doi.org/10.1109/tnnls.2022.3175595",
+  "cluster": "D",
+  "topics": [
+   "chance-constraint",
+   "Lagrangian"
+  ],
+  "summary": "Shows penalty/Lagrangian methods for chance-constrained RL oscillate or become over-conservative and proposes a separated PI-Lagrangian with integral limiting.",
+  "relation": "Directly documents Lagrangian over-conservatism under chance constraints, matching the 10% success failure mode.",
+  "relevance": 3,
+  "cited_by_count": 31
+ },
+ {
+  "title": "Reward Constrained Policy Optimization",
+  "authors": "Tessler et al.",
+  "year": 2018,
+  "venue": "arXiv (ICLR 2019)",
+  "doi": "10.48550/arxiv.1805.11074",
+  "openalex_id": "W2804791273",
+  "url": "https://doi.org/10.48550/arxiv.1805.11074",
+  "cluster": "D",
+  "topics": [
+   "Lagrangian",
+   "CMDP"
+  ],
+  "summary": "RCPO uses a multi-timescale Lagrangian penalty signal to steer policies toward constraint-satisfying solutions.",
+  "relation": "Canonical Lagrangian safe-RL baseline underlying MAPPO-L.",
+  "relevance": 2,
+  "cited_by_count": 545
+ },
+ {
+  "title": "Constrained Policy Optimization",
+  "authors": "Achiam et al.",
+  "year": 2017,
+  "venue": "arXiv (ICML 2017)",
+  "doi": "10.48550/arxiv.1705.10528",
+  "openalex_id": "W2616964725",
+  "url": "https://doi.org/10.48550/arxiv.1705.10528",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "trust-region"
+  ],
+  "summary": "Trust-region policy search with near-constraint satisfaction at each iteration for CMDPs.",
+  "relation": "Seminal constrained policy-gradient method that MACPO extends to multi-agent settings.",
+  "relevance": 2,
+  "cited_by_count": 804
+ },
+ {
+  "title": "Constrained Reinforcement Learning Has Zero Duality Gap",
+  "authors": "Paternain et al.",
+  "year": 2019,
+  "venue": "NeurIPS 2019 (arXiv)",
+  "doi": "10.48550/arxiv.1910.13393",
+  "openalex_id": "W2982624491",
+  "url": "https://doi.org/10.48550/arxiv.1910.13393",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "Lagrangian"
+  ],
+  "summary": "Proves CMDPs have zero duality gap despite non-convexity, justifying primal-dual methods with rich parameterizations.",
+  "relation": "Theoretical justification for Lagrangian approaches, which only hold in expectation, not per mission.",
+  "relevance": 1,
+  "cited_by_count": 79
+ },
+ {
+  "title": "First Order Constrained Optimization in Policy Space",
+  "authors": "Zhang et al.",
+  "year": 2020,
+  "venue": "NeurIPS 2020 (arXiv)",
+  "doi": "10.48550/arxiv.2002.06506",
+  "openalex_id": "W3102309758",
+  "url": "https://doi.org/10.48550/arxiv.2002.06506",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "Lagrangian"
+  ],
+  "summary": "FOCOPS solves the constrained update in nonparametric policy space and projects back, with a bound on worst-case violation.",
+  "relation": "Alternative first-order constrained baseline.",
+  "relevance": 1,
+  "cited_by_count": 98
+ },
+ {
+  "title": "IPO: Interior-Point Policy Optimization under Constraints",
+  "authors": "Liu et al.",
+  "year": 2020,
+  "venue": "AAAI 2020",
+  "doi": "10.1609/aaai.v34i04.5932",
+  "openalex_id": "W2998619042",
+  "url": "https://doi.org/10.1609/aaai.v34i04.5932",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "barrier"
+  ],
+  "summary": "Adds logarithmic barrier functions on cumulative constraints to a PPO objective.",
+  "relation": "Barrier-based alternative to Lagrangian multipliers for cumulative-cost constraints.",
+  "relevance": 1,
+  "cited_by_count": 159
+ },
+ {
+  "title": "A Lyapunov-based Approach to Safe Reinforcement Learning",
+  "authors": "Chow et al.",
+  "year": 2018,
+  "venue": "NeurIPS 2018 (arXiv)",
+  "doi": "10.48550/arxiv.1805.07708",
+  "openalex_id": "W2803543472",
+  "url": "https://doi.org/10.48550/arxiv.1805.07708",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "safe-exploration"
+  ],
+  "summary": "Constructs Lyapunov functions that turn the CMDP cumulative constraint into local linear per-step constraints guaranteeing safety during training.",
+  "relation": "Related idea of converting a cumulative budget into per-step feasibility conditions, as in the thesis' step-wise dose check.",
+  "relevance": 2,
+  "cited_by_count": 284
+ },
+ {
+  "title": "Risk-Constrained Reinforcement Learning with Percentile Risk Criteria",
+  "authors": "Chow et al.",
+  "year": 2015,
+  "venue": "arXiv (JMLR 2018)",
+  "doi": "10.48550/arxiv.1512.01629",
+  "openalex_id": "W3162902207",
+  "url": "https://doi.org/10.48550/arxiv.1512.01629",
+  "cluster": "D",
+  "topics": [
+   "chance-constraint",
+   "CVaR",
+   "Lagrangian"
+  ],
+  "summary": "Policy-gradient and actor-critic algorithms for CMDPs with chance (VaR) and CVaR constraints on cumulative cost.",
+  "relation": "Formal precedent for constraining the probability/tail of cumulative cost, akin to the thesis' 5% violation target.",
+  "relevance": 3,
+  "cited_by_count": 259
+ },
+ {
+  "title": "Risk-Sensitive and Robust Decision-Making: a CVaR Optimization Approach",
+  "authors": "Chow et al.",
+  "year": 2015,
+  "venue": "arXiv (NeurIPS 2015)",
+  "doi": "10.48550/arxiv.1506.02188",
+  "openalex_id": "W2963590277",
+  "url": "https://doi.org/10.48550/arxiv.1506.02188",
+  "cluster": "D",
+  "topics": [
+   "CVaR",
+   "risk-sensitive"
+  ],
+  "summary": "Shows CVaR objectives equal expected cost under worst-case model errors for a given error budget and gives approximate value iteration for CVaR MDPs.",
+  "relation": "Justifies pessimistic quantile/CVaR treatment of an uncertain dose model.",
+  "relevance": 2,
+  "cited_by_count": 159
+ },
+ {
+  "title": "Optimizing the CVaR via Sampling",
+  "authors": "Tamar et al.",
+  "year": 2015,
+  "venue": "AAAI 2015",
+  "doi": "10.1609/aaai.v29i1.9561",
+  "openalex_id": "W2167696704",
+  "url": "https://doi.org/10.1609/aaai.v29i1.9561",
+  "cluster": "D",
+  "topics": [
+   "CVaR",
+   "risk-sensitive"
+  ],
+  "summary": "Sampling-based likelihood-ratio estimator of the CVaR gradient with convergence to local CVaR optima.",
+  "relation": "Background for tail-risk policy optimization of dose.",
+  "relevance": 1,
+  "cited_by_count": 97
+ },
+ {
+  "title": "Iterative Risk Allocation: A new approach to robust Model Predictive Control with a joint chance constraint",
+  "authors": "Ono & Williams",
+  "year": 2008,
+  "venue": "IEEE CDC 2008",
+  "doi": "10.1109/cdc.2008.4739221",
+  "openalex_id": "W2127788848",
+  "url": "https://doi.org/10.1109/cdc.2008.4739221",
+  "cluster": "D",
+  "topics": [
+   "chance-constraint",
+   "risk-allocation"
+  ],
+  "summary": "Iteratively allocates a joint chance-constraint risk budget among individual constraints/time steps in robust MPC, reducing conservatism of uniform allocation.",
+  "relation": "Conceptual basis for splitting the 5% mission-level violation budget across robots and steps (choice of the quantile level).",
+  "relevance": 3,
+  "cited_by_count": 156
+ },
+ {
+  "title": "Safe Exploration for Optimization with Gaussian Processes",
+  "authors": "Sui et al.",
+  "year": 2015,
+  "venue": "ICML 2015 (CaltechAUTHORS)",
+  "doi": null,
+  "openalex_id": "W2120034667",
+  "url": "https://openalex.org/W2120034667",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost"
+  ],
+  "summary": "SafeOpt: GP-based Bayesian optimization that only evaluates points whose safety (unknown function) is above a threshold with high probability.",
+  "relation": "Seminal method for acting safely under an unknown, learned constraint using confidence bounds, akin to a pessimistic posterior quantile.",
+  "relevance": 2,
+  "cited_by_count": 302
+ },
+ {
+  "title": "Safe Exploration in Finite Markov Decision Processes with Gaussian Processes",
+  "authors": "Turchetta et al.",
+  "year": 2016,
+  "venue": "arXiv (NeurIPS 2016)",
+  "doi": "10.48550/arxiv.1606.04753",
+  "openalex_id": "W2427917354",
+  "url": "https://doi.org/10.48550/arxiv.1606.04753",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost"
+  ],
+  "summary": "Explores an MDP with an unknown GP-modelled safety function, only visiting states that are safe with high probability and from which a safe return is possible.",
+  "relation": "Precedent for the exit-reserve (returnability) condition under an unknown cost map.",
+  "relevance": 3,
+  "cited_by_count": 125
+ },
+ {
+  "title": "Safe Exploration and Optimization of Constrained MDPs Using Gaussian Processes",
+  "authors": "Wachi et al.",
+  "year": 2018,
+  "venue": "AAAI 2018",
+  "doi": "10.1609/aaai.v32i1.12103",
+  "openalex_id": "W2788084076",
+  "url": "https://doi.org/10.1609/aaai.v32i1.12103",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost",
+   "CMDP"
+  ],
+  "summary": "Models unknown state safety with a GP and balances exploring safety, exploring reward and exploitation, demonstrated on Martian terrain.",
+  "relation": "Close analogue: a field robot with an a-priori unknown, spatially varying hazard learned online.",
+  "relevance": 3,
+  "cited_by_count": 99
+ },
+ {
+  "title": "Safe Reinforcement Learning in Constrained Markov Decision Processes",
+  "authors": "Wachi & Sui",
+  "year": 2020,
+  "venue": "arXiv (ICML 2020)",
+  "doi": "10.48550/arxiv.2008.06626",
+  "openalex_id": "W3034840734",
+  "url": "https://doi.org/10.48550/arxiv.2008.06626",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost",
+   "CMDP"
+  ],
+  "summary": "SNO-MDP explores and optimizes CMDPs with unknown safety constraints, first expanding the certified-safe region then optimizing reward.",
+  "relation": "Supports the thesis' treatment of the dose field as an unknown constraint learned from observations.",
+  "relevance": 3,
+  "cited_by_count": 87
+ },
+ {
+  "title": "Exploration-Exploitation in Constrained MDPs",
+  "authors": "Efroni et al.",
+  "year": 2020,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2003.02189",
+  "openalex_id": "W3009922106",
+  "url": "https://doi.org/10.48550/arxiv.2003.02189",
+  "cluster": "D",
+  "topics": [
+   "CMDP",
+   "unknown-cost",
+   "safe-exploration"
+  ],
+  "summary": "Analyses optimistic LP-based and primal-dual algorithms for learning unknown CMDPs, with sublinear regret and constraint-violation regret; LP approach gives stronger guarantees.",
+  "relation": "Shows primal-dual learning only bounds violations sublinearly, motivating a hard mask for a non-renewable budget.",
+  "relevance": 1,
+  "cited_by_count": 43
+ },
+ {
+  "title": "Safe Model-based Reinforcement Learning with Stability Guarantees",
+  "authors": "Berkenkamp et al.",
+  "year": 2017,
+  "venue": "arXiv (NeurIPS 2017)",
+  "doi": "10.48550/arxiv.1705.08551",
+  "openalex_id": "W2618318883",
+  "url": "https://doi.org/10.48550/arxiv.1705.08551",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost"
+  ],
+  "summary": "Uses GP models and Lyapunov stability to safely expand the region of attraction during learning.",
+  "relation": "Background on safe learning with statistical models of uncertainty.",
+  "relevance": 1,
+  "cited_by_count": 606
+ },
+ {
+  "title": "A General Safety Framework for Learning-Based Control in Uncertain Robotic Systems",
+  "authors": "Fisac et al.",
+  "year": 2018,
+  "venue": "IEEE TAC",
+  "doi": "10.1109/tac.2018.2876389",
+  "openalex_id": "W2611136914",
+  "url": "https://doi.org/10.1109/tac.2018.2876389",
+  "cluster": "D",
+  "topics": [
+   "safety-layer",
+   "shielding",
+   "unknown-cost"
+  ],
+  "summary": "HJ-reachability safety controller that minimally overrides an arbitrary learner, with Bayesian refinement of the safety analysis as evidence accrues.",
+  "relation": "Least-restrictive supervisory filter whose conservativeness adapts to posterior uncertainty, conceptually like the thesis' posterior-quantile mask plus withdraw override.",
+  "relevance": 3,
+  "cited_by_count": 515
+ },
+ {
+  "title": "A predictive safety filter for learning-based control of constrained nonlinear dynamical systems",
+  "authors": "Wabersich & Zeilinger",
+  "year": 2021,
+  "venue": "Automatica",
+  "doi": "10.1016/j.automatica.2021.109597",
+  "openalex_id": "W3132777934",
+  "url": "https://doi.org/10.1016/j.automatica.2021.109597",
+  "cluster": "D",
+  "topics": [
+   "safety-layer",
+   "predictive-filter"
+  ],
+  "summary": "MPC-based predictive safety filter that certifies a learning controller's input by checking a feasible backup trajectory to a safe set.",
+  "relation": "The exit-reserve check is a predictive safety filter whose backup plan is 'withdraw to exit'.",
+  "relevance": 3,
+  "cited_by_count": 399
+ },
+ {
+  "title": "End-to-End Safe Reinforcement Learning through Barrier Functions for Safety-Critical Continuous Control Tasks",
+  "authors": "Cheng et al.",
+  "year": 2019,
+  "venue": "AAAI 2019",
+  "doi": "10.1609/aaai.v33i01.33013387",
+  "openalex_id": "W2966735560",
+  "url": "https://doi.org/10.1609/aaai.v33i01.33013387",
+  "cluster": "D",
+  "topics": [
+   "CBF",
+   "safety-layer"
+  ],
+  "summary": "Combines model-free RL with a CBF-based controller and GP model of uncertain dynamics to guarantee safety during learning.",
+  "relation": "CBF-based safety layer with learned uncertainty, the continuous-control counterpart of the thesis' mask.",
+  "relevance": 2,
+  "cited_by_count": 664
+ },
+ {
+  "title": "Control Barrier Functions: Theory and Applications",
+  "authors": "Ames et al.",
+  "year": 2019,
+  "venue": "ECC 2019",
+  "doi": "10.23919/ecc.2019.8796030",
+  "openalex_id": "W2925329277",
+  "url": "https://doi.org/10.23919/ecc.2019.8796030",
+  "cluster": "D",
+  "topics": [
+   "CBF"
+  ],
+  "summary": "Survey of control barrier functions for verifying and enforcing safety in optimization-based controllers.",
+  "relation": "Background on forward-invariance-based safety filters.",
+  "relevance": 1,
+  "cited_by_count": 2236
+ },
+ {
+  "title": "Recovery RL: Safe Reinforcement Learning With Learned Recovery Zones",
+  "authors": "Thananjeyan et al.",
+  "year": 2021,
+  "venue": "IEEE RA-L",
+  "doi": "10.1109/lra.2021.3070252",
+  "openalex_id": "W3150718622",
+  "url": "https://doi.org/10.1109/lra.2021.3070252",
+  "cluster": "D",
+  "topics": [
+   "safety-layer",
+   "safe-exploration",
+   "unknown-cost"
+  ],
+  "summary": "Separates a task policy from a recovery policy triggered by a learned safety critic when violation is likely.",
+  "relation": "Analogue of the thesis' withdraw action as a recovery behaviour triggered by a learned risk estimate.",
+  "relevance": 3,
+  "cited_by_count": 256
+ },
+ {
+  "title": "Learning to be Safe: Deep RL with a Safety Critic",
+  "authors": "Srinivasan et al.",
+  "year": 2020,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2010.14603",
+  "openalex_id": "W3095135648",
+  "url": "https://doi.org/10.48550/arxiv.2010.14603",
+  "cluster": "D",
+  "topics": [
+   "safe-exploration",
+   "unknown-cost",
+   "action-masking"
+  ],
+  "summary": "Learns a safety critic in prior tasks and uses it to constrain/filter actions when learning new tasks, reducing safety incidents.",
+  "relation": "Learned-cost action filtering, related to using a learned dose predictor in the mask.",
+  "relevance": 2,
+  "cited_by_count": 175
+ },
+ {
+  "title": "Safety Gymnasium: A Unified Safe Reinforcement Learning Benchmark",
+  "authors": "Ji et al.",
+  "year": 2023,
+  "venue": "NeurIPS 2023 (Datasets & Benchmarks)",
+  "doi": "10.52202/075280-0831",
+  "openalex_id": "W7133205794",
+  "url": "https://doi.org/10.52202/075280-0831",
+  "cluster": "D",
+  "topics": [
+   "benchmark",
+   "MARL"
+  ],
+  "summary": "Unified safe RL benchmark covering single- and multi-agent safety tasks (summary from title; abstract not retrieved).",
+  "relation": "Benchmark context for evaluating safe MARL baselines.",
+  "relevance": 1,
+  "cited_by_count": 66
+ },
+ {
+  "title": "OmniSafe: An Infrastructure for Accelerating Safe Reinforcement Learning Research",
+  "authors": "Ji et al.",
+  "year": 2023,
+  "venue": "arXiv",
+  "doi": "10.48550/arxiv.2305.09304",
+  "openalex_id": "W4376988891",
+  "url": "https://doi.org/10.48550/arxiv.2305.09304",
+  "cluster": "D",
+  "topics": [
+   "benchmark",
+   "Lagrangian",
+   "CMDP"
+  ],
+  "summary": "Open-source framework implementing many safe RL algorithms (Lagrangian, CPO-family, PID-Lagrangian, etc.).",
+  "relation": "Possible source of reference implementations for Lagrangian/PID baselines.",
+  "relevance": 1,
+  "cited_by_count": 60
+ },
+ {
+  "title": "The Surprising Effectiveness of PPO in Cooperative Multi-Agent Games",
+  "authors": "Yu et al.",
+  "year": 2022,
+  "venue": "NeurIPS 2022",
+  "doi": "10.52202/068431-1787",
+  "openalex_id": "W7133226216",
+  "url": "https://doi.org/10.52202/068431-1787",
+  "cluster": "D",
+  "topics": [
+   "MARL"
+  ],
+  "summary": "Shows MAPPO with centralized value function is a strong cooperative MARL baseline across benchmarks.",
+  "relation": "Base algorithm of the thesis (MAPPO).",
+  "relevance": 2,
+  "cited_by_count": 1805
+ },
+ {
+  "title": "A Review of Safe Reinforcement Learning: Methods, Theories, and Applications",
+  "authors": "Gu et al.",
+  "year": 2024,
+  "venue": "IEEE TPAMI",
+  "doi": "10.1109/tpami.2024.3457538",
+  "openalex_id": "W4402402057",
+  "url": "https://doi.org/10.1109/tpami.2024.3457538",
+  "cluster": "D",
+  "topics": [
+   "survey",
+   "CMDP",
+   "MARL"
+  ],
+  "summary": "Review of safe RL methods, theories and applications (summary from title; abstract not retrieved).",
+  "relation": "Survey for framing the thesis within safe RL.",
+  "relevance": 1,
+  "cited_by_count": 709
+ },
+ {
+  "title": "A Survey of Constraint Formulations in Safe Reinforcement Learning",
+  "authors": "Wachi et al.",
+  "year": 2024,
+  "venue": "IJCAI 2024",
+  "doi": "10.24963/ijcai.2024/913",
+  "openalex_id": "W4401023546",
+  "url": "https://doi.org/10.24963/ijcai.2024/913",
+  "cluster": "D",
+  "topics": [
+   "survey",
+   "CMDP",
+   "chance-constraint",
+   "budget-augmentation"
+  ],
+  "summary": "Reviews and relates constraint formulations (expected cumulative, chance, almost-sure, state-wise, CVaR) and matching algorithms.",
+  "relation": "Helps position the mission-level chance constraint relative to expected-cost CMDPs.",
+  "relevance": 2,
+  "cited_by_count": 74
+ },
+ {
+  "title": "Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning",
+  "authors": "Brunke et al.",
+  "year": 2022,
+  "venue": "Annual Review of Control, Robotics, and Autonomous Systems",
+  "doi": "10.1146/annurev-control-042920-020211",
+  "openalex_id": "W3195968524",
+  "url": "https://doi.org/10.1146/annurev-control-042920-020211",
+  "cluster": "D",
+  "topics": [
+   "survey",
+   "safety-layer",
+   "CBF"
+  ],
+  "summary": "Reviews safe learning in robotics, unifying learning-based control, safe RL and certification methods.",
+  "relation": "Robotics-oriented survey covering safety filters and constrained RL.",
+  "relevance": 1,
+  "cited_by_count": 908
+ },
+ {
+  "title": "A comprehensive survey on safe reinforcement learning",
+  "authors": "Garcia & Fernandez",
+  "year": 2015,
+  "venue": "Journal of Machine Learning Research",
+  "doi": "10.5555/2789272.2886795",
+  "openalex_id": "W1845972764",
+  "url": "https://doi.org/10.5555/2789272.2886795",
+  "cluster": "D",
+  "topics": [
+   "survey",
+   "risk-sensitive"
+  ],
+  "summary": "Classic survey separating safe RL into modifying the optimization criterion and modifying the exploration process.",
+  "relation": "Seminal framing: Lagrangian (criterion) vs mask/shield (exploration) approaches.",
+  "relevance": 1,
+  "cited_by_count": 1200
+ },
+ {
+  "title": "Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping",
+  "authors": "Ng et al.",
+  "year": 1999,
+  "venue": "ICML 1999",
+  "doi": null,
+  "openalex_id": "W1777239053",
+  "url": "https://openalex.org/W1777239053",
+  "cluster": "D",
+  "topics": [
+   "reward-shaping"
+  ],
+  "summary": "Proves potential-based reward shaping preserves optimal policies.",
+  "relation": "Justifies potential-based shaping of the search reward (e.g., entropy reduction) without changing the optimal policy.",
+  "relevance": 2,
+  "cited_by_count": 1744
+ },
+ {
+  "title": "Maximizing Information Gain in Partially Observable Environments via Prediction Rewards",
+  "authors": "Satsangi et al.",
+  "year": 2020,
+  "venue": "AAMAS 2020",
+  "doi": "10.65109/yiph3635",
+  "openalex_id": "W3037660226",
+  "url": "https://doi.org/10.65109/yiph3635",
+  "cluster": "D",
+  "topics": [
+   "reward-shaping",
+   "belief-reward"
+  ],
+  "summary": "Shows prediction rewards relate to negative entropy and enable belief-based information-gain rewards in deep RL for active perception.",
+  "relation": "Grounds belief/entropy-based rewards for the source-localization objective.",
+  "relevance": 2,
+  "cited_by_count": 13
+ }
+]

@@ -1,0 +1,922 @@
+[
+ {
+  "title": "Emergency response to the nuclear accident at the Fukushima Daiichi Nuclear Power Plants using mobile rescue robots",
+  "authors": "Nagatani et al.",
+  "year": 2012,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.21439",
+  "openalex_id": "W1950970151",
+  "url": "https://doi.org/10.1002/rob.21439",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "emergency-response",
+   "TID-tolerance",
+   "COTS"
+  ],
+  "summary": "Describes retrofitting the Quince rescue robot for Fukushima Daiichi; gamma irradiation tests at JAEA showed the commercial electronics operated more than 100 h at a 10% safety margin in an assumed 100 mGy/h field, i.e. on the order of 10 Gy+ cumulative dose.",
+  "relation": "Canonical example of sizing a robot's mission by its tolerable cumulative dose in a known dose-rate field; supports the dose-budget framing.",
+  "relevance": 3,
+  "cited_by_count": 636
+ },
+ {
+  "title": "Emergency response by robots to Fukushima-Daiichi accident: summary and lessons learned",
+  "authors": "Kawatsuma et al.",
+  "year": 2012,
+  "venue": "Industrial Robot",
+  "doi": "10.1108/01439911211249715",
+  "openalex_id": "W2017173351",
+  "url": "https://doi.org/10.1108/01439911211249715",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "emergency-response",
+   "review"
+  ],
+  "summary": "Summarises robot deployments (Quince, JAEA-3, imported/donated unmanned machines) at Fukushima Daiichi and extracts organisational and system-level lessons.",
+  "relation": "Background on real accident-response robot operations motivating autonomous, dose-aware robots.",
+  "relevance": 2,
+  "cited_by_count": 178
+ },
+ {
+  "title": "Robotic control vehicle for measuring radiation in Fukushima Daiichi Nuclear Power Plant",
+  "authors": "Ohno et al.",
+  "year": 2011,
+  "venue": "IEEE SSRR",
+  "doi": "10.1109/ssrr.2011.6106792",
+  "openalex_id": "W2078711692",
+  "url": "https://doi.org/10.1109/ssrr.2011.6106792",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "radiation-mapping",
+   "emergency-response"
+  ],
+  "summary": "Presents a shielded control vehicle with a gamma camera, TALON robot with radiation sensor and 3-D LIDAR for measuring hotspots (tens of mSv/h) at Fukushima Daiichi while cutting operator exposure to one third.",
+  "relation": "Example of robot-based radiation survey in an accident site; human-exposure framing complements robot-dose budgeting.",
+  "relevance": 2,
+  "cited_by_count": 60
+ },
+ {
+  "title": "The Use of Robots to Respond to Nuclear Accidents: Applying the Lessons of the Past to the Fukushima Daiichi Nuclear Power Station",
+  "authors": "Yokokohji",
+  "year": 2020,
+  "venue": "Annual Review of Control, Robotics, and Autonomous Systems",
+  "doi": "10.1146/annurev-control-071420-100248",
+  "openalex_id": "W3111268104",
+  "url": "https://doi.org/10.1146/annurev-control-071420-100248",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "Chernobyl",
+   "review"
+  ],
+  "summary": "Reviews robots used at Three Mile Island, Chernobyl and Fukushima Daiichi and the lessons carried between accidents.",
+  "relation": "Key review for the historical context of nuclear-accident robotics (TMI, Chernobyl, Fukushima).",
+  "relevance": 2,
+  "cited_by_count": 35
+ },
+ {
+  "title": "Development and Application of Robotics for Decommissioning of Fukushima Daiichi NPS by IRID",
+  "authors": "Okuzumi et al.",
+  "year": 2024,
+  "venue": "Journal of Robotics and Mechatronics",
+  "doi": "10.20965/jrm.2024.p0009",
+  "openalex_id": "W4391932957",
+  "url": "https://doi.org/10.20965/jrm.2024.p0009",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "decommissioning",
+   "review"
+  ],
+  "summary": "Reports IRID's robots for investigating primary containment vessels at Fukushima Daiichi to locate fuel debris, tailored to each unit's accident scenario.",
+  "relation": "Background on current decommissioning robots operating in extreme gamma fields.",
+  "relevance": 1,
+  "cited_by_count": 10
+ },
+ {
+  "title": "Development and Deployment of Radiation-Tolerant Remotely-Control System in Fukushima Daiichi NPS",
+  "authors": "Sakaue et al.",
+  "year": 2025,
+  "venue": "IEEE SSRR",
+  "doi": "10.1109/ssrr68451.2025.11391270",
+  "openalex_id": "W7130535239",
+  "url": "https://doi.org/10.1109/ssrr68451.2025.11391270",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "TID-tolerance",
+   "dose-limited-lifetime"
+  ],
+  "summary": "For a sandbag-accumulation robot working for months in the Fukushima basement, radiation tolerance of electronics determined lifespan; the highly integrated PLC failed early, so it was moved to a low-dose area with remote I/O on the robot, extending lifespan 1.8x.",
+  "relation": "Directly treats robot lifetime as limited by cumulative dose; supports modelling dose as a consumable, non-renewable resource.",
+  "relevance": 3,
+  "cited_by_count": 1
+ },
+ {
+  "title": "Radiation imaging using a compact Compton camera mounted on a crawler robot inside reactor buildings of Fukushima Daiichi Nuclear Power Station",
+  "authors": "Sato et al.",
+  "year": 2019,
+  "venue": "Journal of Nuclear Science and Technology",
+  "doi": "10.1080/00223131.2019.1581111",
+  "openalex_id": "W2916213670",
+  "url": "https://doi.org/10.1080/00223131.2019.1581111",
+  "cluster": "C",
+  "topics": [
+   "Fukushima",
+   "radiation-mapping"
+  ],
+  "summary": "Deployed a compact Compton camera on a crawler robot in Unit 1 reactor building to visualise gamma-ray streaming and overlay it on a photogrammetric 3-D model.",
+  "relation": "Real-world robot-based gamma imaging/source visualisation in a high-dose building.",
+  "relevance": 2,
+  "cited_by_count": 102
+ },
+ {
+  "title": "Robots in the nuclear industry: a review of technologies and applications",
+  "authors": "Bogue",
+  "year": 2011,
+  "venue": "Industrial Robot",
+  "doi": "10.1108/01439911111106327",
+  "openalex_id": "W2007920821",
+  "url": "https://doi.org/10.1108/01439911111106327",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "decommissioning",
+   "inspection"
+  ],
+  "summary": "Reviews robot use in the nuclear power industry for test/inspection and decommissioning, with product examples and case histories.",
+  "relation": "General review background for nuclear robotics.",
+  "relevance": 1,
+  "cited_by_count": 185
+ },
+ {
+  "title": "A review of ground-based robotic systems for the characterization of nuclear environments",
+  "authors": "Tsitsimpelis et al.",
+  "year": 2018,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2018.10.023",
+  "openalex_id": "W2900742918",
+  "url": "https://doi.org/10.1016/j.pnucene.2018.10.023",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "radiation-mapping",
+   "Fukushima",
+   "Chernobyl"
+  ],
+  "summary": "Reviews ground robots for characterising nuclear environments from pre-TMI through Chernobyl to Fukushima Daiichi, highlighting constraints from extreme radiation, space and atmosphere.",
+  "relation": "Key review for ground-robot radiation characterisation, the platform class used in the thesis.",
+  "relevance": 2,
+  "cited_by_count": 246
+ },
+ {
+  "title": "The Use of Robotics and Automation in Nuclear Decommissioning",
+  "authors": "Seward et al.",
+  "year": 2005,
+  "venue": "ISARC",
+  "doi": "10.22260/isarc2005/0003",
+  "openalex_id": "W2147042357",
+  "url": "https://doi.org/10.22260/isarc2005/0003",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "decommissioning"
+  ],
+  "summary": "Reviews the scope for robotics and automation in nuclear decommissioning to speed demolition and reduce worker exposure.",
+  "relation": "Early decommissioning-robotics background.",
+  "relevance": 1,
+  "cited_by_count": 31
+ },
+ {
+  "title": "Path planning in nuclear facility decommissioning: Research status, challenges, and opportunities",
+  "authors": "Adibeli et al.",
+  "year": 2021,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2021.05.038",
+  "openalex_id": "W3166860843",
+  "url": "https://doi.org/10.1016/j.net.2021.05.038",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "min-dose-path",
+   "decommissioning"
+  ],
+  "summary": "Reviews radiation-aware path planning algorithms for decommissioning (grid, sampling, metaheuristic) and the decision factors involved.",
+  "relation": "Survey of minimum-dose path planning; positions the thesis' dose-aware safety layer relative to this literature.",
+  "relevance": 2,
+  "cited_by_count": 44
+ },
+ {
+  "title": "Design, protection, perception and planning of mobile robots in nuclear power plants",
+  "authors": "Zhang et al.",
+  "year": 2025,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2025.105821",
+  "openalex_id": "W4409852541",
+  "url": "https://doi.org/10.1016/j.pnucene.2025.105821",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "radiation-hardening",
+   "min-dose-path",
+   "multi-robot"
+  ],
+  "summary": "Large review (300+ refs) of mobile robots in NPPs covering design, radiation protection/shielding, perception, path planning, source localization and multi-robot collaboration.",
+  "relation": "Recent comprehensive review spanning robot protection and dose-aware planning.",
+  "relevance": 2,
+  "cited_by_count": 9
+ },
+ {
+  "title": "Research on key technology and application progress of rescue robot in nuclear accident emergency situation",
+  "authors": "Dong et al.",
+  "year": 2025,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2025.103457",
+  "openalex_id": "W4406127226",
+  "url": "https://doi.org/10.1016/j.net.2025.103457",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "emergency-response"
+  ],
+  "summary": "Reviews nuclear-accident emergency rescue robots (reconnaissance, radiation monitoring, decontamination, communication) and proposes key technical parameters.",
+  "relation": "Background on emergency-response robot requirements including radiation resistance.",
+  "relevance": 2,
+  "cited_by_count": 16
+ },
+ {
+  "title": "Robotics in Ionizing Radiation Environments: Vulnerabilities, Hardening, and Future Directions",
+  "authors": "Djirackor et al.",
+  "year": 2026,
+  "venue": "Advanced Robotics Research",
+  "doi": "10.1002/adrr.70191",
+  "openalex_id": "W7225017984",
+  "url": "https://doi.org/10.1002/adrr.70191",
+  "cluster": "C",
+  "topics": [
+   "review",
+   "TID-tolerance",
+   "radiation-hardening"
+  ],
+  "summary": "Reviews TID, displacement damage and single-event effects on robot electronics, sensing, actuation, power and communications, plus hardening, shielding and fault-tolerant architectures; notes a gap in linking component degradation to mission performance.",
+  "relation": "Up-to-date review to cite for robot radiation vulnerability; its identified gap (component degradation to mission performance) motivates a mission-level dose budget.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Radiation tolerance of a small COTS single board computer for mobile robots",
+  "authors": "West et al.",
+  "year": 2021,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2021.12.007",
+  "openalex_id": "W4200045176",
+  "url": "https://doi.org/10.1016/j.net.2021.12.007",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "single-board-computer"
+  ],
+  "summary": "Co-60 irradiation of the UP Core single-board computer running ROS: units failed on average after 111.1 +/- 5.5 Gy, due to on-board power-management faults.",
+  "relation": "Concrete failure-dose number for a typical mobile-robot computer; anchors the 0.1 Gy operating budget as a conservative fraction of COTS failure dose.",
+  "relevance": 3,
+  "cited_by_count": 14
+ },
+ {
+  "title": "Gamma-Induced Image Degradation Analysis of Robot Vision Sensor for Autonomous Inspection of Nuclear Sites",
+  "authors": "Khanam et al.",
+  "year": 2021,
+  "venue": "IEEE Sensors Journal",
+  "doi": "10.1109/jsen.2021.3050168",
+  "openalex_id": "W3118343494",
+  "url": "https://doi.org/10.1109/jsen.2021.3050168",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "camera"
+  ],
+  "summary": "Examines CMOS camera degradation under gamma dose rates up to 3 Gy/min; radiation-induced noise makes images unreliable for visual odometry though still usable for surveillance.",
+  "relation": "Shows perception degrades with dose rate before outright failure, relevant to sensing reliability in strong fields.",
+  "relevance": 2,
+  "cited_by_count": 18
+ },
+ {
+  "title": "Range-Finding Sensor Degradation in Gamma Radiation Environments",
+  "authors": "Diggins et al.",
+  "year": 2014,
+  "venue": "IEEE Sensors Journal",
+  "doi": "10.1109/jsen.2014.2368139",
+  "openalex_id": "W2053893630",
+  "url": "https://doi.org/10.1109/jsen.2014.2368139",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "sensors"
+  ],
+  "summary": "Gamma testing of IR triangulation, sonar and laser rangefinders for nuclear remediation robots: IR sensitivity drifts with dose, the laser rangefinder fails abruptly at low dose, sonar degrades then fails; strong part-to-part variation.",
+  "relation": "Evidence that failure dose is uncertain/variable, supporting a conservative budget with margin.",
+  "relevance": 2,
+  "cited_by_count": 21
+ },
+ {
+  "title": "The effect of ionizing radiation on robotic trajectory movement and electronic components",
+  "authors": "Coloma et al.",
+  "year": 2023,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2023.07.041",
+  "openalex_id": "W4385776099",
+  "url": "https://doi.org/10.1016/j.net.2023.07.041",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "rad-hard"
+  ],
+  "summary": "Irradiates microcontrollers, servo motors and temperature sensors at 0.09-1.5 Gy/s and a 3-DoF arm, comparing rad-hard MCUs and shielding as mitigation to extend operational lifespan.",
+  "relation": "Component-level dose effects on robot motion; supports lifetime-limited-by-dose assumption.",
+  "relevance": 2,
+  "cited_by_count": 10
+ },
+ {
+  "title": "Nuclear Radiation Degradation Study on HD Camera Based on CMOS Image Sensor at Different Dose Rates",
+  "authors": "Wang et al.",
+  "year": 2018,
+  "venue": "Sensors",
+  "doi": "10.3390/s18020514",
+  "openalex_id": "W2791576206",
+  "url": "https://doi.org/10.3390/s18020514",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "camera"
+  ],
+  "summary": "Co-60 irradiation of a COTS CMOS HD camera at 1-100 Gy/h; degradation worsens with dose rate, but the camera still worked at 10 Gy/h over 8 h (~80 Gy) with ~5 dB SNR loss.",
+  "relation": "Camera tolerance data for robots in gamma fields.",
+  "relevance": 2,
+  "cited_by_count": 28
+ },
+ {
+  "title": "Impact of gamma radiation on 8051 microcontroller performance",
+  "authors": "Sharma et al.",
+  "year": 2022,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2022.08.021",
+  "openalex_id": "W4295037462",
+  "url": "https://doi.org/10.1016/j.net.2022.08.021",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "microcontroller"
+  ],
+  "summary": "Co-60 testing of a COTS AT89C51RD2 microcontroller to 1.5 kGy; it operated without failure or degradation up to about 0.6 kGy.",
+  "relation": "Upper-range COTS MCU tolerance number for comparison with SBC (~111 Gy).",
+  "relevance": 2,
+  "cited_by_count": 6
+ },
+ {
+  "title": "Extreme Total Ionizing Dose Survival of a COTS Artix-7 FPGA Under Prolonged Gamma Irradiation",
+  "authors": "Al-Hasan et al.",
+  "year": 2026,
+  "venue": "International Conference on Automation and Computing (ICAC)",
+  "doi": "10.1109/icac70325.2026.11712286",
+  "openalex_id": "W7215687945",
+  "url": "https://doi.org/10.1109/icac70325.2026.11712286",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "FPGA"
+  ],
+  "summary": "A continuously powered Artix-7 FPGA board accumulated ~6,680 Gy over 93.6 h; FPGA fabric survived but the QSPI flash failed, preventing autonomous reconfiguration.",
+  "relation": "Shows peripherals (flash) set the effective failure dose; wide spread of tolerances across components.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Assessment of Radiation Tolerance of Flash Memory by gamma-Ray Irradiation",
+  "authors": "Takakura et al.",
+  "year": 2024,
+  "venue": "Journal of Robotics and Mechatronics",
+  "doi": "10.20965/jrm.2024.p0088",
+  "openalex_id": "W4391988994",
+  "url": "https://doi.org/10.20965/jrm.2024.p0088",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "single-board-computer"
+  ],
+  "summary": "Gamma tests of a Raspberry Pi for decommissioning robots found its boot flash memory had particularly low radiation tolerance, limiting operating duration; some high-performance flash memories were more tolerant.",
+  "relation": "Another COTS computer whose weakest component limits dose lifetime.",
+  "relevance": 2,
+  "cited_by_count": 2
+ },
+ {
+  "title": "gamma Ray irradiation test of control system of nuclear emergency rescue robot",
+  "authors": "Zhao et al.",
+  "year": 2014,
+  "venue": "IEEE ICIST",
+  "doi": "10.1109/icist.2014.6920587",
+  "openalex_id": "W2046826220",
+  "url": "https://doi.org/10.1109/icist.2014.6920587",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "emergency-response"
+  ],
+  "summary": "Gamma irradiation of a nuclear emergency rescue robot control system: control system and communication link survived 100 Gy; an additional 300 Gy test identified the incapacitating total dose.",
+  "relation": "System-level robot failure-dose data (~100+ Gy) for an emergency robot.",
+  "relevance": 3,
+  "cited_by_count": 4
+ },
+ {
+  "title": "Research on Radiation Damage and Reinforcement of Control and Sensing Systems in Nuclear Robots",
+  "authors": "Chang et al.",
+  "year": 2024,
+  "venue": "Electronics",
+  "doi": "10.3390/electronics13071214",
+  "openalex_id": "W4393202476",
+  "url": "https://doi.org/10.3390/electronics13071214",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "shielding"
+  ],
+  "summary": "Irradiation of nuclear-robot components: Hall, pressure and temperature sensors damaged above 1300 Gy; transformers and controllers damaged above 170 Gy; Pb/W shielding (15 mm) improves controller protection.",
+  "relation": "Component failure-dose thresholds; controllers (~170 Gy) are the weak link.",
+  "relevance": 3,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Irradiation of Commercial Equipment for Robotic Applications in a Highly Ionizing Radiation Field",
+  "authors": "Simova et al.",
+  "year": 2024,
+  "venue": "IEEE Radiation Effects Data Workshop (REDW)",
+  "doi": "10.1109/redw61286.2024.10759152",
+  "openalex_id": "W4404741420",
+  "url": "https://doi.org/10.1109/redw61286.2024.10759152",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS"
+  ],
+  "summary": "Evaluates commercial equipment for robotic platforms in high-radiation fields at various dose rates and determines TID for catastrophic failure for some items (values not stated in abstract).",
+  "relation": "Additional COTS failure-dose source to check in full text.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Practical design of robots operating in radiation environments",
+  "authors": "Oomichi et al.",
+  "year": 2007,
+  "venue": "Advanced Robotics",
+  "doi": "10.1163/156855307780108286",
+  "openalex_id": "W2026911979",
+  "url": "https://doi.org/10.1163/156855307780108286",
+  "cluster": "C",
+  "topics": [
+   "radiation-hardening",
+   "design"
+  ],
+  "summary": "Proposes a modular, hierarchical electrical circuit architecture so robot components can withstand radiation without the cost and limited functionality of dedicated rad-hard parts.",
+  "relation": "Background on hardening by architecture.",
+  "relevance": 1,
+  "cited_by_count": 8
+ },
+ {
+  "title": "Study of radiation effects in electronics of a hexapod robotic platform",
+  "authors": "Kazemeini et al.",
+  "year": 2019,
+  "venue": "AIP Conference Proceedings",
+  "doi": "10.1063/1.5127720",
+  "openalex_id": "W2979156205",
+  "url": "https://doi.org/10.1063/1.5127720",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "shielding",
+   "dose-limited-lifetime"
+  ],
+  "summary": "FLUKA study of damage rates in a PhantomX hexapod carrying a CZT detector and camera; notes high doses limit operational time and trades shielding against payload.",
+  "relation": "Explicitly frames robot operating time as limited by dose; shielding vs capability trade-off.",
+  "relevance": 2,
+  "cited_by_count": 4
+ },
+ {
+  "title": "Radiation Tolerance Testing Methodology of Robotic Manipulator Prior to Nuclear Waste Handling",
+  "authors": "Zhang et al.",
+  "year": 2020,
+  "venue": "Frontiers in Robotics and AI",
+  "doi": "10.3389/frobt.2020.00006",
+  "openalex_id": "W3005214890",
+  "url": "https://doi.org/10.3389/frobt.2020.00006",
+  "cluster": "C",
+  "topics": [
+   "TID-tolerance",
+   "COTS",
+   "decommissioning"
+  ],
+  "summary": "Presents a test methodology and results for a robotic arm with modern electronics operated at 10 Gy/h to simulate the harshest waste-handling facilities.",
+  "relation": "Testing methodology for COTS robot tolerance.",
+  "relevance": 2,
+  "cited_by_count": 24
+ },
+ {
+  "title": "Radiation Hardened LIDAR Sensor: Conceptual Design, Testing, and Performance Evaluation",
+  "authors": "Jonasson et al.",
+  "year": 2025,
+  "venue": "Sensors",
+  "doi": "10.3390/s25237311",
+  "openalex_id": "W4417056856",
+  "url": "https://doi.org/10.3390/s25237311",
+  "cluster": "C",
+  "topics": [
+   "rad-hard",
+   "sensors"
+  ],
+  "summary": "Notes standard silicon LIDARs fail quickly in gamma fields and designs a LIDAR prototype from components expected to tolerate up to 1 MGy.",
+  "relation": "Rad-hard alternative illustrating the gap between COTS (~100 Gy) and hardened (~MGy) tolerance.",
+  "relevance": 1,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Robotic Exploration of an Unknown Nuclear Environment Using Radiation Informed Autonomous Navigation",
+  "authors": "Groves et al.",
+  "year": 2021,
+  "venue": "Robotics",
+  "doi": "10.3390/robotics10020078",
+  "openalex_id": "W3165545485",
+  "url": "https://doi.org/10.3390/robotics10020078",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "radiation-mapping",
+   "exploration",
+   "dose-limited-lifetime"
+  ],
+  "summary": "Autonomous UGV with gamma detector integrates measured radiation into its navigation stack to avoid hot spots while travelling between waypoints, explicitly to minimise breakdowns that fail missions and block access routes.",
+  "relation": "Closest robot-centric motivation: robot's own dose causes breakdown; but avoidance is a soft cost, not a hard budget with exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 68
+ },
+ {
+  "title": "Real-Time Avoidance of Ionising Radiation Using Layered Costmaps for Mobile Robots",
+  "authors": "West et al.",
+  "year": 2022,
+  "venue": "Frontiers in Robotics and AI",
+  "doi": "10.3389/frobt.2022.862067",
+  "openalex_id": "W4220972128",
+  "url": "https://doi.org/10.3389/frobt.2022.862067",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "radiation-mapping",
+   "ROS"
+  ],
+  "summary": "Adds a radiation layer (IDW-interpolated observations) to ROS costmaps so planners avoid dose; reduced accumulated dose to background in real trials and up to 10x in simulation, motivated by longer robot lifetime.",
+  "relation": "Robot-dose-aware planning baseline (soft cost) against which a hard dose-budget safety layer can be contrasted.",
+  "relevance": 3,
+  "cited_by_count": 34
+ },
+ {
+  "title": "Radiation Aware Navigation and Planning for Mobile Robot Exploration of Unknown Hazardous Nuclear Environments",
+  "authors": "Batty",
+  "year": 2026,
+  "venue": "PhD thesis, University of Liverpool",
+  "doi": "10.17638/03199094",
+  "openalex_id": "W7166683549",
+  "url": "https://doi.org/10.17638/03199094",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "exploration",
+   "radiation-mapping",
+   "GPR"
+  ],
+  "summary": "Thesis: sparse map abstraction plus hazard-weighted A* (85.6% lower cumulative dose for 17.2% longer paths) and online GPR radiation estimation for exploration (>75% lower dose), deployed on a Unitree Go2.",
+  "relation": "Very recent robot-dose-minimising exploration framework; minimises dose but does not appear (from abstract) to enforce a hard budget with return.",
+  "relevance": 3,
+  "cited_by_count": 0
+ },
+ {
+  "title": "An improved A* algorithm for searching the minimum dose path in nuclear facilities",
+  "authors": "Chen et al.",
+  "year": 2020,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2020.103394",
+  "openalex_id": "W3030087582",
+  "url": "https://doi.org/10.1016/j.pnucene.2020.103394",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "A*"
+  ],
+  "summary": "Improved A* algorithm for minimum-dose paths for nuclear plant workers in complex environments (Unity simulation).",
+  "relation": "Representative grid-based minimum-dose path planner (A* with dose cost).",
+  "relevance": 2,
+  "cited_by_count": 48
+ },
+ {
+  "title": "Grid-based RRT* for minimum dose walking path-planning in complex radioactive environments",
+  "authors": "Chao et al.",
+  "year": 2018,
+  "venue": "Annals of Nuclear Energy",
+  "doi": "10.1016/j.anucene.2018.01.007",
+  "openalex_id": "W2788235625",
+  "url": "https://doi.org/10.1016/j.anucene.2018.01.007",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "RRT*"
+  ],
+  "summary": "GB-RRT* combines RRT* with grid search to find minimum-dose walking paths for workers in cluttered and narrow radioactive environments, outperforming RRT*.",
+  "relation": "Sampling-based minimum-dose planning reference.",
+  "relevance": 2,
+  "cited_by_count": 71
+ },
+ {
+  "title": "DL-RRT* algorithm for least dose path Re-planning in dynamic radioactive environments",
+  "authors": "Chao et al.",
+  "year": 2018,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2018.11.018",
+  "openalex_id": "W2902999210",
+  "url": "https://doi.org/10.1016/j.net.2018.11.018",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "RRT*",
+   "replanning"
+  ],
+  "summary": "Combines RRT* and D* Lite for minimum-dose path re-planning when the radiation field changes.",
+  "relation": "Dose-aware re-planning under changing fields, analogous to updating dose predictions online.",
+  "relevance": 2,
+  "cited_by_count": 70
+ },
+ {
+  "title": "Dynamic minimum dose path-searching method for virtual nuclear facilities",
+  "authors": "Li et al.",
+  "year": 2016,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2016.04.001",
+  "openalex_id": "W2338488600",
+  "url": "https://doi.org/10.1016/j.pnucene.2016.04.001",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path"
+  ],
+  "summary": "Dynamic minimum-dose path search for workers in virtual nuclear facilities.",
+  "relation": "Early minimum-dose path method.",
+  "relevance": 1,
+  "cited_by_count": 39
+ },
+ {
+  "title": "Probabilistic roadmap method for path-planning in radioactive environment of nuclear facilities",
+  "authors": "Wang et al.",
+  "year": 2018,
+  "venue": "Progress in Nuclear Energy",
+  "doi": "10.1016/j.pnucene.2018.08.006",
+  "openalex_id": "W2885155708",
+  "url": "https://doi.org/10.1016/j.pnucene.2018.08.006",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "PRM"
+  ],
+  "summary": "PRM-based path planning that minimises dose in radioactive environments of nuclear facilities (title-based; no abstract returned).",
+  "relation": "Roadmap-based dose-aware planning reference.",
+  "relevance": 1,
+  "cited_by_count": 70
+ },
+ {
+  "title": "Metaheuristic minimum dose path planning for nuclear power plant decommissioning",
+  "authors": "Lai et al.",
+  "year": 2021,
+  "venue": "Annals of Nuclear Energy",
+  "doi": "10.1016/j.anucene.2021.108800",
+  "openalex_id": "W3214333170",
+  "url": "https://doi.org/10.1016/j.anucene.2021.108800",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "PSO",
+   "decommissioning"
+  ],
+  "summary": "PSO and GA methods for minimum-dose paths of workers or robots during decommissioning; PSO beat grid- and sampling-based planners in cumulative dose and distance.",
+  "relation": "Metaheuristic minimum-dose planning for workers/robots.",
+  "relevance": 2,
+  "cited_by_count": 17
+ },
+ {
+  "title": "Multi-objective path planning for mobile robot in nuclear accident environment based on improved ant colony optimization with modified A*",
+  "authors": "Zhang et al.",
+  "year": 2023,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.1016/j.net.2023.02.005",
+  "openalex_id": "W4319723771",
+  "url": "https://doi.org/10.1016/j.net.2023.02.005",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "robot",
+   "multi-objective"
+  ],
+  "summary": "IACO-A* minimises path length, cumulative radiation dose and energy for a mobile robot on a Monte Carlo cost map, plus a high-dose-rate avoidance strategy triggered when lethal dose rates are sensed.",
+  "relation": "Robot cumulative dose as a planning objective with a dose-rate-threshold avoidance rule (closest to a safety layer, but not a cumulative budget).",
+  "relevance": 3,
+  "cited_by_count": 70
+ },
+ {
+  "title": "A Dynamic Nuclear Radiation Environment Path Planning Method Based on an Improved Ant Colony Algorithm",
+  "authors": "Xiang et al.",
+  "year": 2025,
+  "venue": "Nuclear Technology",
+  "doi": "10.1080/00295450.2025.2457249",
+  "openalex_id": "W4407482024",
+  "url": "https://doi.org/10.1080/00295450.2025.2457249",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "robot",
+   "dynamic-field"
+  ],
+  "summary": "Dijkstra-improved ACO for minimum cumulative-dose robot paths in dynamically changing radiation fields during emergencies; ~21% lower cumulative dose than ACO.",
+  "relation": "Robot cumulative-dose minimisation in nuclear emergencies.",
+  "relevance": 2,
+  "cited_by_count": 2
+ },
+ {
+  "title": "A Real-Time Path Planning Algorithm in Radiation Environments Based on an Improved A* Combined with the Dynamic Window Approach",
+  "authors": "Xiang et al.",
+  "year": 2025,
+  "venue": "Nuclear Science and Engineering",
+  "doi": "10.1080/00295639.2025.2575538",
+  "openalex_id": "W4415660110",
+  "url": "https://doi.org/10.1080/00295639.2025.2575538",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "robot",
+   "uncertainty"
+  ],
+  "summary": "Combines improved A* (length, cumulative dose, energy) with a radiation-aware DWA to mitigate radiation damage to onboard components under highly uncertain fields; ~23% lower cumulative dose.",
+  "relation": "Explicitly motivated by onboard component damage and uncertain fields; soft-cost approach.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Path Planning for Nuclear Emergency Robot in Radiation Environment with Uneven Terrain",
+  "authors": "Huang et al.",
+  "year": 2021,
+  "venue": "Lecture Notes in Computer Science (ICIRA)",
+  "doi": "10.1007/978-3-030-89092-6_62",
+  "openalex_id": "W3205841703",
+  "url": "https://doi.org/10.1007/978-3-030-89092-6_62",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "emergency-response",
+   "robot"
+  ],
+  "summary": "Multi-layer costmap (radiation + traversability) with A* heuristic for an emergency robot that cannot pass areas of extremely high dose rate or steep slope.",
+  "relation": "Treats a robot dose-rate limit as an impassable constraint (rate, not cumulative).",
+  "relevance": 2,
+  "cited_by_count": 3
+ },
+ {
+  "title": "Optimal path planning in a real-world radioactive environment: A comparative study of A-star and Dijkstra algorithms",
+  "authors": "Miyombo et al.",
+  "year": 2024,
+  "venue": "Nuclear Engineering and Design",
+  "doi": "10.1016/j.nucengdes.2024.113039",
+  "openalex_id": "W4392156634",
+  "url": "https://doi.org/10.1016/j.nucengdes.2024.113039",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "A*"
+  ],
+  "summary": "Compares A* and Dijkstra for optimal low-dose paths in a real-world radioactive environment.",
+  "relation": "Benchmark comparison of graph planners with dose cost.",
+  "relevance": 1,
+  "cited_by_count": 58
+ },
+ {
+  "title": "Radiation-Aware Path Planning Framework for Mobile Robots in Dynamic Hazardous Environments",
+  "authors": "Karamanlioglu et al.",
+  "year": 2026,
+  "venue": "Sensors",
+  "doi": "10.3390/s26154937",
+  "openalex_id": "W7172414447",
+  "url": "https://doi.org/10.3390/s26154937",
+  "cluster": "C",
+  "topics": [
+   "min-dose-path",
+   "robot",
+   "shielding"
+  ],
+  "summary": "A* + chaotic PSO + B-spline smoothing with exposure-dependent speed adaptation on a mSv/h dose-rate map with shielding attenuation; 21-47% lower cumulative absorbed dose than A*.",
+  "relation": "Recent robot dose-aware planner with attenuation-aware field model.",
+  "relevance": 2,
+  "cited_by_count": 0
+ },
+ {
+  "title": "Use of Gaussian process regression for radiation mapping of a nuclear reactor with a mobile robot",
+  "authors": "West et al.",
+  "year": 2021,
+  "venue": "Scientific Reports",
+  "doi": "10.1038/s41598-021-93474-4",
+  "openalex_id": "W3180642145",
+  "url": "https://doi.org/10.1038/s41598-021-93474-4",
+  "cluster": "C",
+  "topics": [
+   "radiation-mapping",
+   "GPR"
+  ],
+  "summary": "GPR with an MCNP6-benchmarked kernel interpolates sparse, noisy robot radiation measurements; demonstrated at the JSI TRIGA reactor hall.",
+  "relation": "Probabilistic radiation-field estimate usable for predictive dose with uncertainty.",
+  "relevance": 2,
+  "cited_by_count": 96
+ },
+ {
+  "title": "An automated heterogeneous robotic system for radiation surveys: Design and field testing",
+  "authors": "Gabrlik et al.",
+  "year": 2021,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.22010",
+  "openalex_id": "W3037945186",
+  "url": "https://doi.org/10.1002/rob.22010",
+  "cluster": "C",
+  "topics": [
+   "radiation-mapping",
+   "multi-robot",
+   "emergency-response"
+  ],
+  "summary": "Multi-robot (UAV + UGV) system for automated radiation surveys and source localisation with field tests.",
+  "relation": "Multi-robot radiation survey system; relevant to team deployment.",
+  "relevance": 2,
+  "cited_by_count": 38
+ },
+ {
+  "title": "Mobile Robotic Radiation Surveying With Recursive Bayesian Estimation and Attenuation Modeling",
+  "authors": "Anderson et al.",
+  "year": 2020,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "doi": "10.1109/tase.2020.3036808",
+  "openalex_id": "W3107240996",
+  "url": "https://doi.org/10.1109/tase.2020.3036808",
+  "cluster": "C",
+  "topics": [
+   "radiation-mapping",
+   "source-localization",
+   "emergency-response"
+  ],
+  "summary": "Robotic surveys that localize and characterise discrete sources with recursive Bayesian estimation and attenuation modelling, motivated by incident response where dose prohibits humans.",
+  "relation": "Bayesian source characterisation under attenuation, bridging mapping and source search.",
+  "relevance": 2,
+  "cited_by_count": 29
+ },
+ {
+  "title": "The search for orphan radioactive source based on GPR-PRM method",
+  "authors": "Xiao et al.",
+  "year": 2023,
+  "venue": "Nuclear Engineering and Design",
+  "doi": "10.1016/j.nucengdes.2023.112599",
+  "openalex_id": "W4386819067",
+  "url": "https://doi.org/10.1016/j.nucengdes.2023.112599",
+  "cluster": "C",
+  "topics": [
+   "orphan-source",
+   "radiation-mapping",
+   "GPR"
+  ],
+  "summary": "Orphan-source localization by alternating GPR radiation-field reconstruction and PRM/improved-A* path planning for a mobile robot, in simulated rooms with shielding.",
+  "relation": "Orphan-source recovery with a mobile robot (no robot dose constraint).",
+  "relevance": 2,
+  "cited_by_count": 7
+ },
+ {
+  "title": "Physics-Guided Robotic Radiation Source Localization Along Arbitrary Measurement Paths in Unstructured Environments",
+  "authors": "Son et al.",
+  "year": 2026,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "doi": "10.1109/tase.2026.3724772",
+  "openalex_id": "W7166566327",
+  "url": "https://doi.org/10.1109/tase.2026.3724772",
+  "cluster": "C",
+  "topics": [
+   "source-localization",
+   "robot-damage-risk"
+  ],
+  "summary": "Physics-informed ML estimates source location from arbitrary measurement paths, explicitly because approaching the source increases radiation damage risk to the robot.",
+  "relation": "Motivates decoupling localization from approaching the source, consistent with protecting a robot dose budget.",
+  "relevance": 3,
+  "cited_by_count": 0
+ }
+]

@@ -1,6 +1,6 @@
 """Merge per-topic literature JSON files into docs/literature/.
 
-    python scripts/build_literature.py <dir with *_*.json>
+    python scripts/build_literature.py docs/literature/raw
 
 Writes papers.json, papers.csv, references.bib and README.md (index by cluster,
 sorted by relevance then year). Deduplicates by DOI, OpenAlex id, then
