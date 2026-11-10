@@ -24,6 +24,8 @@
    "A",
    "C"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P001",
   "bibkey": "son2026physics"
  },
@@ -78,6 +80,8 @@
    "A",
    "B"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P003",
   "bibkey": "totten2023multi"
  },
@@ -106,6 +110,8 @@
    "A",
    "C"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P004",
   "bibkey": "west2022real"
  },
@@ -162,6 +168,8 @@
    "A",
    "C"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P006",
   "bibkey": "groves2021robotic"
  },
@@ -191,6 +199,167 @@
   "bibkey": "li2026saccl"
  },
  {
+  "title": "Autonomous Radiation Mapping Using a Manipulator-Equipped Quadruped with Flexible Behavior Design",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Applied Sciences",
+  "doi": "10.3390/app16073500",
+  "openalex_id": null,
+  "s2_id": "8b921c3e740a56a9e009cbb780096df4e02d11dd",
+  "url": "https://doi.org/10.3390/app16073500",
+  "topics": [
+   "quadruped",
+   "Bayesian optimization",
+   "adaptive mapping",
+   "Cs-137"
+  ],
+  "summary": "Spot quadruped with manipulator-held gamma spectrometer performs Bayesian-optimization adaptive mapping with a fault-tolerant behaviour tree, locating a Cs-137 source and its intensity in an obstacle-rich testbed.",
+  "relation": "Single-robot active source localization in cluttered space; no robot dose constraint or team.",
+  "relevance": 2,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P235",
+  "bibkey": "see2026autonomous"
+ },
+ {
+  "title": "Physics-Guided Gaussian Process Mapping of Strong-Gradient Radiation Fields from Mobile Robot Surveys: The Role of Sampling Geometry",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Italian National Conference on Sensors",
+  "doi": "10.3390/s26185697",
+  "openalex_id": null,
+  "s2_id": "96aabba8428c55976ccccc4365b2cb9620851f23",
+  "url": "https://doi.org/10.3390/s26185697",
+  "topics": [
+   "radiation field mapping",
+   "Gaussian process",
+   "physics-guided",
+   "sampling geometry",
+   "model error"
+  ],
+  "summary": "Physics-guided GP reconstructs strong-gradient collimated Cs-137 fields from tracked-robot surveys; reliability depends on sampling geometry and extrapolation.",
+  "relation": "Shows where radiation field models can be trusted from robot samples, relevant to model error and overconfidence.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P236",
+  "bibkey": "see2026physics"
+ },
+ {
+  "title": "Reinforcement Learning-Based Augmentation of Data Collection for Bayesian Optimization Towards Radiation Survey and Source Localization",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Journal of Nuclear Engineering",
+  "doi": "10.3390/jne6020010",
+  "openalex_id": null,
+  "s2_id": "8f9c2add13844d2c1448021ef0a506c85d7c2443",
+  "url": "https://doi.org/10.3390/jne6020010",
+  "topics": [
+   "Bayesian optimization",
+   "RL",
+   "radiation survey"
+  ],
+  "summary": "Adds an RL component to Bayesian-optimization radiation search so transit paths collect informative data; tested on three real radiation datasets, improving max-point score at ~2x compute.",
+  "relation": "Learning-based radiation search precedent; single agent and no dose constraint on the robot.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P237",
+  "bibkey": "see2025reinforcement"
+ },
+ {
+  "title": "Radiation Mapping: A Gaussian Multi-Kernel Weighting Method for Source Investigation in Disaster Scenarios",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Italian National Conference on Sensors",
+  "doi": "10.3390/s25154736",
+  "openalex_id": null,
+  "s2_id": "b43fe42cef9dbcaa76d9b6ee99122127e1811ddf",
+  "url": "https://doi.org/10.3390/s25154736",
+  "topics": [
+   "radiation mapping",
+   "GPR",
+   "shielding",
+   "mobile robot"
+  ],
+  "summary": "Multi-kernel GPR with attenuation and energy-dependent kernels for radiation mapping in shielded environments; deployed on a mobile robot with NaI detector, 10-15 cm localization errors.",
+  "relation": "Models shielding-induced field discrepancy, relevant to the thesis' correlated model error finding.",
+  "relevance": 2,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P238",
+  "bibkey": "see2025radiation"
+ },
+ {
+  "title": "Automated Robotic Exploration of Noisy Radiation Fields from Raw Real-World Radiation Data using a Dynamically Enhanced Implementation of Bayesian Optimization",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Journal of Nuclear Engineering and Radiation Science",
+  "doi": "10.1115/1.4070433",
+  "openalex_id": null,
+  "s2_id": "f4b2d6d696a2cdf022ddfbc86a669d1be71fe5fd",
+  "url": "https://doi.org/10.1115/1.4070433",
+  "topics": [
+   "Bayesian optimization",
+   "radiation survey",
+   "real data"
+  ],
+  "summary": "Dynamic-measurement Bayesian optimization for robotic radiation field exploration on raw real-world data including a research reactor with attenuation obstacles.",
+  "relation": "Radiation search with real attenuated fields; single agent, no dose budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P239",
+  "bibkey": "see2025automated"
+ },
+ {
+  "title": "Radiation Source Localization Considering Shielding Effect of Structures Using 3D Object Recognition",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE/SICE International Symposium on System Integration",
+  "doi": "10.1109/sii58957.2024.10417481",
+  "openalex_id": null,
+  "s2_id": "2e9044594c6e027d7fc55434fa244ed71a63f488",
+  "url": "https://doi.org/10.1109/sii58957.2024.10417481",
+  "topics": [
+   "source localization",
+   "shielding",
+   "ML-EM",
+   "EKF"
+  ],
+  "summary": "Uses 3D object recognition to identify shielding structures, corrects measured dose for their attenuation, and localizes sources via ML-EM in regions selected by an EKF.",
+  "relation": "Addresses obstacle-induced model error in source estimation, relevant to the thesis' finding of filter overconfidence under spatially correlated model error.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P240",
+  "bibkey": "see2024radiation"
+ },
+ {
   "title": "Real-Time Radiological Source Term Estimation for Multiple Sources in Cluttered Environments",
   "authors": "Kemp et al.",
   "year": 2023,
@@ -213,6 +382,59 @@
   ],
   "id": "P008",
   "bibkey": "kemp2023real"
+ },
+ {
+  "title": "An Autonomous Clutter Inspection Approach for Radiological Survey Using Mobile Robot",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "doi": "10.1109/tase.2022.3180345",
+  "openalex_id": null,
+  "s2_id": "e1b1719f53b1daa57717036d637e0602f39e3a96",
+  "url": "https://doi.org/10.1109/tase.2022.3180345",
+  "topics": [
+   "particle filter",
+   "radiological survey",
+   "worst-case"
+  ],
+  "summary": "Mobile robot clutter inspection using a particle filter to localize hotspots and estimate intensity, with worst-case analysis of detector limitations; real Geiger-Muller experiments.",
+  "relation": "Particle-filter source estimation with worst-case reasoning, akin to the thesis' percentile-based safety.",
+  "relevance": 2,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P241",
+  "bibkey": "see2023autonomous"
+ },
+ {
+  "title": "Online 2D-3D Radiation Mapping and Source Localization using Gaussian Processes with Mobile Ground Robots",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "IEEE International Symposium on Safety, Security and Rescue Robotics",
+  "doi": "10.1109/ssrr59696.2023.10499940",
+  "openalex_id": null,
+  "s2_id": "b32e10050a1122f95995152edb6cb9ca12380537",
+  "url": "https://doi.org/10.1109/ssrr59696.2023.10499940",
+  "topics": [
+   "Gaussian process",
+   "radiation mapping",
+   "ground robot",
+   "uncertainty"
+  ],
+  "summary": "Online 2D/3D GP radiation mapping and source localization on ground robots with uncertainty quantification, evaluated at EnRicH 2023.",
+  "relation": "Uncertainty-aware field estimation alternative to the particle filter.",
+  "relevance": 2,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P242",
+  "bibkey": "see2023online"
  },
  {
   "title": "An autonomous radiation source detection policy based on deep reinforcement learning with generalized ability in unknown environments",
@@ -260,6 +482,170 @@
   ],
   "id": "P010",
   "bibkey": "anderson2022optimization"
+ },
+ {
+  "title": "A coverage path planning approach for autonomous radiation mapping with a mobile robot",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "International Journal of Advanced Robotic Systems",
+  "doi": "10.1177/17298806221116483",
+  "openalex_id": null,
+  "s2_id": "b3cdf98d1bb27b10d54613de598d6b9240e7e38c",
+  "url": "https://doi.org/10.1177/17298806221116483",
+  "topics": [
+   "radiation mapping",
+   "coverage path planning",
+   "mobile robot",
+   "ROS"
+  ],
+  "summary": "Coverage path planner (sampling points, NN+DFS, K-means clustering) for autonomous radiation mapping with a Geiger-Muller-equipped mobile robot, validated in simulation and real experiments.",
+  "relation": "Single-robot exhaustive mapping without source estimation or robot dose budget; a coverage baseline contrasting with the thesis's estimate-driven, dose-limited search.",
+  "relevance": 2,
+  "cited_by_count": 36,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P243",
+  "bibkey": "see2022coverage"
+ },
+ {
+  "title": "Autonomous mapping and spectroscopic analysis of distributed radiation fields using aerial robots",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Autonomous Robots",
+  "doi": "10.1007/s10514-022-10064-7",
+  "openalex_id": null,
+  "s2_id": "d2e613a22db9fbcb5d70c644915e06a09a1511fb",
+  "url": "https://doi.org/10.1007/s10514-022-10064-7",
+  "topics": [
+   "aerial robot",
+   "radiation mapping",
+   "informative path planning",
+   "spectroscopy",
+   "limited endurance"
+  ],
+  "summary": "Online distributed gamma field estimation with isotope classification and an informative path planner for endurance-limited micro aerial robots in GPS-denied settings, with uranium/radium experiments.",
+  "relation": "Source characterization under a limited endurance budget; budget is flight time, not dose.",
+  "relevance": 2,
+  "cited_by_count": 19,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P244",
+  "bibkey": "see2022autonomous"
+ },
+ {
+  "title": "A fast gamma-ray source localization method for mobile robots.",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Applied Radiation and Isotopes",
+  "doi": "10.1016/j.apradiso.2022.110377",
+  "openalex_id": null,
+  "s2_id": "91c9801dfd87c13fc338e8019d8ace97d113ba58",
+  "url": "https://doi.org/10.1016/j.apradiso.2022.110377",
+  "topics": [
+   "gamma source localization",
+   "Co-60",
+   "mobile robot",
+   "maximum likelihood"
+  ],
+  "summary": "Fast source parameter estimation with triangulation initialisation and hill-climbing MLE, tested with a NaI robot searching for Co-60.",
+  "relation": "Single-robot Co-60 estimation; MLE rather than particle filter, no dose budget.",
+  "relevance": 2,
+  "cited_by_count": 6,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P245",
+  "bibkey": "see2022fast"
+ },
+ {
+  "title": "Investigating the Interpretability of ML-Guided Radiological Source Searches",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "IEEE Access",
+  "doi": "10.1109/access.2022.3193142",
+  "openalex_id": null,
+  "s2_id": "202499613ceb160eb61cd0dd2e139663c29cceb5",
+  "url": "https://doi.org/10.1109/access.2022.3193142",
+  "topics": [
+   "RL",
+   "interpretability",
+   "source localization",
+   "CNN"
+  ],
+  "summary": "Augments an RL-based CNN radiological source search agent with feedback on search progress, termination confidence and projected actions.",
+  "relation": "Single-detector RL source search; relevant for RL search and termination confidence.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P246",
+  "bibkey": "see2022investigating"
+ },
+ {
+  "title": "Informative path planner with exploration-exploitation trade-off for radiological surveys in non-convex scenarios",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "Robotics Auton. Syst.",
+  "doi": "10.1016/j.robot.2020.103691",
+  "openalex_id": null,
+  "s2_id": "138ab4fab1833770af9bc72b9bbb38b9c1605d3e",
+  "url": "https://doi.org/10.1016/j.robot.2020.103691",
+  "topics": [
+   "informative path planning",
+   "Gaussian process",
+   "radiological survey",
+   "CBRN",
+   "B-splines"
+  ],
+  "summary": "Informative path planner with B-spline paths maximizing a GP-based modified mutual information that rewards high-field regions; improves source position estimates in non-convex environments.",
+  "relation": "Information-driven radiological survey that deliberately approaches sources, without accounting for robot dose; the thesis adds a dose budget against exactly this incentive.",
+  "relevance": 2,
+  "cited_by_count": 12,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P247",
+  "bibkey": "see2021informative"
+ },
+ {
+  "title": "Path Planning for Localization of Radiation Sources Based on Principal Component Analysis",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "Applied Sciences",
+  "doi": "10.3390/app11104707",
+  "openalex_id": null,
+  "s2_id": "77241cf7d94d602bd5f59773ecc202c0838ecdf5",
+  "url": "https://doi.org/10.3390/app11104707",
+  "topics": [
+   "radiation source localization",
+   "path planning",
+   "gamma imager",
+   "PCA"
+  ],
+  "summary": "Path planning for a mobile robot with omnidirectional gamma imager: approach the source then encircle it using PCA of past measurements; validated in experiments.",
+  "relation": "Single-robot active source localization without dose limits.",
+  "relevance": 2,
+  "cited_by_count": 21,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P248",
+  "bibkey": "see2021path"
  },
  {
   "title": "Autonomous Search of Radioactive Sources through Mobile Robots",
@@ -312,6 +698,8 @@
    "A",
    "C"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P012",
   "bibkey": "anderson2020mobile"
  },
@@ -365,6 +753,8 @@
    "A",
    "B"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P014",
   "bibkey": "stibinger2020localization"
  },
@@ -419,8 +809,63 @@
    "A",
    "B"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P016",
   "bibkey": "peterson2019experiments"
+ },
+ {
+  "title": "Bayesian Metropolis methods for source localization in an urban environment",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "Radiation Physics and Chemistry",
+  "doi": "10.1016/j.radphyschem.2018.06.024",
+  "openalex_id": null,
+  "s2_id": "cad94e3141cc290935d35b4e204b52de85209478",
+  "url": "https://doi.org/10.1016/j.radphyschem.2018.06.024",
+  "topics": [
+   "MCMC",
+   "Bayesian localization",
+   "urban",
+   "cross-section uncertainty"
+  ],
+  "summary": "Metropolis MCMC estimation of gamma source location and intensity from a detector network, incorporating uncertain building cross sections into the posterior.",
+  "relation": "Relates to model-error-aware posteriors; the thesis finds PF overconfident under correlated model error.",
+  "relevance": 2,
+  "cited_by_count": 17,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P249",
+  "bibkey": "see2019bayesian"
+ },
+ {
+  "title": "Autonomous Exploration for Radioactive Hotspots Localization Taking Account of Sensor Limitations",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "Italian National Conference on Sensors",
+  "doi": "10.3390/s19020292",
+  "openalex_id": null,
+  "s2_id": "d8cffc8ed78b1f2b7cbd11c60c792d74ce70163d",
+  "url": "https://doi.org/10.3390/s19020292",
+  "topics": [
+   "autonomous exploration",
+   "hotspot localization",
+   "gamma camera"
+  ],
+  "summary": "Behaviour-based and MCDM exploration strategies for radioactive hotspot localization accounting for gamma camera acquisition time and angular resolution, validated on a real robot.",
+  "relation": "Single-robot radiation search; no dose budget on robot.",
+  "relevance": 2,
+  "cited_by_count": 24,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P250",
+  "bibkey": "see2019autonomous"
  },
  {
   "title": "Cooperation between an unmanned aerial vehicle and an unmanned ground vehicle in highly accurate localization of gamma radiation hotspots",
@@ -448,6 +893,8 @@
    "A",
    "B"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P017",
   "bibkey": "lazna2018cooperation"
  },
@@ -552,6 +999,59 @@
   "bibkey": "ristic2007information"
  },
  {
+  "title": "Operational verification of a hexapod-robot system equipped with a Compton camera for visualizing radiation sources while overcoming obstacles",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Journal of Instrumentation",
+  "doi": "10.1088/1748-0221/21/10/p10014",
+  "openalex_id": null,
+  "s2_id": "714b52f95d851c5d67294a98484740417269780e",
+  "url": "https://doi.org/10.1088/1748-0221/21/10/p10014",
+  "topics": [
+   "Compton camera",
+   "hexapod",
+   "obstacle traversal",
+   "Fukushima"
+  ],
+  "summary": "Hexapod robot guided by Compton camera direction estimates moves toward a Cs-137 source, overcoming pipes, boards and stairs.",
+  "relation": "Direction-guided single-robot source approach; ignores robot dose and multi-robot coordination.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P251",
+  "bibkey": "see2026operational"
+ },
+ {
+  "title": "Development of optimization-based algorithms for radiation source localization in nuclear emergencies",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Journal of Radiation Research and Applied Sciences",
+  "doi": "10.1016/j.jrras.2026.102588",
+  "openalex_id": null,
+  "s2_id": "4d67940f1cbb94745d0580f19573f376a6e50d40",
+  "url": "https://doi.org/10.1016/j.jrras.2026.102588",
+  "topics": [
+   "radiation source localization",
+   "optimization",
+   "nuclear emergency"
+  ],
+  "summary": "Title only: optimization-based algorithms for radiation source localization in nuclear emergencies.",
+  "relation": "Source estimation methods; exposure-constraint aspects unknown.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P252",
+  "bibkey": "see2026development"
+ },
+ {
   "title": "Deep Reinforcement Learning-Based Path Planning for Radioactive Source Search",
   "authors": "Zhao",
   "year": 2025,
@@ -599,6 +1099,87 @@
   "bibkey": "son2025physics"
  },
  {
+  "title": "Identification of Unknown Multiple Radiation Sources Using Change Rate of Gamma Rays with Directional Detector",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "J. Robotics Mechatronics",
+  "doi": "10.20965/jrm.2025.p1137",
+  "openalex_id": null,
+  "s2_id": "8f668fcf97e2aee9ce6618dcc59f6b8a7ca1e7ed",
+  "url": "https://doi.org/10.20965/jrm.2025.p1137",
+  "topics": [
+   "multiple sources",
+   "directional detector",
+   "unknown intensity",
+   "path planning"
+  ],
+  "summary": "Exploration path generation to localize multiple radiation sources of unknown intensity using the rate of change of gamma counts with a directional detector.",
+  "relation": "Single-robot source localization method; no dose constraint.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P253",
+  "bibkey": "see2025identification"
+ },
+ {
+  "title": "A Rapid Reconstruction Method of Gamma Radiation Field Based on Normalized Proper Orthogonal Decomposition",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "IEEE Transactions on Nuclear Science",
+  "doi": "10.1109/tns.2026.3718773",
+  "openalex_id": null,
+  "s2_id": "484230325de2c078373fb35f43324875669d8132",
+  "url": "https://doi.org/10.1109/tns.2026.3718773",
+  "topics": [
+   "gamma field reconstruction",
+   "proper orthogonal decomposition",
+   "adaptive measurement selection",
+   "mobile robot"
+  ],
+  "summary": "Robot-assisted gamma field mapping coupling normalized POD with minimax adaptive selection of measurement locations; uncertainty-aware weighted least squares reduces error in a 2-D experiment.",
+  "relation": "Field reconstruction from sparse robot stops; offers a model-reduction alternative to the thesis's point-source particle filter but ignores robot exposure.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P254",
+  "bibkey": "see2025rapid"
+ },
+ {
+  "title": "A Behavioral Robotics Approach to Radiation Mapping Using Adaptive Sampling",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Applied Sciences",
+  "doi": "10.3390/app15042050",
+  "openalex_id": null,
+  "s2_id": "7b9b4b4a0b2d8d4019e96c50a9f00e18c4caade7",
+  "url": "https://doi.org/10.3390/app15042050",
+  "topics": [
+   "radiation mapping",
+   "Bayesian optimization",
+   "quadruped robot",
+   "adaptive sampling"
+  ],
+  "summary": "Quadruped robot with manipulator and gamma detector selects measurement points by surrogate-model uncertainty (Bayesian optimization), adapting exploration after collisions; tested with Cs-137.",
+  "relation": "Uncertainty-driven single-robot radiation mapping; no robot dose accounting or multi-agent coordination.",
+  "relevance": 1,
+  "cited_by_count": 7,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P255",
+  "bibkey": "see2025behavioral"
+ },
+ {
   "title": "A radioactive source-seeking method based on angle constraint and particle diffusion",
   "authors": "Ren et al.",
   "year": 2024,
@@ -620,6 +1201,61 @@
   ],
   "id": "P024",
   "bibkey": "ren2024radioactive"
+ },
+ {
+  "title": "A direction-aimed radiation detector and strength estimation method based on mobile robot system",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "International Symposium on Sensors, Mechatronics, and Automation",
+  "doi": "10.1117/12.3015015",
+  "openalex_id": null,
+  "s2_id": "65d198e6753b67251c310d5820608717be148c49",
+  "url": "https://doi.org/10.1117/12.3015015",
+  "topics": [
+   "radiation source search",
+   "directional detector",
+   "Bayesian strength estimation",
+   "mobile robot"
+  ],
+  "summary": "Vehicle-mounted directional detector (0.15 uGy/h to 500 Gy/h range) with conjugate-Gamma Bayesian strength estimation applied to a real radiation source search task.",
+  "relation": "Bayesian source-strength estimation on a mobile robot for high-dose-rate fields; single robot, no dose constraint.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P256",
+  "bibkey": "see2024direction"
+ },
+ {
+  "title": "3D Radiation Mapping Using Gaussian Process Regression with Intensity Projection",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Advanced Intelligent Systems",
+  "doi": "10.1002/aisy.202300820",
+  "openalex_id": null,
+  "s2_id": "fd28439fea483ea5e381961a9e6117d5ad9a10d2",
+  "url": "https://doi.org/10.1002/aisy.202300820",
+  "topics": [
+   "radiation mapping",
+   "Gaussian process",
+   "inverse square kernel",
+   "3D",
+   "source estimation"
+  ],
+  "summary": "GP regression with an inverse-square-law-inspired kernel builds 3D radiation maps from mobile-robot data and estimates sources.",
+  "relation": "Physics-informed field model; complements the thesis's parametric particle filter.",
+  "relevance": 1,
+  "cited_by_count": 10,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P257",
+  "bibkey": "see2024radiation2"
  },
  {
   "title": "A study of robotic search strategy for multi-radiation sources in unknown environments",
@@ -672,6 +1308,33 @@
   "bibkey": "hu2023autonomous"
  },
  {
+  "title": "Heuristic techniques for maximum likelihood localization of radioactive sources via a sensor network",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Nuclear Science and Techniques",
+  "doi": "10.1007/s41365-023-01267-3",
+  "openalex_id": null,
+  "s2_id": "a75622d139e319da83e3478b90d4cec84b49606c",
+  "url": "https://doi.org/10.1007/s41365-023-01267-3",
+  "topics": [
+   "maximum likelihood",
+   "sensor network",
+   "source localization",
+   "heuristics"
+  ],
+  "summary": "Heuristic optimisation to speed MLE estimation of radioactive source parameters with a sensor network.",
+  "relation": "Static sensor network estimation, not mobile robots.",
+  "relevance": 1,
+  "cited_by_count": 6,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P258",
+  "bibkey": "see2023heuristic"
+ },
+ {
   "title": "Localizing unknown radiation sources by unscented particle filtering based on divide-and-conquer sampling",
   "authors": "Liu et al.",
   "year": 2022,
@@ -693,6 +1356,84 @@
   ],
   "id": "P027",
   "bibkey": "liu2022localizing"
+ },
+ {
+  "title": "Rapid localization of radioactive leaks based on hybrid adaptive grey wolf algorithm",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Journal of Instrumentation",
+  "doi": "10.1088/1748-0221/17/08/p08034",
+  "openalex_id": null,
+  "s2_id": "23b13c47e18dbaa73490b59c169e55deec62bd87",
+  "url": "https://doi.org/10.1088/1748-0221/17/08/p08034",
+  "topics": [
+   "radioactive source localization",
+   "grey wolf optimizer",
+   "leak localization",
+   "metaheuristic"
+  ],
+  "summary": "Hybrid adaptive grey wolf optimizer localizes single and double radioactive leak points from exposure-rate changes, with attenuation and scattering modelled.",
+  "relation": "Optimization-based localization alternative to particle filtering; no robot dose or multi-agent aspect.",
+  "relevance": 1,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P259",
+  "bibkey": "see2022rapid"
+ },
+ {
+  "title": "An Alpha/Beta Radiation Mapping Method Using Simultaneous Localization and Mapping for Nuclear Power Plants",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Machines",
+  "doi": "10.3390/machines10090800",
+  "openalex_id": null,
+  "s2_id": "cf823d014021340e2dae8d751391a668df7e2144",
+  "url": "https://doi.org/10.3390/machines10090800",
+  "topics": [
+   "radiation mapping",
+   "SLAM",
+   "mobile robot"
+  ],
+  "summary": "Autonomous alpha/beta radiation mapping framework projecting detector readings onto a LiDAR SLAM map, tested in ROS indoors and outdoors.",
+  "relation": "Mapping rather than source estimation; no exposure constraint.",
+  "relevance": 1,
+  "cited_by_count": 10,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P260",
+  "bibkey": "see2022alpha"
+ },
+ {
+  "title": "Radioactive source search problem and optimisation model based on meta-heuristic algorithm",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Applied Mathematics and Nonlinear Sciences",
+  "doi": "10.2478/amns.2021.2.00159",
+  "openalex_id": null,
+  "s2_id": "390ae46652626bf30bc7fa7de7f1f22b03b66e34",
+  "url": "https://doi.org/10.2478/amns.2021.2.00159",
+  "topics": [
+   "radioactive source search",
+   "meta-heuristic"
+  ],
+  "summary": "Meta-heuristic search algorithm imitating technicians to locate lost radioactive sources, with linear complexity and good efficiency in simulation.",
+  "relation": "Single-searcher heuristic search; no dose budget or team.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P261",
+  "bibkey": "see2022radioactive"
  },
  {
   "title": "Gamma Radiation Source Localization for Micro Aerial Vehicles with a Miniature Single-Detector Compton Event Camera",
@@ -767,6 +1508,60 @@
   "bibkey": "bukartas2018bayesian"
  },
  {
+  "title": "Active Range and Bearing-based Radiation Source Localization",
+  "authors": "(see DOI)",
+  "year": 2018,
+  "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+  "doi": "10.1109/iros.2018.8593625",
+  "openalex_id": null,
+  "s2_id": "4d6c2b8806f1df7929cd4742a8290678069eda24",
+  "url": "https://doi.org/10.1109/iros.2018.8593625",
+  "topics": [
+   "Compton camera",
+   "Fisher information",
+   "active localization",
+   "adaptive step"
+  ],
+  "summary": "Gamma-camera mapping plus greedy Fisher-information waypoint selection with adaptive step size for 3D source localization.",
+  "relation": "Information-driven single-robot search; no dose budget.",
+  "relevance": 1,
+  "cited_by_count": 17,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P262",
+  "bibkey": "see2018active"
+ },
+ {
+  "title": "Use of Multi-Rotor Unmanned Aerial Vehicles for Radioactive Source Search",
+  "authors": "(see DOI)",
+  "year": 2018,
+  "venue": "Remote Sensing",
+  "doi": "10.3390/rs10050728",
+  "openalex_id": null,
+  "s2_id": "145e7eb861e7e7fa42c845b055ca532177388d98",
+  "url": "https://doi.org/10.3390/rs10050728",
+  "topics": [
+   "UAV",
+   "radioactive source search",
+   "multi-rotor",
+   "field experiment"
+  ],
+  "summary": "Low-cost multi-rotor UAV platform with three search algorithms; field tests located a radioactive source with 0.32 m error.",
+  "relation": "Aerial source search precedent; single vehicle, low-activity sources, no dose constraint.",
+  "relevance": 1,
+  "cited_by_count": 48,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P263",
+  "bibkey": "see2018multi"
+ },
+ {
   "title": "Radiation search operations using scene understanding with autonomous UAV and UGV",
   "authors": "Christie et al.",
   "year": 2017,
@@ -790,6 +1585,60 @@
   ],
   "id": "P031",
   "bibkey": "christie2017radiation"
+ },
+ {
+  "title": "Hybrid optimization and Bayesian inference techniques for a non‐smooth radiation detection problem",
+  "authors": "(see DOI)",
+  "year": 2016,
+  "venue": null,
+  "doi": "10.1002/nme.5491",
+  "openalex_id": null,
+  "s2_id": "372edcccd9293680b58f16d6e2a346366808106c",
+  "url": "https://doi.org/10.1002/nme.5491",
+  "topics": [
+   "Bayesian inference",
+   "Poisson likelihood",
+   "urban",
+   "hybrid optimization"
+  ],
+  "summary": "Hybrid global/local optimization and adaptive MCMC to estimate radiation source location and intensity in an urban block with non-smooth likelihood.",
+  "relation": "Source estimation alternatives to particle filtering with uncertainty quantification.",
+  "relevance": 1,
+  "cited_by_count": 18,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P264",
+  "bibkey": "see2016hybrid"
+ },
+ {
+  "title": "UAV-based multiple source localization and contour mapping of radiation fields",
+  "authors": "(see DOI)",
+  "year": 2016,
+  "venue": "Robotics Auton. Syst.",
+  "doi": "10.1016/j.robot.2016.08.002",
+  "openalex_id": null,
+  "s2_id": "f3dbcbceaf025db405df4bd06218a6d67e735b7e",
+  "url": "https://doi.org/10.1016/j.robot.2016.08.002",
+  "topics": [
+   "UAV",
+   "multiple source localization",
+   "contour mapping",
+   "radiation field"
+  ],
+  "summary": "UAV approach for localizing multiple radiation sources and contour mapping, handling scattered, clustered and biased source distributions.",
+  "relation": "Aerial multi-source localization; no robot exposure constraint.",
+  "relevance": 1,
+  "cited_by_count": 43,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "A"
+  ],
+  "id": "P265",
+  "bibkey": "see2016based"
  },
  {
   "title": "Search strategy of a mobile robot for radiation sources in an unknown environment",
@@ -885,6 +1734,8 @@
    "A",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P035",
   "bibkey": "vergassola2007infotaxis"
  },
@@ -961,6 +1812,33 @@
   ],
   "id": "P038",
   "bibkey": "huo2025psopf"
+ },
+ {
+  "title": "Leveraging Swarm Robotics for Environmental Radiation Monitoring: An Interdisciplinary Perspective",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "2025 9th International Conference on Mechanical Engineering and Robotics Research (ICMERR)",
+  "doi": "10.1109/icmerr64601.2025.10950004",
+  "openalex_id": null,
+  "s2_id": "df00e7cb1e766cef5cc414b082f99610311c0fc9",
+  "url": "https://doi.org/10.1109/icmerr64601.2025.10950004",
+  "topics": [
+   "swarm",
+   "radiation mapping",
+   "radiation tolerance",
+   "multi-robot"
+  ],
+  "summary": "Integrates dynamic radiation source behaviour into a robot simulator to study swarms exploring and mapping radioactive environments, evaluating number of robots, their radiation tolerance and navigation efficiency.",
+  "relation": "Close setting (multi-robot radiation exploration with robot radiation tolerance as a factor) but no learned policy, budget-aware withdrawal or estimate-dependent safety.",
+  "relevance": 3,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "B"
+  ],
+  "id": "P266",
+  "bibkey": "see2025leveraging"
  },
  {
   "title": "A heterogeneous robot collaborative search method for radioactive sources",
@@ -1484,8 +2362,37 @@
    "B",
    "C"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P060",
   "bibkey": "gabrlik2021automated"
+ },
+ {
+  "title": "Using an Automated Heterogeneous Robotic System for Radiation Surveys",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2006.16066",
+  "openalex_id": null,
+  "s2_id": "e9e3a4f1666e31fe83149c2dc2d08c6f167bec9e",
+  "url": "https://doi.org/10.48550/arxiv.2006.16066",
+  "topics": [
+   "heterogeneous team",
+   "UAS+UGV",
+   "radiation mapping",
+   "source localization"
+  ],
+  "summary": "Three-phase UAS then UGV system for aerial and terrestrial radiation mapping and source localization, validated in a staged field exercise.",
+  "relation": "Multi-robot radiation search precedent, but sequential heterogeneous deployment without dose budgets or learned coordination.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "B"
+  ],
+  "id": "P267",
+  "bibkey": "see2020using"
  },
  {
   "title": "Search and Localization of a Weak Source with a Multi-robot Formation",
@@ -1603,6 +2510,33 @@
   ],
   "id": "P065",
   "bibkey": "chen2025distributed"
+ },
+ {
+  "title": "A high-effective swarm intelligence-based multi-robot cooperation method for target searching in unknown hazardous environments",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Expert systems with applications",
+  "doi": "10.1016/j.eswa.2024.125609",
+  "openalex_id": null,
+  "s2_id": "752bbed6c69164d2fd481483b492d63075fb340d",
+  "url": "https://doi.org/10.1016/j.eswa.2024.125609",
+  "topics": [
+   "multi-robot",
+   "swarm intelligence",
+   "target search",
+   "hazardous environment"
+  ],
+  "summary": "Title only: swarm-intelligence-based multi-robot cooperation for target searching in unknown hazardous environments.",
+  "relation": "Multi-robot hazardous search; whether exposure is constrained is unknown.",
+  "relevance": 1,
+  "cited_by_count": 24,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "B"
+  ],
+  "id": "P268",
+  "bibkey": "see2025high"
  },
  {
   "title": "Multi-Robot Radiation Reconnaissance in the Chornobyl NPP Exclusion Zone",
@@ -1879,6 +2813,34 @@
   "bibkey": "zhang2023multi"
  },
  {
+  "title": "Radiation Field Detection of Nuclear Emergency Robot with Gamma Camera",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "2022 IEEE/ASME International Conference on Advanced Intelligent Mechatronics (AIM)",
+  "doi": "10.1109/aim52237.2022.9863419",
+  "openalex_id": null,
+  "s2_id": "9bc97949061e6beaa17d7b80722ddcc0220dc433",
+  "url": "https://doi.org/10.1109/aim52237.2022.9863419",
+  "topics": [
+   "gamma camera",
+   "Fisher information",
+   "dose accumulation",
+   "path planning",
+   "nuclear emergency robot"
+  ],
+  "summary": "Detection-pose planning for a nuclear emergency robot with a gamma camera using Fisher information, with a path planner that accounts for dose accumulation on the robot for unknown sources.",
+  "relation": "Close single-robot precedent combining active source detection with robot dose accumulation; lacks a hard budget, exit reserve and team.",
+  "relevance": 3,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P269",
+  "bibkey": "see2022radiation"
+ },
+ {
   "title": "Radiation tolerance of a small COTS single board computer for mobile robots",
   "authors": "West et al.",
   "year": 2021,
@@ -2018,6 +2980,88 @@
   "bibkey": "karamanlioglu2026radiation"
  },
  {
+  "title": "Indoor UAV for Nuclear Investigation: Experimental Qualification and Field Feedback",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.70357",
+  "openalex_id": null,
+  "s2_id": "d317c376e89b632471d8fd56e95f1b5d8d1384ba",
+  "url": "https://doi.org/10.1002/rob.70357",
+  "topics": [
+   "indoor UAV",
+   "field qualification",
+   "cumulative dose management",
+   "source search"
+  ],
+  "summary": "Field report of an indoor UAV at CEA Marcoule; located a Cs-137 source in blind tests and notes commercial electronics require conservative cumulative-dose management and short battery life.",
+  "relation": "Practitioner evidence that cumulative dose to robot electronics is a real operational constraint, supporting the dose-budget premise.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P270",
+  "bibkey": "see2026indoor"
+ },
+ {
+  "title": "From Single Platforms Towards Coordinated Fleets: Safety- and Security-Bounded Autonomous Multi-Robot Systems for Nuclear Decommissioning in Europe",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Computers",
+  "doi": "10.3390/computers15090620",
+  "openalex_id": null,
+  "s2_id": "66dcb304a9c5de60a2eabbc141b4be82c3d8fb46",
+  "url": "https://doi.org/10.3390/computers15090620",
+  "topics": [
+   "multi-robot",
+   "nuclear decommissioning",
+   "risk-aware navigation",
+   "energy-aware task allocation",
+   "radiological digital twin"
+  ],
+  "summary": "XS-ABILITY: heterogeneous legged/wheeled/aerial robot fleet for radiological characterisation with energy-aware task allocation, risk-aware navigation and a supervisory safety controller; field test of a single platform (TRL 4-5).",
+  "relation": "Real-world multi-robot nuclear system design; radiation endurance and fleet coordination not evaluated, which the thesis addresses in simulation.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P271",
+  "bibkey": "see2026from"
+ },
+ {
+  "title": "RI-RRT*: a riemannian metric-based path planning algorithm for autonomous robots in nuclear environments",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Journal of Nuclear Science and Technology",
+  "doi": "10.1080/00223131.2025.2606062",
+  "openalex_id": null,
+  "s2_id": "1d1f4fa400d58a8d8eeeed05d50ec8c3c5b94ff1",
+  "url": "https://doi.org/10.1080/00223131.2025.2606062",
+  "topics": [
+   "dose-aware path planning",
+   "RRT*",
+   "Riemannian metric",
+   "UAV"
+  ],
+  "summary": "RI-RRT* embeds radiation intensity and obstacles into a Riemannian metric to plan low cumulative-dose paths; Geant4 simulations show 3-12% dose reduction, validated on a UAV.",
+  "relation": "Cumulative-dose-aware planning in a known field; thesis plans under an uncertain field and a hard budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P272",
+  "bibkey": "see2026riemannian"
+ },
+ {
   "title": "Design, protection, perception and planning of mobile robots in nuclear power plants",
   "authors": "Zhang et al.",
   "year": 2025,
@@ -2110,6 +3154,87 @@
   "bibkey": "xiang2025real"
  },
  {
+  "title": "Design and Implementation of the Scenario Simulation System for Robotic Operations in Nuclear Radiation Environment",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "2025 IEEE 26th China Conference on System Simulation Technology and its Applications (CCSSTA)",
+  "doi": "10.1109/ieeeconf65522.2025.11136988",
+  "openalex_id": null,
+  "s2_id": "9b513ee0223973471a70cf55c9511e3bdd579ae1",
+  "url": "https://doi.org/10.1109/ieeeconf65522.2025.11136988",
+  "topics": [
+   "simulation",
+   "Unity3D",
+   "accumulated robot dose",
+   "task planning"
+  ],
+  "summary": "Unity3D simulator integrating SuperMC radiation fields to plan robot paths and compute real-time accumulated dose on sensitive electronic components.",
+  "relation": "Evaluates robot cumulative dose for a known field offline; the thesis handles an unknown source with online budgeted control.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P273",
+  "bibkey": "see2025design"
+ },
+ {
+  "title": "Multi-Objective Path Planning of Robots in Nuclear Environments Based on Improved Ant Colony Algorithm",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "2025 5th International Conference on Conference on Robotics, Automation and Intelligent Control (ICRAIC)",
+  "doi": "10.1109/icraic67376.2025.11376514",
+  "openalex_id": null,
+  "s2_id": "6cfc5d6cefddd4ace1429eb2ec01eabd36fbdd46",
+  "url": "https://doi.org/10.1109/icraic67376.2025.11376514",
+  "topics": [
+   "dose-aware path planning",
+   "ant colony optimization",
+   "A*",
+   "multi-objective",
+   "nuclear environment"
+  ],
+  "summary": "Hybrid A*-directed ant colony optimization path planner jointly minimizing path length, accumulated radiation dose and energy, validated in simulation and a robot experiment in a radiation field.",
+  "relation": "Dose-aware planning with a known radiation field; the thesis must plan dose under an uncertain, estimated field and a hard budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P274",
+  "bibkey": "see2025multi"
+ },
+ {
+  "title": "A Path Planning Algorithm Considering the Feasibility Region of Nuclear Decommissioning Robots",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Nuclear science and engineering",
+  "doi": "10.1080/00295639.2025.2509471",
+  "openalex_id": null,
+  "s2_id": "fb531a9becd11d30c7d698a98e49ed329d2dd034",
+  "url": "https://doi.org/10.1080/00295639.2025.2509471",
+  "topics": [
+   "dose-aware path planning",
+   "decommissioning",
+   "A*"
+  ],
+  "summary": "Proposes a dynamic-constraint A* (DC-A*) planner for nuclear decommissioning robots that accounts for robot footprint and orientation in narrow passages while avoiding radiation sources. Experiments show reduced dose accumulation and higher task success.",
+  "relation": "Dose-minimizing planning with a known field for a single robot; the thesis instead budgets dose under an uncertain source estimate during search.",
+  "relevance": 2,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P275",
+  "bibkey": "see2025path"
+ },
+ {
   "title": "Assessment of Radiation Tolerance of Flash Memory by gamma-Ray Irradiation",
   "authors": "Takakura et al.",
   "year": 2024,
@@ -2153,6 +3278,33 @@
   ],
   "id": "P088",
   "bibkey": "simova2024irradiation"
+ },
+ {
+  "title": "Multi-objective path planning for mobile robots in nuclear radiation environment",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Journal of Physics: Conference Series",
+  "doi": "10.1088/1742-6596/2897/1/012017",
+  "openalex_id": null,
+  "s2_id": "3207000bed243d886dae83520ec41c7d49c6aadd",
+  "url": "https://doi.org/10.1088/1742-6596/2897/1/012017",
+  "topics": [
+   "dose-aware path planning",
+   "cumulative dose",
+   "ant colony",
+   "multi-objective"
+  ],
+  "summary": "Improved ACO-A* multi-objective path planner minimising path length, cumulative radiation dose and energy for a mobile robot in a radiation field.",
+  "relation": "Dose-aware planning in a known field; thesis faces an unknown source and a hard budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P276",
+  "bibkey": "see2024multi"
  },
  {
   "title": "The effect of ionizing radiation on robotic trajectory movement and electronic components",
@@ -2201,6 +3353,60 @@
   "bibkey": "xiao2023search"
  },
  {
+  "title": "CARMA II: A ground vehicle for autonomous surveying of alpha, beta and gamma radiation",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Frontiers in Robotics and AI",
+  "doi": "10.3389/frobt.2023.1137750",
+  "openalex_id": null,
+  "s2_id": "fd763d3424a66529adb4bdeac572d3b4843b01cf",
+  "url": "https://doi.org/10.3389/frobt.2023.1137750",
+  "topics": [
+   "radiation avoidance",
+   "costmap",
+   "robot dose reduction",
+   "survey robot"
+  ],
+  "summary": "Autonomous ground vehicle surveying alpha/beta/gamma; radiation costmaps re-plan around contamination and experimentally reduce gamma dose to the robot.",
+  "relation": "Dose-aware planning to protect the robot from a mapped field, but no hard cumulative budget, exit reserve or uncertain-source prediction.",
+  "relevance": 2,
+  "cited_by_count": 18,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P277",
+  "bibkey": "see2023carma"
+ },
+ {
+  "title": "A Novel Path Planning Approach for Mobile Robot in Radioactive Environment Based on Improved Deep Q Network Algorithm",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Symmetry",
+  "doi": "10.3390/sym15112048",
+  "openalex_id": null,
+  "s2_id": "3308dcefa4624b449abc66f651d5420007efe605",
+  "url": "https://doi.org/10.3390/sym15112048",
+  "topics": [
+   "DRL",
+   "DQN",
+   "accumulated dose",
+   "path planning"
+  ],
+  "summary": "Improved dueling double DQN (ID3QN) for robot path planning in radioactive grid environments under path-length and accumulated-dose constraints, outperforming A*, GA, ACO and DQN variants.",
+  "relation": "RL path planning minimizing accumulated dose in a known field, single agent; no search, budget or uncertainty.",
+  "relevance": 2,
+  "cited_by_count": 21,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P278",
+  "bibkey": "see2023novel"
+ },
+ {
   "title": "Impact of gamma radiation on 8051 microcontroller performance",
   "authors": "Sharma et al.",
   "year": 2022,
@@ -2245,6 +3451,32 @@
   ],
   "id": "P234",
   "bibkey": "sayed2022modular"
+ },
+ {
+  "title": "Using Machine Learning for Anomaly Detection on a System-on-Chip under Gamma Radiation",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "Nuclear Engineering and Technology",
+  "doi": "10.48550/arxiv.2201.01588",
+  "openalex_id": null,
+  "s2_id": "9045ebe90b403a00f47d76f24cee29b3d75ec981",
+  "url": "https://doi.org/10.48550/arxiv.2201.01588",
+  "topics": [
+   "total ionizing dose",
+   "electronics failure",
+   "anomaly detection"
+  ],
+  "summary": "Uses ML anomaly detection on consumer FPGA/SoC measurements under gamma irradiation to anticipate total-ionizing-dose failure before the boards stop working.",
+  "relation": "Evidence on cumulative TID failure of commodity electronics, supporting a hard per-robot dose budget.",
+  "relevance": 2,
+  "cited_by_count": 14,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P279",
+  "bibkey": "see2022using"
  },
  {
   "title": "Path planning in nuclear facility decommissioning: Research status, challenges, and opportunities",
@@ -2361,6 +3593,60 @@
   "bibkey": "west2021gaussian"
  },
  {
+  "title": "Simulating Ionising Radiation in Gazebo for Robotic Nuclear Inspection Challenges",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "Robotics",
+  "doi": "10.3390/robotics10030086",
+  "openalex_id": null,
+  "s2_id": "171f64c3d0c5f46c0af38990ef2403a072152de8",
+  "url": "https://doi.org/10.3390/robotics10030086",
+  "topics": [
+   "simulation",
+   "Gazebo",
+   "gamma transport",
+   "MCNP validation"
+  ],
+  "summary": "ROS/Gazebo plugin to simulate gamma sources and robot-mounted detectors in evolving nuclear environments, verified against MCNP6.",
+  "relation": "Candidate simulation substrate for realistic robot dose/count rates; no planning or dose budget.",
+  "relevance": 2,
+  "cited_by_count": 38,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P280",
+  "bibkey": "see2021simulating"
+ },
+ {
+  "title": "Vega—A small, low cost, ground robot for nuclear decommissioning",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "J. Field Robotics",
+  "doi": "10.1002/rob.22048",
+  "openalex_id": null,
+  "s2_id": "d8407e9d531c6edf17ae1e46bb99f23c3fe90194",
+  "url": "https://doi.org/10.1002/rob.22048",
+  "topics": [
+   "radiation tolerance",
+   "decommissioning robot",
+   "component irradiation",
+   "low-cost robot"
+  ],
+  "summary": "Vega small ground robot for nuclear decommissioning; components irradiated to estimate operating lifetime in active environments; deployed at Dounreay.",
+  "relation": "Source of empirical robot radiation tolerance/lifetime estimates to justify cumulative dose budgets.",
+  "relevance": 2,
+  "cited_by_count": 31,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P281",
+  "bibkey": "see2021vegaa"
+ },
+ {
   "title": "The Use of Robots to Respond to Nuclear Accidents: Applying the Lessons of the Past to the Fukushima Daiichi Nuclear Power Station",
   "authors": "Yokokohji",
   "year": 2020,
@@ -2429,6 +3715,86 @@
   "bibkey": "chen2020improved"
  },
  {
+  "title": "Evaluation and Analysis of Technologies for Robotic Platforms for the Nuclear Decommissioning",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "International Conference on Design & Technology of Integrated Systems in Nanoscale Era",
+  "doi": "10.1109/dtis48698.2020.9081293",
+  "openalex_id": null,
+  "s2_id": "bbd2422c418e25aa3230e21da7646d31e606583d",
+  "url": "https://doi.org/10.1109/dtis48698.2020.9081293",
+  "topics": [
+   "radiation hardness assurance",
+   "COTS electronics",
+   "TID 400 Gy",
+   "decommissioning robot"
+  ],
+  "summary": "Radiation hardness assurance procedure qualifying COTS electronics of a nuclear inspection robot to an initial TID target of 400 Gy.",
+  "relation": "Gives a concrete robot TID tolerance figure usable to set dose budgets.",
+  "relevance": 2,
+  "cited_by_count": 8,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P282",
+  "bibkey": "see2020evaluation"
+ },
+ {
+  "title": "Allocation of Radiation Shielding Boards to Protect the Urban Search and Rescue Robots from Malfunctioning in the Radioactive Environments Arising from Decommissioning of the Nuclear Facility",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "Symmetry",
+  "doi": "10.3390/sym12081297",
+  "openalex_id": null,
+  "s2_id": "e9e84bddfbb2954c4319280e132e305f6c1860cb",
+  "url": "https://doi.org/10.3390/sym12081297",
+  "topics": [
+   "UGV swarm",
+   "radiation shielding allocation",
+   "asymmetric allocation",
+   "absorbed dose"
+  ],
+  "summary": "Allocates a finite budget of radiation shielding boards across a USAR UGV swarm to minimise absorbed doses and sensor malfunction, showing asymmetric allocation beats even allocation (competitive equilibrium, ILP).",
+  "relation": "Treats robot dose protection as a team resource allocation problem with unequal shares, analogous to the thesis's unequal budgets; static allocation, no search or learning.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P283",
+  "bibkey": "see2020allocation"
+ },
+ {
+  "title": "Robotic Development for the Nuclear Environment: Challenges and Strategy",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "Robotics",
+  "doi": "10.3390/robotics9040094",
+  "openalex_id": null,
+  "s2_id": "15f7fa0f5dd3c74ffc17d7006993ecba8d23ade7",
+  "url": "https://doi.org/10.3390/robotics9040094",
+  "topics": [
+   "nuclear robotics",
+   "radiation effects",
+   "review"
+  ],
+  "summary": "Reviews the challenges of deploying robots in nuclear environments, including radiation effects, remote maintenance and deployment constraints, and the nuclear industry's development/assessment processes.",
+  "relation": "Background motivating per-robot radiation limits; no algorithms.",
+  "relevance": 2,
+  "cited_by_count": 65,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P284",
+  "bibkey": "see2020robotic"
+ },
+ {
   "title": "Radiation imaging using a compact Compton camera mounted on a crawler robot inside reactor buildings of Fukushima Daiichi Nuclear Power Station",
   "authors": "Sato et al.",
   "year": 2019,
@@ -2472,6 +3838,61 @@
   ],
   "id": "P101",
   "bibkey": "kazemeini2019study"
+ },
+ {
+  "title": "Evaluation of 3D Printed Soft Robots in Radiation Environments and Comparison With Molded Counterparts",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "Frontiers in Robotics and AI",
+  "doi": "10.3389/frobt.2019.00040",
+  "openalex_id": null,
+  "s2_id": "ec4073f2e50b5760202d92586c90e6efaaf5aa30",
+  "url": "https://doi.org/10.3389/frobt.2019.00040",
+  "topics": [
+   "soft robots",
+   "gamma irradiation",
+   "radiation tolerance",
+   "PDMS",
+   "operation time"
+  ],
+  "summary": "PDMS soft robots lose mechanical performance with gamma dose but are minimally affected up to 20 kGy; an operating time of about 12 h is estimated for two of three nuclear radiation environments.",
+  "relation": "Gives radiation tolerance evidence and an example of converting dose rate into a robot operating-time budget.",
+  "relevance": 2,
+  "cited_by_count": 48,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P285",
+  "bibkey": "see2019evaluation"
+ },
+ {
+  "title": "Irradiation test and hardness design for mobile rescue robot in nuclear environment",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "Industrial robot",
+  "doi": "10.1108/ir-01-2019-0010",
+  "openalex_id": null,
+  "s2_id": "5371db75a37627cf97a4ea1eb3fba5026d8f2ed6",
+  "url": "https://doi.org/10.1108/ir-01-2019-0010",
+  "topics": [
+   "radiation hardness",
+   "irradiation test",
+   "rescue robot",
+   "shielding"
+  ],
+  "summary": "Gamma irradiation tests of electronic modules of a mobile rescue robot with a 7-DOF arm, plus shielding/modular redeployment design and time-protection operational practices.",
+  "relation": "Evidence on robot component radiation tolerance motivating a finite cumulative dose budget per robot.",
+  "relevance": 2,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P286",
+  "bibkey": "see2019irradiation"
  },
  {
   "title": "A review of ground-based robotic systems for the characterization of nuclear environments",
@@ -2566,6 +3987,83 @@
   "bibkey": "chao2018algorithm"
  },
  {
+  "title": "The path-planning in radioactive environment of nuclear facilities using an improved particle swarm optimization algorithm",
+  "authors": "(see DOI)",
+  "year": 2018,
+  "venue": null,
+  "doi": "10.1016/j.nucengdes.2017.11.006",
+  "openalex_id": null,
+  "s2_id": "deb7ca333215282897f8b6feed18ac25fc9c8dd9",
+  "url": "https://doi.org/10.1016/j.nucengdes.2017.11.006",
+  "topics": [
+   "PSO",
+   "dose-aware path planning"
+  ],
+  "summary": "Title only: improved particle swarm optimization for path planning in radioactive environments of nuclear facilities.",
+  "relation": "Classic dose-minimizing planning baseline in a known field.",
+  "relevance": 2,
+  "cited_by_count": 68,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P287",
+  "bibkey": "see2018path"
+ },
+ {
+  "title": "Methods of minimising doses incurred by external exposure while moving in radiation hazardous areas",
+  "authors": "(see DOI)",
+  "year": 2017,
+  "venue": "Journal of Radiological Protection",
+  "doi": "10.1088/1361-6498/aa7c4f",
+  "openalex_id": null,
+  "s2_id": "894742ccfa4e64c95bc3c138896de22882333a36",
+  "url": "https://doi.org/10.1088/1361-6498/aa7c4f",
+  "topics": [
+   "dose minimization",
+   "path planning",
+   "external exposure"
+  ],
+  "summary": "Title only (no abstract): methods for minimising external-exposure dose while moving through radiation hazardous areas.",
+  "relation": "Dose-minimizing movement in known fields, a precedent for dose-aware routing that the thesis extends to uncertain fields and robots.",
+  "relevance": 2,
+  "cited_by_count": 12,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P288",
+  "bibkey": "see2017methods"
+ },
+ {
+  "title": "Minimum dose method for walking-path planning of nuclear facilities",
+  "authors": "(see DOI)",
+  "year": 2015,
+  "venue": null,
+  "doi": "10.1016/j.anucene.2015.04.019",
+  "openalex_id": null,
+  "s2_id": "4c94416301770e3ecd5b07129ffec4b64424488a",
+  "url": "https://doi.org/10.1016/j.anucene.2015.04.019",
+  "topics": [
+   "minimum dose path",
+   "walking path planning",
+   "nuclear facilities"
+  ],
+  "summary": "Title only (no abstract): minimum dose method for walking-path planning in nuclear facilities.",
+  "relation": "Classic dose-minimizing path precedent with known fields; the thesis faces uncertain fields and hard budgets.",
+  "relevance": 2,
+  "cited_by_count": 58,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P289",
+  "bibkey": "see2015minimum"
+ },
+ {
   "title": "Range-Finding Sensor Degradation in Gamma Radiation Environments",
   "authors": "Diggins et al.",
   "year": 2014,
@@ -2635,6 +4133,59 @@
   "bibkey": "ohno2011robotic"
  },
  {
+  "title": "Digital twins for robot-assisted nuclear decommissioning: a review of perception, radiological mapping, and model interoperability, with the DORADO project as a case study",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Frontiers in Nuclear Engineering",
+  "doi": "10.3389/fnuen.2026.1954802",
+  "openalex_id": null,
+  "s2_id": "72155c15f8bd09ae377f0ab0ee9fd4fa8147a156",
+  "url": "https://doi.org/10.3389/fnuen.2026.1954802",
+  "topics": [
+   "digital twin",
+   "radiological mapping",
+   "uncertainty propagation",
+   "review"
+  ],
+  "summary": "Review of digital twins for robot-assisted decommissioning covering radiological sensing, radiation-field estimation, mission planning and uncertainty propagation/V&V, with DORADO as case study; concludes end-to-end uncertainty management is a key barrier.",
+  "relation": "Background on radiation-field estimation and uncertainty in robotic nuclear missions; supports the thesis' concern with estimate miscalibration.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P290",
+  "bibkey": "see2026digital"
+ },
+ {
+  "title": "Seeing the Invisible: Physics-Guided Visual Prompting for Temperature- and Radiation-Aware VLA Navigation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.07558",
+  "openalex_id": null,
+  "s2_id": "afaa3016d5b15b85c3c56cb3c4e2b3ab519435df",
+  "url": "https://doi.org/10.48550/arxiv.2610.07558",
+  "topics": [
+   "radiation-aware navigation",
+   "VLA",
+   "hazard avoidance"
+  ],
+  "summary": "PG-VP overlays physics-guided virtual obstacles so a frozen VLA navigation policy avoids invisible radiation or thermal hazards.",
+  "relation": "Radiation-aware navigation by hazard masking; no budget or search.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P291",
+  "bibkey": "see2026seeing"
+ },
+ {
   "title": "Radiation Hardened LIDAR Sensor: Conceptual Design, Testing, and Performance Evaluation",
   "authors": "Jonasson et al.",
   "year": 2025,
@@ -2655,6 +4206,32 @@
   ],
   "id": "P109",
   "bibkey": "jonasson2025radiation"
+ },
+ {
+  "title": "An Improved Prototypical Network–based Method for Diagnosing Gamma Radiation Faults in Optical Encoders",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Scientia Sinica Technologica",
+  "doi": "10.1360/sst-2025-0018",
+  "openalex_id": null,
+  "s2_id": "aedc0125beab909b941c2683439c0d0b972bec5f",
+  "url": "https://doi.org/10.1360/sst-2025-0018",
+  "topics": [
+   "gamma radiation faults",
+   "optical encoders",
+   "fault diagnosis"
+  ],
+  "summary": "Prototypical-network method to diagnose gamma-radiation-induced faults in optical encoder circuits of nuclear robots from few samples.",
+  "relation": "Evidence of radiation-induced robot sensor failures; diagnostic, not planning.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P292",
+  "bibkey": "see2025improved"
  },
  {
   "title": "Development and Application of Robotics for Decommissioning of Fukushima Daiichi NPS by IRID",
@@ -2702,6 +4279,273 @@
   "bibkey": "miyombo2024optimal"
  },
  {
+  "title": "Arduino programming of an educational robotic platform applied in radiological accident simulation",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Brazilian Journal of Radiation Sciences",
+  "doi": "10.15392/2319-0612.2024.2395",
+  "openalex_id": null,
+  "s2_id": "5a70fb646e07ab7d3eb0e8eb856a312d52e08d6a",
+  "url": "https://doi.org/10.15392/2319-0612.2024.2395",
+  "topics": [
+   "radiation effects on electronics",
+   "teleoperated robot",
+   "field test"
+  ],
+  "summary": "Arduino six-wheel robot with RadEye detector for radiological accident simulation; radiation field caused interference in control signals, shielding of boards recommended.",
+  "relation": "Anecdotal evidence that radiation degrades robot electronics/communication, motivating robot dose limits.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P293",
+  "bibkey": "see2024arduino"
+ },
+ {
+  "title": "Research on the degradation of resolution in cameras based on CMOS image sensor under γ- and X-rays irradiation",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Radiation effects and defects in solids (Print)",
+  "doi": "10.1080/10420150.2024.2391768",
+  "openalex_id": null,
+  "s2_id": "5e1fda33c5b7c1996a68ac8ff4c6ddb59f1db2c0",
+  "url": "https://doi.org/10.1080/10420150.2024.2391768",
+  "topics": [
+   "CMOS camera",
+   "TID",
+   "Co-60",
+   "sensor degradation"
+  ],
+  "summary": "Irradiation of CMOS image sensors with Co-60 gamma and X-rays shows TID-driven degradation of dark current, full well capacity and camera resolution.",
+  "relation": "Component-level evidence of Co-60 TID damage to robot cameras, informing per-robot dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P294",
+  "bibkey": "see2024research"
+ },
+ {
+  "title": "Applicability of an Ionising Radiation Measuring System for Real-Time Effective-Dose-Optimised Route Finding Solution during Nuclear Accidents",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Fire",
+  "doi": "10.3390/fire7040142",
+  "openalex_id": null,
+  "s2_id": "952d8c3a9686c913f87914e6a0fbab2d92ee9020",
+  "url": "https://doi.org/10.3390/fire7040142",
+  "topics": [
+   "dose-optimised routing",
+   "emergency vehicles",
+   "real-time dose measurement"
+  ],
+  "summary": "Real-time measurement system that estimates effective dose of candidate routes for rescue vehicles through contaminated nuclear-accident areas, accounting for vehicle shielding, speed and travel time.",
+  "relation": "Dose-optimal route selection precedent, but for crewed vehicles/evacuees from measured fields, not robots with a hard budget and an uncertain source estimate.",
+  "relevance": 1,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P295",
+  "bibkey": "see2024applicability"
+ },
+ {
+  "title": "Degradation Mechanism of Piezoresistive Sensors Under the Influence of γ -Ray Irradiation",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE Sensors Journal",
+  "doi": "10.1109/jsen.2024.3467103",
+  "openalex_id": null,
+  "s2_id": "7a8ce945afe7865c4f1c7a0dae6c0820f2f2342e",
+  "url": "https://doi.org/10.1109/jsen.2024.3467103",
+  "topics": [
+   "radiation tolerance",
+   "MEMS sensors",
+   "gamma irradiation"
+  ],
+  "summary": "Gamma irradiation of MEMS piezoresistive pressure sensors up to 27.9 Mrad: sensitivity changed <0.8% but bridge offset drifted 139%.",
+  "relation": "Provides component cumulative-dose degradation numbers relevant to robot dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P296",
+  "bibkey": "see2024degradation"
+ },
+ {
+  "title": "Detailed visualization of radioactive hotspots inside the unit 1 reactor building of the Fukushima Daiichi Nuclear Power Station using an integrated Radiation Imaging System mounted on a Mecanum wheel robot",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Journal of Nuclear Science and Technology",
+  "doi": "10.1080/00223131.2023.2282551",
+  "openalex_id": null,
+  "s2_id": "68399670742f746a2d8939b9ce301737172caa1f",
+  "url": "https://doi.org/10.1080/00223131.2023.2282551",
+  "topics": [
+   "Fukushima",
+   "Compton camera",
+   "hotspot mapping",
+   "ground robot"
+  ],
+  "summary": "Mecanum-wheel robot with Compton camera, SLAM and survey meter visualised radioactive hotspots and dose-rate distribution inside Fukushima Daiichi Unit 1.",
+  "relation": "Real deployment evidence for robot radiation characterisation in high-dose buildings; no autonomy or dose budget.",
+  "relevance": 1,
+  "cited_by_count": 18,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P297",
+  "bibkey": "see2023detailed"
+ },
+ {
+  "title": "Effect of ionising radiation on the mechanical and structural properties of 3D printed plastics",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": null,
+  "doi": "10.1016/j.addma.2019.100907",
+  "openalex_id": null,
+  "s2_id": "ae3bd705836cb11b6e08854beccd34b41beb7eb2",
+  "url": "https://doi.org/10.1016/j.addma.2019.100907",
+  "topics": [
+   "3D printed plastics",
+   "gamma irradiation",
+   "MGy",
+   "material tolerance"
+  ],
+  "summary": "Tensile and structural properties of FFF printed polymers after gamma doses up to 5.3 MGy; Nylon most robust, PLA most sensitive.",
+  "relation": "Material dose-tolerance data relevant to robot structural parts; much higher doses than electronics limits.",
+  "relevance": 1,
+  "cited_by_count": 68,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P298",
+  "bibkey": "see2020effect"
+ },
+ {
+  "title": "Minimum collective dose based optimal evacuation path-planning method under nuclear accidents",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": null,
+  "doi": "10.1016/j.anucene.2020.107644",
+  "openalex_id": null,
+  "s2_id": "8a6d3977f5c63bfb483ac8470ea0501db683ae83",
+  "url": "https://doi.org/10.1016/j.anucene.2020.107644",
+  "topics": [
+   "evacuation",
+   "accumulated dose",
+   "Dijkstra",
+   "collective dose"
+  ],
+  "summary": "Accumulated-dose Dijkstra plus equilibrium model to plan minimum collective dose evacuation routes after a nuclear accident.",
+  "relation": "Exit planning minimizing dose for humans in a known field; analogous to robots' exit path cost.",
+  "relevance": 1,
+  "cited_by_count": 23,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P299",
+  "bibkey": "see2020minimum"
+ },
+ {
+  "title": "An Optimization Algorithm Based on Artificial Potential Field and Particle Swarm Optimization to Avoid Radiation Exposure Under Radioactive Environment",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": null,
+  "doi": "10.1080/00295639.2019.1710975",
+  "openalex_id": null,
+  "s2_id": "572c8833aaf42706035df7506573369284051bd3",
+  "url": "https://doi.org/10.1080/00295639.2019.1710975",
+  "topics": [
+   "radiation avoidance",
+   "artificial potential field",
+   "PSO",
+   "personnel"
+  ],
+  "summary": "APF tuned by PSO generates radiation-avoiding trajectories for personnel among known sources.",
+  "relation": "Dose-avoiding path planning with known sources; baseline-level related work.",
+  "relevance": 1,
+  "cited_by_count": 6,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P300",
+  "bibkey": "see2020optimization"
+ },
+ {
+  "title": "The effects of Total Ionizing Dose irradiation on supercapacitors deployed in nuclear decommissioning environments",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": null,
+  "doi": "10.1016/j.jpowsour.2020.228675",
+  "openalex_id": null,
+  "s2_id": "16405fd29d85267ad43b9ac3f59d5b776d3ff87f",
+  "url": "https://doi.org/10.1016/j.jpowsour.2020.228675",
+  "topics": [
+   "total ionizing dose",
+   "supercapacitors",
+   "Co-60 irradiation",
+   "radiation tolerance",
+   "decommissioning"
+  ],
+  "summary": "100 F supercapacitors irradiated with Co-60 showed negligible capacitance change up to 40 kGy and unchanged internal resistance/self-discharge up to 89 kGy.",
+  "relation": "Provides component-level TID tolerance numbers useful for setting plausible robot dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 12,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P301",
+  "bibkey": "see2020effects"
+ },
+ {
+  "title": "Total-Ionizing-Dose Effects, Border Traps, and 1/f Noise in Emerging MOS Technologies",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "IEEE Transactions on Nuclear Science",
+  "doi": "10.1109/tns.2020.2971861",
+  "openalex_id": null,
+  "s2_id": "90bfac7e3b523e2a8f959f2a99cfd70056709bd1",
+  "url": "https://doi.org/10.1109/tns.2020.2971861",
+  "topics": [
+   "total ionizing dose",
+   "MOS electronics",
+   "radiation tolerance"
+  ],
+  "summary": "Reviews TID effects in emerging MOS technologies; failure doses often 100 krad to 1 Mrad(SiO2) or higher.",
+  "relation": "Source for electronics failure-dose numbers that set robot dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 93,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P302",
+  "bibkey": "see2020total"
+ },
+ {
   "title": "Probabilistic roadmap method for path-planning in radioactive environment of nuclear facilities",
   "authors": "Wang et al.",
   "year": 2018,
@@ -2722,6 +4566,84 @@
   ],
   "id": "P112",
   "bibkey": "wang2018probabilistic"
+ },
+ {
+  "title": "A Robot to Monitor Nuclear Facilities: Using Autonomous Radiation-Monitoring Assistance to Reduce Risk and Cost",
+  "authors": "(see DOI)",
+  "year": 2018,
+  "venue": "IEEE robotics & automation magazine",
+  "doi": "10.1109/mra.2018.2879755",
+  "openalex_id": null,
+  "s2_id": "679710da3386f5d075c281d6fd7af0dbed76bb05",
+  "url": "https://doi.org/10.1109/mra.2018.2879755",
+  "topics": [
+   "nuclear facility monitoring",
+   "autonomous robot"
+  ],
+  "summary": "Argues for autonomous radiation-monitoring robots in nuclear facilities to replace human operators and reduce risk and cost.",
+  "relation": "Motivational precedent for robotic radiation monitoring; no dose budget or source search.",
+  "relevance": 1,
+  "cited_by_count": 60,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P303",
+  "bibkey": "see2018robot"
+ },
+ {
+  "title": "A sampling-based method with virtual reality technology to provide minimum dose path navigation for occupational workers in nuclear facilities",
+  "authors": "(see DOI)",
+  "year": 2017,
+  "venue": null,
+  "doi": "10.1016/j.pnucene.2017.05.024",
+  "openalex_id": null,
+  "s2_id": "e17611b02c9e0e82d6a8fd691251d2e251401bb7",
+  "url": "https://doi.org/10.1016/j.pnucene.2017.05.024",
+  "topics": [
+   "minimum dose path",
+   "sampling-based planning",
+   "workers"
+  ],
+  "summary": "Title only: sampling-based minimum dose path navigation for workers in nuclear facilities with VR.",
+  "relation": "Dose-minimizing path planning precedent in known fields.",
+  "relevance": 1,
+  "cited_by_count": 42,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P304",
+  "bibkey": "see2017sampling"
+ },
+ {
+  "title": "Impact of Cobalt-60 Gamma Radiation Source on Electronic Devices using Geant4",
+  "authors": "(see DOI)",
+  "year": 2017,
+  "venue": null,
+  "doi": "10.1016/j.procs.2017.01.187",
+  "openalex_id": null,
+  "s2_id": "a53dd5cfccfa5ca17f2751441815f364bafac6b9",
+  "url": "https://doi.org/10.1016/j.procs.2017.01.187",
+  "topics": [
+   "Co-60",
+   "microcontroller",
+   "Geant4",
+   "radiation effects on electronics"
+  ],
+  "summary": "Geant4 simulation and Geiger-Muller measurements of an Atmega328 exposed to a Co-60 source at varying distances, discussed via the inverse-square law.",
+  "relation": "Evidence on Co-60 effects on robot-grade electronics; minor support for the dose-budget motivation.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "C"
+  ],
+  "id": "P305",
+  "bibkey": "see2017impact"
  },
  {
   "title": "Dynamic minimum dose path-searching method for virtual nuclear facilities",
@@ -2836,8 +4758,65 @@
    "D",
    "E"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P117",
   "bibkey": "abdelmeguid2026energy"
+ },
+ {
+  "title": "Who Bears the Burden? Learning Responsibility for Shared Constraints in Multi-Agent Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.07491",
+  "openalex_id": null,
+  "s2_id": "f1d0fdc60fe9379105bac92977080f4214417e9f",
+  "url": "https://doi.org/10.48550/arxiv.2610.07491",
+  "topics": [
+   "shared constraint",
+   "Lagrangian",
+   "responsibility allocation",
+   "MARL",
+   "heterogeneous agents"
+  ],
+  "summary": "LiRA learns each agent's share of a common Lagrange multiplier for a shared cost budget, optimizing social welfare; tested with 3-400 agents.",
+  "relation": "Directly relevant to risk sharing: how a team constraint's burden is allocated across agents; the thesis uses individual dose budgets, possibly unequal.",
+  "relevance": 3,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P306",
+  "bibkey": "see2026bears"
+ },
+ {
+  "title": "From Cumulative Constraints to Adaptive Runtime Safety Control for Nonstationary Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2605.18841",
+  "openalex_id": null,
+  "s2_id": "3d5970cb7f34abddcf349fc62fb84ddd6a303f5b",
+  "url": "https://doi.org/10.48550/arxiv.2605.18841",
+  "topics": [
+   "cumulative budget",
+   "safety shield",
+   "remaining budget",
+   "runtime"
+  ],
+  "summary": "CPSS tracks the remaining cumulative safety budget, projects it into a time-varying admissible risk threshold and filters actions whose predicted cost exceeds it, with cumulative cost bounds.",
+  "relation": "Very close mechanism to the thesis' budget-aware safety layer, but single-agent driving without exit reserve or estimate-dependent cost.",
+  "relevance": 3,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P307",
+  "bibkey": "see2026from2"
  },
  {
   "title": "Safe multi-agent reinforcement learning for multi-robot control",
@@ -3271,6 +5250,596 @@
   "bibkey": "ono2008iterative"
  },
  {
+  "title": "Safe on Average, Unsafe in the Tail: When Is the Episodic-Cost Tail Controllable?",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.09508",
+  "openalex_id": null,
+  "s2_id": "36cbb9bc4874bd941259a4c6aea16ef1d67a6dce",
+  "url": "https://doi.org/10.48550/arxiv.2610.09508",
+  "topics": [
+   "CVaR",
+   "tail cost",
+   "Safety-Gymnasium",
+   "budget"
+  ],
+  "summary": "Shows policies satisfying expected-cost budgets can violate them in the worst 10% of episodes (CVaR0.1) and studies constraint families for tail control.",
+  "relation": "Supports evaluating dose overruns in the tail rather than on average, aligned with the thesis' percentile-based safety.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P308",
+  "bibkey": "see2026safe"
+ },
+ {
+  "title": "RBGA: Residual-Budget Guide Arbitration for Offline-to-Online Safe Reinforcement Learning in Dexterous Manipulation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.33494",
+  "openalex_id": null,
+  "s2_id": "0b4f5b1f487b4a0aad3dffcf1bfc67e782ffae16",
+  "url": "https://doi.org/10.48550/arxiv.2610.33494",
+  "topics": [
+   "remaining budget",
+   "cost-to-go",
+   "action arbitration",
+   "offline-to-online"
+  ],
+  "summary": "RBGA tracks the remaining within-episode safety budget and compares cost-to-go of candidate actions against it to arbitrate actions.",
+  "relation": "Precedent for conditioning decisions on remaining budget and predicted cost-to-go, like dose-left-vs-exit-cost checks.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P309",
+  "bibkey": "see2026rbga"
+ },
+ {
+  "title": "SafeDiSTL: Decomposing Joint Constraints for Safe Multi-Agent Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.13737",
+  "openalex_id": null,
+  "s2_id": "cf39f17a68a44f7b21182265d51a41fb15c0ecce",
+  "url": "https://doi.org/10.48550/arxiv.2610.13737",
+  "topics": [
+   "safe MARL",
+   "joint constraints",
+   "credit assignment",
+   "STL"
+  ],
+  "summary": "SafeDiSTL allocates team-level constraint violation increments across agents via action sensitivities for constrained MARL.",
+  "relation": "Relevant to attributing shared safety cost among agents, related to risk sharing.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P310",
+  "bibkey": "see2026safedistl"
+ },
+ {
+  "title": "Restorative Control and the Limits of Safe Model Discrimination",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.09442",
+  "openalex_id": null,
+  "s2_id": "44d031404752f59a665cef826c67bc6561ff8bac",
+  "url": "https://doi.org/10.48550/arxiv.2610.09442",
+  "topics": [
+   "irreversible damage",
+   "exposure tolerance",
+   "reach-avoid",
+   "model discrimination"
+  ],
+  "summary": "Reach-avoid restorative control where systems accumulate irreversible damage from exposure; bounds required exposure against tolerances under model uncertainty.",
+  "relation": "Conceptual parallel: cumulative irreversible exposure versus tolerance under model ambiguity.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P311",
+  "bibkey": "see2026restorative"
+ },
+ {
+  "title": "Hull-Fence: Online Multi-Robot Safe Coverage in Unknown Environments with Convex-Hull Hazard Cordoning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "ACM Symposium on Applied Computing",
+  "doi": "10.1145/3748522.3779845",
+  "openalex_id": null,
+  "s2_id": "f88a9949aadaf16d71091127bcc9e7dd5c37d71a",
+  "url": "https://doi.org/10.1145/3748522.3779845",
+  "topics": [
+   "multi-robot coverage",
+   "CVaR",
+   "distributional critic",
+   "CTDE",
+   "hazard avoidance"
+  ],
+  "summary": "Hull-Fence: hierarchical CTDE MARL for multi-robot coverage of unknown maps while avoiding latent hazardous regions, with a CVaR-trained distributional critic; reduces per-agent hazard exposure to 7.8%.",
+  "relation": "Multi-robot learned policy with tail-risk hazard exposure, close in spirit; hazards are regions to avoid rather than a cumulative dose budget tied to an uncertain source estimate.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P312",
+  "bibkey": "see2026hull"
+ },
+ {
+  "title": "DynBudget: Adaptive Risk Calibration and Dynamic Budgeting for Safe Reinforcement Learning Under Distribution Drift",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Applied Sciences",
+  "doi": "10.3390/app16168113",
+  "openalex_id": null,
+  "s2_id": "c854ef797652d37a474da45c7e8d177738a4e285",
+  "url": "https://doi.org/10.3390/app16168113",
+  "topics": [
+   "safety shield",
+   "risk calibration",
+   "dynamic budget",
+   "distribution drift"
+  ],
+  "summary": "DynBudget combines a learned safety critic, temperature-calibrated risk estimates and a dynamic safety budget to adapt shielding under environment drift (MiniGrid, Safety-Gymnasium).",
+  "relation": "Relevant to the thesis's finding on miscalibrated (overconfident) risk estimates feeding a safety mask; offers calibration as a remedy.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P313",
+  "bibkey": "see2026dynbudget"
+ },
+ {
+  "title": "Sampling-Based Safe Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2605.19469",
+  "openalex_id": null,
+  "s2_id": "a401a48166a41357e53a67e6340a78f380904c3a",
+  "url": "https://doi.org/10.48550/arxiv.2605.19469",
+  "topics": [
+   "safe exploration",
+   "model uncertainty",
+   "sampled dynamics",
+   "safety guarantee"
+  ],
+  "summary": "SBSRL enforces safety constraints jointly across a finite set of sampled dynamics models, approximating worst-case safety under epistemic uncertainty with guarantees.",
+  "relation": "Constraint over samples mirrors the thesis's masking over particle-filter samples; single-agent, no budget.",
+  "relevance": 2,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P314",
+  "bibkey": "see2026sampling"
+ },
+ {
+  "title": "RAYA: Learning Where and When to Intervene for Robot Recovery",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2609.21690",
+  "openalex_id": null,
+  "s2_id": "3eaac2e3c4bafd11b19df20fdb6909a05ec0bfab",
+  "url": "https://doi.org/10.48550/arxiv.2609.21690",
+  "topics": [
+   "recoverability margin",
+   "recovery",
+   "hard constraints"
+  ],
+  "summary": "RAYA embeds a learned recoverability margin in an optimal controller and shifts task weights as recoverability shrinks, improving survival.",
+  "relation": "Conceptual analog of keeping an exit reserve: preserve what recovery needs while acting; not radiation or multi-agent.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P315",
+  "bibkey": "see2026raya"
+ },
+ {
+  "title": "LyMARL: A Lyapunov-Guided Multiagent Reinforcement Learning Framework for Energy-Aware Radio Resource Management",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Internet of Things Journal",
+  "doi": "10.1109/jiot.2026.3718407",
+  "openalex_id": null,
+  "s2_id": "9289bb741dfb38400951ec8263efaebac0e1bf71",
+  "url": "https://doi.org/10.1109/jiot.2026.3718407",
+  "topics": [
+   "MARL",
+   "finite energy budget",
+   "virtual queue in state",
+   "cumulative violation tracking",
+   "CTDE"
+  ],
+  "summary": "LyMARL embeds Lyapunov virtual-queue budget dynamics into state and reward of a CTDE MARL framework to respect finite-horizon energy budgets.",
+  "relation": "Budget state augmentation in MARL analog to remaining-dose observations; wireless domain.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P316",
+  "bibkey": "see2026lymarl"
+ },
+ {
+  "title": "Characterization and Analysis of Emergency Landing Flight Envelopes with Graded Safety Specifications",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2606.05350",
+  "openalex_id": null,
+  "s2_id": "b6285ef5318d61ced50b60e1c771fbed7a96c038",
+  "url": "https://doi.org/10.48550/arxiv.2606.05350",
+  "topics": [
+   "graded safety",
+   "limited exposure",
+   "reachability",
+   "degraded states"
+  ],
+  "summary": "HJ reachability framework where limited cumulative time in degraded states is tolerated via soft trajectory-dependent constraints for emergency landing envelopes.",
+  "relation": "Cumulative exposure-style safety constraint analog to a dose budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P317",
+  "bibkey": "see2026characterization"
+ },
+ {
+  "title": "Risk-Aware Switch-Time Recovery Planning (ReSwitch) for High-Speed Unmanned Aerial Vehicle (UAV) Pursuit–Evasion",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Drones",
+  "doi": "10.3390/drones10100733",
+  "openalex_id": null,
+  "s2_id": "7cae2ebd649a3f8e360cb5ad6bd2003f8a8d6652",
+  "url": "https://doi.org/10.3390/drones10100733",
+  "topics": [
+   "recovery timing",
+   "risk-aware",
+   "switching"
+  ],
+  "summary": "ReSwitch separates pursuit from safety recovery and selects the switching time to begin recovery via hybrid rollouts once finite-horizon risk emerges in UAV pursuit-evasion.",
+  "relation": "Analogous to deciding when to withdraw; not dose or multi-robot search.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P318",
+  "bibkey": "see2026risk"
+ },
+ {
+  "title": "On the Equilibrium Between Feasible Zone and Uncertain Model in Safe Exploration",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+  "doi": "10.1109/tpami.2026.3669907",
+  "openalex_id": null,
+  "s2_id": "8437151f3862f81e484abc9b13cf7d13a733e871",
+  "url": "https://doi.org/10.1109/tpami.2026.3669907",
+  "topics": [
+   "safe exploration",
+   "feasible zone",
+   "uncertain model"
+  ],
+  "summary": "Safe equilibrium exploration (SEE) alternates between maximum feasible zone and least uncertain model, proving monotone expansion and convergence with zero violations.",
+  "relation": "Formalizes the interdependence between model uncertainty and safe set, as in the thesis where the safety mask depends on the uncertain source estimate.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P319",
+  "bibkey": "see2026equilibrium"
+ },
+ {
+  "title": "Dyna-Style Safety Augmented Reinforcement Learning: Staying Safe in the Face of Uncertainty",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2604.25508",
+  "openalex_id": null,
+  "s2_id": "ed9d665bfb28cc5dad1b6e3e96ae36028160f004",
+  "url": "https://doi.org/10.48550/arxiv.2604.25508",
+  "topics": [
+   "safety filter",
+   "model uncertainty",
+   "model-based RL"
+  ],
+  "summary": "Dyna-SAuR learns a policy and a safety filter from an uncertainty-aware dynamics model, avoiding failures and regions of high model uncertainty; reduces failures by two orders of magnitude.",
+  "relation": "Uncertainty-aware safety filtering, analogous to percentile-over-particles masking.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P320",
+  "bibkey": "see2026dyna"
+ },
+ {
+  "title": "Neuro-Symbolic Risk Semantics for Safe Multi-Agent Coverage in Hazardous Environments",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE International Joint Conference on Neural Network",
+  "doi": "10.1109/ijcnn69854.2026.11729435",
+  "openalex_id": null,
+  "s2_id": "c84c5994c085eadfb5bea464a2eb9e292a9ce1dd",
+  "url": "https://doi.org/10.1109/ijcnn69854.2026.11729435",
+  "topics": [
+   "safe MARL",
+   "coverage",
+   "hazardous environment",
+   "model mismatch"
+  ],
+  "summary": "FMEA-Net provides differentiable failure-mode risk semantics conditioning decentralized actors for safe multi-agent coverage, robust to risk-model mismatch.",
+  "relation": "Multi-agent hazardous coverage with structured risk; no cumulative budget.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P321",
+  "bibkey": "see2026neuro"
+ },
+ {
+  "title": "Heterogeneous Multi-Agent Reinforcement Learning for Radio Resource Management under Coupled Finite-Horizon Constraints",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2608.01745",
+  "openalex_id": null,
+  "s2_id": "ee179a49b09842b6ce9a962dabfbd869a6e4c587",
+  "url": "https://doi.org/10.48550/arxiv.2608.01745",
+  "topics": [
+   "MARL",
+   "finite-horizon budget",
+   "Lyapunov",
+   "virtual queues"
+  ],
+  "summary": "HeLyMARL uses drift-plus-penalty virtual queues to enforce hard finite-horizon energy/handover budgets within episodes, outperforming Lagrangian MARL which only regulates across episodes.",
+  "relation": "Shows Lagrangian methods do not pace within-episode budgets; relevant critique for MAPPO-Lagrangian with hard dose budgets.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P322",
+  "bibkey": "see2026heterogeneous"
+ },
+ {
+  "title": "Open and Auditable Drawdown Control: An Exit-Reserve Shield for Learned Portfolios",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Proceedings of the International Conference on Open Finance (ICOF 2026)",
+  "doi": "10.36287/setsci.25.1.001",
+  "openalex_id": null,
+  "s2_id": "3cb14350d771e3511224775065fa0ca6fd25aacb",
+  "url": "https://doi.org/10.36287/setsci.25.1.001",
+  "topics": [
+   "exit reserve",
+   "shield",
+   "drawdown",
+   "finance"
+  ],
+  "summary": "Defines an exit-reserve set of states from which a safe liquidation remains possible and projects learned portfolio actions onto actions preserving it, with conditional guarantees.",
+  "relation": "Conceptual analogue of the thesis' exit reserve (always keep enough to exit), from finance.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P323",
+  "bibkey": "see2026open"
+ },
+ {
+  "title": "ProSh: Probabilistic Shielding for Model-free Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Adaptive Agents and Multi-Agent Systems",
+  "doi": "10.65109/kcvz6904",
+  "openalex_id": null,
+  "s2_id": "478ea29e48a45d7795d57a0f06ddb6a76ff8c316",
+  "url": "https://doi.org/10.65109/kcvz6904",
+  "topics": [
+   "probabilistic shielding",
+   "risk budget",
+   "state augmentation",
+   "model-free safe RL"
+  ],
+  "summary": "ProSh augments the CMDP state with a risk budget and shields the policy distribution using a learned cost critic, bounding expected cost during training.",
+  "relation": "Budget-in-state plus shield is structurally similar to the thesis (remaining dose in observation + mask), but cost is learned, not predicted from a source estimate, and single-agent.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P324",
+  "bibkey": "see2025prosh"
+ },
+ {
+  "title": "Distributed primal-dual algorithm for constrained multi-agent reinforcement learning under coupled policies",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2511.15053",
+  "openalex_id": null,
+  "s2_id": "e45285f1f9938941fb2b5103242a5829c00268ae",
+  "url": "https://doi.org/10.48550/arxiv.2511.15053",
+  "topics": [
+   "constrained MARL",
+   "individual constraints",
+   "distributed primal-dual"
+  ],
+  "summary": "Distributed primal-dual algorithm for constrained MARL with coupled policies where each agent has its own safety constraint and local Lagrange multipliers.",
+  "relation": "Per-agent constraints with local multipliers parallel per-robot dose budgets in MAPPO-Lagrangian.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P325",
+  "bibkey": "see2025distributed"
+ },
+ {
+  "title": "Resolving Conflicting Constraints in Multi-Agent Reinforcement Learning with Layered Safety",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Robotics",
+  "doi": "10.15607/rss.2025.xxi.094",
+  "openalex_id": null,
+  "s2_id": "fa7dc355073eacd0bd31bd44b78779d68fd22620",
+  "url": "https://doi.org/10.15607/rss.2025.xxi.094",
+  "topics": [
+   "safe MARL",
+   "safety filters",
+   "layered safety",
+   "multi-robot"
+  ],
+  "summary": "Combines MARL that learns to avoid multi-agent conflicts with control-barrier/reachability safety filters for multi-robot navigation.",
+  "relation": "Precedent for MARL plus a safety layer; collision constraints rather than dose.",
+  "relevance": 2,
+  "cited_by_count": 17,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P326",
+  "bibkey": "see2025resolving"
+ },
+ {
+  "title": "The Lagrangian Method for Solving Constrained Markov Games",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2503.10561",
+  "openalex_id": null,
+  "s2_id": "a828b4775c430e5bbf55b355b6b4bbf0d7fd112e",
+  "url": "https://doi.org/10.48550/arxiv.2503.10561",
+  "topics": [
+   "constrained Markov game",
+   "Lagrangian",
+   "primal-dual",
+   "energy constraints"
+  ],
+  "summary": "Lagrangian-game primal-dual method for constrained Markov games where agents face cost constraints, e.g. teams under local energy and time constraints.",
+  "relation": "Theoretical grounding for Lagrangian MARL with per-agent costs.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P327",
+  "bibkey": "see2025lagrangian"
+ },
+ {
+  "title": "Rectified Robust Policy Optimization for Model-Uncertain Constrained Reinforcement Learning without Strong Duality",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Trans. Mach. Learn. Res.",
+  "doi": "10.48550/arxiv.2508.17448",
+  "openalex_id": null,
+  "s2_id": "e92dccc8157803c69643839f90c113b40ac9449e",
+  "url": "https://doi.org/10.48550/arxiv.2508.17448",
+  "topics": [
+   "robust constrained RL",
+   "model uncertainty",
+   "no strong duality"
+  ],
+  "summary": "Shows strong duality fails in robust constrained RL and proposes primal-only RRPO with convergence guarantees under model uncertainty.",
+  "relation": "Relevant to Lagrangian methods under model error, which the thesis encounters.",
+  "relevance": 2,
+  "cited_by_count": 8,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P328",
+  "bibkey": "see2025rectified"
+ },
+ {
+  "title": "Solving Multi-Agent Safe Optimal Control with Distributed Epigraph Form MARL",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Robotics",
+  "doi": "10.48550/arxiv.2504.15425",
+  "openalex_id": null,
+  "s2_id": "4509aaa8dcff1928a677dee749dcc581b8fc4b5a",
+  "url": "https://doi.org/10.48550/arxiv.2504.15425",
+  "topics": [
+   "safe MARL",
+   "epigraph form",
+   "zero violation",
+   "CTDE"
+  ],
+  "summary": "Def-MARL uses the epigraph form to solve multi-agent safe optimal control with zero constraint violation in a distributed CTDE manner; tested in simulation and on Crazyflies.",
+  "relation": "Alternative to MAPPO-Lagrangian for hard per-agent constraints.",
+  "relevance": 2,
+  "cited_by_count": 16,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P329",
+  "bibkey": "see2025solving"
+ },
+ {
   "title": "Scalable Constrained Policy Optimization for Safe Multi-agent Reinforcement Learning",
   "authors": "Zhang et al.",
   "year": 2024,
@@ -3318,6 +5887,112 @@
   "bibkey": "wachi2024survey"
  },
  {
+  "title": "ActSafe: Active Exploration with Safety Constraints for Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "International Conference on Learning Representations",
+  "doi": "10.48550/arxiv.2410.09486",
+  "openalex_id": null,
+  "s2_id": "0d6810090d2ae12cd20530f8f883d635dcf4b5c5",
+  "url": "https://doi.org/10.48550/arxiv.2410.09486",
+  "topics": [
+   "model-based safe RL",
+   "epistemic uncertainty",
+   "pessimistic constraints"
+  ],
+  "summary": "Model-based RL that is optimistic on epistemic uncertainty for exploration but pessimistic for safety constraints, with safety guarantees during learning.",
+  "relation": "Analogous to masking actions using pessimistic (upper-percentile) dose predictions under estimate uncertainty.",
+  "relevance": 2,
+  "cited_by_count": 29,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P330",
+  "bibkey": "see2024actsafe"
+ },
+ {
+  "title": "CVaR-Constrained Policy Optimization for Safe Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+  "doi": "10.1109/tnnls.2023.3331304",
+  "openalex_id": null,
+  "s2_id": "2a9accbc670e71041b8e75ad1c1bcc7e04a54599",
+  "url": "https://doi.org/10.1109/tnnls.2023.3331304",
+  "topics": [
+   "CVaR constraint",
+   "state augmentation",
+   "constrained policy optimization",
+   "tail risk"
+  ],
+  "summary": "CVaR-CPO constrains the CVaR of cumulative cost via state augmentation, trust region and Lagrangian updates, with quantile-based CVaR value estimation.",
+  "relation": "Tail-risk constraint on cumulative cost with state augmentation, relevant to replacing expectation-level dose constraints; single-agent.",
+  "relevance": 2,
+  "cited_by_count": 75,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P331",
+  "bibkey": "see2024cvar"
+ },
+ {
+  "title": "Safe Multiagent Coordination via Entropic Exploration",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2412.20361",
+  "openalex_id": null,
+  "s2_id": "ea2f030235313983c283c137a9911624a20bca42",
+  "url": "https://doi.org/10.48550/arxiv.2412.20361",
+  "topics": [
+   "safe MARL",
+   "team constraints",
+   "entropic exploration"
+  ],
+  "summary": "E2C analyzes joint team constraints versus individual constraints in constrained MARL and uses observation-entropy maximization to aid safe cooperative exploration.",
+  "relation": "Team vs individual constraint comparison bears on pooled vs per-robot dose budgets and risk sharing.",
+  "relevance": 2,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P332",
+  "bibkey": "see2024safe"
+ },
+ {
+  "title": "The Price of Failure Risk: Clipped Barrier Policy Gradients with Convex Regularization",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": null,
+  "doi": "10.48550/arxiv.2411.19193",
+  "openalex_id": null,
+  "s2_id": "d2e6d6b312754b7b4be3e66f021b9e38b48c0052",
+  "url": "https://doi.org/10.48550/arxiv.2411.19193",
+  "topics": [
+   "resource budget",
+   "failure risk",
+   "barrier",
+   "budget-augmented state"
+  ],
+  "summary": "Augments the state with the remaining resource budget and uses clipped barrier rewards so policy gradients control the probability of exhausting it within a horizon; proves convergence.",
+  "relation": "Formal treatment of a non-renewable budget in the state with exhaustion risk, close to the thesis' dose budget formulation.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P333",
+  "bibkey": "see2024price"
+ },
+ {
   "title": "Provably Efficient Generalized Lagrangian Policy Optimization for Safe Multi-Agent Reinforcement Learning",
   "authors": "Ding et al.",
   "year": 2023,
@@ -3339,6 +6014,60 @@
   ],
   "id": "P139",
   "bibkey": "ding2023provably"
+ },
+ {
+  "title": "Scalable Primal-Dual Actor-Critic Method for Safe Multi-Agent RL with General Utilities",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Neural Information Processing Systems",
+  "doi": "10.48550/arxiv.2305.17568",
+  "openalex_id": null,
+  "s2_id": "55e9de9e89eeae52dd50c41eb9f334383af2f924",
+  "url": "https://doi.org/10.48550/arxiv.2305.17568",
+  "topics": [
+   "safe MARL",
+   "primal-dual",
+   "per-agent constraints",
+   "general utilities"
+  ],
+  "summary": "Scalable primal-dual actor-critic for safe MARL where each agent has its own safety constraint, using shadow rewards and kappa-hop truncation, with convergence guarantees.",
+  "relation": "Per-agent constraints in MARL theory, relevant to individual dose budgets; no hazard-search application.",
+  "relevance": 2,
+  "cited_by_count": 29,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P334",
+  "bibkey": "see2023scalable"
+ },
+ {
+  "title": "Safe Exploration in Reinforcement Learning: A Generalized Formulation and Algorithms",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Neural Information Processing Systems",
+  "doi": "10.48550/arxiv.2310.03225",
+  "openalex_id": null,
+  "s2_id": "d3d7fa13b3f9b533647ac84fc2e446ef98211b08",
+  "url": "https://doi.org/10.48550/arxiv.2310.03225",
+  "topics": [
+   "safe exploration",
+   "uncertainty quantification",
+   "meta-algorithm",
+   "emergency stop"
+  ],
+  "summary": "MASE combines unconstrained RL with an uncertainty quantifier to guarantee safety within an episode and penalize unsafe exploration before violation.",
+  "relation": "Uncertainty-quantified safety guarantee with early intervention, relevant to the thesis's percentile-based mask and withdraw action.",
+  "relevance": 2,
+  "cited_by_count": 40,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P335",
+  "bibkey": "see2023safe"
  },
  {
   "title": "A Closer Look at Invalid Action Masking in Policy Gradient Algorithms",
@@ -3404,6 +6133,33 @@
   ],
   "id": "P142",
   "bibkey": "lu2021decentralized"
+ },
+ {
+  "title": "WCSAC: Worst-Case Soft Actor Critic for Safety-Constrained Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "AAAI Conference on Artificial Intelligence",
+  "doi": "10.1609/aaai.v35i12.17272",
+  "openalex_id": null,
+  "s2_id": "5b2370ebd3439ff60ea64a0c8db88fea2dd86a9c",
+  "url": "https://doi.org/10.1609/aaai.v35i12.17272",
+  "topics": [
+   "CVaR",
+   "worst-case",
+   "safe RL",
+   "SAC"
+  ],
+  "summary": "WCSAC adds a safety critic and constrains a CVaR of the cost distribution rather than its expectation.",
+  "relation": "Tail-risk constraint precedent for the thesis' 97th-percentile dose masking.",
+  "relevance": 2,
+  "cited_by_count": 191,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P336",
+  "bibkey": "see2021wcsac"
  },
  {
   "title": "Learning to be Safe: Deep RL with a Safety Critic",
@@ -3583,6 +6339,60 @@
   "bibkey": "sui2015safe"
  },
  {
+  "title": "Safe Exploration in Markov Decision Processes",
+  "authors": "(see DOI)",
+  "year": 2012,
+  "venue": "International Conference on Machine Learning",
+  "doi": "10.48550/arxiv.1205.4810",
+  "openalex_id": null,
+  "s2_id": "d66ab178e941e3a79954c858d3c1bcdee8e1d17d",
+  "url": "https://doi.org/10.48550/arxiv.1205.4810",
+  "topics": [
+   "safe exploration",
+   "ergodicity",
+   "return-ability",
+   "MDP"
+  ],
+  "summary": "Defines safety as the ability to return (ergodicity) and gives an efficient algorithm restricting exploration to guaranteed-safe policies; NP-hard in general.",
+  "relation": "Formal precedent for the exit-reserve idea (always being able to get back) in safe exploration.",
+  "relevance": 2,
+  "cited_by_count": 338,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P337",
+  "bibkey": "see2012safe"
+ },
+ {
+  "title": "Risk-Sensitive Reinforcement Learning Applied to Control under Constraints",
+  "authors": "(see DOI)",
+  "year": 2005,
+  "venue": "Journal of Artificial Intelligence Research",
+  "doi": "10.1613/jair.1666",
+  "openalex_id": null,
+  "s2_id": "69a2d3bfbb7cbaa53df983483421ce86b87d80e1",
+  "url": "https://doi.org/10.1613/jair.1666",
+  "topics": [
+   "risk-sensitive RL",
+   "constrained MDP",
+   "error states",
+   "chance constraint"
+  ],
+  "summary": "Defines risk as probability of entering error states and learns policies with risk below a threshold by adaptively weighting value and risk in a constrained MDP.",
+  "relation": "Classic precedent for constraint-weighted (Lagrangian-like) safe RL; single agent, no budget dynamics.",
+  "relevance": 2,
+  "cited_by_count": 338,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P338",
+  "bibkey": "see2005risk"
+ },
+ {
   "title": "Policy Invariance Under Reward Transformations: Theory and Application to Reward Shaping",
   "authors": "Ng et al.",
   "year": 1999,
@@ -3602,6 +6412,770 @@
   ],
   "id": "P151",
   "bibkey": "ng1999policy"
+ },
+ {
+  "title": "Constrained Markov Decision Processes",
+  "authors": "(see DOI)",
+  "year": 1999,
+  "venue": null,
+  "doi": "10.1201/9781315140223",
+  "openalex_id": null,
+  "s2_id": "3cc2608fd77b9b65f5bd378e8797b2ab1b8acde7",
+  "url": "https://doi.org/10.1201/9781315140223",
+  "topics": [
+   "CMDP",
+   "Lagrangian",
+   "foundational"
+  ],
+  "summary": "Altman's monograph on constrained MDPs: occupation measures, LP and Lagrangian approaches.",
+  "relation": "Foundational formalism for the thesis's constrained dose formulation.",
+  "relevance": 2,
+  "cited_by_count": 2322,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P339",
+  "bibkey": "see1999constrained"
+ },
+ {
+  "title": "Learning Infinite-Horizon Average-Reward CMDPs via State Augmentation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2609.39093",
+  "openalex_id": null,
+  "s2_id": "c85361183f975352660dd2c518a8f5d0de3bb67a",
+  "url": "https://doi.org/10.48550/arxiv.2609.39093",
+  "topics": [
+   "CMDP",
+   "state augmentation",
+   "cumulative violation"
+  ],
+  "summary": "Average-reward CMDP algorithm that augments the state with cumulative constraint violation, achieving sqrt(T) regret and violation.",
+  "relation": "Theoretical support for putting accumulated cost (dose used) into the state.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P340",
+  "bibkey": "see2026learning"
+ },
+ {
+  "title": "Safe Exploration via Policy Priors",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "International Conference on Learning Representations",
+  "doi": "10.48550/arxiv.2601.19612",
+  "openalex_id": null,
+  "s2_id": "5e82bc68d60d02149fdbd52e43d80102a04f686a",
+  "url": "https://doi.org/10.48550/arxiv.2601.19612",
+  "topics": [
+   "safe exploration",
+   "policy priors",
+   "fallback policy",
+   "probabilistic dynamics"
+  ],
+  "summary": "SOOPER explores optimistically with probabilistic models but falls back to a conservative prior policy when needed, with safety guarantees throughout learning and regret bounds.",
+  "relation": "Fallback-to-safe-policy mechanism parallels the thesis's withdraw action and safety layer.",
+  "relevance": 1,
+  "cited_by_count": 7,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P341",
+  "bibkey": "see2026safe2"
+ },
+ {
+  "title": "Reachability-Aware Diffusion Policy Optimization",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.05969",
+  "openalex_id": null,
+  "s2_id": "ec2d4fbb83d29496c5c952c93aa08b336442220a",
+  "url": "https://doi.org/10.48550/arxiv.2610.05969",
+  "topics": [
+   "reachability",
+   "cumulative cost budget",
+   "diffusion policy",
+   "safe RL"
+  ],
+  "summary": "RADPO combines a learned first-hit reachability value with cumulative-cost budget feedback via a dual-like multiplier to train safe diffusion policies.",
+  "relation": "Combines predictive safety with budget feedback, akin to the thesis's mask plus Lagrangian; generic benchmarks.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P342",
+  "bibkey": "see2026reachability"
+ },
+ {
+  "title": "Chance-Constrained Inspection Viewpoint Sequencing for On-Orbit Servicing via Safe Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.41639",
+  "openalex_id": null,
+  "s2_id": "2eb791dd9cd11bce35c4e387e93c81c48630ae38",
+  "url": "https://doi.org/10.48550/arxiv.2610.41639",
+  "topics": [
+   "chance constraint",
+   "PPO-Lagrangian",
+   "inspection planning",
+   "fuel budget"
+  ],
+  "summary": "PPO-Lagrangian with PID-controlled multiplier sequences spacecraft inspection viewpoints under a chance constraint on keep-out violation and a delta-v budget.",
+  "relation": "Chance-constrained Lagrangian RL with a non-renewable resource budget in an inspection task; single agent.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P343",
+  "bibkey": "see2026chance"
+ },
+ {
+  "title": "Continue, Abort, or Fall: Viability-Aware Policy Selection (VAPS) for Safe Humanoid Acrobatics",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.01397",
+  "openalex_id": null,
+  "s2_id": "fdeffb7357c7c42573793011b6dbc562850029fd",
+  "url": "https://doi.org/10.48550/arxiv.2610.01397",
+  "topics": [
+   "abort policy",
+   "viability",
+   "backup policy selection"
+  ],
+  "summary": "VAPS learns predictors to choose at each step between continuing, aborting or a protective fall policy for humanoid acrobatics.",
+  "relation": "Learned continue/abort decision parallels the thesis's withdraw action.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P344",
+  "bibkey": "see2026continue"
+ },
+ {
+  "title": "SteinGate: Tail-Sensitive Safe Reinforcement Learning via Stein Discrepancy",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2607.13175",
+  "openalex_id": null,
+  "s2_id": "c613fab80f2300db2d5e13509847ade7ab136715",
+  "url": "https://doi.org/10.48550/arxiv.2607.13175",
+  "topics": [
+   "tail risk",
+   "distributional safety",
+   "safe RL"
+  ],
+  "summary": "SteinGate uses kernelized Stein discrepancy as a distributional safety certificate on rollout cost tails to switch between reward improvement and recovery.",
+  "relation": "Tail-sensitive cost handling relates to the thesis's percentile-based safety; not multi-agent or budget-based.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P345",
+  "bibkey": "see2026steingate"
+ },
+ {
+  "title": "Conformal Risk-Calibrated Latent World Models with Runtime Assurance Under Distribution Shift",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Electronics",
+  "doi": "10.3390/electronics15204765",
+  "openalex_id": null,
+  "s2_id": "6ed348534c38a91f8fdfc8e6034cf615fb0c51e9",
+  "url": "https://doi.org/10.3390/electronics15204765",
+  "topics": [
+   "runtime assurance",
+   "conformal calibration",
+   "model overconfidence",
+   "distribution shift"
+  ],
+  "summary": "Converts ensemble disagreement into conformally calibrated uncertainty radii and a runtime governor that switches to a backup action when predicted envelopes near safety limits.",
+  "relation": "Addresses model overconfidence under shift with calibrated fallback, relevant to the thesis's overconfident particle filter finding.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P346",
+  "bibkey": "see2026conformal"
+ },
+ {
+  "title": "SCOPE: Safety-Constrained Online Preview Enforcement for Efficient Encirclement in Multi-UAV Pursuit-Evasion",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IJCAI/ECAI",
+  "doi": "10.24963/ijcai.2026/7",
+  "openalex_id": null,
+  "s2_id": "2a007f534212ffef2cb79889d95c42b3ab3b016f",
+  "url": "https://doi.org/10.24963/ijcai.2026/7",
+  "topics": [
+   "safe MARL",
+   "safety preview",
+   "action correction",
+   "multi-UAV"
+  ],
+  "summary": "SCOPE: safe MARL with learned short-horizon safety preview and hierarchical online action correction for multi-UAV encirclement.",
+  "relation": "Look-ahead action correction in MARL akin to a safety layer; collision rather than cumulative dose.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P347",
+  "bibkey": "see2026scope"
+ },
+ {
+  "title": "Learning to Harvest Without Collapse in a Regenerative Commons: A Lagrangian Framework",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2609.36478",
+  "openalex_id": null,
+  "s2_id": "66bbf1736d9d27a536124c3d40d52c9c248782c2",
+  "url": "https://doi.org/10.48550/arxiv.2609.36478",
+  "topics": [
+   "constrained Markov game",
+   "shared budget",
+   "Lagrangian",
+   "depletion budget"
+  ],
+  "summary": "Lagrangian framework for constrained multi-agent games with a designer-specified depletion budget on a shared regenerative resource, with feasibility certificates.",
+  "relation": "Team-level budget constraint in MARL; resource is shared rather than per-agent non-renewable dose.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P348",
+  "bibkey": "see2026learning2"
+ },
+ {
+  "title": "Utility-Constrained Policy Optimization",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2606.14029",
+  "openalex_id": null,
+  "s2_id": "24537521b671fea255aa3031768c6049500ac939",
+  "url": "https://doi.org/10.48550/arxiv.2606.14029",
+  "topics": [
+   "risk-sensitive constraints",
+   "utility-constrained MDP"
+  ],
+  "summary": "Practical method for utility-constrained MDPs enabling risk-sensitive constraints without fixing limits in advance.",
+  "relation": "Risk-sensitive alternative to expected-cost constraints used by MAPPO-Lagrangian.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P349",
+  "bibkey": "see2026utility"
+ },
+ {
+  "title": "Safety Internalization in UAV Navigation via Training-Time CBF-Integrated RL",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2026.3746138",
+  "openalex_id": null,
+  "s2_id": "08e6a4ce2fd475e241e6918f4eb1efffda6286f0",
+  "url": "https://doi.org/10.1109/lra.2026.3746138",
+  "topics": [
+   "CBF",
+   "shield",
+   "PPO",
+   "safety layer in training"
+  ],
+  "summary": "Shows post-hoc CBF shields can raise collision rates due to distribution shift and proposes training the policy toward the CBF-projected safe action (CBFT-PPO).",
+  "relation": "Relevant to how the thesis's safety mask interacts with policy learning.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P350",
+  "bibkey": "see2026safety"
+ },
+ {
+  "title": "Safety-Constrained Reinforcement Learning with Post-Training Reachability Verification for Robot Navigation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2605.14174",
+  "openalex_id": null,
+  "s2_id": "582684e41fe72f53d03da52e4ac02a9c61364851",
+  "url": "https://doi.org/10.48550/arxiv.2605.14174",
+  "topics": [
+   "CVaR constraint",
+   "robot navigation",
+   "reachability verification"
+  ],
+  "summary": "CVaR-constrained TD3 for robot navigation with post-training neural reachability verification under observation uncertainty.",
+  "relation": "Tail-risk constraint precedent; not cumulative dose or multi-agent.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P351",
+  "bibkey": "see2026safety2"
+ },
+ {
+  "title": "Stochastic Decision Horizons for Survival-Based Constrained Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2602.04599",
+  "openalex_id": null,
+  "s2_id": "ab2acbdfc08748355870390726f495f47363d890",
+  "url": "https://doi.org/10.48550/arxiv.2602.04599",
+  "topics": [
+   "survival constraint",
+   "constrained RL",
+   "termination"
+  ],
+  "summary": "Stochastic decision horizons treat violations as shortening the effective horizon (survival) rather than spending a cumulative budget; off-policy algorithms.",
+  "relation": "Contrasting formulation to the thesis's cumulative budget constraint.",
+  "relevance": 1,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P352",
+  "bibkey": "see2026stochastic"
+ },
+ {
+  "title": "Safe Deep Reinforcement Learning for Energy Management of Electrified Vehicles: Optimal Action Filtering and Battery-in-the-Loop Validation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Transactions on Transportation Electrification",
+  "doi": "10.1109/tte.2025.3615387",
+  "openalex_id": null,
+  "s2_id": "6c4241015d2c01c0045c071d50613f85858abefd",
+  "url": "https://doi.org/10.1109/tte.2025.3615387",
+  "topics": [
+   "safety layer",
+   "Lagrangian",
+   "action filtering",
+   "zero violations"
+  ],
+  "summary": "Safe SAC energy management combining a model-based action-filtering safety layer with Lagrangian penalisation; zero violations in training and deployment.",
+  "relation": "Same combination (safety layer plus Lagrangian) in another domain.",
+  "relevance": 1,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P353",
+  "bibkey": "see2026safe3"
+ },
+ {
+  "title": "Chance-Constrained DRL for Energy-Efficient and Timely Wind-Powered WSNs Under Uncertain Underground Mine Environments",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Transactions on Green Communications and Networking",
+  "doi": "10.1109/tgcn.2026.3718462",
+  "openalex_id": null,
+  "s2_id": "ac94e1f948f1f1fff0584c12f37c8ffd1e0de66b",
+  "url": "https://doi.org/10.1109/tgcn.2026.3718462",
+  "topics": [
+   "MAPPO",
+   "chance constraint",
+   "CVaR",
+   "Lagrangian"
+  ],
+  "summary": "Distributionally robust chance-constrained MAPPO with an offline Lagrangian penalty for wind-powered WSNs in mines, converting chance constraints into deterministic margins via Bernstein bounds and CVaR.",
+  "relation": "Methodological precedent for MAPPO with Lagrangian and tail-risk margins; unrelated application.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P354",
+  "bibkey": "see2026chance2"
+ },
+ {
+  "title": "Structural Dual Adaptation for Safe Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2611.00636",
+  "openalex_id": null,
+  "s2_id": "c96575ea28ee43127831532b18889046a1beb0ac",
+  "url": "https://doi.org/10.48550/arxiv.2611.00636",
+  "topics": [
+   "Lagrangian",
+   "primal-dual",
+   "multiplier oscillation"
+  ],
+  "summary": "SDLA replaces bang-bang Lagrange multiplier response with a continuous one, reducing oscillations; tested with PPO/SAC on OmniSafe and HASARD.",
+  "relation": "Relevant to stabilizing MAPPO-Lagrangian training.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P355",
+  "bibkey": "see2026structural"
+ },
+ {
+  "title": "Adaptive Safety Filtering for Frozen ACC Policies via Conformal Residual Calibration",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2609.35415",
+  "openalex_id": null,
+  "s2_id": "0139f81cffc140f3466d937a412cc908da4202ab",
+  "url": "https://doi.org/10.48550/arxiv.2609.35415",
+  "topics": [
+   "conformal calibration",
+   "safety filter",
+   "model mismatch"
+  ],
+  "summary": "Calibrates residuals of a nominal predictor via conformal quantiles to set safety-filter margins online when deployment dynamics differ from training.",
+  "relation": "Calibration remedy relevant to the thesis' overconfident filter under model error.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P356",
+  "bibkey": "see2026adaptive"
+ },
+ {
+  "title": "Optimistic Exploration for Risk-Averse Constrained Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "European Conference on Artificial Intelligence",
+  "doi": "10.48550/arxiv.2507.08793",
+  "openalex_id": null,
+  "s2_id": "418d67e7f1797a75a1928ec470ff07b178c51a80",
+  "url": "https://doi.org/10.48550/arxiv.2507.08793",
+  "topics": [
+   "risk-averse constrained RL",
+   "optimistic exploration",
+   "CVaR"
+  ],
+  "summary": "ORAC: risk-averse constrained actor-critic using upper bound on reward and lower bound on risk-averse cost value with adaptive cost weighting.",
+  "relation": "Risk-averse constrained RL alternative to Lagrangian MAPPO.",
+  "relevance": 1,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P357",
+  "bibkey": "see2025optimistic"
+ },
+ {
+  "title": "Beyond Rewards: Extended Evaluation Metrics for Safe Reinforcement Learning with PPO-Lagrangian",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "International Conference on Advancements in Computational Sciences",
+  "doi": "10.1145/3789418.3789420",
+  "openalex_id": null,
+  "s2_id": "2cf1902039507097fafe665a1c8dfccd09d8bf02",
+  "url": "https://doi.org/10.1145/3789418.3789420",
+  "topics": [
+   "PPO-Lagrangian",
+   "CVaR",
+   "budget utilization",
+   "evaluation metrics"
+  ],
+  "summary": "Evaluates PPO-Lagrangian with CVaR, safety budget utilization ratio, violation and recovery rates in Safety-Gymnasium.",
+  "relation": "Evaluation metrics (budget utilization, CVaR) applicable to dose budget results.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P358",
+  "bibkey": "see2025beyond"
+ },
+ {
+  "title": "A safe multi-agent reinforcement learning algorithm using constraint update projection approach",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Engineering applications of artificial intelligence",
+  "doi": "10.1016/j.engappai.2025.111929",
+  "openalex_id": null,
+  "s2_id": "8e904ac58d291b0d239f72cbf63756310781893d",
+  "url": "https://doi.org/10.1016/j.engappai.2025.111929",
+  "topics": [
+   "safe MARL",
+   "constraint projection"
+  ],
+  "summary": "Title only: safe multi-agent RL algorithm using a constraint update projection approach.",
+  "relation": "Alternative safe MARL baseline to MAPPO-Lagrangian.",
+  "relevance": 1,
+  "cited_by_count": 7,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P359",
+  "bibkey": "see2025safe"
+ },
+ {
+  "title": "Adaptive Shielding for Safe Reinforcement Learning under Hidden-Parameter Dynamics Shifts",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": null,
+  "doi": "10.48550/arxiv.2506.11033",
+  "openalex_id": null,
+  "s2_id": "946d2b4908decf81942fa29fdd964d1fbbc3b3ce",
+  "url": "https://doi.org/10.48550/arxiv.2506.11033",
+  "topics": [
+   "adaptive shielding",
+   "hidden-parameter MDP",
+   "dynamics shift",
+   "safe RL"
+  ],
+  "summary": "Adaptive Shielding infers hidden dynamics parameters online with a function encoder and adapts a shield, plus safety-regularized optimization.",
+  "relation": "Shield adapting to inferred hidden parameters parallels the thesis's mask driven by an online source estimate.",
+  "relevance": 1,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P360",
+  "bibkey": "see2025adaptive"
+ },
+ {
+  "title": "Action Masking Methods for Safe Reinforcement Learning in a Non-Stationary Configurable Environment",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "International Conference on System Theory, Control and Computing",
+  "doi": "10.1109/icstcc66753.2025.11240265",
+  "openalex_id": null,
+  "s2_id": "bea1e97ba8dd41ac9b2daaa29d0094a5d62a5058",
+  "url": "https://doi.org/10.1109/icstcc66753.2025.11240265",
+  "topics": [
+   "action masking",
+   "safe RL",
+   "soft masking"
+  ],
+  "summary": "Compares hard action masking with a soft annealed masking based on empirical risk in a partially observable environment.",
+  "relation": "Action masking precedent for the thesis's safety layer.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P361",
+  "bibkey": "see2025action"
+ },
+ {
+  "title": "A Hamilton-Jacobi Reachability Framework with Soft Constraints for Safety-Critical Systems",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2510.24933",
+  "openalex_id": null,
+  "s2_id": "8b488d3324413e2f63487830776f7b90be2b9a39",
+  "url": "https://doi.org/10.48550/arxiv.2510.24933",
+  "topics": [
+   "soft constraints",
+   "reachability",
+   "budgeted violation"
+  ],
+  "summary": "Extends HJ reachability to soft constraints permitting temporary bounded violations, e.g. battery state of charge.",
+  "relation": "Formal analog of budgeted exposure; no learning or multi-agent.",
+  "relevance": 1,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P362",
+  "bibkey": "see2025hamilton"
+ },
+ {
+  "title": "Constraint-Aware Reinforcement Learning via Adaptive Action Scaling",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2510.11491",
+  "openalex_id": null,
+  "s2_id": "f1fcba62e4efb33d6b397a07373edde38066e74d",
+  "url": "https://doi.org/10.48550/arxiv.2510.11491",
+  "topics": [
+   "safe RL",
+   "action scaling",
+   "predicted constraint violation"
+  ],
+  "summary": "Modular cost-aware regulator that smoothly scales actions based on predicted constraint violations instead of overriding them, achieving strong return-to-cost ratios on Safety Gym.",
+  "relation": "Alternative to the thesis' hard masking safety layer based on predicted cost.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P363",
+  "bibkey": "see2025constraint"
+ },
+ {
+  "title": "A Survey of Safe Reinforcement Learning and Constrained MDPs: A Technical Survey on Single-Agent and Multi-Agent Safety",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2505.17342",
+  "openalex_id": null,
+  "s2_id": "f1b714b556f49ea5a247ce71d2496c679e7b666c",
+  "url": "https://doi.org/10.48550/arxiv.2505.17342",
+  "topics": [
+   "survey",
+   "CMDP",
+   "safe MARL"
+  ],
+  "summary": "Technical survey of CMDP-based safe RL and safe MARL, with open problems in safe multi-agent settings.",
+  "relation": "Background survey for MAPPO-Lagrangian framing.",
+  "relevance": 1,
+  "cited_by_count": 34,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P364",
+  "bibkey": "see2025survey"
+ },
+ {
+  "title": "Fault Tolerant Multi-Agent Learning with Adversarial Budget Constraints",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": null,
+  "doi": "10.48550/arxiv.2508.08800",
+  "openalex_id": null,
+  "s2_id": "0e9dafe26c1a86d4f572fbba7fbf37d0cfaad903",
+  "url": "https://doi.org/10.48550/arxiv.2508.08800",
+  "topics": [
+   "fault tolerance",
+   "MARL",
+   "agent malfunction"
+  ],
+  "summary": "MARTA adds a switcher-adversary that induces agent malfunctions in critical states to make cooperative MARL robust to failures.",
+  "relation": "Robustness to agent loss, analogous to robot dose failure; adversarial rather than budgeted.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P365",
+  "bibkey": "see2025fault"
+ },
+ {
+  "title": "Tackling Uncertainties in Multi-Agent Reinforcement Learning through Integration of Agent Termination Dynamics",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Adaptive Agents and Multi-Agent Systems",
+  "doi": "10.48550/arxiv.2501.12061",
+  "openalex_id": null,
+  "s2_id": "48ea067b2c84680117ef5fc3bc01eb0e66907e66",
+  "url": "https://doi.org/10.48550/arxiv.2501.12061",
+  "topics": [
+   "MARL",
+   "agent termination",
+   "barrier function",
+   "distributional RL"
+  ],
+  "summary": "Integrates distributional learning with a barrier-function loss built from agent termination/fault dynamics to improve safe cooperative MARL.",
+  "relation": "Handles agent termination in MARL, related to robots exhausting dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P366",
+  "bibkey": "see2025tackling"
+ },
+ {
+  "title": "Learning to Navigate Under Imperfect Perception: Conformalised Segmentation for Safe Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "ACM Symposium on Applied Computing",
+  "doi": "10.1145/3748522.3779888",
+  "openalex_id": null,
+  "s2_id": "5c3f9d7f8f1af7bf2f6ea4ba60e409c049c4c210",
+  "url": "https://doi.org/10.1145/3748522.3779888",
+  "topics": [
+   "conformal prediction",
+   "hazard maps",
+   "safe RL"
+  ],
+  "summary": "COPPOL uses conformal segmentation to produce calibrated hazard maps with bounds on missed detections, inducing risk-aware cost fields for RL navigation.",
+  "relation": "Calibrated hazard perception feeding RL, relevant to overconfidence of the source estimate.",
+  "relevance": 1,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P367",
+  "bibkey": "see2025learning"
  },
  {
   "title": "A Review of Safe Reinforcement Learning: Methods, Theories, and Applications",
@@ -3625,6 +7199,58 @@
   ],
   "id": "P152",
   "bibkey": "gu2024review"
+ },
+ {
+  "title": "Safe multi-agent reinforcement learning for bimanual dexterous manipulation",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+  "doi": "10.1109/iros58592.2024.10801490",
+  "openalex_id": null,
+  "s2_id": "54180dbd124a96a52535d3bba2c43914573aee61",
+  "url": "https://doi.org/10.1109/iros58592.2024.10801490",
+  "topics": [
+   "safe MARL",
+   "MAC-PAO",
+   "sequential updates"
+  ],
+  "summary": "Multi-agent constrained proximal advantage optimization with sequential agent updates for individual and collective safety constraints.",
+  "relation": "Safe MARL algorithm with per-agent and team constraints, comparable to MAPPO-Lagrangian.",
+  "relevance": 1,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P368",
+  "bibkey": "see2024safe2"
+ },
+ {
+  "title": "Safe Reinforcement Learning in Black-Box Environments via Adaptive Shielding",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "European Conference on Artificial Intelligence",
+  "doi": "10.48550/arxiv.2405.18180",
+  "openalex_id": null,
+  "s2_id": "78aa1431cb5a239a31a96497b8928d0e83230646",
+  "url": "https://doi.org/10.48550/arxiv.2405.18180",
+  "topics": [
+   "adaptive shielding",
+   "contrastive autoencoder",
+   "black-box safe RL"
+  ],
+  "summary": "ADVICE post-shield learns safe/unsafe state-action features with a contrastive autoencoder to block likely hazardous actions.",
+  "relation": "Learned shield alternative to the thesis's model-based percentile mask.",
+  "relevance": 1,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P369",
+  "bibkey": "see2024safe3"
  },
  {
   "title": "Safety Gymnasium: A Unified Safe Reinforcement Learning Benchmark",
@@ -3672,6 +7298,111 @@
   "bibkey": "ji2023omnisafe"
  },
  {
+  "title": "Safe Model-Based Multi-Agent Mean-Field Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Adaptive Agents and Multi-Agent Systems",
+  "doi": "10.48550/arxiv.2306.17052",
+  "openalex_id": null,
+  "s2_id": "bb60707140a048a156aa088f5bbf11b3b4b83578",
+  "url": "https://doi.org/10.48550/arxiv.2306.17052",
+  "topics": [
+   "safe multi-agent RL",
+   "mean-field",
+   "epistemic uncertainty",
+   "pessimistic constraints"
+  ],
+  "summary": "Safe-M3-UCRL uses epistemic transition uncertainty in a log-barrier to satisfy global distributional constraints pessimistically in mean-field MARL.",
+  "relation": "Multi-agent pessimistic constraint satisfaction under model uncertainty.",
+  "relevance": 1,
+  "cited_by_count": 7,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P370",
+  "bibkey": "see2023safe2"
+ },
+ {
+  "title": "Provably Learning Nash Policies in Constrained Markov Potential Games",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Adaptive Agents and Multi-Agent Systems",
+  "doi": "10.48550/arxiv.2306.07749",
+  "openalex_id": null,
+  "s2_id": "177e61c6971125686b4e694e3f2bf965a72e2a20",
+  "url": "https://doi.org/10.48550/arxiv.2306.07749",
+  "topics": [
+   "constrained Markov games",
+   "per-agent constraints",
+   "Nash"
+  ],
+  "summary": "Constrained Markov potential games: shows Lagrangian primal-dual can fail (no strong duality) and gives a provable coordinate-ascent algorithm.",
+  "relation": "Theoretical caution for Lagrangian safe MARL with per-agent constraints such as individual dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 14,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P371",
+  "bibkey": "see2023provably"
+ },
+ {
+  "title": "Safe Offline Reinforcement Learning with Real-Time Budget Constraints",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "International Conference on Machine Learning",
+  "doi": "10.48550/arxiv.2306.00603",
+  "openalex_id": null,
+  "s2_id": "2b8efe38e1d95cacbe1f45390632ab07c17a5fc8",
+  "url": "https://doi.org/10.48550/arxiv.2306.00603",
+  "topics": [
+   "budget-conditioned policy",
+   "offline safe RL",
+   "real-time budget"
+  ],
+  "summary": "TREBI handles dynamically specified safety budgets at deployment via trajectory-distribution diffusion planning in offline safe RL.",
+  "relation": "Budget-conditioned policies relate to robots with unequal budgets; offline and single-agent.",
+  "relevance": 1,
+  "cited_by_count": 45,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P372",
+  "bibkey": "see2023safe3"
+ },
+ {
+  "title": "DePAint: a decentralized safe multi-agent reinforcement learning algorithm considering peak and average constraints",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Applied intelligence (Boston)",
+  "doi": "10.1007/s10489-024-05433-x",
+  "openalex_id": null,
+  "s2_id": "4de4f5dc4b00a886632cf97218c6cf118c2cb86c",
+  "url": "https://doi.org/10.1007/s10489-024-05433-x",
+  "topics": [
+   "decentralized safe MARL",
+   "peak constraints",
+   "average constraints"
+  ],
+  "summary": "DePAint: decentralized safe MARL algorithm handling both peak and average constraints with privacy.",
+  "relation": "Hard (peak) plus average constraints relate to hard dose budget vs expected-cost Lagrangian.",
+  "relevance": 1,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P373",
+  "bibkey": "see2023depaint"
+ },
+ {
   "title": "Safe Learning in Robotics: From Learning-Based Control to Safe Reinforcement Learning",
   "authors": "Brunke et al.",
   "year": 2022,
@@ -3693,6 +7424,85 @@
   ],
   "id": "P155",
   "bibkey": "brunke2022safe"
+ },
+ {
+  "title": "Safe Reinforcement Learning of Dynamic High-Dimensional Robotic Tasks: Navigation, Manipulation, Interaction",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "IEEE International Conference on Robotics and Automation",
+  "doi": "10.1109/icra48891.2023.10161548",
+  "openalex_id": null,
+  "s2_id": "7b47b49f0aa0da4468c91c7821d1ee7873a8e84f",
+  "url": "https://doi.org/10.1109/icra48891.2023.10161548",
+  "topics": [
+   "safety layer",
+   "ATACOM",
+   "constraint manifold",
+   "robot RL"
+  ],
+  "summary": "Safe exploration in the tangent space of the constraint manifold so RL actions always satisfy constraints locally; deployed on TIAGo++.",
+  "relation": "Alternative safety-layer design to action masking.",
+  "relevance": 1,
+  "cited_by_count": 31,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P374",
+  "bibkey": "see2022safe"
+ },
+ {
+  "title": "On the Robustness of Safe Reinforcement Learning under Observational Perturbations",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "International Conference on Learning Representations",
+  "doi": "10.48550/arxiv.2205.14691",
+  "openalex_id": null,
+  "s2_id": "274f0cee47c8a5bbc38c32de6787adee6a08f69e",
+  "url": "https://doi.org/10.48550/arxiv.2205.14691",
+  "topics": [
+   "observational perturbation",
+   "safe RL",
+   "robustness"
+  ],
+  "summary": "Shows optimal safe RL policies are vulnerable to observational perturbations and proposes robust training.",
+  "relation": "Relevant to safety when observations/estimates are wrong, as with an overconfident filter.",
+  "relevance": 1,
+  "cited_by_count": 64,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P375",
+  "bibkey": "see2022robustness"
+ },
+ {
+  "title": "DESTA: A Framework for Safe Reinforcement Learning with Markov Games of Intervention",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2110.14468",
+  "openalex_id": null,
+  "s2_id": "676b8462708f3851effee13c1b029ed0b79e82e9",
+  "url": "https://doi.org/10.48550/arxiv.2110.14468",
+  "topics": [
+   "safe RL",
+   "intervention",
+   "two-player game"
+  ],
+  "summary": "DESTA: a safety agent can take control from the task agent at selected states to minimise violations while the task agent maximises reward.",
+  "relation": "Intervention-based safety related to safety layer/withdraw override; single agent.",
+  "relevance": 1,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P376",
+  "bibkey": "see2021desta"
  },
  {
   "title": "First Order Constrained Optimization in Policy Space",
@@ -3762,6 +7572,31 @@
   "bibkey": "efroni2020exploration"
  },
  {
+  "title": "Projection-Based Constrained Policy Optimization",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "International Conference on Learning Representations",
+  "doi": "10.48550/arxiv.2010.03152",
+  "openalex_id": null,
+  "s2_id": "9ec0bd60df62b997bb371e65d254434f8851ea9b",
+  "url": "https://doi.org/10.48550/arxiv.2010.03152",
+  "topics": [
+   "PCPO",
+   "constrained policy optimization"
+  ],
+  "summary": "Projection-based constrained policy optimization with bounds on reward improvement and constraint violation.",
+  "relation": "Alternative constrained RL algorithm to Lagrangian MAPPO.",
+  "relevance": 1,
+  "cited_by_count": 343,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P377",
+  "bibkey": "see2020projection"
+ },
+ {
   "title": "Constrained Reinforcement Learning Has Zero Duality Gap",
   "authors": "Paternain et al.",
   "year": 2019,
@@ -3805,6 +7640,85 @@
   "bibkey": "ames2019control"
  },
  {
+  "title": "Benchmarking Safe Exploration in Deep Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": null,
+  "doi": null,
+  "openalex_id": null,
+  "s2_id": "4d0f6a6ffcd6ab04732ff76420fd9f8a7bb649c3",
+  "url": "https://www.semanticscholar.org/paper/4d0f6a6ffcd6ab04732ff76420fd9f8a7bb649c3",
+  "topics": [
+   "Safety Gym",
+   "benchmark",
+   "constrained RL"
+  ],
+  "summary": "Title only: benchmark suite for safe exploration in deep RL (Safety Gym).",
+  "relation": "Standard constrained-RL benchmark and Lagrangian baselines the thesis' MAPPO-Lagrangian builds on.",
+  "relevance": 1,
+  "cited_by_count": 753,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P378",
+  "bibkey": "see2019benchmarking"
+ },
+ {
+  "title": "Worst Cases Policy Gradients",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "Conference on Robot Learning",
+  "doi": "10.48550/arxiv.1911.03618",
+  "openalex_id": null,
+  "s2_id": "46712dd04ab67286efb47a8c072360d0c25946a6",
+  "url": "https://doi.org/10.48550/arxiv.1911.03618",
+  "topics": [
+   "CVaR",
+   "distributional RL",
+   "risk-sensitive"
+  ],
+  "summary": "Worst Cases Policy Gradients optimizes policies for varying CVaR levels from a learned return distribution.",
+  "relation": "Risk-sensitive alternative to percentile masking of dose.",
+  "relevance": 1,
+  "cited_by_count": 88,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P379",
+  "bibkey": "see2019worst"
+ },
+ {
+  "title": "Lyapunov-based Safe Policy Optimization for Continuous Control",
+  "authors": "(see DOI)",
+  "year": 2019,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.1901.10031",
+  "openalex_id": null,
+  "s2_id": "3fa50569925cfecc66fed5ec616682ecf3794ad7",
+  "url": "https://doi.org/10.48550/arxiv.1901.10031",
+  "topics": [
+   "Lyapunov constraints",
+   "safe policy optimization",
+   "action projection",
+   "CMDP"
+  ],
+  "summary": "Lyapunov-based safe policy optimization projecting policy parameters or actions onto a feasible set, compatible with DDPG/PPO; tested on MuJoCo and indoor robot navigation.",
+  "relation": "Action-projection safety layer precedent for the thesis's action masking, though with a known cost model.",
+  "relevance": 1,
+  "cited_by_count": 309,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P380",
+  "bibkey": "see2019lyapunov"
+ },
+ {
   "title": "Safe Model-based Reinforcement Learning with Stability Guarantees",
   "authors": "Berkenkamp et al.",
   "year": 2017,
@@ -3825,6 +7739,85 @@
   ],
   "id": "P161",
   "bibkey": "berkenkamp2017safe"
+ },
+ {
+  "title": "Proximal Policy Optimization Algorithms",
+  "authors": "(see DOI)",
+  "year": 2017,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.1707.06347",
+  "openalex_id": null,
+  "s2_id": "dce6f9d4017b1785979e7520fd0834ef8cf02f4b",
+  "url": "https://doi.org/10.48550/arxiv.1707.06347",
+  "topics": [
+   "PPO",
+   "policy gradient",
+   "foundational"
+  ],
+  "summary": "Proximal Policy Optimization: clipped surrogate objective enabling multiple minibatch epochs per batch.",
+  "relation": "Base algorithm underlying MAPPO and MAPPO-Lagrangian used in the thesis.",
+  "relevance": 1,
+  "cited_by_count": 33362,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P381",
+  "bibkey": "see2017proximal"
+ },
+ {
+  "title": "Control Barrier Function Based Quadratic Programs for Safety Critical Systems",
+  "authors": "(see DOI)",
+  "year": 2016,
+  "venue": "IEEE Transactions on Automatic Control",
+  "doi": "10.1109/tac.2016.2638961",
+  "openalex_id": null,
+  "s2_id": "291a176dc906f31e8faf760911a61f0ca9bde444",
+  "url": "https://doi.org/10.1109/tac.2016.2638961",
+  "topics": [
+   "control barrier functions",
+   "QP",
+   "safety filter"
+  ],
+  "summary": "Control barrier function based QPs unifying safety (forward invariance) and performance (CLF) in real-time controllers.",
+  "relation": "Foundational safety-filter precedent for the thesis' action-masking safety layer.",
+  "relevance": 1,
+  "cited_by_count": 3145,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P382",
+  "bibkey": "see2016control"
+ },
+ {
+  "title": "Safe, Multi-Agent, Reinforcement Learning for Autonomous Driving",
+  "authors": "(see DOI)",
+  "year": 2016,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.1610.03295",
+  "openalex_id": null,
+  "s2_id": "75a760c6bd5ae15e0fc489a074bc42bc1fc4e697",
+  "url": "https://doi.org/10.48550/arxiv.1610.03295",
+  "topics": [
+   "safe MARL",
+   "hard constraints",
+   "autonomous driving",
+   "options"
+  ],
+  "summary": "Decomposes driving into a learned desires policy and non-learned trajectory planning with hard safety constraints.",
+  "relation": "Early precedent for combining learned policies with a hard-constraint safety layer in multi-agent settings.",
+  "relevance": 1,
+  "cited_by_count": 964,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P383",
+  "bibkey": "see2016safe"
  },
  {
   "title": "Optimizing the CVaR via Sampling",
@@ -3871,6 +7864,32 @@
   "bibkey": "garcia2015comprehensive"
  },
  {
+  "title": "Reachability-based safe learning with Gaussian processes",
+  "authors": "(see DOI)",
+  "year": 2014,
+  "venue": "IEEE Conference on Decision and Control",
+  "doi": "10.1109/cdc.2014.7039601",
+  "openalex_id": null,
+  "s2_id": "410c3573849dfb673ce5c6f5b3108db7a0745551",
+  "url": "https://doi.org/10.1109/cdc.2014.7039601",
+  "topics": [
+   "reachability",
+   "Gaussian process",
+   "safe learning"
+  ],
+  "summary": "Title only: reachability-based safe learning with Gaussian processes.",
+  "relation": "Safety-set precedent under learned model uncertainty.",
+  "relevance": 1,
+  "cited_by_count": 322,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "D"
+  ],
+  "id": "P384",
+  "bibkey": "see2014reachability"
+ },
+ {
   "title": "When Information is Worth the Risk: Behavioral Valuation for Hazardous Robotic Exploration",
   "authors": "Srivastava et al.",
   "year": 2026,
@@ -3895,6 +7914,8 @@
    "E",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P164",
   "bibkey": "srivastava2026when"
  },
@@ -3925,6 +7946,8 @@
    "E",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P165",
   "bibkey": "butler2026cooperative"
  },
@@ -3977,6 +8000,34 @@
   "bibkey": "qureshi2026hough"
  },
  {
+  "title": "Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2607.09060",
+  "openalex_id": null,
+  "s2_id": "7d0c083db15cdf3aa7cabf13ad9320dc7debfbc4",
+  "url": "https://doi.org/10.48550/arxiv.2607.09060",
+  "topics": [
+   "multi-robot exploration",
+   "travel budget",
+   "return to base",
+   "decentralized",
+   "communication-free"
+  ],
+  "summary": "Dec-MARVEL: decentralized multi-UAV exploration policy conditioned on each robot's remaining travel budget, which must reserve enough to return to base; outperforms baselines across 2-8 robots and three budgets, with physical tests.",
+  "relation": "Very close structural precedent: per-robot non-renewable budget with return reserve in a learned multi-robot policy; differs in that the budget is deterministic travel distance, not dose predicted from an uncertain source estimate.",
+  "relevance": 3,
+  "cited_by_count": 0,
+  "threat": true,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P385",
+  "bibkey": "see2026marvel"
+ },
+ {
   "title": "Bi-objective trail-planning for a robot team orienteering in a hazardous environment",
   "authors": "Simon et al.",
   "year": 2025,
@@ -4000,6 +8051,61 @@
   ],
   "id": "P168",
   "bibkey": "simon2025objective"
+ },
+ {
+  "title": "Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Proceedings of the  ... International Conference on Automated Planning and Scheduling",
+  "doi": "10.1609/icaps.v36i1.42829",
+  "openalex_id": null,
+  "s2_id": "44648be8cc8da5bea8cd61f1ab183d379b85305e",
+  "url": "https://doi.org/10.1609/icaps.v36i1.42829",
+  "topics": [
+   "risk budget allocation",
+   "multi-agent path finding",
+   "CBS",
+   "market mechanism"
+  ],
+  "summary": "Risk-bounded MAPF where agents share a global risk budget dynamically distributed into per-agent budgets via iterative (greedy or market) risk allocation.",
+  "relation": "Direct precedent for risk sharing / reallocating budgets across agents; risk is static edge risk, not cumulative dose from an estimated source.",
+  "relevance": 3,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P386",
+  "bibkey": "see2025risk"
+ },
+ {
+  "title": "Behaviorally Adaptive Multi-Robot Hazard Localization in Failure-Prone, Communication-Denied Environments",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2508.04537",
+  "openalex_id": null,
+  "s2_id": "3321dac202f159a6dee23cf6fcac0267afbc7b51",
+  "url": "https://doi.org/10.48550/arxiv.2508.04537",
+  "topics": [
+   "multi-robot",
+   "hazard mapping",
+   "risk-sensitive planning",
+   "survivability",
+   "behavioral entropy"
+  ],
+  "summary": "Behavior-Adaptive Path Planning (BAPP) uses behavioral entropy with a tunable risk-sensitivity parameter for multi-robot hazard mapping in failure-prone, communication-denied environments; BAPP-SIG improves robot survivability with little information loss.",
+  "relation": "Close analogue: multi-robot hazard search trading information against robot failure risk, but risk is a per-step failure probability rather than a cumulative non-renewable dose budget with exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P387",
+  "bibkey": "see2025behaviorally"
  },
  {
   "title": "Eclares: Energy-Aware Clarity-Driven Ergodic Search",
@@ -4077,8 +8183,37 @@
    "E",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P171",
   "bibkey": "mcguire2024valuing"
+ },
+ {
+  "title": "Planning under uncertainty for safe robot exploration using Gaussian process prediction",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "Autonomous Robots",
+  "doi": "10.1007/s10514-024-10172-6",
+  "openalex_id": null,
+  "s2_id": "480cb22af84f553e2e834ed6529e69170a14b56c",
+  "url": "https://doi.org/10.1007/s10514-024-10172-6",
+  "topics": [
+   "safe exploration",
+   "Gaussian process",
+   "radiation threshold",
+   "MDP"
+  ],
+  "summary": "Safe exploration where safety means staying in regions with environmental values (e.g., radiation) below a threshold, predicted by a GP and embedded in an MDP balancing information, safety and distance; physical robot test underground.",
+  "relation": "Safety depends on an uncertain estimate of the field, as in the thesis, but per-step threshold rather than cumulative dose budget and single robot.",
+  "relevance": 3,
+  "cited_by_count": 10,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P388",
+  "bibkey": "see2024planning"
  },
  {
   "title": "Hierarchical Motion Planning Under Probabilistic Temporal Tasks and Safe-Return Constraints",
@@ -4128,6 +8263,34 @@
   ],
   "id": "P173",
   "bibkey": "shamshirgaran2022reconstructing"
+ },
+ {
+  "title": "Adaptive and Risk-Aware Target Tracking for Robot Teams With Heterogeneous Sensors",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2022.3155805",
+  "openalex_id": null,
+  "s2_id": "f7d76d9f135939968bdfb4e88d093e2d6fd67955",
+  "url": "https://doi.org/10.1109/lra.2022.3155805",
+  "topics": [
+   "robot team",
+   "risk-aware",
+   "sensor failure",
+   "target tracking",
+   "hazard proximity"
+  ],
+  "summary": "Robot team with heterogeneous sensors tracks targets/hazards whose proximity induces sensor failures, balancing tracking quality against sensor preservation and adapting to failures that occurred.",
+  "relation": "Very close in spirit: proximity-dependent damage traded against estimation quality in a team; no cumulative budget or exit requirement.",
+  "relevance": 3,
+  "cited_by_count": 27,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P389",
+  "bibkey": "see2022adaptive"
  },
  {
   "title": "Optimization-Based Robot Team Exploration Considering Attrition and Communication Constraints",
@@ -4276,6 +8439,32 @@
   "bibkey": "jorgensen2017matroid"
  },
  {
+  "title": "The risk-sensitive coverage problem: Multi-robot routing under uncertainty with service level and survival constraints",
+  "authors": "(see DOI)",
+  "year": 2017,
+  "venue": "IEEE Conference on Decision and Control",
+  "doi": "10.1109/cdc.2017.8263777",
+  "openalex_id": null,
+  "s2_id": "12d209103031dd7301b614547f6ce51f6f4ec52d",
+  "url": "https://doi.org/10.1109/cdc.2017.8263777",
+  "topics": [
+   "risk-sensitive coverage",
+   "multi-robot routing",
+   "survival constraints"
+  ],
+  "summary": "Title only: multi-robot routing under uncertainty with service level and survival constraints.",
+  "relation": "Precedent for multi-robot missions with robot survival probability constraints in hazardous environments.",
+  "relevance": 3,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P390",
+  "bibkey": "see2017risk"
+ },
+ {
   "title": "A Multi-robot Control Policy for Information Gathering in the Presence of Unknown Hazards",
   "authors": "Schwager et al.",
   "year": 2016,
@@ -4301,6 +8490,8 @@
    "E",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P180",
   "bibkey": "schwager2016multi"
  },
@@ -4355,6 +8546,142 @@
   "bibkey": "pant2026energy"
  },
  {
+  "title": "Energy-Oriented Multi-Robot Collaborative Exploration and Mapping for Nuclear Power Plant Operation and Maintenance Based on I-WFD-Gmapping-DT",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Energies",
+  "doi": "10.3390/en19102355",
+  "openalex_id": null,
+  "s2_id": "6096a0ae1f357ce4136ac50a5e3f8efd8108192e",
+  "url": "https://doi.org/10.3390/en19102355",
+  "topics": [
+   "multi-robot exploration",
+   "nuclear power plant",
+   "energy-aware task allocation",
+   "frontier exploration"
+  ],
+  "summary": "Multi-robot frontier exploration and mapping for NPP maintenance with a utility combining information gain, path cost, battery energy and safety constraints, plus energy- and risk-aware task allocation.",
+  "relation": "Multi-robot exploration in radiation-risk plants with a per-robot resource (battery) in the utility, but no dose budget, exit reserve or source estimation.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P391",
+  "bibkey": "see2026energy"
+ },
+ {
+  "title": "A Capability-Aware Backup-Recoverability Filter for Heterogeneous Multi-Robot Navigation",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.41188",
+  "openalex_id": null,
+  "s2_id": "e9741dc470d8cfb4c540dca87fcf8fbdc6ed1c94",
+  "url": "https://doi.org/10.48550/arxiv.2610.41188",
+  "topics": [
+   "backup recoverability",
+   "safety filter",
+   "heterogeneous multi-robot",
+   "recursive feasibility"
+  ],
+  "summary": "Capability-aware backup-recoverability filter keeps each heterogeneous robot's action within a set that preserves a certified recovery maneuver, with recursive feasibility.",
+  "relation": "Preserving access to a recovery manoeuvre parallels the thesis's exit-reserve mask; applied to collision safety, not dose.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P392",
+  "bibkey": "see2026capability"
+ },
+ {
+  "title": "The hazardous team orienteering problem",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "4OR",
+  "doi": "10.1007/s10288-026-00625-2",
+  "openalex_id": null,
+  "s2_id": "07436c0963ffd0874b56da44dbe53b1ebf5cac56",
+  "url": "https://doi.org/10.1007/s10288-026-00625-2",
+  "topics": [
+   "hazardous orienteering",
+   "multi-vehicle",
+   "catastrophic loss risk",
+   "branch-and-price"
+  ],
+  "summary": "Hazardous Team Orienteering Problem: fleet routing where visiting hazardous nodes incurs time-dependent risk of catastrophic loss of the route's profit; exact branch-and-price and ALNS.",
+  "relation": "Combinatorial analogue of exposure-limited team missions where lingering in hazards risks losing everything collected; no estimation uncertainty.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P393",
+  "bibkey": "see2026hazardous"
+ },
+ {
+  "title": "Bayesian Networks for Path-Based Sensors: Gathering Information and Path Planning in Communication Denied Environments",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2605.16673",
+  "openalex_id": null,
+  "s2_id": "6673b623f4e8bc5bbd1707b9387470bd39a8348f",
+  "url": "https://doi.org/10.48550/arxiv.2605.16673",
+  "topics": [
+   "path-based sensor",
+   "robot loss as observation",
+   "multi-robot",
+   "hazard mapping",
+   "communication denied"
+  ],
+  "summary": "Bayesian-network belief update where a robot failing to return from a path signals a hazard; plans information-gaining paths for single and multi-robot teams.",
+  "relation": "Treats robot attrition in hazardous fields as information; thesis instead prevents loss via dose budgets and withdrawal.",
+  "relevance": 2,
+  "cited_by_count": 4,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P394",
+  "bibkey": "see2026bayesian"
+ },
+ {
+  "title": "URGE: Urgency-Aware Energy-Efficient UAV Mobility via Hybrid Deep Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "ACM Symposium on Solid Modeling and Applications",
+  "doi": "10.1109/sm69703.2026.11614125",
+  "openalex_id": null,
+  "s2_id": "d3e612c43a3d5a85408b7aa4b3a37456fe4c49eb",
+  "url": "https://doi.org/10.1109/sm69703.2026.11614125",
+  "topics": [
+   "return-to-base",
+   "energy budget",
+   "safety shield",
+   "UAV fleet"
+  ],
+  "summary": "URGE combines DRL with a deterministic safety shield that enforces return-to-charger under hard battery constraints for disaster-response UAVs, achieving 100% fleet survivability.",
+  "relation": "Close precedent for exit reserve shield with a hard resource budget; budget is battery, not dose predicted from an uncertain source estimate.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P395",
+  "bibkey": "see2026urge"
+ },
+ {
   "title": "Energy-constrained multi-robot exploration for autonomous map building",
   "authors": "Karumanchi et al.",
   "year": 2025,
@@ -4377,6 +8704,88 @@
   ],
   "id": "P183",
   "bibkey": "karumanchi2025energy"
+ },
+ {
+  "title": "Autonomous Air-Ground Vehicle Operations Optimization in Hazardous Environments: A Multi-Armed Bandit Approach",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Journal of Aerospace Information Systems",
+  "doi": "10.2514/1.i011749",
+  "openalex_id": null,
+  "s2_id": "aa8e6c6cccd433febe9aabbc8d86e4b5c37f909f",
+  "url": "https://doi.org/10.2514/1.i011749",
+  "topics": [
+   "air-ground team",
+   "hazardous environment",
+   "Bayesian UCB",
+   "vehicle routing with profits",
+   "resource constraints"
+  ],
+  "summary": "Dispatch framework for UAV sensing and UGV cleaning in hazardous (chemical/radiological) sites using Bayesian UCB and routing with profits under resource constraints.",
+  "relation": "Heterogeneous team under uncertain hazard levels and resource limits; no per-robot exposure accumulation.",
+  "relevance": 2,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P396",
+  "bibkey": "see2025autonomous"
+ },
+ {
+  "title": "Reinforcement Learning-Based Energy-Aware Coverage Path Planning for Precision Agriculture",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "Research in Adaptive and Convergent Systems",
+  "doi": "10.1145/3769002.3769971",
+  "openalex_id": null,
+  "s2_id": "87aca884b52427456d13730147b2f068b24f3183",
+  "url": "https://doi.org/10.1145/3769002.3769971",
+  "topics": [
+   "energy-aware",
+   "coverage path planning",
+   "return-to-base",
+   "SAC"
+  ],
+  "summary": "SAC-based energy-aware coverage path planning with CNN/LSTM, rewarding coverage while respecting energy and return-to-base constraints.",
+  "relation": "RL precedent for a resource reserve to return; energy is deterministic, not estimate-dependent dose.",
+  "relevance": 2,
+  "cited_by_count": 36,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P397",
+  "bibkey": "see2025reinforcement2"
+ },
+ {
+  "title": "Task Allocation and Online Planning for Multi-Agent Systems with Safe-Return Constraints under Temporal Logic Specifications",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "2025 IEEE International Conference on Unmanned Systems (ICUS)",
+  "doi": "10.1109/icus66297.2025.11294344",
+  "openalex_id": null,
+  "s2_id": "9c91d931061e714db9324109884583a8b7a87ab3",
+  "url": "https://doi.org/10.1109/icus66297.2025.11294344",
+  "topics": [
+   "multi-agent",
+   "safe-return constraints",
+   "task allocation",
+   "temporal logic"
+  ],
+  "summary": "Task allocation and online planning for multi-agent systems with local safe-return tasks under LTL specifications using MILP.",
+  "relation": "Explicit safe-return precedent for teams, like the exit reserve; constraint is logical, not dose-based.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P398",
+  "bibkey": "see2025task"
  },
  {
   "title": "Energy-Aware Ergodic Search: Continuous Exploration for Multi-Agent Systems with Battery Constraints",
@@ -4425,6 +8834,168 @@
   ],
   "id": "P185",
   "bibkey": "ramezani2024energy"
+ },
+ {
+  "title": "Solving Stochastic Orienteering Problems With Chance Constraints Using Monte Carlo Tree Search",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE Transactions on Automation Science and Engineering",
+  "doi": "10.1109/tase.2024.3472453",
+  "openalex_id": null,
+  "s2_id": "44962eac19ad8109f183138e0a52d7931dfeb000",
+  "url": "https://doi.org/10.1109/tase.2024.3472453",
+  "topics": [
+   "stochastic orienteering",
+   "chance constraints",
+   "MCTS",
+   "budget"
+  ],
+  "summary": "MCTS for stochastic orienteering that estimates per-action probability of exceeding the travel budget and prunes violating actions.",
+  "relation": "Close analog of budget-violation-probability action pruning; budget uncertainty from stochastic costs, not a searched field.",
+  "relevance": 2,
+  "cited_by_count": 14,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P399",
+  "bibkey": "see2024solving"
+ },
+ {
+  "title": "meSch: Multi-Agent Energy-Aware Scheduling for Task Persistence",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": "IEEE/RJS International Conference on Intelligent RObots and Systems",
+  "doi": "10.1109/iros60139.2025.11247605",
+  "openalex_id": null,
+  "s2_id": "d06d3a35c7768c92a5471fbebdd7a3f0199b30f0",
+  "url": "https://doi.org/10.1109/iros60139.2025.11247605",
+  "topics": [
+   "multi-robot",
+   "energy-aware scheduling",
+   "return to charge",
+   "persistent tasks"
+  ],
+  "summary": "meSch scheduling ensures a robot team with limited, heterogeneous battery discharge returns to a single charging station one at a time.",
+  "relation": "Return-to-base under heterogeneous resource depletion in teams; renewable energy versus non-renewable dose.",
+  "relevance": 2,
+  "cited_by_count": 9,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P400",
+  "bibkey": "see2024mesch"
+ },
+ {
+  "title": "Exploration–Exploitation Tradeoff in the Adaptive Information Sampling of Unknown Spatial Fields with Mobile Robots",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Italian National Conference on Sensors",
+  "doi": "10.3390/s23239600",
+  "openalex_id": null,
+  "s2_id": "12638c7489fe67ebfd21b8bbafd3f2126de36e4c",
+  "url": "https://doi.org/10.3390/s23239600",
+  "topics": [
+   "adaptive sampling",
+   "Gaussian process",
+   "energy constraints",
+   "heterogeneous energy"
+  ],
+  "summary": "Analyzes exploration-exploitation weights in GP-based adaptive sampling of fields such as radiation, trading mapping/localization accuracy against energy in single and multi-robot settings, including heterogeneous energy.",
+  "relation": "Resource-constrained (unequal energy) multi-robot field sampling; energy not dose and no exit reserve.",
+  "relevance": 2,
+  "cited_by_count": 14,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P401",
+  "bibkey": "see2023explorationexploitation"
+ },
+ {
+  "title": "Risk-aware Recharging Rendezvous for a Collaborative Team of UAVs and UGVs",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "IEEE International Conference on Robotics and Automation",
+  "doi": "10.1109/icra48891.2023.10161446",
+  "openalex_id": null,
+  "s2_id": "2537674568d86990f85ef5e1b810badcd267eeca",
+  "url": "https://doi.org/10.1109/icra48891.2023.10161446",
+  "topics": [
+   "recharging rendezvous",
+   "stochastic energy",
+   "risk tolerance",
+   "UAV-UGV"
+  ],
+  "summary": "Risk-aware recharging for UAV-UGV teams ensuring probability that no UAV runs out of charge exceeds a tolerance.",
+  "relation": "Chance-constrained resource feasibility for return; energy is renewable at UGVs unlike dose.",
+  "relevance": 2,
+  "cited_by_count": 19,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P402",
+  "bibkey": "see2023risk"
+ },
+ {
+  "title": "The matroid team surviving orienteers problem and its variants: Constrained routing of heterogeneous teams with risky traversal",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "Int. J. Robotics Res.",
+  "doi": "10.1177/02783649231210326",
+  "openalex_id": null,
+  "s2_id": "b923617ea71e737eb3d4b0e669ec2b161daa1f6d",
+  "url": "https://doi.org/10.1177/02783649231210326",
+  "topics": [
+   "team orienteering",
+   "survival probability constraint",
+   "heterogeneous team",
+   "risky traversal"
+  ],
+  "summary": "Matroid Team Surviving Orienteers: route a heterogeneous robot team through a risky graph with per-robot survival probability constraints and team constraints; submodular approximation algorithms.",
+  "relation": "Per-robot risk constraint in team planning resembles per-robot dose budgets; risk is known and probabilistic, not a cumulative dose from an uncertain source estimate.",
+  "relevance": 2,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P403",
+  "bibkey": "see2023matroid"
+ },
+ {
+  "title": "Multi-Robot Heterogeneous Adversarial Coverage",
+  "authors": "(see DOI)",
+  "year": 2023,
+  "venue": "International Symposium on Multi-Robot and Multi-Agent Systems",
+  "doi": "10.1109/mrs60187.2023.10416778",
+  "openalex_id": null,
+  "s2_id": "f51f5d8a0d7c08f8973ec671209c56f981f27000",
+  "url": "https://doi.org/10.1109/mrs60187.2023.10416778",
+  "topics": [
+   "adversarial coverage",
+   "heterogeneous robots",
+   "Dec-POMDP",
+   "MARL"
+  ],
+  "summary": "Multi-robot coverage of areas with threats that may stop robots probabilistically, formulated as a Dec-POMDP and solved with MARL accounting for heterogeneous robots.",
+  "relation": "Risk sharing among heterogeneous robots under hazards; risk is probabilistic loss, not cumulative dose.",
+  "relevance": 2,
+  "cited_by_count": 2,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P404",
+  "bibkey": "see2023multi"
  },
  {
   "title": "Energy Autonomy for Robot Systems With Constrained Resources",
@@ -4496,6 +9067,60 @@
   ],
   "id": "P188",
   "bibkey": "zhang2022online"
+ },
+ {
+  "title": "Energy-Aware, Collision-Free Information Gathering for Heterogeneous Robot Teams",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "IEEE Transactions on robotics",
+  "doi": "10.1109/tro.2023.3257512",
+  "openalex_id": null,
+  "s2_id": "32458d9927737a3f6b35085a97d27221f88eb41a",
+  "url": "https://doi.org/10.1109/tro.2023.3257512",
+  "topics": [
+   "energy-aware",
+   "heterogeneous team",
+   "information gathering",
+   "CBF"
+  ],
+  "summary": "Hierarchical planner trading information gain against energy cost for heterogeneous robot teams with CBF-based collision safety.",
+  "relation": "Resource-aware multi-robot informative sensing; energy is a cost term, not a hard non-renewable budget with exit.",
+  "relevance": 2,
+  "cited_by_count": 18,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P405",
+  "bibkey": "see2022energy"
+ },
+ {
+  "title": "MARLAS: Multi Agent Reinforcement Learning for cooperated Adaptive Sampling",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "International Symposium on Distributed Autonomous Robotic Systems",
+  "doi": "10.48550/arxiv.2207.07751",
+  "openalex_id": null,
+  "s2_id": "824a31ce79b700240cd137fc6b065eee77a5efe1",
+  "url": "https://doi.org/10.48550/arxiv.2207.07751",
+  "topics": [
+   "multi-robot",
+   "adaptive sampling",
+   "endurance budget",
+   "MARL"
+  ],
+  "summary": "MARLAS learns decentralized multi-robot sampling policies for environmental fields within a fixed endurance budget.",
+  "relation": "Budgeted multi-robot information gathering with MARL; budget is endurance, not hazard exposure.",
+  "relevance": 2,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P406",
+  "bibkey": "see2022marlas"
  },
  {
   "title": "Multi-Robot Information Gathering Subject to Resource Constraints",
@@ -4570,8 +9195,64 @@
    "E",
    "F"
   ],
+  "s2_id": null,
+  "arxiv": null,
   "id": "P191",
   "bibkey": "di2021risk"
+ },
+ {
+  "title": "Multi-robot task allocation for safe planning against stochastic hazard dynamics",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "European Control Conference",
+  "doi": "10.23919/ecc57647.2023.10178126",
+  "openalex_id": null,
+  "s2_id": "ee8afd85f3396b5afe36a92450aae0c0f65cff60",
+  "url": "https://doi.org/10.23919/ecc57647.2023.10178126",
+  "topics": [
+   "multi-robot task allocation",
+   "stochastic hazards",
+   "reachability",
+   "auction"
+  ],
+  "summary": "Two-stage multi-robot safe mission planning: stochastic reachability per robot plus greedy/auction task allocation.",
+  "relation": "Multi-robot hazard-aware allocation; safety probability not cumulative dose.",
+  "relevance": 2,
+  "cited_by_count": 10,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P407",
+  "bibkey": "see2021multi"
+ },
+ {
+  "title": "Multi-robot Coordination and Planning in Uncertain and Adversarial Environments",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "Current Robotics Reports",
+  "doi": "10.1007/s43154-021-00046-5",
+  "openalex_id": null,
+  "s2_id": "4ec7317625cab443cf2348b262be9ac5bca4d39d",
+  "url": "https://doi.org/10.1007/s43154-021-00046-5",
+  "topics": [
+   "multi-robot coordination",
+   "risk-aware",
+   "resilience",
+   "review"
+  ],
+  "summary": "Review of multi-robot coordination under uncertainty and adversaries: resilient coordination, risk-aware coordination and GNN-based methods.",
+  "relation": "Survey framing for risk-aware multi-robot teams.",
+  "relevance": 2,
+  "cited_by_count": 70,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P408",
+  "bibkey": "see2021multi2"
  },
  {
   "title": "Learning a Spatial Field in Minimum Time With a Team of Robots",
@@ -4623,6 +9304,33 @@
   "bibkey": "sharma2020risk"
  },
  {
+  "title": "Robust Multiple-Path Orienteering Problem: Securing Against Adversarial Attacks",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "IEEE Transactions on robotics",
+  "doi": "10.1109/tro.2022.3232268",
+  "openalex_id": null,
+  "s2_id": "e0768d2a552a8cec701589f4db5145076bc1912a",
+  "url": "https://doi.org/10.1109/tro.2022.3232268",
+  "topics": [
+   "orienteering",
+   "budget",
+   "robot failures",
+   "multi-robot"
+  ],
+  "summary": "Robust multiple-path orienteering for robot teams with path-length budgets and worst-case guarantees against attacks disabling up to alpha robots.",
+  "relation": "Team routing under budgets and robot loss; static planning, not exposure-driven.",
+  "relevance": 2,
+  "cited_by_count": 39,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P409",
+  "bibkey": "see2020robust"
+ },
+ {
   "title": "CARE: Cooperative Autonomy for Resilience and Efficiency of robot teams for complete coverage of unknown environments under robot failures",
   "authors": "Song et al.",
   "year": 2019,
@@ -4668,6 +9376,33 @@
   ],
   "id": "P195",
   "bibkey": "quann2019road"
+ },
+ {
+  "title": "RADMPC: A Fast Decentralized Approach for Chance-Constrained Multi-Vehicle Path-Planning",
+  "authors": "(see DOI)",
+  "year": 2018,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.1811.09914",
+  "openalex_id": null,
+  "s2_id": "c2c803ccb21e4f9f6da5627f8f896f21212f446d",
+  "url": "https://doi.org/10.48550/arxiv.1811.09914",
+  "topics": [
+   "chance constraint",
+   "risk allocation",
+   "multi-vehicle",
+   "decentralized MPC"
+  ],
+  "summary": "Decentralized chance-constrained multi-vehicle path planning with iterative risk allocation.",
+  "relation": "Risk allocation across vehicles is a precedent for distributing risk/budget among team members.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P410",
+  "bibkey": "see2018radmpc"
  },
  {
   "title": "Coordinated recharging of mobile robots during exploration",
@@ -4792,6 +9527,59 @@
   "bibkey": "singh2009efficient"
  },
  {
+  "title": "SAFARI: Semantic- And Frontier-driven Autonomous Risk Inspection",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2610.41456",
+  "openalex_id": null,
+  "s2_id": "db0311567475ab92464790f479100445eb4be8e1",
+  "url": "https://doi.org/10.48550/arxiv.2610.41456",
+  "topics": [
+   "risk-aware exploration",
+   "semantic map",
+   "quadruped",
+   "hazardous objects"
+  ],
+  "summary": "SAFARI couples semantic detection with a probabilistic map for risk-aware exploration of hazardous objects on a quadruped in 11 field missions.",
+  "relation": "Risk-aware hazard search, but risk is proximity-based and not a cumulative budget.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P411",
+  "bibkey": "see2026safari"
+ },
+ {
+  "title": "Risk-Averse Autonomous Material Handling in Healthcare Systems",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "2025 IEEE 21st International Conference on Automation Science and Engineering (CASE)",
+  "doi": "10.1109/case58245.2025.11163993",
+  "openalex_id": null,
+  "s2_id": "a77d11e96f066fc20c971bd8a9b2d4963383f910",
+  "url": "https://doi.org/10.1109/case58245.2025.11163993",
+  "topics": [
+   "risk-averse path planning",
+   "risk budget",
+   "hazardous materials"
+  ],
+  "summary": "Risk-averse grid path planning for hazardous material transport in hospitals integrating risk into transition costs with a risk budget.",
+  "relation": "Risk-budget path planning precedent; unrelated hazard model.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P412",
+  "bibkey": "see2025risk2"
+ },
+ {
   "title": "Multirobot Persistent Monitoring: Minimizing Latency and Number of Robots With Recharging Constraints",
   "authors": "Asghar et al.",
   "year": 2024,
@@ -4840,6 +9628,33 @@
   "bibkey": "jakkala2024multi"
  },
  {
+  "title": "Distributed Multi-robot Information Gathering Using Path-Based Sensors in Entropy-Weighted Voronoi Regions",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "International Symposium on Distributed Autonomous Robotic Systems",
+  "doi": "10.1007/978-3-031-51497-5_21",
+  "openalex_id": null,
+  "s2_id": "6ad97292ded581b99b13af0b03fe058bc5b3a0ea",
+  "url": "https://doi.org/10.1007/978-3-031-51497-5_21",
+  "topics": [
+   "path-based sensors",
+   "multi-robot",
+   "information gathering",
+   "Voronoi"
+  ],
+  "summary": "Title only: distributed multi-robot information gathering with path-based sensors in entropy-weighted Voronoi regions.",
+  "relation": "Precursor of path-based (robot loss) hazard sensing; no exposure budget.",
+  "relevance": 1,
+  "cited_by_count": 8,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P413",
+  "bibkey": "see2022distributed"
+ },
+ {
   "title": "Learning Risk-Aware Costmaps for Traversability in Challenging Environments",
   "authors": "Fan et al.",
   "year": 2021,
@@ -4861,6 +9676,33 @@
   ],
   "id": "P203",
   "bibkey": "fan2021learning"
+ },
+ {
+  "title": "Risk-Aware Submodular Optimization for Multirobot Coordination",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "IEEE Transactions on robotics",
+  "doi": "10.1109/tro.2022.3158227",
+  "openalex_id": null,
+  "s2_id": "177e70e41d5610e3be600bde8f7f9854973c2938",
+  "url": "https://doi.org/10.1109/tro.2022.3158227",
+  "topics": [
+   "CVaR",
+   "submodular optimization",
+   "multi-robot coordination",
+   "risk-aware"
+  ],
+  "summary": "Sequential greedy algorithm with approximation guarantees for CVaR-based submodular maximization, applied to vehicle assignment and sensor selection with failures.",
+  "relation": "Risk-aware multi-robot coordination formalism; not sequential RL nor dose budgets.",
+  "relevance": 1,
+  "cited_by_count": 23,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "E"
+  ],
+  "id": "P414",
+  "bibkey": "see2020risk"
  },
  {
   "title": "Randomized algorithm for informative path planning with budget constraints",
@@ -4908,6 +9750,34 @@
   ],
   "id": "P205",
   "bibkey": "otte2021path"
+ },
+ {
+  "title": "Risk-Aware Motion Planning in Partially Known Environments",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "IEEE Conference on Decision and Control",
+  "doi": "10.1109/cdc45484.2021.9683744",
+  "openalex_id": null,
+  "s2_id": "f17465002e35fa4f20b0cef6bc38bc3624e1f03e",
+  "url": "https://doi.org/10.1109/cdc45484.2021.9683744",
+  "topics": [
+   "risk-aware planning",
+   "Gaussian process",
+   "CVaR",
+   "unknown hazard field",
+   "gas/radiation"
+  ],
+  "summary": "Builds a GP model of an unknown hazardous field (gas, radiation) from noisy samples and uses CVaR-based risk in sampling-based motion planning with online replanning.",
+  "relation": "Safety cost computed from an uncertain estimate of the hazard field, like the thesis's percentile mask over particles; single robot, no cumulative budget or exit.",
+  "relevance": 3,
+  "cited_by_count": 30,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P415",
+  "bibkey": "see2021risk"
  },
  {
   "title": "Learning about physical parameters: the importance of model discrepancy",
@@ -5008,6 +9878,115 @@
   "bibkey": "cheng2026sniffysquad"
  },
  {
+  "title": "Multi-Agent Reinforcement Learning for UAV-Based Chemical Plume Source Localization",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "IEEE Internet of Things Journal",
+  "doi": "10.48550/arxiv.2603.11582",
+  "openalex_id": null,
+  "s2_id": "1f102c5949d94fd684800aee06fbd2c953812b51",
+  "url": "https://doi.org/10.48550/arxiv.2603.11582",
+  "topics": [
+   "MARL",
+   "UAV",
+   "chemical plume source localization",
+   "methane"
+  ],
+  "summary": "MARL framework with virtual anchor nodes for multi-UAV chemical plume source localization, outperforming fluxotaxis.",
+  "relation": "Multi-agent RL source search in an analogous hazard domain; no agent exposure budget.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P416",
+  "bibkey": "see2026multi"
+ },
+ {
+  "title": "Information-Guided Safe Reinforcement Learning for Autonomous Gas Source Localization using sUAS",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "arXiv.org",
+  "doi": "10.48550/arxiv.2609.05569",
+  "openalex_id": null,
+  "s2_id": "b920ccfc925680e2247adc8ca1f3ec01714f566a",
+  "url": "https://doi.org/10.48550/arxiv.2609.05569",
+  "topics": [
+   "gas source localization",
+   "safe RL",
+   "control barrier function",
+   "estimator reliability",
+   "UAV"
+  ],
+  "summary": "Information-guided safe RL for sUAS gas source localization; identifies a bias where planners exploit flawed early estimates, uses a KL-based meta-supervisor on estimator reliability and an RCBF for zero violations.",
+  "relation": "Relevant to the thesis's overconfident-filter finding: monitors estimator reliability and couples estimation with safety in source search.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P417",
+  "bibkey": "see2026information"
+ },
+ {
+  "title": "Hierarchical Role-Based Multi-Agent Reinforcement Learning for UHF Radiation Source Localization with Heterogeneous UAV Swarms",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Drones",
+  "doi": "10.3390/drones10010054",
+  "openalex_id": null,
+  "s2_id": "d1141165bed2338151c53a9bfd951ad135212bc3",
+  "url": "https://doi.org/10.3390/drones10010054",
+  "topics": [
+   "MARL",
+   "source localization",
+   "UAV swarm",
+   "heterogeneous"
+  ],
+  "summary": "Hierarchical heterogeneous MARL (HMUDRL) with cluster-head and monitoring UAVs to localize UHF radio sources under payload and endurance limits, 96% success.",
+  "relation": "Analogous multi-agent RL source search (RF instead of gamma); no hazard to agents.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P418",
+  "bibkey": "see2026hierarchical"
+ },
+ {
+  "title": "UAV Mission Planning for Post-Disaster Victim Localisation via Federated Multi-Agent Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": "Drones",
+  "doi": "10.3390/drones10050385",
+  "openalex_id": null,
+  "s2_id": "1e8853402a1c4bbd1ece28dd56f49a588b1deeef",
+  "url": "https://doi.org/10.3390/drones10050385",
+  "topics": [
+   "FedQMIX",
+   "victim localization",
+   "return-to-base",
+   "UAV"
+  ],
+  "summary": "Federated QMIX for multi-UAV victim localization with PSO position estimation, return-to-base and map-feasibility safety checks, and training state built on estimated victim locations.",
+  "relation": "Analogous multi-agent search with return-to-base safety checks and estimate-based state; no cumulative hazard exposure.",
+  "relevance": 2,
+  "cited_by_count": 1,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P419",
+  "bibkey": "see2026mission"
+ },
+ {
   "title": "Bayesian Decentralized Decision-Making for Multi-Robot Systems: Sample-Efficient Estimation of Event Rates",
   "authors": "Aguirre et al.",
   "year": 2025,
@@ -5055,6 +10034,60 @@
   ],
   "id": "P211",
   "bibkey": "granadeno2025multi"
+ },
+ {
+  "title": "Enhanced Reward Function Design for Source Term Estimation Based on Deep Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "IEEE Access",
+  "doi": "10.1109/access.2025.3569827",
+  "openalex_id": null,
+  "s2_id": "7bd6b09775dcda18e61f855a0ee05c1358d617b7",
+  "url": "https://doi.org/10.1109/access.2025.3569827",
+  "topics": [
+   "source term estimation",
+   "particle filter",
+   "DQN",
+   "reward design"
+  ],
+  "summary": "Particle filter for gas source term estimation combined with DQN search policy; compares and proposes GMM-variance and information-gain rewards.",
+  "relation": "Same PF+deep RL architecture in the gas domain; informs reward design; no agent exposure constraint.",
+  "relevance": 2,
+  "cited_by_count": 5,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P420",
+  "bibkey": "see2025enhanced"
+ },
+ {
+  "title": "RoLocMe: A Robust Multi-agent Source Localization System with Learning-based Map Estimation",
+  "authors": "(see DOI)",
+  "year": 2025,
+  "venue": "International Joint Conference on Artificial Intelligence",
+  "doi": "10.24963/ijcai.2025/18",
+  "openalex_id": null,
+  "s2_id": "089ce24f58508a2af7277e0ceb386728d6a9afe6",
+  "url": "https://doi.org/10.24963/ijcai.2025/18",
+  "topics": [
+   "multi-agent RL",
+   "source localization",
+   "RSS map estimation",
+   "value decomposition"
+  ],
+  "summary": "RoLocMe: MARL system for (RF) source localization combining a learned RSS map estimator with cooperative dueling DQN and value decomposition; higher success than prior methods.",
+  "relation": "Multi-agent RL source search analog without any agent exposure constraint.",
+  "relevance": 2,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P421",
+  "bibkey": "see2025rolocme"
  },
  {
   "title": "Improved Socialtaxis for information-theoretic source search using cooperative multiple agents in turbulent environments",
@@ -5131,6 +10164,34 @@
   "bibkey": "aggarwal2022risk"
  },
  {
+  "title": "Source Term Estimation Using Deep Reinforcement Learning With Gaussian Mixture Model Feature Extraction for Mobile Sensors",
+  "authors": "(see DOI)",
+  "year": 2022,
+  "venue": "IEEE Robotics and Automation Letters",
+  "doi": "10.1109/lra.2022.3184787",
+  "openalex_id": null,
+  "s2_id": "b89b2e7b06ab805524d9d29b73eb1796307d6885",
+  "url": "https://doi.org/10.1109/lra.2022.3184787",
+  "topics": [
+   "source term estimation",
+   "particle filter",
+   "DDPG",
+   "Gaussian mixture",
+   "gas"
+  ],
+  "summary": "DRL (DDPG with GRU) for gas source term estimation where a particle filter's belief is compressed via a Gaussian mixture model as policy input; beats information-theoretic baselines.",
+  "relation": "Direct precedent for feeding a particle filter belief to an RL search policy; single agent, gas, no exposure budget.",
+  "relevance": 2,
+  "cited_by_count": 24,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P422",
+  "bibkey": "see2022source"
+ },
+ {
   "title": "PDE solution to UAV/UGV trajectory planning problem by spatio-temporal estimation during wildfires",
   "authors": "Radmanesh et al.",
   "year": 2021,
@@ -5154,6 +10215,113 @@
   ],
   "id": "P215",
   "bibkey": "radmanesh2021solution"
+ },
+ {
+  "title": "Robotic Information Gathering With Reinforcement Learning Assisted by Domain Knowledge: An Application to Gas Source Localization",
+  "authors": "(see DOI)",
+  "year": 2021,
+  "venue": "IEEE Access",
+  "doi": "10.1109/access.2021.3052024",
+  "openalex_id": null,
+  "s2_id": "8dbe75b7035e463fcdcb6c0e579376341460bd1a",
+  "url": "https://doi.org/10.1109/access.2021.3052024",
+  "topics": [
+   "gas source localization",
+   "reinforcement learning",
+   "domain knowledge"
+  ],
+  "summary": "RL for gas source localization using dispersion-model-informed rewards and observations, outperforming classic strategies.",
+  "relation": "Analogous RL hazardous-source search; no agent exposure budget.",
+  "relevance": 2,
+  "cited_by_count": 26,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P423",
+  "bibkey": "see2021robotic"
+ },
+ {
+  "title": "Unmanned Aerial Vehicle-Based Hazardous Materials Response: Information-Theoretic Hazardous Source Search and Reconstruction",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "IEEE robotics & automation magazine",
+  "doi": "10.1109/mra.2019.2943006",
+  "openalex_id": null,
+  "s2_id": "62d32db9f246f52772d82970ec96f65272bb516a",
+  "url": "https://doi.org/10.1109/mra.2019.2943006",
+  "topics": [
+   "UAV",
+   "HAZMAT",
+   "information-theoretic search",
+   "source term estimation"
+  ],
+  "summary": "UAV-based information-theoretic search and reconstruction of hazardous atmospheric release source terms under uncertain parameters.",
+  "relation": "Analogous hazardous-source search with Bayesian source-term estimation; no agent exposure budget.",
+  "relevance": 2,
+  "cited_by_count": 31,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P424",
+  "bibkey": "see2020unmanned"
+ },
+ {
+  "title": "Decentralized Multi-agent information-theoretic control for target estimation and localization: finding gas leaks",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "Int. J. Robotics Res.",
+  "doi": "10.1177/0278364920957090",
+  "openalex_id": null,
+  "s2_id": "c278d699f2994a109fe0d7c5348440a301437fb7",
+  "url": "https://doi.org/10.1177/0278364920957090",
+  "topics": [
+   "multi-agent",
+   "information-theoretic control",
+   "gas leak localization",
+   "Bayesian estimation",
+   "field experiments"
+  ],
+  "summary": "Decentralized multi-agent information-theoretic control with non-parametric Bayesian estimation for gas leak localization, with outdoor aerial-robot experiments.",
+  "relation": "Multi-agent Bayesian source search precedent in gas; no agent exposure budget.",
+  "relevance": 2,
+  "cited_by_count": 41,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P425",
+  "bibkey": "see2020decentralized"
+ },
+ {
+  "title": "Gas Source Localization using Improved Multi-Agent Reinforcement Learning",
+  "authors": "(see DOI)",
+  "year": 2020,
+  "venue": "ACM Cloud and Autonomic Computing Conference",
+  "doi": "10.1109/cac51589.2020.9327850",
+  "openalex_id": null,
+  "s2_id": "1ad6bc3a73c671002e27ea053e8275be84053169",
+  "url": "https://doi.org/10.1109/cac51589.2020.9327850",
+  "topics": [
+   "gas source localization",
+   "multi-agent RL",
+   "dispersion model"
+  ],
+  "summary": "Improved MARL pre-trained on a Gaussian-dispersion synthetic environment guides mobile sensors to localize a gas source among disturbance sources.",
+  "relation": "Analog multi-agent RL source search without agent exposure constraints.",
+  "relevance": 2,
+  "cited_by_count": 3,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P426",
+  "bibkey": "see2020source"
  },
  {
   "title": "Cooperative information-driven source search and estimation for multiple agents",
@@ -5349,6 +10517,59 @@
   ],
   "id": "P223",
   "bibkey": "wu2026multi"
+ },
+ {
+  "title": "Discrepancy Modeling with Intermediate Variables: A New Framework for Robust Gaussian Process Calibration",
+  "authors": "(see DOI)",
+  "year": 2026,
+  "venue": null,
+  "doi": "10.48550/arxiv.2606.12857",
+  "openalex_id": null,
+  "s2_id": "75386725d3aa4c4855a5b37e3e4df0d7f00d3e47",
+  "url": "https://doi.org/10.48550/arxiv.2606.12857",
+  "topics": [
+   "model discrepancy",
+   "Gaussian process calibration",
+   "intermediate variables"
+  ],
+  "summary": "Robust GP calibration framework that uses intermediate simulator variables to model discrepancy and reduce identifiability issues.",
+  "relation": "Model-discrepancy methodology relevant to the thesis's finding of filter overconfidence under correlated model error.",
+  "relevance": 1,
+  "cited_by_count": 0,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P427",
+  "bibkey": "see2026discrepancy"
+ },
+ {
+  "title": "UGV-CBRN: An Unmanned Ground Vehicle for Chemical, Biological, Radiological, and Nuclear Disaster Response",
+  "authors": "(see DOI)",
+  "year": 2024,
+  "venue": null,
+  "doi": "10.48550/arxiv.2406.14385",
+  "openalex_id": null,
+  "s2_id": "8ce25ed2682a318a4f2a588bcbc0455a9279f3ae",
+  "url": "https://doi.org/10.48550/arxiv.2406.14385",
+  "topics": [
+   "CBRN",
+   "UGV",
+   "radiation mapping",
+   "EnRicH"
+  ],
+  "summary": "UGV for CBRN response combining LiDAR/Geiger radiation mapping with semi-autonomous manipulation and sampling, field-tested at EnRicH.",
+  "relation": "System precedent for robotic radiation source search; teleoperated, single robot, no dose budget.",
+  "relevance": 1,
+  "cited_by_count": 12,
+  "threat": false,
+  "round": 2,
+  "clusters": [
+   "F"
+  ],
+  "id": "P428",
+  "bibkey": "see2024cbrn"
  },
  {
   "title": "Odor Source Localization in Obstacle Regions Using Switching Planning Algorithms with a Switching Framework",
