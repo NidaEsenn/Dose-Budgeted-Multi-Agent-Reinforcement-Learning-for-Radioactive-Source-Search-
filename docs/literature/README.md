@@ -1,8 +1,6 @@
 # Literature library
 
-232 papers, every one returned by a scholarly database search (OpenAlex and others) with an OpenAlex id or DOI. Summaries are based on titles and abstracts only; read the paper before citing a detail.
-
-Raw per-search results: `raw/`. Closest works and first novelty check: `CLOSEST_WORKS.md`.
+234 papers, every one returned by a scholarly database search (OpenAlex and others) with an OpenAlex id or DOI. Summaries are based on titles and abstracts only; read the paper before citing a detail.
 
 Files: `papers.csv` (spreadsheet), `papers.json` (full records), `references.bib` (BibTeX; authors are first author + et al., complete them before submission).
 
@@ -12,7 +10,7 @@ Relevance: 3 = very close to this thesis, 2 = related method or setting, 1 = bac
 |---|---|---|---|
 | A | Single-robot radiation source search and localization | 36 | 6 |
 | B | Multi-robot / multi-agent radiation search | 40 | 8 |
-| C | Nuclear robotics and radiation exposure of robots | 49 | 11 |
+| C | Nuclear robotics and radiation exposure of robots | 51 | 12 |
 | D | Safe and constrained reinforcement learning (single- and multi-agent) | 47 | 20 |
 | E | Resource-constrained exploration, active sensing and return-to-base | 42 | 19 |
 | F | Analogous hazardous-source search and estimation (gas, CBRN, fire, calibration) | 34 | 7 |
@@ -109,6 +107,7 @@ Relevance: 3 = very close to this thesis, 2 = related method or setting, 1 = bac
 | P076 | 3 | 2024 | [Research on Radiation Damage and Reinforcement of Control and Sensing Systems in Nuclear Robots](https://doi.org/10.3390/electronics13071214), Chang et al., *Electronics* | Component failure-dose thresholds; controllers (~170 Gy) are the weak link. |
 | P077 | 3 | 2023 | [Multi-objective path planning for mobile robot in nuclear accident environment based on improved ant colony optimization with modified A*](https://doi.org/10.1016/j.net.2023.02.005), Zhang et al., *Nuclear Engineering and Technology* | Robot cumulative dose as a planning objective with a dose-rate-threshold avoidance rule (closest to a safety layer, but not a cumulative budget). |
 | P078 | 3 | 2021 | [Radiation tolerance of a small COTS single board computer for mobile robots](https://doi.org/10.1016/j.net.2021.12.007), West et al., *Nuclear Engineering and Technology* | Concrete failure-dose number for a typical mobile-robot computer; anchors the 0.1 Gy operating budget as a conservative fraction of COTS failure dose. |
+| P233 | 3 | 2016 | [RICA: A Tracked Robot for Sampling and Radiological Characterization in the Nuclear Field](https://doi.org/10.1002/rob.21650), Ducros et al., *Journal of Field Robotics* | Direct operational precedent for treating a robot's cumulative dose like a personal dose budget; used for maintenance scheduling, not for online planning with an exit reserve. |
 | P079 | 3 | 2014 | [gamma Ray irradiation test of control system of nuclear emergency rescue robot](https://doi.org/10.1109/icist.2014.6920587), Zhao et al., *IEEE ICIST* | System-level robot failure-dose data (~100+ Gy) for an emergency robot. |
 | P080 | 3 | 2012 | [Emergency response to the nuclear accident at the Fukushima Daiichi Nuclear Power Plants using mobile rescue robots](https://doi.org/10.1002/rob.21439), Nagatani et al., *Journal of Field Robotics* | Canonical example of sizing a robot's mission by its tolerable cumulative dose in a known dose-rate field; supports the dose-budget framing. |
 | P081 | 2 | 2026 | [Extreme Total Ionizing Dose Survival of a COTS Artix-7 FPGA Under Prolonged Gamma Irradiation](https://doi.org/10.1109/icac70325.2026.11712286), Al-Hasan et al., *International Conference on Automation and Computing (ICAC)* | Shows peripherals (flash) set the effective failure dose; wide spread of tolerances across components. |
@@ -122,6 +121,7 @@ Relevance: 3 = very close to this thesis, 2 = related method or setting, 1 = bac
 | P089 | 2 | 2023 | [The effect of ionizing radiation on robotic trajectory movement and electronic components](https://doi.org/10.1016/j.net.2023.07.041), Coloma et al., *Nuclear Engineering and Technology* | Component-level dose effects on robot motion; supports lifetime-limited-by-dose assumption. |
 | P090 | 2 | 2023 | [The search for orphan radioactive source based on GPR-PRM method](https://doi.org/10.1016/j.nucengdes.2023.112599), Xiao et al., *Nuclear Engineering and Design* | Orphan-source recovery with a mobile robot (no robot dose constraint). |
 | P091 | 2 | 2022 | [Impact of gamma radiation on 8051 microcontroller performance](https://doi.org/10.1016/j.net.2022.08.021), Sharma et al., *Nuclear Engineering and Technology* | Upper-range COTS MCU tolerance number for comparison with SBC (~111 Gy). |
+| P234 | 2 | 2022 | [Modular Robots for Enabling Operations in Unstructured Extreme Environments](https://doi.org/10.1002/aisy.202000227), Sayed et al., *Advanced Intelligent Systems* | Gives the per-robot TID and time-to-failure numbers that motivate a hard dose budget; no planning method. |
 | P092 | 2 | 2021 | [Path planning in nuclear facility decommissioning: Research status, challenges, and opportunities](https://doi.org/10.1016/j.net.2021.05.038), Adibeli et al., *Nuclear Engineering and Technology* | Survey of minimum-dose path planning; positions the thesis' dose-aware safety layer relative to this literature. |
 | P093 | 2 | 2021 | [Gamma-Induced Image Degradation Analysis of Robot Vision Sensor for Autonomous Inspection of Nuclear Sites](https://doi.org/10.1109/jsen.2021.3050168), Khanam et al., *IEEE Sensors Journal* | Shows perception degrades with dose rate before outright failure, relevant to sensing reliability in strong fields. |
 | P094 | 2 | 2021 | [Metaheuristic minimum dose path planning for nuclear power plant decommissioning](https://doi.org/10.1016/j.anucene.2021.108800), Lai et al., *Annals of Nuclear Energy* | Metaheuristic minimum-dose planning for workers/robots. |

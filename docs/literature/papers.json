@@ -1902,6 +1902,30 @@
   "bibkey": "west2021radiation"
  },
  {
+  "title": "RICA: A Tracked Robot for Sampling and Radiological Characterization in the Nuclear Field",
+  "authors": "Ducros et al.",
+  "year": 2016,
+  "venue": "Journal of Field Robotics",
+  "doi": "10.1002/rob.21650",
+  "openalex_id": "W2406563910",
+  "url": "https://doi.org/10.1002/rob.21650",
+  "topics": [
+   "TID-tolerance",
+   "decommissioning",
+   "radiation-mapping",
+   "dose-tracking"
+  ],
+  "summary": "CEA tracked robot that locates and measures radioactive sources; gamma irradiation tests gave component failure doses (some cards >1000 Gy, power supplies ~100 Gy, others >200 Gy). Full text (Scholar Gateway): 'the cumulative dose absorbed by the robot can be followed by dosimetry, as is done for human operators ... the robot's operating time in nominal conditions depends on the maximum dose acceptable for its weakest components.'",
+  "relation": "Direct operational precedent for treating a robot's cumulative dose like a personal dose budget; used for maintenance scheduling, not for online planning with an exit reserve.",
+  "relevance": 3,
+  "cited_by_count": 66,
+  "clusters": [
+   "C"
+  ],
+  "id": "P233",
+  "bibkey": "ducros2016rica"
+ },
+ {
   "title": "gamma Ray irradiation test of control system of nuclear emergency rescue robot",
   "authors": "Zhao et al.",
   "year": 2014,
@@ -2198,6 +2222,29 @@
   ],
   "id": "P091",
   "bibkey": "sharma2022impact"
+ },
+ {
+  "title": "Modular Robots for Enabling Operations in Unstructured Extreme Environments",
+  "authors": "Sayed et al.",
+  "year": 2022,
+  "venue": "Advanced Intelligent Systems",
+  "doi": "10.1002/aisy.202000227",
+  "openalex_id": "W4210776196",
+  "url": "https://doi.org/10.1002/aisy.202000227",
+  "topics": [
+   "review",
+   "Fukushima",
+   "TID-tolerance"
+  ],
+  "summary": "Survey of robots for extreme environments; full text (Scholar Gateway) includes a figure of the total integrated dose of 23 nuclear robotic systems and their effective time before failure in Fukushima Daiichi Unit 2 (530 Gy/h), with humans (0.02 Gy) for comparison.",
+  "relation": "Gives the per-robot TID and time-to-failure numbers that motivate a hard dose budget; no planning method.",
+  "relevance": 2,
+  "cited_by_count": 44,
+  "clusters": [
+   "C"
+  ],
+  "id": "P234",
+  "bibkey": "sayed2022modular"
  },
  {
   "title": "Path planning in nuclear facility decommissioning: Research status, challenges, and opportunities",

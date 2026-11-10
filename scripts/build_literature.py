@@ -98,10 +98,26 @@ def main(src):
             p["url"] = (f"https://doi.org/{p['doi']}" if p["doi"]
                         else f"https://openalex.org/{p['openalex_id']}" if p["openalex_id"] else None)
     merged.sort(key=lambda p: (min(p["clusters"]), -p["relevance"], -(p.get("year") or 0)))
-    used = set()
-    for i, p in enumerate(merged, 1):
-        p["id"] = f"P{i:03d}"
-        p["bibkey"] = bib_key(p, used)
+    # stable ids: a paper keeps the id it had in the previous papers.json
+    prev = {}
+    if os.path.exists(f"{OUT}/papers.json"):
+        with open(f"{OUT}/papers.json") as fh:
+            for q in json.load(fh):
+                for k in (("doi", norm_doi(q.get("doi"))), ("oa", norm_oa(q.get("openalex_id"))),
+                          ("t", norm_title(q.get("title")))):
+                    if k[1]:
+                        prev[k] = (q["id"], q.get("bibkey"))
+    used, nxt = set(), 1 + max([int(v[0][1:]) for v in prev.values()] or [0])
+    for p in merged:
+        old = next((prev[k] for k in (("doi", p["doi"]), ("oa", p["openalex_id"]), ("t", norm_title(p["title"])))
+                    if k[1] and k in prev), None)
+        if old:
+            p["id"], p["bibkey"] = old
+            used.add(old[1])
+    for p in merged:
+        if "id" not in p:
+            p["id"] = f"P{nxt:03d}"; nxt += 1
+            p["bibkey"] = bib_key(p, used)
 
     os.makedirs(OUT, exist_ok=True)
     with open(f"{OUT}/papers.json", "w") as f:
