@@ -19,7 +19,7 @@ Columns: **Dose** = robot's own cumulative dose is limited (B = hard budget, S =
 | P117 | Abdelmeguid & Hasan 2026, SEA-MAPPO (battery, Robotics) | B (battery) | – | – (energy roughly known) | yes | MAPPO | yes: closest method |
 | P038 | Huo et al. 2025, PSOPF-MATD3 (NET) | – | – | – | yes | MATD3 | no |
 | P003 | Totten 2023, RAD-TEAM MARL (PSU thesis) | – | – | – | yes | MARL | yes: confirm no budget |
-| P037 | Huo et al. 2026, Heterogeneity (Prog. Nucl. Energy) | tolerance differs by robot | – | ? | yes | rule | yes: no abstract seen |
+| P037 | Huo et al. 2026, Heterogeneity (Prog. Nucl. Energy). **Full text read** | implicit: "residence time ... constrained by its radiation resistance level", in practice a 30-detection stop; no Gy, no dose computed | – (mobile robot "ultimately moves to the source location") | – (activity assumed known; estimate drives information gain only) | 3 robots, roles fixed by design | rule | done |
 | P039 | Ling et al. 2024, heterogeneous search (Ann. Nucl. Energy) | ? | – | ? | yes | rule | yes |
 | P041 | Lee et al. 2023, multi-agent min-dose path planning (NET) | S | evacuation | – (known field) | yes | – | no |
 | P074 | Batty 2026, radiation-aware navigation (Liverpool PhD) | S | ? | GP map | no | – | yes |

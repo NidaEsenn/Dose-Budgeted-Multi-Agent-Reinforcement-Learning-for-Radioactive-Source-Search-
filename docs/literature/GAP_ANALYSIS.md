@@ -1,6 +1,6 @@
 # Gap analysis: where the thesis is new
 
-*10 November 2026. Based on 234 papers in `papers.csv` (IDs P###). Evidence level: abstracts for almost all papers; full-text passages for two (P233 RICA, P234 Sayed) via Scholar Gateway. The full texts of the closest works could not be fetched from this environment (publisher hosts blocked); the checks still owed are listed at the end.*
+*10 November 2026 (updated with full-text reads of P037, P042, P043, P079, P118). Based on 234 papers in `papers.csv` (IDs P###). Evidence level: abstracts for almost all papers; full-text passages for two (P233 RICA, P234 Sayed) via Scholar Gateway. The full texts of the closest works could not be fetched from this environment (publisher hosts blocked); the checks still owed are listed at the end.*
 
 ## Bottom line
 
@@ -36,7 +36,8 @@ The thesis is new where four research lines meet, and **not** in any one of them
   - Butler P165 (arXiv 2026) gives a game-theoretic risk transfer to lower-valued robots, with exposure as a penalty.
   - Jorgensen P178 and Simon P168 handle known per-edge risks.
   - McGuire P171 values lost robots.
-- **What could weaken it:** the full text of Huo P037 (no abstract is available) or Butler P165 may already do budget-dependent role switching. **This must be checked before claiming it.**
+- **Huo P037, checked in full text (10 Nov):** roles are fixed before the mission (two static low-tolerance robots at the edge, one high-tolerance mobile robot). Tolerance is never given in Gy and no robot dose is computed; the "residence time K" is a 30-detection stop. There is no exit, reserve or withdrawal. **Not a threat:** cite it as the static, qualitative precursor of budget-dependent roles.
+- **Still to check:** Butler P165 (game-theoretic risk transfer). Also Xiao, Cui & Xu 2017, "cooperative multiagent online search with resource constraints" (IEEE Trans. Cybernetics), cited by Alagha P043: there, agents whose resources are "much less than the average of the team ... decide not to move". That is allocation under unequal resources and possible prior art for G3.
 - **Still open:** learned (MARL) allocation, a cumulative budget (not penalty or probability), voluntary withdrawal, and an uncertain cost.
 
 ### G4. Why price-based safe RL fails here (supporting finding)
@@ -75,8 +76,9 @@ Read in full. They can't be fetched from here; download them or allow the hosts:
 
 | Paper | Why | Host |
 |---|---|---|
-| P037 Huo et al. 2026, Heterogeneity | Possible overlap with G3; no abstract available | SSRN preprint 10.2139/ssrn.4927417 (open), ScienceDirect |
+| ~~P037 Huo et al. 2026, Heterogeneity~~ | Done (full text): not a threat, see G3 | – |
 | P165 Butler et al. 2026, Algorithmic altruism | Overlap with G3 | arxiv.org/abs/2608.28409 |
+| Xiao, Cui & Xu 2017, cooperative multiagent online search with resource constraints (IEEE T-Cyb) | Possible G3 prior art (unequal resources, agents stop moving) | IEEE (Northeastern access) |
 | P003 Totten 2023, RAD-TEAM | Confirm no dose budget or exit | pdxscholar.library.pdx.edu (open PDF) |
 | P117 Abdelmeguid & Hasan 2026, SEA-MAPPO | Exact predictor and mask design, for the related-work contrast | mdpi.com (open) |
 | P180 Schwager et al. 2016 | Exact failure model | Springer or an author copy |

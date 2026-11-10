@@ -126,3 +126,22 @@ Status: **Core** = the thesis already does it; **Easy** = small code change or e
    - idea 7 (one classical team baseline);
    - idea 8 (sensor degradation).
 4. **Justify the budget:** 0.1 Gy is about 1000× below the reported hardware failure doses (P078: 111.1 ± 5.5 Gy; controllers about 170 Gy). Present it as a conservative operating limit, and add a budget sweep (0.1, 0.3, 1 Gy) with the activity scaled to match, since only the ratio of budget to activity matters.
+
+## Update: five papers read in full (uploaded PDFs)
+
+Per-paper answers with quotes: `gaps/gaps_fulltext_uploads.json`.
+
+| Paper | Dose budget | Exit / withdraw | Dose from uncertain estimate | Team | Verdict |
+|---|---|---|---|---|---|
+| P037 Huo 2026 | implicit 30-detection cap tied to "radiation resistance level"; no Gy | none | no (activity assumed known) | 3 robots, fixed roles | static precursor of budget-based roles |
+| P042 Ling 2022 | ignored | none | no | 4 identical | – |
+| P043 Alagha 2022 | soft movement penalty; "1 cost unit" per agent | agents learn to idle to save resources | no estimator | 1–10 identical, shared policy | weak precursor of withdrawal |
+| P079 Zhao 2014 | failure doses: fine under 100 Gy; serial bus abnormal 130 Gy; EEPROM 256 Gy; network dead 270–280 Gy | n/a | n/a | n/a | supports a hard dose resource |
+| P118 Gu 2023 | per-agent constraint on expected discounted cost (MACPO hard, MAPPO-L "soft") | none | no (cost from environment) | joints of one robot | generic expected-cost precursor |
+
+**New ideas from these full texts:**
+- **Obstacles:** Huo and Ling assume an obstacle-free plane; Ling and Alagha list obstacles as future work. Obstacles make dose path-dependent, which strengthens G1.
+- **Hard mask vs expected-cost MARL:** Gu reports that MAPPO-L reacts "with a delay" and is "sensitive to the learning rate". Compare per-episode violation rates and lost reward against MACPO / MAPPO-L.
+- **Online, budget-aware roles:** generalise Huo's static split and Alagha's learned idling into learned edge-sensing / probing / withdrawal by remaining budget.
+- **Richer damage model:** Zhao shows failure depends on dose rate and power state, comes in soft-then-hard stages, and is partly undone by annealing. This supports component-wise or probabilistic budgets.
+- **Lead to check:** Xiao, Cui & Xu 2017 (IEEE T-Cyb), resource-constrained cooperative online search where low-resource agents stop moving.
