@@ -146,6 +146,8 @@ def main(src):
              f"{n} papers, every one returned by a scholarly database search (OpenAlex and others) with "
              "an OpenAlex id or DOI. Summaries are based on titles and abstracts only; read the paper "
              "before citing a detail.", "",
+             "**Analysis:** `GAP_ANALYSIS.md` (gaps, recommended framing, checks still owed) and "
+             "`CLOSEST_WORKS.md` (overlap matrix of the closest works). Raw per-search results: `raw/`.", "",
              "Files: `papers.csv` (spreadsheet), `papers.json` (full records), `references.bib` (BibTeX; "
              "authors are first author + et al., complete them before submission).", "",
              "Relevance: 3 = very close to this thesis, 2 = related method or setting, 1 = background.", "",
