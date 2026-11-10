@@ -145,3 +145,73 @@ Per-paper answers with quotes: `gaps/gaps_fulltext_uploads.json`.
 - **Online, budget-aware roles:** generalise Huo's static split and Alagha's learned idling into learned edge-sensing / probing / withdrawal by remaining budget.
 - **Richer damage model:** Zhao shows failure depends on dose rate and power state, comes in soft-then-hard stages, and is partly undone by annealing. This supports component-wise or probabilistic budgets.
 - **Lead to check:** Xiao, Cui & Xu 2017 (IEEE T-Cyb), resource-constrained cooperative online search where low-resource agents stop moving.
+
+## Round 2: 194 more papers (citation snowballing)
+
+*10 November 2026.*
+- **How they were found:** the references of the 63 relevance-3 papers and the papers citing them, via Semantic Scholar. That gave 3,327 candidates. The 500 with the best keyword scores were screened by title and abstract, and 194 were kept. The library now holds 428 papers.
+- **Evidence read:** 99 of the new papers in full text, 84 from the abstract, 11 from the title only.
+- **Gap statements:** 537 recorded, with quotes in `gaps/gaps_round2_*.json`.
+
+### Novelty check against the new papers
+
+No new paper combines all four thesis elements. Closest:
+
+| ID | Paper | Has | Lacks |
+|---|---|---|---|
+| P385 | Dec-MARVEL 2026 (multi-UAV exploration under budget) | multi-robot, hard per-robot budget, guaranteed return reserve, budget-conditioned learned policy | budget is deterministic travel distance, not dose predicted from the searched-for field |
+| P323 | Exit-reserve shield for portfolios 2026 | hard budget with a reserved exit cost, projection shield | single agent, finance, uncertainty not about a searched field |
+| P307 | CPSS 2026 (cumulative constraints, runtime safety) | remaining cumulative budget turned into a per-step filter on predicted cost | no exit reserve, single agent |
+| P343 | Chance-constrained on-orbit inspection 2026 | hard budget by action masking plus a chance constraint | single agent, uncertainty in the dynamics, no exit |
+| P337 | Safe exploration in MDPs 2012 | safety = being able to return, judged over the belief | no cumulative budget, single agent |
+| P415, P388 | Risk-aware planning in partially known fields (2021, 2024) | risk from a GP posterior of an unknown gas or radiation field (CVaR in P415) | single robot, instantaneous threshold, no cumulative budget or exit |
+| P399 | Chance-constrained stochastic orienteering 2024 | prunes actions by sampled probability of exceeding the budget (like the 97th-percentile mask) | single robot, known cost distribution |
+| P386 | Risk-bounded multi-agent navigation via iterative risk allocation 2025 | team risk budget split and reallocated across agents | risk is shared and predicted, no exit, no estimated field |
+| P306 | Who Bears the Burden? (LiRA) 2026 | learns how a shared constraint is split across agents | expected-value constraint, no exit |
+| P269 | Gamma-camera nuclear emergency robot 2022 | dose builds up on the robot while sources are unknown | dose is only a path cost, single robot, no exit |
+| P266 | Swarm radiation monitoring 2025 | swarm, robot radiation tolerance evaluated | no per-robot budget enforced, no reserve |
+
+**Effect on the claim:** the claim holds, but **budget + return reserve + learned multi-robot policy is now taken (Dec-MARVEL, P385)**. The thesis must lead with element (3): the cost of every action, including the exit, is predicted from the uncertain estimate of the same source the team is searching for. P411 states the matching gap from the nuclear side: radiation-aware systems "constrain where the robot may go, but never inform the robot where it should look next".
+
+### Recurring problems in round 2 (with examples)
+1. **Hard safety within an episode is missing.**
+   - Expected-cost or episode-level constraints let rare disasters through (P307, P331, P336, P349).
+   - P349: "constraints are risk-neutral, that is, they are only enforced in expectation".
+2. **Lagrangian methods are unstable or timid.**
+   - P326: "instability due to suboptimal policies and inaccurate Lagrange multipliers".
+   - P332: agents "remain still to avoid collisions".
+   - P370: "MAPPO-Lagrangian does not guarantee hard constraints for safety".
+   - P371: constrained Markov potential games "do not satisfy strong duality".
+3. **One-step safety layers ignore forward feasibility.**
+   - P376: the safety layer "does not deal with negative long-term consequences of an action".
+   - P343: "feasibility masking alone does not ensure safety".
+4. **Guarantees rest on calibrated uncertainty, which breaks.**
+   - P360: "A primary risk is false confidence".
+   - P386: the bound constrains "predicted cumulative risk ... a proxy for ground-truth safety".
+   - P323: a support miss terminates the guarantee.
+   - P394: hazards "statistically independent across cells".
+5. **Splitting a shared constraint across agents is open.**
+   - P306: it does not say "how that penalty should be apportioned across agents".
+   - P408: how robots "trade-off their local risks with the global/team risk".
+   - P410: uniform allocation "is conservative".
+6. **When to give up or withdraw is open.**
+   - P344: networks "learn how to fall but not when to give up the task".
+   - P318: "when recovery should begin".
+7. **Nuclear planners assume a known field and treat hazards as no-go zones.**
+   - P276: "the radiation intensity is known and remains constant over time".
+   - P303: contaminated areas are "mapped but not entered".
+   - P270: "commercial electronics require conservative cumulative-dose management".
+
+### New or strengthened ideas (added to the ranked list above)
+- **Idea 2 (calibration-aware safety layer) is now supported by about 20 papers.** Concrete forms:
+  - Conformal calibration of the dose predictor (P346, P356, P367).
+  - A margin that adapts to how accurate the estimator is (P324).
+  - A reliability monitor on the filter, e.g. effective sample size or a KL mismatch between predicted and measured counts (P417).
+  - A runtime fit-quality gate that "flags when its own assumptions fail" (P236).
+- **Risk allocation over time:** spend the dose margin where it buys the most information instead of a fixed 97th percentile every step (P410, P386, P399).
+- **Joint consistency of per-robot masks:** independent masks can jointly block the exit, e.g. two robots needing the same doorway (P392, P385). Easy test.
+- **Withdrawal as a stopping problem:** predict exit feasibility explicitly and analyse when withdraw is used (P344, P318, P335).
+- **Rule plus safety layer as a conservative prior for learning:** warm-start or residual MAPPO that falls back to the rule (P341, P377). This gives a direct route to "beat the rule".
+- **Report tail and per-robot violations,** e.g. CVaR of dose and the worst-decile robot (P308, P331).
+- **Robustness when teammates withdraw or fail** (P365, P366).
+- **State as a contribution:** one source estimate drives both search and safety (P411).

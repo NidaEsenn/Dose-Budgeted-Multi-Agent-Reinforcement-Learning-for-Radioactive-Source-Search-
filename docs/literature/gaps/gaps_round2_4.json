@@ -1,0 +1,1113 @@
+[
+ {
+  "id": "P382",
+  "title": "Control Barrier Function Based Quadratic Programs for Safety Critical Systems",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "How to characterize and compute CBFs for general classes of systems is open",
+    "quote": "problem how to do characterize and compute such functions for general classes of control systems"
+   },
+   {
+    "type": "open-problem",
+    "text": "Designing CBFs in some cases remains open",
+    "quote": "Designing CBFs in this case remains an open question."
+   },
+   {
+    "type": "future-work",
+    "text": "Composing multiple safety specifications into one framework",
+    "quote": "formulating how to unify safety constraints, e.g., combining ACC and LK constraints into a single framework, has the potential to suggest methods for composing safety specifications"
+   },
+   {
+    "type": "assumption",
+    "text": "Requires known, locally Lipschitz dynamics and a known safe set",
+    "quote": "f is assumed to be locally Lipschitz"
+   },
+   {
+    "type": "inferred",
+    "text": "Safe set is a known deterministic function of state; no treatment of a safe set defined by an uncertain, estimated hazard field or a cumulative (integral) budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Foundational for the thesis safety layer as a filter, but assumes a known safe set, whereas the thesis safe set (remaining dose budget) depends on an uncertain particle-filter estimate."
+ },
+ {
+  "id": "P383",
+  "title": "Safe, Multi-Agent, Reinforcement Learning for Autonomous Driving",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Experiment is a non-reproducible demonstration without comparison to other approaches",
+    "quote": "We leave to future work the task of conducting a reproducible experiment, with a comparison to other approaches."
+   },
+   {
+    "type": "assumption",
+    "text": "Safety guarantee assumes hard constraints can be expressed as linear constraints on parameters",
+    "quote": "it assumes that the hard constraints on safety can be expressed as linear constraints on the parameter vector θ"
+   },
+   {
+    "type": "limitation",
+    "text": "Standard MDP formulation has limitations in multi-agent settings since transitions depend on other players",
+    "quote": "there are several limitations of this approach"
+   },
+   {
+    "type": "inferred",
+    "text": "Hard safety comes from a non-learned planner layer, not from the learned policy; same split as thesis rule/safety layer + learned policy",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis design choice of a learned policy wrapped by a non-learned hard-safety layer, but has no cumulative budget or estimate-dependent constraint."
+ },
+ {
+  "id": "P384",
+  "title": "Reachability-based safe learning with Gaussian processes",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; no stated gaps available. GP-reachability safe learning would need extension to cumulative dose and multi-robot",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "None stated; only a pointer to uncertainty-aware safe sets that could inform a probabilistic dose mask."
+ },
+ {
+  "id": "P385",
+  "title": "Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Main evaluation assumes accurate teammate detection and exact self-localization",
+    "quote": "The main evaluation assumes accurate teammate detections and exact selflocalization."
+   },
+   {
+    "type": "future-work",
+    "text": "Onboard perception with real detection/identity errors; priority for contested waypoints; decentralized collision avoidance",
+    "quote": "Future work will study onboard perception with real detection and identity errors, identitybased priority for contested waypoints, and integration with decentralized collision avoidance."
+   },
+   {
+    "type": "limitation",
+    "text": "Robots can pick the same waypoint; collision avoidance delegated to low-level controller",
+    "quote": "two robots can still select the same waypoint; physical collision avoidance is therefore delegated to a low-level controller"
+   },
+   {
+    "type": "limitation",
+    "text": "Hardware tests replay simulated plans with noise-free teammate info; no onboard perception",
+    "quote": "no onboard perception is used"
+   },
+   {
+    "type": "inferred",
+    "text": "Budget is travel distance, deterministic and known; return cost does not depend on an uncertain estimate of a hazard field; budgets equal across robots",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest structural analogue (multi-robot, per-robot hard budget with return reserve, budget-conditioned learned policy plus budget guard) but the cost is deterministic travel distance, not dose predicted from an uncertain source estimate, which the thesis adds."
+ },
+ {
+  "id": "P386",
+  "title": "Risk-Bounded Multi-Agent Visual Navigation via Iterative Risk Allocation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Relies on fidelity of learned critics; systematic errors distort the effective budget",
+    "quote": "Systematic errors in distance or risk estimation can distort the effective budget and the resulting trade-offs."
+   },
+   {
+    "type": "limitation",
+    "text": "Bound constrains predicted risk, a proxy for true safety; needs UQ/calibration",
+    "quote": "the global bound ∆ constrains the predicted cumulative risk on the learned graph, which acts as a proxy for ground-truth safety. Stronger probabilistic guarantees would require integrating uncertainty quantification or calibrating the critics against real-world failure rates."
+   },
+   {
+    "type": "open-problem",
+    "text": "Generalization to unseen environments",
+    "quote": "generalization to unseen environments remains an open challenge."
+   },
+   {
+    "type": "limitation",
+    "text": "CBS-based, exponential worst-case complexity in number of agents",
+    "quote": "our planner inherits exponential worst-case complexity with respect to the number of agents"
+   },
+   {
+    "type": "future-work",
+    "text": "MILP allocation to restore guarantees",
+    "quote": "Future work could explore formulating the allocation step as a Mixed Integer Linear Program (MILP)"
+   },
+   {
+    "type": "inferred",
+    "text": "Risk budget is a shared global budget redistributed among agents; per-agent non-transferable physical budgets (dose cannot be moved between robots) and exit reserve are not considered",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly supports the thesis concern that budget enforcement on predicted (not true) cost is only as good as the predictor; also a template for the 'risk sharing / unequal budgets' open question, though thesis dose budgets are physically non-transferable."
+ },
+ {
+  "id": "P387",
+  "title": "Behaviorally Adaptive Multi-Robot Hazard Localization in Failure-Prone, Communication-Denied Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Incorporate actuation uncertainty and richer (non-binary, probabilistic) observation models",
+    "quote": "In future, we plan to incorporate actuation uncertainties into the belief update and path planning, and extend the observation model beyond binary feedback to include partial or probabilistic sensing"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior work assumes fixed behavior, static bases or homogeneous teams",
+    "quote": "many of these approaches still assume fixed robot behavior [14], [16], static base stations [16]–[18], or homogeneous teams [15]"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior work does not reason about survivability or energy constraints",
+    "quote": "most of these approaches assume uniform agent roles and do not explicitly reason about survivability, energy constraints, or behavioral adaptation under uncertainty"
+   },
+   {
+    "type": "inferred",
+    "text": "Multi-robot case is reduced to n independent single-robot missions via partitioning, so no real coordination; risk is per-step failure probability, not cumulative dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Points toward the thesis (risk-sensitive multi-robot hazard search with tunable risk attitude) but uses probabilistic attrition rather than a cumulative dose budget with exit reserve; its finding that more, shorter trajectories reduce per-agent exposure is relevant to team-size studies."
+ },
+ {
+  "id": "P388",
+  "title": "Planning under uncertainty for safe robot exploration using Gaussian process prediction",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Safety is an instantaneous threshold on a GP-predicted field (e.g., radiation level), not a cumulative exposure budget; single robot; no exit reserve stated",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Close single-robot analogue (safety from a predicted radiation field); the thesis extends to cumulative dose with exit reserve and multiple robots."
+ },
+ {
+  "id": "P389",
+  "title": "Adaptive and Risk-Aware Target Tracking for Robot Teams With Heterogeneous Sensors",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Robots compute risk using estimated, not true, target states",
+    "quote": "as they do not have access to the true target states"
+   },
+   {
+    "type": "limitation",
+    "text": "Tracking-error target not always met; relies on slack variable",
+    "quote": "despite not meeting the desired maximum tracking error ρ1 , the team continues to perform the task, thanks to the slack variable"
+   },
+   {
+    "type": "inferred",
+    "text": "Risk is probabilistic sensor failure from proximity, not cumulative dose; no budget or exit; no calibration of estimate-based risk",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shares the thesis idea that risk is computed from the estimate of the thing being searched for, but has no hard cumulative budget or exit reserve."
+ },
+ {
+  "id": "P390",
+  "title": "The risk-sensitive coverage problem: Multi-robot routing under uncertainty with service level and survival constraints",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; survival constraints are probabilistic per-robot constraints, not cumulative dose with exit",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "None stated; relevant only as related multi-robot survival-constrained routing."
+ },
+ {
+  "id": "P391",
+  "title": "Energy-Oriented Multi-Robot Collaborative Exploration and Mapping for Nuclear Power Plant Operation and Maintenance Based on I-WFD-Gmapping-DT",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Utility includes 'safety constraints' and risk-aware allocation in radiation-risk areas but no explicit cumulative dose budget or source estimation is described; simulation only",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Same domain (NPP, multi-robot) but energy-focused; the thesis' explicit dose budget is absent."
+ },
+ {
+  "id": "P392",
+  "title": "A Capability-Aware Backup-Recoverability Filter for Heterogeneous Multi-Robot Navigation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Guarantee only at discrete control-update instants",
+    "quote": "The guarantee is limited to discrete control-update instants"
+   },
+   {
+    "type": "limitation",
+    "text": "New robot models need an admissible backup with finite stopping-time bound; deadlock-free progress not guaranteed",
+    "quote": "new robot models require an admissible backup policy with a finite stopping-time bound, and deadlock-free progress is not guaranteed"
+   },
+   {
+    "type": "future-work",
+    "text": "Continuous-time safety, online model adaptation, deadlock-aware coordination",
+    "quote": "Future work will address continuous-time safety, online model adaptation, and deadlock-aware coordination."
+   },
+   {
+    "type": "limitation",
+    "text": "Locally feasible pairwise checks don't compose; consistent filtering raises backup use",
+    "quote": "certifying different filtered actions for one robot does not certify the action it executes"
+   },
+   {
+    "type": "inferred",
+    "text": "Backup maneuver idea maps onto the thesis exit path as a certified recovery; but assumes known dynamics, not an uncertain hazard model",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Conceptually parallel to the thesis exit-reserve mask (always keep a certified backup available); its composition-failure finding warns that per-robot masks may need joint consistency when robots interact."
+ },
+ {
+  "id": "P393",
+  "title": "The hazardous team orienteering problem",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Pricing phase is the computational bottleneck of the exact approach; only small/medium instances solved optimally",
+    "quote": "the pricing phase is the main computational bottleneck of the exact approach"
+   },
+   {
+    "type": "inferred",
+    "text": "Hazard modeled as known exponential failure rate, not uncertain field estimated online; offline routing",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Team routing with time-dependent hazard exposure; complements the thesis but assumes known hazard rates."
+ },
+ {
+  "id": "P394",
+  "title": "Bayesian Networks for Path-Based Sensors: Gathering Information and Path Planning in Communication Denied Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Hazards static and independent across cells; dependencies would make inference expensive",
+    "quote": "we assume that hazard states are static and statistically independent across cells; modeling spatial or temporal dependencies would introduce additional edges"
+   },
+   {
+    "type": "assumption",
+    "text": "Hazards only detected indirectly via agent loss",
+    "quote": "We assume that hazards can only be detected indirectly when agents fail to return"
+   },
+   {
+    "type": "limitation",
+    "text": "Belief update is still suboptimal",
+    "quote": "enabling a more principled (but still suboptimal) iterative Bayesian belief update"
+   },
+   {
+    "type": "inferred",
+    "text": "Independence assumption is exactly where spatially correlated error matters (thesis finding on correlated model error)",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its stated independence assumption echoes the thesis finding that ignoring spatial correlation makes the filter overconfident; otherwise agent loss is used as a sensor, unlike the thesis."
+ },
+ {
+  "id": "P395",
+  "title": "URGE: Urgency-Aware Energy-Efficient UAV Mobility via Hybrid Deep Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing strategies neglect hard battery constraints and urgency",
+    "quote": "neglecting two key operational constraints: the heterogeneous urgency of disaster zones and the hard constraints of battery life"
+   },
+   {
+    "type": "inferred",
+    "text": "Shield enforces return-to-charger with deterministic energy model; no uncertainty in the cost model",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Same architecture as thesis (DRL + deterministic shield guaranteeing return), but with deterministic, known energy cost rather than uncertain dose."
+ },
+ {
+  "id": "P396",
+  "title": "Autonomous Air-Ground Vehicle Operations Optimization in Hazardous Environments: A Multi-Armed Bandit Approach",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Hazard evolves by simplified spatially coupled logistic model",
+    "quote": "the model assumes that hazard levels evolve according to a spatially coupled logistic process"
+   },
+   {
+    "type": "limitation",
+    "text": "Belief extrapolation unreliable with sparse/noisy observations",
+    "quote": "it becomes unreliable when observations are sparse or highly noisy"
+   },
+   {
+    "type": "limitation",
+    "text": "Fixed fleet roles",
+    "quote": "This rigid fleet structure may limit adaptability"
+   },
+   {
+    "type": "assumption",
+    "text": "Centralized coordination with full observability and instant communication",
+    "quote": "the framework assumes centralized coordination with full observability and instantaneous communication"
+   },
+   {
+    "type": "future-work",
+    "text": "Decentralized/hierarchical planning with delayed or local info",
+    "quote": "Future work could explore decentralized or hierarchical planning strategies where agents operate with delayed or local information."
+   },
+   {
+    "type": "inferred",
+    "text": "Vehicle exposure to the hazard is not a constraint; only travel range",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Hazardous-site (radiological) multi-vehicle sensing, but vehicle exposure is not modeled; thesis fills the per-vehicle dose dimension."
+ },
+ {
+  "id": "P397",
+  "title": "Reinforcement Learning-Based Energy-Aware Coverage Path Planning for Precision Agriculture",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Coverage algorithms often ignore energy constraints and safe-return guarantees",
+    "quote": "coverage algorithms often ignore energy constraints and safe return guarantees"
+   },
+   {
+    "type": "limitation",
+    "text": "Energy constraint is only a reward penalty, so violations are reduced not eliminated",
+    "quote": "significantly reducing energy constraint violations"
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot; deterministic energy; soft-penalty enforcement rather than a hard mask",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shows that reward-shaped return constraints leave residual violations, supporting the thesis use of a hard action mask over pure penalty/Lagrangian."
+ },
+ {
+  "id": "P398",
+  "title": "Task Allocation and Online Planning for Multi-Agent Systems with Safe-Return Constraints under Temporal Logic Specifications",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Safe return is a logical task requirement with time uncertainty, not a consumable budget predicted from an uncertain field",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-agent safe-return constraint, but no exposure budget or estimation uncertainty."
+ },
+ {
+  "id": "P399",
+  "title": "Solving Stochastic Orienteering Problems With Chance Constraints Using Monte Carlo Tree Search",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Greedy rollout policy",
+    "quote": "the current rollout policy relies on a simple greedy strategy"
+   },
+   {
+    "type": "future-work",
+    "text": "Stochastic rewards and multiple chance constraints",
+    "quote": "it would also be necessary to revise the problem formulation accounting for multiple constraints"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior work largely assumes deterministic costs",
+    "quote": "Most former research in this area has considered scenarios where costs and rewards are deterministic"
+   },
+   {
+    "type": "limitation",
+    "text": "No parameter tuning done",
+    "quote": "one could perform a grid search to determine the optimal parameter values, but this has not been done"
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot; cost distribution known (generative model), not learned online from measurements",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Close single-robot analogue of the thesis mask: prune actions whose sampled probability of exceeding the budget is too high; thesis adds multi-robot and a cost distribution that comes from an online, possibly miscalibrated posterior."
+ },
+ {
+  "id": "P400",
+  "title": "meSch: Multi-Agent Energy-Aware Scheduling for Task Persistence",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Vulnerable to central-node failure",
+    "quote": "meSch is vulnerable to central node failure"
+   },
+   {
+    "type": "limitation",
+    "text": "Not provably robust to new robots",
+    "quote": "it is not provably robust to new robots, as they might add potentially infeasible constraints"
+   },
+   {
+    "type": "future-work",
+    "text": "Distributed implementation; continuous replanning; mission-aware return trajectories",
+    "quote": "Future work will enhance meSch’s robustness to central node failure via a distributed implementation"
+   },
+   {
+    "type": "assumption",
+    "text": "Assumes a high-level planner provides nominal trajectories",
+    "quote": "We assume the existence of a high-level trajectory planner"
+   },
+   {
+    "type": "inferred",
+    "text": "Energy is renewable (recharging) and discharge known; not a non-renewable dose budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Per-robot reserve-to-return with heterogeneous budgets as a filter on a planner, like the thesis, but energy is rechargeable and deterministic."
+ },
+ {
+  "id": "P401",
+  "title": "Exploration–Exploitation Tradeoff in the Adaptive Information Sampling of Unknown Spatial Fields with Mobile Robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior work assumes unconstrained or homogeneous energy",
+    "quote": "works in the literature have either assumed the robot’s energy is unconstrained or used a homogeneous availability of energy capacity among different robots"
+   },
+   {
+    "type": "inferred",
+    "text": "Energy is a cost to trade off, not a hard budget; exposure to the radiation field is not considered",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports thesis interest in heterogeneous budgets; does not address exposure to the sampled field."
+ },
+ {
+  "id": "P402",
+  "title": "Risk-aware Recharging Rendezvous for a Collaborative Team of UAVs and UGVs",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior work ignored stochastic energy consumption",
+    "quote": "In contrast to prior work on such problems, we consider the challenge of dealing with stochastic energy consumption in a risk-aware fashion"
+   },
+   {
+    "type": "inferred",
+    "text": "Stochastic energy distribution assumed known; renewable energy",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Team-level chance constraint that no robot runs out is analogous to a team-wide dose-violation bound; thesis uses per-robot percentile instead."
+ },
+ {
+  "id": "P403",
+  "title": "The matroid team surviving orienteers problem and its variants: Constrained routing of heterogeneous teams with risky traversal",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Per-robot survival probability constraints on a graph with known edge risks; offline; no online estimation",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Per-robot probabilistic survival constraint in a team, close in spirit to per-robot dose limits, but with known risks."
+ },
+ {
+  "id": "P404",
+  "title": "Multi-Robot Heterogeneous Adversarial Coverage",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Learning-based algorithms have limitations in some settings",
+    "quote": "we discuss the possible limitations of learning-based algorithms in different settings"
+   },
+   {
+    "type": "inferred",
+    "text": "Threats stop robots probabilistically; no cumulative exposure budget or withdraw option",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "MARL for heterogeneous teams in threatening areas; relevant to the thesis question of whether learned coordination beats heuristics."
+ },
+ {
+  "id": "P405",
+  "title": "Energy-Aware, Collision-Free Information Gathering for Heterogeneous Robot Teams",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "DLS needs all-to-all communication and scales poorly",
+    "quote": "DLS still requires all-to-all communication and its computation scales poorly with large number of robots"
+   },
+   {
+    "type": "assumption",
+    "text": "Robots know each other's states perfectly",
+    "quote": "this work assumes that the robots know each other’s states perfectly but this strong assumption may not hold in practice"
+   },
+   {
+    "type": "future-work",
+    "text": "Approximation algorithms with collision avoidance inside planning",
+    "quote": "design approximation algorithms that ensure collision avoidance during planning"
+   },
+   {
+    "type": "inferred",
+    "text": "Energy is a soft cost in the objective, not a hard budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Hierarchical planner + safety controller is the same split as thesis; energy is soft, not a hard exposure budget."
+ },
+ {
+  "id": "P406",
+  "title": "MARLAS: Multi Agent Reinforcement Learning for cooperated Adaptive Sampling",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Field quasi-static during sampling",
+    "quote": "can be obtained through pilot surveys or satellite data or historical knowledge of the field"
+   },
+   {
+    "type": "assumption",
+    "text": "Low-quality prior reward map available",
+    "quote": "can be obtained through pilot surveys or satellite data or historical knowledge of the field"
+   },
+   {
+    "type": "future-work",
+    "text": "Dynamic spatiotemporal processes, shorter shared histories, motion primitives",
+    "quote": "can be obtained through pilot surveys or satellite data or historical knowledge of the field"
+   },
+   {
+    "type": "inferred",
+    "text": "Endurance budget fixed and equal; no exposure to the sampled field",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Decentralized MARL with endurance budget; thesis adds that the field itself is harmful and budget use depends on the estimate."
+ },
+ {
+  "id": "P407",
+  "title": "Multi-robot task allocation for safe planning against stochastic hazard dynamics",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Map, targets and hazard sources known a priori",
+    "quote": "We assume that the map of the environment including the obstacles and the location of the targets and hazard sources are known a priori."
+   },
+   {
+    "type": "future-work",
+    "text": "Robot failure and hazard observation feedback",
+    "quote": "Future works include accounting for robot failure, and incorporating hazard observation feedback."
+   },
+   {
+    "type": "limitation",
+    "text": "Group-safety maximization is computationally hard over the joint state",
+    "quote": "maximizing the probability of group safety is computationally challenging"
+   },
+   {
+    "type": "assumption",
+    "text": "Conditioning on others' success does not reduce a robot's success probability",
+    "quote": "the assumption requires that conditioning on the success/safety of other robots does not decrease the probability"
+   },
+   {
+    "type": "inferred",
+    "text": "No online estimation of the hazard; thesis closes the 'hazard observation feedback' gap",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its stated future work (hazard observation feedback) is what the thesis does: hazard (dose field) is learned online by a particle filter that drives the safety constraint."
+ },
+ {
+  "id": "P408",
+  "title": "Multi-robot Coordination and Planning in Uncertain and Adversarial Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "How individual robots trade local risk against team risk",
+    "quote": "The second future direction is to investigate how individual robots trade-off their local risks with the global/team risk to optimize team performance."
+   },
+   {
+    "type": "open-problem",
+    "text": "Learning-based coordination that is robust to uncertainty and attacks",
+    "quote": "developing learning-based coordination strategies that are resilient to such attacks and robust to uncertainties is an important open area of research"
+   },
+   {
+    "type": "future-work",
+    "text": "Parsimonious communication in GNN coordination, heterogeneity",
+    "quote": "embedding parsimonious communication protocols into GNN architectures"
+   }
+  ],
+  "thesis_relevance": "Its local-vs-team risk trade-off open problem is exactly the thesis open question on unequal budgets and risk sharing."
+ },
+ {
+  "id": "P409",
+  "title": "Robust Multiple-Path Orienteering Problem: Securing Against Adversarial Attacks",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Requires an accurate estimate of the number of failures alpha",
+    "quote": "we need to have an accurate estimate of the α before applying our algorithm, which is one limitation of this paper"
+   },
+   {
+    "type": "assumption",
+    "text": "Offline version has no communication or replanning",
+    "quote": "there is no communication or replanning when robots execute their plans"
+   },
+   {
+    "type": "inferred",
+    "text": "Failures adversarial/worst-case rather than caused by a cumulative exposure budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Redundancy against loss of robots is relevant when robots withdraw early (thesis withdraw action) but failure model differs."
+ },
+ {
+  "id": "P410",
+  "title": "RADMPC: A Fast Decentralized Approach for Chance-Constrained Multi-Vehicle Path-Planning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Uniform risk allocation is conservative",
+    "quote": "this chance-constrained method is conservative since it assigns a uniform value to the risk bound for every individual chance constraint"
+   },
+   {
+    "type": "limitation",
+    "text": "Approximation accuracy degrades with problem complexity",
+    "quote": "the accuracy of the RADMPC approximation decreases in some cases especially when the complexity of the multi-vehicle problem increases"
+   },
+   {
+    "type": "limitation",
+    "text": "Bounded-disturbance assumption invalid in many applications",
+    "quote": "the assumption of bounded environmental disturbances is invalid in many practical applications"
+   },
+   {
+    "type": "inferred",
+    "text": "Gaussian, known disturbance model; risk for collisions, not cumulative exposure",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Iterative risk allocation idea could inform non-uniform per-step allocation of dose budget (thesis uses fixed 97th percentile each step)."
+ },
+ {
+  "id": "P411",
+  "title": "SAFARI: Semantic- And Frontier-driven Autonomous Risk Inspection",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Detector gives no calibrated miss rate; non-detections weighted geometrically",
+    "quote": "the detector reports confidence only for presence, not for absence, so nondetections must be weighted by a geometric model rather than a calibrated miss rate"
+   },
+   {
+    "type": "future-work",
+    "text": "Learned policy arbitrating coverage, risk, traversal cost online instead of fixed thresholds",
+    "quote": "a learned policy that arbitrates coverage, risk, and traversal cost online, replacing the fixed thresholds"
+   },
+   {
+    "type": "limitation",
+    "text": "Not benchmarked on larger areas",
+    "quote": "performance over larger areas has not been benchmarked"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior radiation costmaps only constrain where to go, never where to look",
+    "quote": "The measurements constrain where the robot may go, but never inform the robot where it should look next."
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot; no cumulative dose budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Explicitly notes radiation used only as avoid-costmap and not to guide search; thesis couples the same field estimate to both search and dose constraint."
+ },
+ {
+  "id": "P412",
+  "title": "Risk-Averse Autonomous Material Handling in Healthcare Systems",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Risk map known (pedestrian density); single robot; risk budget offline",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Path planning under a risk budget with known risk map; marginal."
+ },
+ {
+  "id": "P413",
+  "title": "Distributed Multi-robot Information Gathering Using Path-Based Sensors in Entropy-Weighted Voronoi Regions",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; no stated gaps",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "None stated."
+ },
+ {
+  "id": "P414",
+  "title": "Risk-Aware Submodular Optimization for Multirobot Coordination",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Choose the best reassignment triggering ratio generically",
+    "quote": "our second future research direction is to design a generic approach for deciding the best triggering ratio γ"
+   },
+   {
+    "type": "future-work",
+    "text": "Risk-aware algorithms with hard guarantees for worst-case arrival",
+    "quote": "design corresponding risk-aware algorithms with hard guarantees"
+   },
+   {
+    "type": "inferred",
+    "text": "CVaR on utility, not a hard per-robot cumulative cost constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "CVaR-style risk measure for team decisions is an alternative to the thesis' 97th-percentile dose prediction."
+ },
+ {
+  "id": "P415",
+  "title": "Risk-Aware Motion Planning in Partially Known Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Dynamic GP-based cost is expensive and hard to handle in sampling-based planners",
+    "quote": "since the risk cost function is dynamic (it changes as new samples are added to the GP), the graph needs to adapt to it every time replanning is triggered, and doing so is not straightforward"
+   },
+   {
+    "type": "future-work",
+    "text": "Integrate global and local search for dynamic cost functions",
+    "quote": "an interesting future work would be to integrate global and local search in a systematic manner, tailored for dynamic cost functions"
+   },
+   {
+    "type": "future-work",
+    "text": "Multi-dimensional processes and real-robot nuclear inspection",
+    "quote": "Our plans for future work include expanding our results to multi-dimensional processes as well as to testing on real robots in a nuclear inspection task."
+   },
+   {
+    "type": "limitation",
+    "text": "Does not aim to model the hazard field accurately; GP accurate only along path",
+    "quote": "We do not aim at performing any type of exploration of the environment to precisely model the unknown process."
+   },
+   {
+    "type": "inferred",
+    "text": "Threshold on instantaneous hazard, not accumulated dose; single robot; goal-reaching not source search",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest single-robot idea to the thesis mask (CVaR of hazard predicted from an online posterior); the thesis extends to cumulative dose with exit reserve, source search, and multiple robots."
+ },
+ {
+  "id": "P416",
+  "title": "Multi-Agent Reinforcement Learning for UAV-Based Chemical Plume Source Localization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Include position/velocity errors",
+    "quote": "we plan to incorporate errors in position, velocity, and acceleration"
+   },
+   {
+    "type": "future-work",
+    "text": "Communication delays",
+    "quote": "incorporate a latency-aware architecture"
+   },
+   {
+    "type": "future-work",
+    "text": "Reduce collision rate toward zero with a QP solver",
+    "quote": "Future work will focus on further reducing the collision rate toward zero—for example, by integrating a Quadratic Programming (QP) solver"
+   },
+   {
+    "type": "limitation",
+    "text": "Overfitting to training environment",
+    "quote": "the model begins to overfit the training environment"
+   },
+   {
+    "type": "assumption",
+    "text": "UAVs always in communication range",
+    "quote": "All UAVs are assumed to remain within communication range"
+   },
+   {
+    "type": "future-work",
+    "text": "Variable team sizes, experimental validation",
+    "quote": "explore variable team sizes"
+   },
+   {
+    "type": "inferred",
+    "text": "No exposure/budget constraint on agents",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "MARL source localization whose safety is collisions only; the thesis adds per-agent hazard exposure and a hard mask, and its zero-violation goal via QP matches the thesis safety-layer idea."
+ },
+ {
+  "id": "P417",
+  "title": "Information-Guided Safe Reinforcement Learning for Autonomous Gas Source Localization using sUAS",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Planners exploit flawed early estimates (degeneracy)",
+    "quote": "deterministic planners computing trajectories based solely on current parameter estimates are prone to a secondary degeneracy"
+   },
+   {
+    "type": "limitation",
+    "text": "Convergence criterion relies on oracle distance",
+    "quote": "One limitation of the convergence criterion is that it relies on oracle distance, which is unavailable in deployment."
+   },
+   {
+    "type": "limitation",
+    "text": "Generalization gap in larger domain; failures from boundary sources and occlusion",
+    "quote": "Expanding to the larger domain in Stage 2 drops success to 79.3%, quantifying the generalization gap"
+   },
+   {
+    "type": "future-work",
+    "text": "Sim-to-real and multi-source, multi-agent",
+    "quote": "Future work includes sim-to-real hardware transfer and multi-source, multi-agent scenarios."
+   },
+   {
+    "type": "inferred",
+    "text": "Safety filter (RCBF) is for geometric constraints, not exposure; single agent",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Strongly supports the thesis finding that acting on an overconfident/flawed estimate is dangerous; its estimator-reliability (KL) monitor suggests a way to inflate the dose percentile when the particle filter is unreliable; multi-agent is its stated future work."
+ },
+ {
+  "id": "P418",
+  "title": "Hierarchical Role-Based Multi-Agent Reinforcement Learning for UHF Radiation Source Localization with Heterogeneous UAV Swarms",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Limited payload and endurance constrain UAV monitoring",
+    "quote": "the limited payload capacity and endurance of UAVs constrain their monitoring capabilities"
+   },
+   {
+    "type": "inferred",
+    "text": "'Radiation' is RF; no exposure harm or budget constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Heterogeneous-role MARL for source localization; relevant to thesis role/unequal-budget idea, not to dose."
+ },
+ {
+  "id": "P419",
+  "title": "UAV Mission Planning for Post-Disaster Victim Localisation via Federated Multi-Agent Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Simulation only; real validation needed",
+    "quote": "This study remains simulation-based, and future validation with real UAVs, BLE devices, and rubble-inspired testbeds is required"
+   },
+   {
+    "type": "inferred",
+    "text": "Return-to-base safety check on energy; uses estimated (not ground-truth) target in the centralized state, like the thesis",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "MARL with return-to-base safety checks and estimate-based training state; budget is energy, not exposure."
+ },
+ {
+  "id": "P420",
+  "title": "Enhanced Reward Function Design for Source Term Estimation Based on Deep Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing reward functions have limitations",
+    "quote": "To overcome the limitations of existing rewards, we combine their strengths"
+   },
+   {
+    "type": "inferred",
+    "text": "Single agent; no exposure cost",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "PF + DRL reward design (GMM variance / info gain) directly applicable to thesis reward shaping."
+ },
+ {
+  "id": "P421",
+  "title": "RoLocMe: A Robust Multi-agent Source Localization System with Learning-based Map Estimation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Performance drops for large teams at far proximities, attributed to VDN",
+    "quote": "We suspect this limitation arises from using VDN, which struggles to optimize policies for large groups of agents."
+   },
+   {
+    "type": "limitation",
+    "text": "Prior MARL struggles with complex environments and severe attenuation",
+    "quote": "face challenges in addressing complex environments and severe signal attenuation"
+   },
+   {
+    "type": "inferred",
+    "text": "No agent safety/exposure constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Evidence that larger teams can hurt learned coordination; relevant to thesis 2-6 robot scaling."
+ },
+ {
+  "id": "P422",
+  "title": "Source Term Estimation Using Deep Reinforcement Learning With Gaussian Mixture Model Feature Extraction for Mobile Sensors",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Single sensor; no exposure constraint; PF belief compressed via GMM as policy input",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Offers a way to feed the thesis particle filter belief to the policy (GMM features)."
+ },
+ {
+  "id": "P423",
+  "title": "Robotic Information Gathering With Reinforcement Learning Assisted by Domain Knowledge: An Application to Gas Source Localization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Effect of mismatch between simulated and real dispersion",
+    "quote": "it has to be investigated how the system reacts to a mismatch between the simulated gas dispersion during training and the real-world"
+   },
+   {
+    "type": "assumption",
+    "text": "Constant wind over domain; static environment",
+    "quote": "We assume the wind strength and directions as constant over the entire domain."
+   },
+   {
+    "type": "future-work",
+    "text": "Dynamic gas, other RL methods, multi-agent RL",
+    "quote": "A possible extension in this context would be to consider a multi-agent RL setting."
+   },
+   {
+    "type": "limitation",
+    "text": "Model-based IG fails if model inaccurate",
+    "quote": "However, it fails if the model is not accurate enough."
+   },
+   {
+    "type": "limitation",
+    "text": "Better estimates would greatly help (ground-truth agent best)",
+    "quote": "an accurate estimate close to the ground-truth could have a significant improvement on the performance of an agent"
+   }
+  ],
+  "thesis_relevance": "Model-mismatch concern matches the thesis finding of filter overconfidence under correlated model error; domain randomization is a suggested remedy."
+ },
+ {
+  "id": "P424",
+  "title": "Unmanned Aerial Vehicle-Based Hazardous Materials Response: Information-Theoretic Hazardous Source Search and Reconstruction",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Static sensor networks are costly; manual collection puts personnel at risk",
+    "quote": "the manual collection of sensor measurements, e.g., using handheld devices and HAZMAT suits, which can be time-consuming and places personnel at risk"
+   },
+   {
+    "type": "inferred",
+    "text": "No platform exposure constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivates robotic source search to protect humans; platform exposure not treated."
+ },
+ {
+  "id": "P425",
+  "title": "Decentralized Multi-agent information-theoretic control for target estimation and localization: finding gas leaks",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "No exposure or budget constraint; abstract states no limitations",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-agent information-theoretic baseline for thesis comparisons; no safety budget."
+ },
+ {
+  "id": "P426",
+  "title": "Gas Source Localization using Improved Multi-Agent Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Pre-training on synthetic dispersion model implies model-mismatch risk; no exposure constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Marginal; MARL pre-trained on a model like the thesis simulator."
+ },
+ {
+  "id": "P427",
+  "title": "Discrepancy Modeling with Intermediate Variables: A New Framework for Robust Gaussian Process Calibration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Joint calibration of emulator and discrepancy has identifiability issues",
+    "quote": "Joint parameter calibration of the emulator model and the discrepancy model can lead to identifiability issues"
+   },
+   {
+    "type": "assumption",
+    "text": "Data-constrained assumption may prefer wrong parameters",
+    "quote": "this is a data-constrained assumption, not an assumption based on physical constraints"
+   },
+   {
+    "type": "future-work",
+    "text": "Incorporate subject-matter expertise; horseshoe prior for variable selection",
+    "quote": "incorporation of that expertise with the robust GP model is the subject of future work"
+   },
+   {
+    "type": "inferred",
+    "text": "Model-discrepancy method could add a correlated error term to the thesis measurement model",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Offers a principled route to model the spatially correlated model error that makes the thesis filter overconfident."
+ },
+ {
+  "id": "P428",
+  "title": "UGV-CBRN: An Unmanned Ground Vehicle for Chemical, Biological, Radiological, and Nuclear Disaster Response",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "More robust map generation outdoors; more autonomy",
+    "quote": "Future work will integrate solutions to improve the robustness of map generation for the challenges of largescale outdoor environments."
+   },
+   {
+    "type": "limitation",
+    "text": "Incomplete mapping in confined rooms",
+    "quote": "The turbine rooms (in the left foreground) have not been fully mapped due to the limited spatial capacity within them."
+   },
+   {
+    "type": "inferred",
+    "text": "Single UGV; radiation mapped by GPR but robot dose budget is not used in planning",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Real CBRN UGV that maps radiation but does not budget its own dose; thesis provides that planning layer."
+ }
+]

@@ -1,0 +1,994 @@
+[
+ {
+  "id": "P284",
+  "title": "Robotic Development for the Nuclear Environment: Challenges and Strategy",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Commercial robots do not meet nuclear-specific requirements (radiation effects, remote maintenance, deployment constraints).",
+    "quote": "There may be some unique requirements for a nuclear application that a commercial system does not meet, such as radiation effects, the needs remote maintenance and deployment constraints."
+   },
+   {
+    "type": "inferred",
+    "text": "Review addresses hardware/development process; no treatment of exposure-budgeted autonomous search.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Background only: motivates radiation exposure as a deployment constraint but does not touch budgeted multi-robot search."
+ },
+ {
+  "id": "P285",
+  "title": "Evaluation of 3D Printed Soft Robots in Radiation Environments and Comparison With Molded Counterparts",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Experimenting under gamma irradiation was the main limitation; detailed failure characterisation not possible.",
+    "quote": "The main limitation of this study was due to the difficulties of experimenting under gamma irradiation."
+   },
+   {
+    "type": "assumption",
+    "text": "Temperature-radiation interaction assumed absent, not evaluated.",
+    "quote": "it is not anticipated that these effects would interact; however, this has not been evaluated."
+   },
+   {
+    "type": "future-work",
+    "text": "Quantify soft-robot functionality outside water under radiation.",
+    "quote": "Future work will focus on quantifying the functionality of a 3D printed soft robot outside of an aquatic environment under radiation with radiation hardened test equipment."
+   },
+   {
+    "type": "inferred",
+    "text": "Operating time estimated from dose rate (12 h) is a static lifetime budget, not a planning constraint.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the notion of a finite cumulative-dose lifetime for robot hardware (dose-limited operating time), which the thesis turns into a per-robot planning budget."
+ },
+ {
+  "id": "P286",
+  "title": "Irradiation test and hardness design for mobile rescue robot in nuclear environment",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Whole-system radiation resistance could not be verified in the field because of high-dose risk.",
+    "quote": "Considering the huge risks of high-dose source exposure, the radiation-resistance of the overall system cannot be verified in the field experiment."
+   },
+   {
+    "type": "inferred",
+    "text": "'Time protection' is handled by operational practice, not by an online dose-aware planner.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivates time/distance/shielding protection for robots; the thesis's online dose budget plus safety layer automates 'time protection'."
+ },
+ {
+  "id": "P287",
+  "title": "The path-planning in radioactive environment of nuclear facilities using an improved particle swarm optimization algorithm",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; minimum-dose path planning presumably assumes a known radiation field.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "No stated gap; classic known-field dose path planning that the thesis extends to an unknown, estimated field."
+ },
+ {
+  "id": "P288",
+  "title": "Methods of minimising doses incurred by external exposure while moving in radiation hazardous areas",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; no gaps available.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "none stated; general dose-minimising movement background."
+ },
+ {
+  "id": "P289",
+  "title": "Minimum dose method for walking-path planning of nuclear facilities",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; minimum-dose walking path presumably on a known dose map.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "none stated; known-field minimum dose planning background."
+ },
+ {
+  "id": "P290",
+  "title": "Digital twins for robot-assisted nuclear decommissioning: a review of perception, radiological mapping, and model interoperability, with the DORADO project as a case study",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Uncertainty is handled locally and lost downstream; end-to-end uncertainty management is a key barrier.",
+    "quote": "The second is uncertainty management: uncertainties are handled locally and lost downstream"
+   },
+   {
+    "type": "limitation",
+    "text": "Validation of survey planning and radiological mapping under representative radiological conditions is immature; no public benchmark.",
+    "quote": "no public benchmark dataset combines localisation ground truth with radiological measurements"
+   },
+   {
+    "type": "limitation",
+    "text": "Incomplete twin information makes dose estimation and navigation unreliable.",
+    "quote": "Incomplete or outdated twin information leads to unreliable navigation, coverage planning, and dose estimation"
+   },
+   {
+    "type": "future-work",
+    "text": "Move to adaptive, information-driven radiological characterisation with reduced equipment exposure.",
+    "quote": "Radiological characterisation is expected to move from fixed surveys to adaptive, information-driven strategies that select observations by expected information gain, with potential gains in survey efficiency and reduced equipment exposure."
+   },
+   {
+    "type": "limitation",
+    "text": "Loop closure mostly mediated by human operators.",
+    "quote": "bidirectional, automated loop closure remains rare and confined to specific tasks."
+   }
+  ],
+  "thesis_relevance": "Directly supports the thesis: propagating estimate uncertainty into dose predictions (97th percentile over particles) is exactly the 'uncertainty lost downstream' gap, and adaptive search with reduced equipment exposure is named as a direction."
+ },
+ {
+  "id": "P291",
+  "title": "Seeing the Invisible: Physics-Guided Visual Prompting for Temperature- and Radiation-Aware VLA Navigation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Visual perception alone cannot detect radiation hazards.",
+    "quote": "Still, a key challenge remains for VLA-based navigation in safety-critical environments: visual perception alone is insufficient."
+   },
+   {
+    "type": "limitation",
+    "text": "Hazard avoidance does not quantify risk; only detours around nearby high-risk situations.",
+    "quote": "The models do not explicitly quantify risk; instead, they identify nearby highrisk situations where the robot should take a detour."
+   },
+   {
+    "type": "limitation",
+    "text": "Guidance strength trades off against navigation success.",
+    "quote": "However, guidance strength comes with a trade-off: it causes an SR drop in VLN."
+   },
+   {
+    "type": "future-work",
+    "text": "Validate in industrial environments beyond the lab.",
+    "quote": "Future work can include a broader range of real-world navigation scenarios, not only in laboratory settings but also in industrial environments, to rigorously validate the integrated PG-VP framework."
+   },
+   {
+    "type": "inferred",
+    "text": "No cumulative dose accounting; only instantaneous/peak count rate metrics.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shows avoidance without cumulative exposure budgeting or risk quantification; the thesis's budgeted, quantified dose prediction fills that gap."
+ },
+ {
+  "id": "P292",
+  "title": "An Improved Prototypical Network-based Method for Diagnosing Gamma Radiation Faults in Optical Encoders",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Fault data under gamma radiation is scarce because testing is difficult.",
+    "quote": "Because of difficulty in testing, the amount of available fault data is limited."
+   },
+   {
+    "type": "inferred",
+    "text": "Hardware failure under dose is progressive; a dose budget proxies this.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Peripheral: supports that cumulative gamma dose degrades robot sensing, justifying a hard per-robot dose limit."
+ },
+ {
+  "id": "P293",
+  "title": "Arduino programming of an educational robotic platform applied in radiological accident simulation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Radiation field interfered with control signals and communication.",
+    "quote": "However, when faced with the radiation field, there was interference in the signals and communication controlling the robot's movements."
+   },
+   {
+    "type": "future-work",
+    "text": "Implement automatic return-to-start when the radio link is lost, to avoid abandoning the robot.",
+    "quote": "Implement a routine so that when the robot loses the radiofrequency signal, it returns to the starting point, avoiding the disposal of the robot at the site of the radiological accident"
+   },
+   {
+    "type": "future-work",
+    "text": "Use higher-activity sources with shielding of electronics.",
+    "quote": "Use radioactive sources with more significant activity through appropriate shielding of on-board electronic components"
+   }
+  ],
+  "thesis_relevance": "The 'return to starting point' future work maps to the thesis's exit reserve and withdraw action (robot retrieval rather than abandonment)."
+ },
+ {
+  "id": "P294",
+  "title": "Research on the degradation of resolution in cameras based on CMOS image sensor under gamma- and X-rays irradiation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Difference in camera degradation between gamma and X-rays at equal TID was unclear.",
+    "quote": "the difference in degradation of camera’s performance induced by ionizing radiation damage with equivalent total ionizing dose (TID) of these two rays is unclear"
+   }
+  ],
+  "thesis_relevance": "Peripheral: TID-driven sensor degradation motivates cumulative dose limits for robots."
+ },
+ {
+  "id": "P295",
+  "title": "Applicability of an Ionising Radiation Measuring System for Real-Time Effective-Dose-Optimised Route Finding Solution during Nuclear Accidents",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Route dose evaluated from measured fields for human-carrying vehicles; no autonomous search or source estimation.",
+    "quote": null
+   },
+   {
+    "type": "inferred",
+    "text": "Detector shielding by carrier vehicle must be accounted for.",
+    "quote": "In the case of radiation measuring detectors, the shielding effect of the carrier vehicle must be taken into account, especially in the case of heavy shielding vehicles."
+   }
+  ],
+  "thesis_relevance": "Related dose-optimised routing with measured fields; thesis differs by predicting dose from an uncertain source estimate during search."
+ },
+ {
+  "id": "P296",
+  "title": "Degradation Mechanism of Piezoresistive Sensors Under the Influence of gamma-Ray Irradiation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Offset voltage drift significant under cumulative dose.",
+    "quote": "However, the deviation in the offset voltage of the Wheatstone bridge (WB) configuration was significant and as recorded was 139% at a cumulative dose of 27.90 Mrad."
+   }
+  ],
+  "thesis_relevance": "Peripheral hardware-dose evidence; not about planning."
+ },
+ {
+  "id": "P297",
+  "title": "Detailed visualization of radioactive hotspots inside the unit 1 reactor building of the Fukushima Daiichi Nuclear Power Station using an integrated Radiation Imaging System mounted on a Mecanum wheel robot",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Use the system in unexplored areas such as upper floors.",
+    "quote": "In the future, if this robotic system is used in unexplored areas, such as the upper floors of reactor buildings, it can provide information about the locations of radioactive hotspots and the distribution of dose-equivalent rates."
+   },
+   {
+    "type": "inferred",
+    "text": "Single teleoperated robot; no autonomy or exposure budgeting described.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Real-world motivation (single robot hotspot mapping); thesis adds autonomy, multi-robot and dose budgets."
+ },
+ {
+  "id": "P298",
+  "title": "Effect of ionising radiation on the mechanical and structural properties of 3D printed plastics",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "FFF-processed parts may have different radiation tolerance than bulk material; additives may cause undesirable properties.",
+    "quote": "A mechanism is proposed whereby FFF-processed components would have substantially different radiation tolerances than bulk material."
+   }
+  ],
+  "thesis_relevance": "Peripheral materials study; not relevant to planning."
+ },
+ {
+  "id": "P299",
+  "title": "Minimum collective dose based optimal evacuation path-planning method under nuclear accidents",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior evacuation planning did not fully consider radiation field distribution.",
+    "quote": "the effect of the radiation field distribution has not been fully considered in current studies."
+   },
+   {
+    "type": "inferred",
+    "text": "Minimises collective (sum) dose over people with known field; no per-individual hard caps.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Contrasts collective-dose minimisation with the thesis's per-robot hard budgets; relevant to the risk-sharing question."
+ },
+ {
+  "id": "P300",
+  "title": "An Optimization Algorithm Based on Artificial Potential Field and Particle Swarm Optimization to Avoid Radiation Exposure Under Radioactive Environment",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Sources are known; personnel is a point in 2D.",
+    "quote": "The premise of this study is that ROP can be designated as a movable point in a two-dimensional radioactive scene with known radioactive sources."
+   },
+   {
+    "type": "limitation",
+    "text": "APF has parameter selection and local minima problems.",
+    "quote": "APF has obvious difficulties with parameter selection and a local minima problem."
+   }
+  ],
+  "thesis_relevance": "Known-source assumption is exactly what the thesis removes (dose predicted from an uncertain source estimate)."
+ },
+ {
+  "id": "P301",
+  "title": "The effects of Total Ionizing Dose irradiation on supercapacitors deployed in nuclear decommissioning environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated; component TID tolerance (negligible effect up to 40-89 kGy).",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "none stated; hardware dose-tolerance background."
+ },
+ {
+  "id": "P302",
+  "title": "Total-Ionizing-Dose Effects, Border Traps, and 1/f Noise in Emerging MOS Technologies",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated; failure doses 100 krad-1 Mrad(SiO2) give context for setting robot dose limits.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "none stated; gives context for realistic electronics dose limits."
+ },
+ {
+  "id": "P303",
+  "title": "A Robot to Monitor Nuclear Facilities: Using Autonomous Radiation-Monitoring Assistance to Reduce Risk and Cost",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Simulations assume 360-degree radiation sensing and holonomic robot.",
+    "quote": "One of the primary challenges to overcome is that the simulations assume that the radiation sensors have a 360° view around the robot and that the robot is holonomic."
+   },
+   {
+    "type": "limitation",
+    "text": "Radiation analysis completed offline.",
+    "quote": "The CARMA robot logs the data from the DP6 sensor, but the analysis is completed offline."
+   },
+   {
+    "type": "limitation",
+    "text": "Robots in high-gamma environments are likely to fail, costly.",
+    "quote": "Experience gained from other groups deploying robots into high c- dose environ­ ments at Fukushima Daiichi has shown that they are likely to fail, which has proven to be quite costly."
+   },
+   {
+    "type": "inferred",
+    "text": "Avoidance is binary (map but do not enter contaminated areas); no cumulative dose budget; single robot.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis motivation (robots fail in high gamma fields); thesis replaces binary no-go with a quantitative cumulative budget and multi-robot search."
+ },
+ {
+  "id": "P304",
+  "title": "A sampling-based method with virtual reality technology to provide minimum dose path navigation for occupational workers in nuclear facilities",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Title only; known-field minimum-dose path for workers.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "none stated; background on minimum-dose navigation."
+ },
+ {
+  "id": "P305",
+  "title": "Impact of Cobalt-60 Gamma Radiation Source on Electronic Devices using Geant4",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Abstract mentions limitations and recommendations but does not state them.",
+    "quote": "Following the advantages and limitations of this paper, some recommendations for future researchers were also presented."
+   }
+  ],
+  "thesis_relevance": "Peripheral: Co-60 effect on electronics, inverse-square dose model background."
+ },
+ {
+  "id": "P306",
+  "title": "Who Bears the Burden? Learning Responsibility for Shared Constraints in Multi-Agent Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "A shared multiplier enforces the aggregate budget but not how the burden is allocated across agents.",
+    "quote": "A shared Lagrange multiplier specifies the strength of the penalty associated with a common constraint, but does not determine how that penalty should be apportioned across agents."
+   },
+   {
+    "type": "open-problem",
+    "text": "No local improvement guarantees for nonconvex learners under shared constraints.",
+    "quote": "Closing this gap, for instance, by establishing local improvement guarantees for nonconvex learners under shared constraints, is a substantial open problem."
+   },
+   {
+    "type": "limitation",
+    "text": "Responsibility shares are constant across states; state-dependent allocation left open.",
+    "quote": "The responsibility shares are also constant across states; every state sees the same allocation."
+   },
+   {
+    "type": "inferred",
+    "text": "Shared aggregate expected budget; no individual hard non-renewable budgets or safety masking.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly relevant to the thesis's open question on risk sharing / unequal budgets: a state-dependent allocation of exposure among robots is the stated open direction."
+ },
+ {
+  "id": "P307",
+  "title": "From Cumulative Constraints to Adaptive Runtime Safety Control for Nonstationary Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Cumulative-cost constraints do not prevent individual unsafe actions.",
+    "quote": "Standard cumulative-cost formulations regulate the long-run frequency of unsafe events, but they do not prevent individual unsafe actions and may fail under distribution shift."
+   },
+   {
+    "type": "limitation",
+    "text": "Existing shields use fixed thresholds not tied to a cumulative budget.",
+    "quote": "Existing shielding approaches typically enforce fixed or heuristic safety thresholds and do not explicitly connect runtime enforcement to a cumulative safety budget."
+   },
+   {
+    "type": "limitation",
+    "text": "Simulated driving only, short horizons, few seeds.",
+    "quote": "The quantitative experiments use simulated driving environments, relatively short training horizons, and a limited number of seeds."
+   },
+   {
+    "type": "inferred",
+    "text": "Single agent; predicted cost assumed reliable; no exit/return reserve.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest single-agent analogue to the thesis's safety layer (remaining budget vs predicted cost filter); thesis adds multi-robot, exit reserve and estimate-dependent cost prediction."
+ },
+ {
+  "id": "P308",
+  "title": "Safe on Average, Unsafe in the Tail: When Is the Episodic-Cost Tail Controllable?",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Mean episodic cost hides severe tails; standard evaluations miss this.",
+    "quote": "Consequently, standard evaluations report mean episodic cost without characterizing how cost is distributed across episodes."
+   },
+   {
+    "type": "open-problem",
+    "text": "No method controlled the tail on navigation tasks; stricter constraints do not help.",
+    "quote": "Strengthening the tested constraints does not resolve this problem on dense-hazard navigation."
+   },
+   {
+    "type": "limitation",
+    "text": "Image observations and multiple simultaneous constraints untested; few seeds.",
+    "quote": "The experiments use low-dimensional observations and one cost signal, leaving image observations and multiple simultaneous constraints untested."
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's choice of hard per-step masking over expected-cost Lagrangian (which became timid) and its reporting of violation rates; multiple simultaneous (per-robot) constraints are named as untested."
+ },
+ {
+  "id": "P309",
+  "title": "RBGA: Residual-Budget Guide Arbitration for Offline-to-Online Safe Reinforcement Learning in Dexterous Manipulation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing O2O safe RL ignores budget already consumed within an episode.",
+    "quote": "existing O2O safe RL approaches do not explicitly account for the safety budget already consumed when making decisions within an episode."
+   },
+   {
+    "type": "inferred",
+    "text": "Residual budget arbitrated in expectation (cost limit approached, not hard), single agent.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports residual-budget awareness (dose so far) as a decision input, which the thesis uses in its mask and observation."
+ },
+ {
+  "id": "P310",
+  "title": "SafeDiSTL: Decomposing Joint Constraints for Safe Multi-Agent Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Team violation cost does not tell which agents caused it.",
+    "quote": "A team level violation cost function can measure this constraint outcome, but does not distinguish which agents’ actions most strongly influence that violation."
+   },
+   {
+    "type": "limitation",
+    "text": "Relies on differentiable dynamics gradients.",
+    "quote": "it relies on the gradients of the robustness signal through the system dynamics."
+   },
+   {
+    "type": "future-work",
+    "text": "Incorporate direction of influence; validate on real robots.",
+    "quote": "Future works will include validation of the proposed method on real-world robotic platforms."
+   }
+  ],
+  "thesis_relevance": "Credit assignment for shared constraints; relevant if the thesis moves to a team-level/shared dose budget."
+ },
+ {
+  "id": "P311",
+  "title": "Restorative Control and the Limits of Safe Model Discrimination",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Damage from exposure is irreversible; withdrawal stops accumulation but does not undo it.",
+    "quote": "Withdrawal stops further accumulation but leaves existing damage."
+   },
+   {
+    "type": "open-problem",
+    "text": "How probe exposure, noise, observation time affect safe success probability under a failure allowance is open.",
+    "quote": "How probe exposure, noise and observation time affect safe-restoration probability under fixed horizon and failure allowance remains open."
+   },
+   {
+    "type": "inferred",
+    "text": "Model uncertainty (two candidates) determines safe exposure allocation; learning the model costs exposure.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Conceptually close: irreversible cumulative exposure with tolerances and withdrawal, under model uncertainty; mirrors the thesis's exposure-vs-information trade-off but single-system, theoretical."
+ },
+ {
+  "id": "P312",
+  "title": "Hull-Fence: Online Multi-Robot Safe Coverage in Unknown Environments with Convex-Hull Hazard Cordoning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Multi-robot coverage neglects robot safety from hazards.",
+    "quote": "But, safety of the robots is neglected and there are certain hazards in the path that need to be avoided, or they may damage the robots severely."
+   },
+   {
+    "type": "inferred",
+    "text": "Hazards are regions to avoid (binary), not cumulative dose with hard per-robot budget; no exit reserve.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Close multi-robot MARL analogue (CTDE, CVaR critic, per-agent hazard exposure), but without cumulative per-robot budgets or return reserve."
+ },
+ {
+  "id": "P313",
+  "title": "DynBudget: Adaptive Risk Calibration and Dynamic Budgeting for Safe Reinforcement Learning Under Distribution Drift",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Distribution drift invalidates previously calibrated risk estimates.",
+    "quote": "distribution drift can quickly invalidate previously calibrated risk estimates."
+   },
+   {
+    "type": "inferred",
+    "text": "Single-agent; budget adapts from violation feedback, not a fixed non-renewable budget.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Relates to the thesis's finding of overconfident filter: calibrating risk estimates online (temperature/threshold) is a possible remedy."
+ },
+ {
+  "id": "P314",
+  "title": "Sampling-Based Safe Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing methods over-conservative due to constraint tightening.",
+    "quote": "these methods often (i) introduce excessive conservatism through their constraint tightening"
+   },
+   {
+    "type": "future-work",
+    "text": "Extend to non-episodic setting (manual resets).",
+    "quote": "Extending this work to the non-episodic setting is an exciting direction for future work."
+   },
+   {
+    "type": "future-work",
+    "text": "Extend from expected accumulated cost to state-wise safety.",
+    "quote": "Extending this work to state-wise safety formulations (Thomas et al., 2021), while retaining high-probability guarantees for high-dimensional nonlinear dynamics and general policies (e.g., beyond MPC), is an important direction"
+   }
+  ],
+  "thesis_relevance": "Enforcing constraint jointly over sampled models parallels the thesis's percentile over particles; supports sample-based worst-case dose prediction."
+ },
+ {
+  "id": "P315",
+  "title": "RAYA: Learning Where and When to Intervene for Robot Recovery",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Risk-aware methods do not tell the planner which objectives should yield.",
+    "quote": "These approaches make risk visible, but they do not enable the planner and controller to reason about which task objectives can or should be modified in response."
+   },
+   {
+    "type": "limitation",
+    "text": "Post hoc filters act too late when no admissible input remains.",
+    "quote": "By the time the post hoc filter requests a correction, there is almost never an admissible input left to deliver it."
+   },
+   {
+    "type": "future-work",
+    "text": "Learn which features predict deteriorating recoverability.",
+    "quote": "A natural step is to learn which features predict deteriorating recoverability and which objectives should yield."
+   }
+  ],
+  "thesis_relevance": "Supports shaping the policy with the remaining exit margin early (not only a post-hoc mask), relevant to why learned policies should see dose margin."
+ },
+ {
+  "id": "P316",
+  "title": "LyMARL: A Lyapunov-Guided Multiagent Reinforcement Learning Framework for Energy-Aware Radio Resource Management",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Lyapunov methods enforce budgets only asymptotically; myopic early exhaustion of finite budgets.",
+    "quote": "Under finite-horizon operation, the myopic per-slot drift-plus-penalty (DPP) objective causes aggressive early BS activation, rapidly exhausting the budget and forcing prolonged service outages."
+   },
+   {
+    "type": "limitation",
+    "text": "MARL approaches use shaping/Lagrangian penalties without tracking cumulative violations over finite horizons.",
+    "quote": "Existing multiagent reinforcement learning (MARL) approaches rely on heuristic reward shaping or Lagrangian penalties without explicitly tracking cumulative violations over finite horizons."
+   }
+  ],
+  "thesis_relevance": "Analogous finite non-renewable budget pacing in MARL; supports putting cumulative-budget state into observation (as the thesis does with dose so far)."
+ },
+ {
+  "id": "P317",
+  "title": "Characterization and Analysis of Emergency Landing Flight Envelopes with Graded Safety Specifications",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "How the violation cost choice shapes the envelope is open.",
+    "quote": "A remaining open question is how the choice of ℓ (and, when parameterized, λ) influences the resulting flight envelope."
+   },
+   {
+    "type": "limitation",
+    "text": "Grid-based HJ scales poorly; scalable approximations needed.",
+    "quote": "Since grid-based solutions of HJ equations scale poorly with state dimension, future work should investigate scalable approximation techniques"
+   },
+   {
+    "type": "inferred",
+    "text": "Cumulative tolerated exposure (budget Q) to degraded states with a reach (landing) requirement resembles exposure budget + exit.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Conceptual analogue: reach-avoid with a cumulative exposure budget (reach the exit while integrated exposure stays under Q), single agent, known dynamics."
+ },
+ {
+  "id": "P318",
+  "title": "Risk-Aware Switch-Time Recovery Planning (ReSwitch) for High-Speed UAV Pursuit-Evasion",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing methods do not decide when recovery should begin once finite-horizon risk emerges.",
+    "quote": "they do not explicitly determine when recovery should begin once finite-horizon risk emerges."
+   }
+  ],
+  "thesis_relevance": "Mirrors the thesis's withdraw timing question (when to stop searching and exit)."
+ },
+ {
+  "id": "P319",
+  "title": "On the Equilibrium Between Feasible Zone and Uncertain Model in Safe Exploration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Safety-filter constraints too restrictive, giving overly conservative policies.",
+    "quote": "a notable limitation of safety filter-based methods is that, to ensure safety, their designed constraints are usually too restrictive, resulting in unreasonably small feasible zones and overly conservative policies."
+   },
+   {
+    "type": "open-problem",
+    "text": "Maximum attainable feasible zone is open.",
+    "quote": "As a result, the maximum attainable size of the feasible zone remains an open problem."
+   },
+   {
+    "type": "assumption",
+    "text": "Guarantee requires a well-calibrated uncertain model containing the truth.",
+    "quote": "If the true dynamics lie outside the predicted uncertainty set, the safety guarantee may theoretically be compromised."
+   },
+   {
+    "type": "limitation",
+    "text": "Practical algorithms only for discrete spaces; high complexity.",
+    "quote": "which might be unacceptable for high-dimensional systems or fine discretization."
+   }
+  ],
+  "thesis_relevance": "The calibration assumption is exactly what the thesis's overconfident particle filter violates; supports studying mask failure under miscalibrated estimates."
+ },
+ {
+  "id": "P320",
+  "title": "Dyna-Style Safety Augmented Reinforcement Learning: Staying Safe in the Face of Uncertainty",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Learned model unreliable outside training data.",
+    "quote": "However, p̂ is typically unreliable outside the training data distribution."
+   },
+   {
+    "type": "limitation",
+    "text": "Expanding the explored set in high dimensions is a limitation.",
+    "quote": "this suggests that efficiently expanding E in high-dimensional spaces is a limitation of the current approach."
+   },
+   {
+    "type": "future-work",
+    "text": "Improve exploration via active exploration of the dynamics model; compute efficiency; non-control-affine theory.",
+    "quote": "Among these are improving the exploration capabilities in high-dimensional problems"
+   }
+  ],
+  "thesis_relevance": "Avoiding regions of high model uncertainty parallels treating particle spread as risk; single-agent, no cumulative budget."
+ },
+ {
+  "id": "P321",
+  "title": "Neuro-Symbolic Risk Semantics for Safe Multi-Agent Coverage in Hazardous Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Safe MARL brittle under epistemic mismatch; scalar penalties obscure failure mechanisms; symbolic priors mis-calibrate under shift.",
+    "quote": "remains brittle under epistemic mismatch, scalar penalties obscure failure mechanisms, and fixed symbolic priors can become mis-calibrated under distribution shift."
+   },
+   {
+    "type": "inferred",
+    "text": "No cumulative per-agent budget or return reserve described.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis finding that risk models can be mis-calibrated (overconfident filter) in multi-agent hazardous coverage."
+ },
+ {
+  "id": "P322",
+  "title": "Heterogeneous Multi-Agent Reinforcement Learning for Radio Resource Management under Coupled Finite-Horizon Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Lagrangian multipliers regulate violations only across episodes; queues sensitive to tight budgets and short horizons.",
+    "quote": "queues enable faster learning but are sensitive to tight budgets and short horizons, while multipliers adapt constraint prices across training episodes."
+   },
+   {
+    "type": "open-problem",
+    "text": "Relative behaviour of multipliers vs virtual queues under coupled constraints unclear.",
+    "quote": "but their relative behavior under coupled two-sided constraints remains unclear."
+   },
+   {
+    "type": "future-work",
+    "text": "Adaptive queue-price calibration.",
+    "quote": "Future work will investigate adaptive queue-price calibration and more realistic physical-layer models."
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's observation that episode-level Lagrangian methods do not enforce within-episode hard budgets; per-step budget tracking is preferable."
+ },
+ {
+  "id": "P323",
+  "title": "Open and Auditable Drawdown Control: An Exit-Reserve Shield for Learned Portfolios",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Guarantee holds only within the declared return support; a support miss ends the guarantee.",
+    "quote": "A support miss does not retroactively falsify the optimization theorem, but it does terminate the pathwise guarantee at the point where its declared domain was left."
+   },
+   {
+    "type": "limitation",
+    "text": "Exact viability kernel is nonconvex and expensive; shield is conservative.",
+    "quote": "The exact kernel is conceptually clean but can be nonconvex and expensive online."
+   },
+   {
+    "type": "limitation",
+    "text": "Exchangeable prediction does not give conditional time-series coverage; calibration is separate requirement.",
+    "quote": "Exchangeability-based prediction methods do not automatically supply conditional time-series coverage; a defensible sequential calibration protocol is a separate statistical requirement"
+   },
+   {
+    "type": "inferred",
+    "text": "Myopic one-step rule allows slightly more exposure; the reserve is the price of keeping exit feasible.",
+    "quote": "The six-tenths percentage-point gap is the price of retaining a feasible successor action."
+   }
+  ],
+  "thesis_relevance": "Very close structural analogue of the thesis's mask (remaining budget, current cost, reserved exit cost) in finance; single agent and its coverage caveat matches the thesis's overconfidence finding."
+ },
+ {
+  "id": "P324",
+  "title": "ProSh: Probabilistic Shielding for Model-free Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Lagrangian approaches give no formal safety guarantees during training or at the end.",
+    "quote": "Traditional methods, such as Lagrangian approaches [2, 30, 36], allow to converge toward a safe policy, but do not provide formal guarantees on safety, neither during training nor on the provided policy."
+   },
+   {
+    "type": "assumption",
+    "text": "Guarantees depend on backup critic accuracy; deterministic environments.",
+    "quote": "Our theoretical results focus on deterministic environments."
+   },
+   {
+    "type": "future-work",
+    "text": "Dynamic risk margin adapting to critic accuracy.",
+    "quote": "future work could leverage a dynamic risk margin that adapts to the critic’s accuracy over time, ensuring safety even in early training stages."
+   }
+  ],
+  "thesis_relevance": "Risk-budget state augmentation supports the thesis's dose-so-far observation; a margin adapting to estimator accuracy is a remedy for filter overconfidence."
+ },
+ {
+  "id": "P325",
+  "title": "Distributed primal-dual algorithm for constrained multi-agent reinforcement learning under coupled policies",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior work uses independent policies and needs global Lagrange multipliers.",
+    "quote": "most rely on independent policies that fail to capture complex interactions in coupled environments; and (2) agents require the global Lagrange multipliers"
+   },
+   {
+    "type": "open-problem",
+    "text": "No convergence rate for constraint violation; stationarity does not imply feasibility.",
+    "quote": "Establishing a rigorous convergence rate for constraint violation in our distributed, coupled-policy setting therefore remains an important direction for future research."
+   },
+   {
+    "type": "future-work",
+    "text": "Extend to heterogeneous large-scale swarms, lossy communication.",
+    "quote": "extending the proposed framework to more complex settings such as heterogeneous autonomous swarm environments with largescale agents."
+   }
+  ],
+  "thesis_relevance": "Per-agent cumulative budgets in CMARL with local multipliers, compared against MAPPO-L; budgets are expected, not hard, so the thesis's masking approach is complementary."
+ },
+ {
+  "id": "P326",
+  "title": "Resolving Conflicting Constraints in Multi-Agent Reinforcement Learning with Layered Safety",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Safety filtering conservativeness hinders MARL exploration.",
+    "quote": "a main challenge in this safety-constrained training is that the conservativeness introduced by safety filtering can hinder the exploration necessary for MARL to learn an effective policy."
+   },
+   {
+    "type": "limitation",
+    "text": "MAPPO-Lagrangian training unstable due to inaccurate multipliers.",
+    "quote": "training with PPO-Lagrangian [33], and its multi-agent variant [34] often suffers from instability due to suboptimal policies and inaccurate Lagrange multipliers."
+   },
+   {
+    "type": "open-problem",
+    "text": "Identifying leaky corners/combinatorial interactions open.",
+    "quote": "Addressing this issue requires analyzing the combinatorial number of possible interactions, which remains an open problem."
+   },
+   {
+    "type": "future-work",
+    "text": "Test in other domains incl. ground robots, sensing constraints.",
+    "quote": "an important future direction is testing the proposed approach’s applicability in various robotics domains"
+   }
+  ],
+  "thesis_relevance": "Directly supports the thesis's design (MARL trained with a safety filter in the loop) and its MAPPO-L instability finding."
+ },
+ {
+  "id": "P327",
+  "title": "The Lagrangian Method for Solving Constrained Markov Games",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Constraints other than expected discounted/average are unexplored in Markov games.",
+    "quote": "Introducing constraints other than the standard expected discounted or ergodic time average reward introduces new opportunities for exploiting structure in the underlying CMDP—opportunities that remain unexplored as of yet in the Markov game literature."
+   },
+   {
+    "type": "limitation",
+    "text": "No stationary Nash solution; strong duality fails for constrained potential games.",
+    "quote": "While our framework does not yield a stationary Nash solution"
+   }
+  ],
+  "thesis_relevance": "Per-agent constraints in Markov games; hard cumulative non-renewable budgets are among the 'unexplored' constraint types the thesis uses."
+ },
+ {
+  "id": "P328",
+  "title": "Rectified Robust Policy Optimization for Model-Uncertain Constrained Reinforcement Learning without Strong Duality",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Strong duality fails in robust constrained RL; primal-dual may fail.",
+    "quote": "strong duality does not generally hold in robust constrained RL, indicating that traditional primal-dual methods may fail to find optimal feasible policies."
+   },
+   {
+    "type": "limitation",
+    "text": "Constant gap linear in uncertainty diameter.",
+    "quote": "there is a constant gap linearly depending on the uncertainty diameter c"
+   },
+   {
+    "type": "open-problem",
+    "text": "Constrained robust MARL unexplored.",
+    "quote": "Many topics in constrained robust MARL remains unexplored"
+   }
+  ],
+  "thesis_relevance": "Gives a theoretical reason the thesis's MAPPO-Lagrangian under model error (correlated field error) may misbehave; constrained robust MARL is an open area."
+ },
+ {
+  "id": "P329",
+  "title": "Solving Multi-Agent Safe Optimal Control with Distributed Epigraph Form MARL",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "CMDP/Lagrangian methods handle hard (zero-violation) constraints poorly.",
+    "quote": "the CMDP setting they handle makes it difficult for them to handle hard constraints, and results in poor performance with zero constraint violation threshold"
+   },
+   {
+    "type": "limitation",
+    "text": "Shielded policy may become non-collaborative or deadlock.",
+    "quote": "the policy after shielding might not consider the same objective as the original policy and may result in noncollaborative behaviors or deadlocks"
+   },
+   {
+    "type": "limitation",
+    "text": "No noise, disturbances, or communication delays considered.",
+    "quote": "the framework does not consider noise, disturbances in the dynamics, or communication delays between agents."
+   }
+  ],
+  "thesis_relevance": "Epigraph form is an alternative to MAPPO-L for hard constraints in MARL; the thesis could test it against timid Lagrangian behaviour."
+ },
+ {
+  "id": "P330",
+  "title": "ActSafe: Active Exploration with Safety Constraints for Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Safety filters can lead to arbitrarily bad exploration.",
+    "quote": "while safety is ensured, safety filters can lead to arbitrarily bad exploration and therefore lack guarantees for optimality."
+   },
+   {
+    "type": "assumption",
+    "text": "Reward and cost assumed known; dynamics unknown.",
+    "quote": "The dynamics f ∗ are unknown and without loss of generality, the reward r and cost c are assumed to be known."
+   }
+  ],
+  "thesis_relevance": "Optimism for information, pessimism for safety maps onto the thesis's search (info gain) vs pessimistic dose percentile; the thesis's cost is itself unknown, unlike ActSafe's assumption."
+ },
+ {
+  "id": "P331",
+  "title": "CVaR-Constrained Policy Optimization for Safe Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Expected-cost constraints inadequate; high probability of exceeding threshold.",
+    "quote": "Current constrained reinforcement learning (RL) methods guarantee constraint satisfaction only in expectation, which is inadequate for safety-critical decision problems."
+   }
+  ],
+  "thesis_relevance": "Supports tail-aware (percentile) dose constraints over expected-cost Lagrangian, as used in the thesis's 97th-percentile mask."
+ },
+ {
+  "id": "P332",
+  "title": "Safe Multiagent Coordination via Entropic Exploration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Strict constraint thresholds hurt exploration and performance.",
+    "quote": "However, enforcing strict thresholds leads to a significant performance trade-off due to the detrimental effects of constraints on exploration"
+   },
+   {
+    "type": "limitation",
+    "text": "Policy entropy under restrictive thresholds makes multipliers grow unbounded; agents stay still.",
+    "quote": "C-MAPPO’s limited exploration during the early stages of training causes agents to remain still to avoid collisions, finally lead to task failure."
+   },
+   {
+    "type": "inferred",
+    "text": "Team vs individual constraints compared but no hard non-renewable per-agent budgets.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly explains the thesis's timid MAPPO-Lagrangian; observation-entropy exploration and team-level constraints are cheap additions to try."
+ }
+]

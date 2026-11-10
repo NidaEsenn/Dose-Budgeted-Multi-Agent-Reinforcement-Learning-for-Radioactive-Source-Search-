@@ -40,6 +40,18 @@ Columns: **Dose** = robot's own cumulative dose is limited (B = hard budget, S =
 | P120 / P125 | Sootla 2022 Saute RL; Castellano 2021 almost-sure constraints | budget in state | – | – | no | yes | no (theory support) |
 | P124 | Elsayed-Aly et al. 2021, shielded MARL (AAMAS) | shield | – | – (known model) | yes | yes | no |
 
+### Added in round 2
+
+| ID | Paper | Dose | Exit | Unc | Multi | Learn |
+|---|---|---|---|---|---|---|
+| P385 | Dec-MARVEL 2026 | B (travel distance) | **yes** | – | yes | MARL |
+| P323 | Exit-reserve shield (finance) 2026 | B (drawdown) | **yes** | return set, not a field | no | yes |
+| P307 | CPSS 2026 | B (cumulative safety budget) | – | predicted cost | no | yes |
+| P399 | Chance-constrained orienteering 2024 | B, chance-pruned | – | known cost distribution | no | MCTS |
+| P386 | Iterative risk allocation, multi-agent 2025 | shared risk budget | – | predicted risk | yes | – |
+| P415 / P388 | Risk from GP field estimate 2021 / 2024 | threshold | – | **yes** | no | – |
+| P269 | Gamma-camera emergency robot 2022 | S | – | yes | no | – |
+
 ## Where the gap looks real
 
 - **Nuclear robotics** treats dose as something to minimise (soft cost) or plans an offline time limit. No paper found enforces a hard per-robot budget online with a reserved exit.

@@ -50,6 +50,10 @@ The thesis is new where four research lines meet, and **not** in any one of them
 - **Closest:** Brynjarsdottir & O'Hagan (model discrepancy, cluster F) explains the overconfidence, but no robotics paper found links filter calibration to the safety rate of exploring robots.
 - **Evidence:** D24 sweep (13 settings, none better on both axes).
 
+## Round-2 update (194 more papers)
+
+Dec-MARVEL (P385, 2026) already combines a multi-robot learned policy, a hard per-robot budget and a guaranteed return reserve, for deterministic travel distance. **G2 alone is therefore no longer novel; G1 (estimate-coupled cost) carries the claim.** Other near misses: P323 exit-reserve shield (finance), P307 CPSS cumulative-budget filter, P399 chance-constrained pruning, P386 iterative team risk allocation, and P415/P388 risk from a GP estimate of an unknown field. Each lacks at least two of the four elements. Details: `RESEARCH_GAPS.md`, round 2.
+
 ## Recommended framing
 
 **Main contribution (G1 + G2):** a formulation and safety layer for cooperative radiation search in which each robot's hard dose budget, including its exit reserve, is checked against dose predicted from the team's uncertain source estimate, with a pessimistic quantile. The evidence: it makes the 5% target reachable where the mean-based rule and price-based RL do not.

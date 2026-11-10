@@ -1,0 +1,1139 @@
+[
+ {
+  "id": "P333",
+  "title": "The Price of Failure Risk: Clipped Barrier Policy Gradients with Convex Regularization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Guarantees exist only for idealized infinite failure cost; practice uses finite penalty and horizon",
+    "quote": "The available guarantees concern the idealized problem with an infinite failure cost [27], whereas in practice a finite penalty and a finite horizon are used."
+   },
+   {
+    "type": "limitation",
+    "text": "A finite failure penalty alone gives no incentive to keep a margin before budget exhaustion",
+    "quote": "With a finite failure penalty, the divergence is avoided, but nothing in the reward then discourages running the budget close to zero."
+   },
+   {
+    "type": "open-problem",
+    "text": "No guarantee that PPO/SAC with noisy finite networks reach the regularized optimum",
+    "quote": "A guarantee that a noisy finite network with discrete steps and PPO’s or SAC’s estimators reaches the regularized optimum of the clipped value remains open."
+   },
+   {
+    "type": "limitation",
+    "text": "Risk certificates are sufficient estimates, not lower bounds",
+    "quote": "This limitation lies in the sufficient estimates and is not a lower bound on risk."
+   },
+   {
+    "type": "inferred",
+    "text": "Single-agent, resource consumption observed directly; no uncertain-field cost prediction or exit reserve",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest single-agent analogue: remaining budget in state + barrier near exhaustion supports the thesis's budget-in-observation and margin design; thesis adds multi-agent, exit reserve and estimate-dependent cost."
+ },
+ {
+  "id": "P334",
+  "title": "Scalable Primal-Dual Actor-Critic Method for Safe Multi-Agent RL with General Utilities",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Prior safe MARL assumes global state or unlimited communication",
+    "quote": "In particular, the existing works in safe MARL allow full access to the global state or unlimited communications among all agents for policy implementation, value estimation, and constraint satisfaction [25–27]."
+   },
+   {
+    "type": "assumption",
+    "text": "Relies on spatial correlation decay of transitions",
+    "quote": "Inspired by [34], we assume that the transition probability satisfies a form of the spatial correlation decay property [35, 36]."
+   },
+   {
+    "type": "future-work",
+    "text": "Adaptive communication and intelligent trajectory sampling",
+    "quote": "For future research, it would be interesting to develop scalable safe MARL algorithms with adaptive communication of agents’ state/action information and intelligent sampling of agents’ trajectories."
+   },
+   {
+    "type": "inferred",
+    "text": "Per-agent constraints are in expectation (CMDP-style), not hard cumulative budgets",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Per-agent safety constraints in MARL match the thesis's per-robot budgets, but in expectation only; thesis uses a hard per-step mask instead."
+ },
+ {
+  "id": "P335",
+  "title": "Safe Exploration in Reinforcement Learning: A Generalized Formulation and Algorithms",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Practical and theoretically grounded safe exploration remains open",
+    "quote": "In summary, many algorithms have been proposed in various safe RL formulations, but the creation of a safe exploration algorithm that is both practically useful and supported by theoretical foundations remains an open problem."
+   },
+   {
+    "type": "assumption",
+    "text": "Safety cost assumed to be in a class with estimable uncertainty (GLM/GP)",
+    "quote": "As for the second difficulty, we assume that the safety cost function belongs to a class where uncertainty can be estimated and guarantee the satisfaction of the safety constraint with high probability."
+   },
+   {
+    "type": "limitation",
+    "text": "Emergency stop actions are costly in hazardous environments",
+    "quote": "In some applications (e.g., the agent is in a hazardous environment), however, emergency stop actions should often be avoided because of the expensive cost of human intervention."
+   },
+   {
+    "type": "future-work",
+    "text": "Asking for human help and further performance improvement left to future work",
+    "quote": "However, because we require the agent to solve difficult problems where safety is guaranteed at every time step and episode, we consider that this result is reasonable, and further performance improvements are left to future work."
+   }
+  ],
+  "thesis_relevance": "MASE's uncertainty-gated emergency stop is analogous to the thesis's withdraw action; thesis's cost uncertainty comes from the particle filter rather than a GLM/GP on cost."
+ },
+ {
+  "id": "P336",
+  "title": "WCSAC: Worst-Case Soft Actor Critic for Safety-Constrained Reinforcement Learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Expectation constraints ignore cost-distribution tail",
+    "quote": "However, it can be hazardous to set constraints on the expected safety signal without considering the tail of the distribution."
+   },
+   {
+    "type": "inferred",
+    "text": "Abstract gives no own limitations; P351 notes WCSAC's Gaussian cost assumption can fail",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's use of a high percentile (97th) of predicted dose rather than the mean."
+ },
+ {
+  "id": "P337",
+  "title": "Safe Exploration in Markov Decision Processes",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Most exploration methods assume ergodicity, which rarely holds",
+    "quote": "Almost all proposed exploration techniques presume ergodicity; authors present it as a harmless technical assumption but it rarely holds in interesting practical problems."
+   },
+   {
+    "type": "limitation",
+    "text": "Prior safe-exploration ignores uncertainty in the transition estimate",
+    "quote": "The safe exploration for MDP methods proposed by (Geramifard et al., 2011; Hans et al., 2008) gauge safety based on the best best estimate of the transition measure but they ignore the level of uncertainty in this estimate."
+   },
+   {
+    "type": "limitation",
+    "text": "Safety under the mean model can differ from safety under the belief",
+    "quote": "However, under the mean transition measure, represented by the MDP on the right, the policy is safe."
+   },
+   {
+    "type": "future-work",
+    "text": "Stricter return-within-horizon criteria possible",
+    "quote": "Stricter ergodicity ensuring that return is possible within some horizon, H, not just eventually, with probability δ."
+   },
+   {
+    "type": "limitation",
+    "text": "Computation repeated after every step",
+    "quote": "They also show that our algorithm is almost as computationally efficient as planning in a known MDP—but then, as every step leads to an update in knowledge about the MDP, this computation is to be repeated after every step."
+   }
+  ],
+  "thesis_relevance": "Directly underpins the thesis's exit reserve (safety = ability to return) and the need to evaluate safety over the belief, not the mean estimate; thesis applies it with a dose budget and multiple robots."
+ },
+ {
+  "id": "P338",
+  "title": "Risk-Sensitive Reinforcement Learning Applied to Control under Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Unknown how large the risk of entering error states actually is",
+    "quote": "A drawback of the approach is the fact that it is unknown how large the risk (probability) of entering an error state is."
+   },
+   {
+    "type": "open-problem",
+    "text": "Oscillations; convergence and usefulness remain open",
+    "quote": "Preliminary experiments have shown that oscillations may occur in our algorithm, but the behavior tends to oscillate between sensible policies without getting too bad in-between although the convergence and usefulness of the policies remains an open issue."
+   },
+   {
+    "type": "future-work",
+    "text": "State-dependent weights could find better policies",
+    "quote": "We conjecture that better policies could be found by allowing state-dependent weights ξ(x) with a modified adaptation strategy, and by extending the considered policy class."
+   },
+   {
+    "type": "future-work",
+    "text": "Other chance-constraint types to be investigated",
+    "quote": "We plan investigating these cases in the future."
+   }
+  ],
+  "thesis_relevance": "Weighted value/risk trade-off oscillation mirrors MAPPO-Lagrangian instability; state-dependent weighting is a possible fix for the thesis's timid Lagrangian."
+ },
+ {
+  "id": "P339",
+  "title": "Constrained Markov Decision Processes",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Book lists open questions incl. coordination between controllers",
+    "quote": "On Coordination Between Controllers Open Questions"
+   },
+   {
+    "type": "inferred",
+    "text": "Expected-cost CMDP formalism does not give hard per-episode budget satisfaction",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Foundational formalism; the thesis's hard per-robot budgets go beyond expected-cost CMDP."
+ },
+ {
+  "id": "P340",
+  "title": "Learning Infinite-Horizon Average-Reward CMDPs via State Augmentation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Primal-dual methods fail for weakly communicating average-reward CMDPs",
+    "quote": "Motivated by the failure of primal-dual approaches, our method can be summarized as follows: to avoid the additional variation induced by incorporating the constraint information into the reward, we instead incorporate it into the state space, inspired by Sootla et al."
+   },
+   {
+    "type": "assumption",
+    "text": "Reward and cost known and deterministic; tabular",
+    "quote": "Moreover, we assume that r and g are known and deterministic, while the transition kernel P is unknown."
+   },
+   {
+    "type": "open-problem",
+    "text": "Extension to linear CMDPs open",
+    "quote": "It remains open whether the same computational efficiency and rate-optimal guarantees can be achieved for weakly communicating averagereward linear CMDPs."
+   }
+  ],
+  "thesis_relevance": "Supports putting cumulative cost (dose so far) in the state rather than relying on Lagrange multipliers, as the thesis does."
+ },
+ {
+  "id": "P341",
+  "title": "Safe Exploration via Policy Priors",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Scalable methods lack safety during learning; guaranteed methods do not scale",
+    "quote": "Methods with theoretical safety guarantees often struggle to scale to complex, general-purpose tasks, whereas scalable approaches typically fail to ensure safety during learning (cf."
+   },
+   {
+    "type": "assumption",
+    "text": "Gaussian additive noise and RKHS regularity",
+    "quote": "The additive noise ωt is independent and identically distributed (i.i.d.) zero-mean Gaussian noise with variance σ 2 ."
+   },
+   {
+    "type": "future-work",
+    "text": "High-probability state constraints and non-episodic setting",
+    "quote": "In terms of theory and methodology, extending our work to high-probability constraints over particular states and developing new methods for the non-episodic setting, where agents learn from a single trajectory without resets, are two challenging yet crucial problems."
+   },
+   {
+    "type": "future-work",
+    "text": "More complex tasks with more powerful models",
+    "quote": "On the practical side, considering more complex tasks with more powerful models is a promising direction for future work."
+   }
+  ],
+  "thesis_relevance": "Fallback to a conservative prior policy parallels the thesis's rule-based policy + safety layer; suggests using the rule as a prior that learning improves on."
+ },
+ {
+  "id": "P342",
+  "title": "Reachability-Aware Diffusion Policy Optimization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Cost critics do not isolate when first cost occurs",
+    "quote": "Cost critics address this by estimating accumulated future cost (Liu et al., 2022; Wu et al., 2024), which captures violation magnitude and repeated exposure but does not explicitly isolate when the first cost encounter occurs."
+   },
+   {
+    "type": "limitation",
+    "text": "No end-to-end feasibility result; reachability is a surrogate",
+    "quote": "Our theoretical analysis establishes properties of individual RADPO components rather than an end-to-end feasibility result."
+   },
+   {
+    "type": "limitation",
+    "text": "Transient violations persist as in primal-dual methods",
+    "quote": "Transient violations and sensitivity to the controller timescale or multiplier cap can therefore still occur, as in primal-dual methods."
+   },
+   {
+    "type": "limitation",
+    "text": "Binarization discards cost magnitude",
+    "quote": "For nonbinary costs, ht = 1{ct > 0} also discards magnitude information, although perstep costs are binary in all ten tasks considered here."
+   }
+  ],
+  "thesis_relevance": "Dose is a continuous accumulated cost, so first-hit binarized signals would lose magnitude; supports the thesis's explicit cumulative-dose prediction."
+ },
+ {
+  "id": "P343",
+  "title": "Chance-Constrained Inspection Viewpoint Sequencing for On-Orbit Servicing via Safe Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Calibrated risk budget under stochastic dynamics not previously examined",
+    "quote": "To our knowledge, the behaviour of a caligoals with orbital dynamics and safety considerations, brated keep-out risk budget under stochastic relative dywhich must be solved on board, under limited time and namics has not been examined."
+   },
+   {
+    "type": "limitation",
+    "text": "Masking alone does not ensure safety",
+    "quote": "The application of feasibility masking alone does not ensure safety."
+   },
+   {
+    "type": "limitation",
+    "text": "Single target geometry; coverage model simplified",
+    "quote": "The study rests on a single target geometry; the objective on that target saturates within roughly ten viewpoints"
+   },
+   {
+    "type": "limitation",
+    "text": "Deterministic nominal test cannot express violation probability",
+    "quote": "A deterministic test on the nominal arc returns a single pass or fail at this boundary and cannot express the violation probability the realised distribution carries."
+   }
+  ],
+  "thesis_relevance": "Close analogue: hard budget (delta-v) via action masking + chance constraint via PID-Lagrangian; shows masking needs a probabilistic layer, as the thesis's percentile mask does; single agent and known dynamics though."
+ },
+ {
+  "id": "P344",
+  "title": "Continue, Abort, or Fall: Viability-Aware Policy Selection (VAPS) for Safe Humanoid Acrobatics",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Binary task-to-recovery switch is too coarse",
+    "quote": "A single switch is therefore too coarse, particularly in the intermediate regime where the maneuver is already lost but a controlled landing is not."
+   },
+   {
+    "type": "assumption",
+    "text": "Prior designs assume one nominal objective, one recovery, mature nominal policy",
+    "quote": "these designs assume one nominal objective, one generic recovery behavior, and a mature nominal policy [22]."
+   },
+   {
+    "type": "limitation",
+    "text": "Single networks learn how to fall but not when to give up",
+    "quote": "Single networks trained on the same objectives, and students distilled from VAPS itself, learn how to fall but not when to give up the task"
+   },
+   {
+    "type": "open-problem",
+    "text": "When to abandon a task safely is broadly open",
+    "quote": "More broadly, deciding when to abandon a task, and how to do so safely, is a question that reaches well beyond acrobatics."
+   }
+  ],
+  "thesis_relevance": "Directly relevant to the thesis's withdraw action: explicit, separately predicted abort options beat end-to-end learning of when to quit; single robot, no budget."
+ },
+ {
+  "id": "P345",
+  "title": "SteinGate: Tail-Sensitive Safe Reinforcement Learning via Stein Discrepancy",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Expected-cost bounds miss rare catastrophic tail events",
+    "quote": "Safe reinforcement learning typically enforces safety by bounding expected cumulative costs, a criterion that often fails to detect rare but catastrophic tail events."
+   },
+   {
+    "type": "limitation",
+    "text": "Direct tail estimation is unstable in online RL",
+    "quote": "As a result, direct tail estimation can exhibit high variance and brittleness, leading to oscillations between over-conservatism and catastrophic failure during training."
+   },
+   {
+    "type": "inferred",
+    "text": "Requires a pre-certified safe reference distribution; no future work stated",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Explains the thesis's Lagrangian oscillation/timidity; supports a hard runtime mask over learned tail constraints."
+ },
+ {
+  "id": "P346",
+  "title": "Conformal Risk-Calibrated Latent World Models with Runtime Assurance Under Distribution Shift",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "World models can remain confident outside training distribution",
+    "quote": "Learning-enabled autonomous controllers may fail when a compact world model remains confident outside its training distribution."
+   },
+   {
+    "type": "inferred",
+    "text": "Evaluated only on CartPole/Pendulum; nominal coverage below target (0.882)",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly relevant to the thesis's overconfident particle filter: conformal calibration of prediction residuals could inflate the dose-prediction margin."
+ },
+ {
+  "id": "P347",
+  "title": "SCOPE: Safety-Constrained Online Preview Enforcement for Efficient Encirclement in Multi-UAV Pursuit-Evasion",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Execution-level filters ignore forward feasibility and inter-agent constraints",
+    "quote": "Execution-level methods adjust actions before execution to enforce safety online [Alshiekh et al., 2018; Zhang et al., 2023a; Zhou et al., 2025], but they usually do not account for whether safety remains feasible over predicted trajectories"
+   },
+   {
+    "type": "limitation",
+    "text": "Instantaneous CBF enforcement does not ensure forward feasibility",
+    "quote": "While the basic CBF enforcement guarantees instantaneous safety, it does not ensure forward feasible safety."
+   },
+   {
+    "type": "limitation",
+    "text": "Lagrangian/MACPO baselines become conservative or unstable",
+    "quote": "MAP3O reduces safety costs relative to MADDPG, but converges to lower returns with longer episode lengths (Steps), while MACPO shows low SR and high AC, suggesting conservative policies that hinder efficient pursuit–evasion."
+   },
+   {
+    "type": "future-work",
+    "text": "Larger swarms, richer onboard limits, adaptive safety margins",
+    "quote": "We also plan to incorporate richer physical constraints and more realistic onboard limitations, and to study adaptive safety margins that adjust online to the environment dynamics and risk level."
+   }
+  ],
+  "thesis_relevance": "Multi-agent shield with look-ahead feasibility; the thesis's exit-dose term is a forward-feasibility check, and adaptive margins match its percentile tuning."
+ },
+ {
+  "id": "P348",
+  "title": "Learning to Harvest Without Collapse in a Regenerative Commons: A Lagrangian Framework",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Does not control within-episode minima or per-episode safety",
+    "quote": "It does not control within-episode stock minima or ensure safety in every episode."
+   },
+   {
+    "type": "limitation",
+    "text": "Uniform unilateral Slater condition fails",
+    "quote": "The uniform unilateral Slater condition in the prior CMG result fails in this fishery: one agent cannot offset maximal extraction by its opponent (Appendix C)."
+   },
+   {
+    "type": "limitation",
+    "text": "Experiments do not measure oracle error or optimality gaps",
+    "quote": "The experiments do not measure oracle error, feasible-deviation gains, or cooperative optimality gaps."
+   }
+  ],
+  "thesis_relevance": "Shared budget redistributed across agents relates to the thesis's open question of risk sharing/unequal budgets, but only on average and without hard per-episode guarantees."
+ },
+ {
+  "id": "P349",
+  "title": "Utility-Constrained Policy Optimization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "CMDP constraints are risk-neutral",
+    "quote": "Despite being widely adopted as the basis for many constrained RL methods (for example, [Ji et al., 2023, 2024]), a substantial limitation of the CMDP framework is that constraints are risk-neutral, that is, they are only enforced in expectation."
+   },
+   {
+    "type": "limitation",
+    "text": "No theoretical analysis",
+    "quote": "Despite strong empirical results, a key limitation is the lack of theoretical analysis."
+   },
+   {
+    "type": "future-work",
+    "text": "PID-Lagrangian outer loop, other RL methods incl. PPO",
+    "quote": "The outer optimization could also be improved, for example, with PID-Lagrangian [Stooke et al., 2020] updates."
+   }
+  ],
+  "thesis_relevance": "Budget-in-state lets one policy run under different budgets without retraining, directly useful for the thesis's unequal per-robot budgets."
+ },
+ {
+  "id": "P350",
+  "title": "Safety Internalization in UAV Navigation via Training-Time CBF-Integrated RL",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Post-hoc shield can raise collision rate due to policy distribution shift",
+    "quote": "This letter further shows that the loosely coupled “policy learning + post-hoc shield” architecture can give rise to a shield deployment paradox: owing to policy distribution shift, a post-hoc CBF shield raises rather than lowers the collision rate under high-density dynamic scenes."
+   }
+  ],
+  "thesis_relevance": "Warns that the thesis's safety mask should be active during training (as action masking in MAPPO), not added post hoc."
+ },
+ {
+  "id": "P351",
+  "title": "Safety-Constrained Reinforcement Learning with Post-Training Reachability Verification for Robot Navigation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Expectation constraints give no control over rare high-consequence outcomes",
+    "quote": "Most existing methods enforce these constraints in expectation [2]–[5], which limits the overall frequency of unsafe events but provides no control over rare, high-consequence outcomes."
+   },
+   {
+    "type": "limitation",
+    "text": "Existing CVaR methods rely on distributional assumptions or on-policy updates",
+    "quote": "Nonetheless, existing CVaR-based safe RL methods either rely on distributional assumptions (e.g., Gaussian approximations or trust-region surrogates) that may not hold in practice [10], [11], or require on-policy updates that limit sample efficiency [12]."
+   },
+   {
+    "type": "limitation",
+    "text": "Verification restricted to compact networks",
+    "quote": "A current limitation is that Taylor Model arithmetic requires compact network architectures, restricting the policy complexity that can be verified."
+   },
+   {
+    "type": "future-work",
+    "text": "Feed verification signals back into training",
+    "quote": "Future work will explore GPU-accelerated reachability methods and network compression to scale verification to larger policies, as well as integrating verification signals into the training loop"
+   },
+   {
+    "type": "limitation",
+    "text": "Average cost is an insufficient safety indicator",
+    "quote": "Q2: Average cost alone is an insufficient safety indicator."
+   }
+  ],
+  "thesis_relevance": "Supports reporting tail/violation metrics rather than mean dose; single robot, observation uncertainty only."
+ },
+ {
+  "id": "P352",
+  "title": "Stochastic Decision Horizons for Survival-Based Constrained Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "No hard per-action safety or additive budget guarantee",
+    "quote": "SDH does not provide hard per-action or state-wise safety certification, a generic additive-cost budget guarantee, or tuning-free continuation design."
+   },
+   {
+    "type": "limitation",
+    "text": "Does not represent residual-budget semantics",
+    "quote": "State augmentation can instead carry residual budget in the state [39], capturing residual-budget semantics that state-action-only SDH does not represent."
+   },
+   {
+    "type": "future-work",
+    "text": "Learned continuation, primal-dual validation, safety-sensitive applications",
+    "quote": "Future work includes learned continuation models, full primal-dual validation across survivalconstraint levels, offline/pessimistic variants, and evaluation in safety-sensitive applications with complementary certified mechanisms."
+   }
+  ],
+  "thesis_relevance": "Clarifies that the thesis's cumulative dose needs residual-budget state augmentation, not survival discounting."
+ },
+ {
+  "id": "P353",
+  "title": "Safe Deep Reinforcement Learning for Energy Management of Electrified Vehicles: Optimal Action Filtering and Battery-in-the-Loop Validation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Safety concerns on control actions hinder real deployment",
+    "quote": "Despite the promising performance of deep reinforcement learning (DRL)-based energy management systems (EMSs) for electrified vehicles, persistent safety concerns regarding control actions hinder their real-world deployment."
+   },
+   {
+    "type": "inferred",
+    "text": "Zero violations rely on a model-based safety layer with prior knowledge (known SOC dynamics)",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Same pattern as thesis (model-based filter + Lagrangian), but the filter's model is known; thesis's dose model is uncertain."
+ },
+ {
+  "id": "P354",
+  "title": "Chance-Constrained DRL for Energy-Efficient and Timely Wind-Powered WSNs Under Uncertain Underground Mine Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Conventional methods need prohibitive global communication for tail-event safety",
+    "quote": "whereas conventional methods incur prohibitive global communication overhead to guarantee tail-event safety under such conditions."
+   },
+   {
+    "type": "inferred",
+    "text": "Converts chance constraints to deterministic margins offline; conservative, no online belief update",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "MAPPO with chance constraints converted to deterministic margins via CVaR/Bernstein is a possible principled alternative to the thesis's 97th-percentile margin."
+ },
+ {
+  "id": "P355",
+  "title": "Structural Dual Adaptation for Safe Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Bang-bang multiplier response causes oscillation and violations in PPO-Lag",
+    "quote": "SDLA replaces fixed-policy bang-bang switching with structured smooth feedback of bounded sensitivity."
+   },
+   {
+    "type": "inferred",
+    "text": "Theory only for tabular entropy-regularized policies; single constraint, single agent",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Smoother multiplier updates may fix the thesis's timid/oscillating MAPPO-Lagrangian."
+ },
+ {
+  "id": "P356",
+  "title": "Adaptive Safety Filtering for Frozen ACC Policies via Conformal Residual Calibration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Online updates do not preserve conformal validity premises",
+    "quote": "Empirical online updates do not automatically preserve these premises."
+   },
+   {
+    "type": "limitation",
+    "text": "No universal advantage of online adaptation over fixed margins",
+    "quote": "Selected fixed margins remain competitive, so the evidence does not establish a universal advantage for online adaptation."
+   },
+   {
+    "type": "future-work",
+    "text": "Larger libraries, estimated states, target hardware",
+    "quote": "Evidence remains limited to simulated ACC, an eight-model library, and simulatorstate access; larger libraries, estimated states, and targethardware evaluation remain future work."
+   },
+   {
+    "type": "limitation",
+    "text": "Fallback does not preserve safety premise",
+    "quote": "so premisepreserving fallback is not established."
+   }
+  ],
+  "thesis_relevance": "Conformal calibration of the dose predictor's residuals could correct particle-filter overconfidence; thesis's fallback (withdraw) also needs feasibility checking."
+ },
+ {
+  "id": "P357",
+  "title": "Optimistic Exploration for Risk-Averse Constrained Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Risk-aversion causes conservative exploration and sub-optimal policies",
+    "quote": "In general, risk-aversion leads to conservative exploration of the environment which typically results in converging to sub-optimal policies that fail to adequately maximise reward or, in some cases, fail to achieve the goal."
+   },
+   {
+    "type": "limitation",
+    "text": "No safe exploration guarantee during training",
+    "quote": "Similarly to the underlying algorithm, WCSAC, however, ORAC does not guarantee safe exploration but instead aims for safe policies at deployment."
+   },
+   {
+    "type": "future-work",
+    "text": "Adaptive switching optimism/conservatism; dynamic confidence bounds",
+    "quote": "In future work we aim to investigate an exploration approach that adaptively explores the environment switching between optimism and conservatism based on constraint satisfaction, to improve the safety during training."
+   }
+  ],
+  "thesis_relevance": "Explains the thesis's timid MAPPO-Lagrangian; optimistic reward bounds + conservative cost bounds could help learned policies beat the rule."
+ },
+ {
+  "id": "P358",
+  "title": "Beyond Rewards: Extended Evaluation Metrics for Safe Reinforcement Learning with PPO-Lagrangian",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Standard metrics overlook worst-case risk",
+    "quote": "Standard metrics often overlook worst-case risks, motivating the use of richer evaluation criteria."
+   },
+   {
+    "type": "limitation",
+    "text": "Stricter constraints trade efficiency; larger networks unstable",
+    "quote": "stricter constraints enhance safety at the expense of efficiency and larger networks introduce instability."
+   }
+  ],
+  "thesis_relevance": "Suggests reporting budget utilization ratio, CVaR and violation rate alongside success, as the thesis does with violation %."
+ },
+ {
+  "id": "P359",
+  "title": "A safe multi-agent reinforcement learning algorithm using constraint update projection approach",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated (title only)",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Unknown; potentially a safe MARL baseline alternative to MAPPO-Lagrangian."
+ },
+ {
+  "id": "P360",
+  "title": "Adaptive Shielding for Safe Reinforcement Learning under Hidden-Parameter Dynamics Shifts",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Adaptive methods lack explicit safety enforcement during adaptation",
+    "quote": "but typically do not provide explicit mechanisms for enforcing safety during this process."
+   },
+   {
+    "type": "limitation",
+    "text": "Guarantees rely on cost-structure assumptions; needs offline data; simulation only",
+    "quote": "Second, the method depends on an offline dataset to train the function encoder, which may limit applicability in settings without prior data. Third, our evaluation has so far been limited to simulated environments."
+   },
+   {
+    "type": "limitation",
+    "text": "False confidence outside modelling assumptions",
+    "quote": "Risks. A primary risk is false confidence: probabilistic safety guarantees may be over-trusted outside our modeling assumptions or when the offline data used to train the function encoder poorly covers extreme dynamics."
+   },
+   {
+    "type": "future-work",
+    "text": "Relax assumptions, physical robots",
+    "quote": "Future work will aim to address these limitations by relaxing modeling assumptions, reducing reliance on offline data, and extending evaluations to physical robotic platforms to assess scalability and real-world applicability."
+   }
+  ],
+  "thesis_relevance": "Hidden-parameter inference + conformal shield is structurally like the thesis's filter-based dose mask (hidden source position/activity); its false-confidence risk mirrors the thesis's overconfidence finding."
+ },
+ {
+  "id": "P361",
+  "title": "Action Masking Methods for Safe Reinforcement Learning in a Non-Stationary Configurable Environment",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Manually designed safety rules limit adaptability",
+    "quote": "Many approaches rely on manually designed or domain-specific safety rules, which may limit adaptability or require extensive prior knowledge."
+   }
+  ],
+  "thesis_relevance": "Hard vs soft annealed masking comparison is relevant to the thesis's hard mask design choice."
+ },
+ {
+  "id": "P362",
+  "title": "A Hamilton-Jacobi Reachability Framework with Soft Constraints for Safety-Critical Systems",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Hard constraints make solutions overly conservative or infeasible",
+    "quote": "However, they strictly enforce state constraints as inviolable, which can result in overly conservative or infeasible solutions in complex operational scenarios."
+   },
+   {
+    "type": "limitation",
+    "text": "CMDPs do not ensure persistent state-constraint satisfaction",
+    "quote": "However, standard CMDP formulations do not, in general, ensure persistent satisfaction of state constraints, which can limit their ability to treat hard and soft constraints concurrently [20], [21]."
+   },
+   {
+    "type": "limitation",
+    "text": "HJ suffers curse of dimensionality",
+    "quote": "However, this capability comes at a cost: HJ methods suffer from the curse of dimensionality, with computational complexity that scales exponentially with the state dimension."
+   },
+   {
+    "type": "future-work",
+    "text": "Other soft-constraint types and violation metrics",
+    "quote": "Future work will extend this framework to accommodate different types of soft constraints as well as alternative violation metrics."
+   }
+  ],
+  "thesis_relevance": "Soft constraint with bounded violation budget (augmented state z) is the HJ analogue of a cumulative dose budget; too high-dimensional for multi-robot + belief state."
+ },
+ {
+  "id": "P363",
+  "title": "Constraint-Aware Reinforcement Learning via Adaptive Action Scaling",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Hard to balance reward and cost within one policy",
+    "quote": "However, a core limitation of these methods is the difficulty of balancing reward and cost within a single policy."
+   },
+   {
+    "type": "assumption",
+    "text": "Monotonicity and safety of inaction",
+    "quote": "Our scaling mechanism assumes: (i) Monotonicity, where Qc (s, ρ⊙a) is expected to decrease as ρ → 0, and (ii) Safety of Inaction, where zero-magnitude actions are safer than highmagnitude ones."
+   },
+   {
+    "type": "future-work",
+    "text": "Auto-tune regulator hyperparameters; general constraints",
+    "quote": "A key direction for future work is to develop principled strategies for automatically tuning the regulator hyperparameters (λ and β) and to extend the approach beyond input-magnitude costs toward more general safety constraints."
+   },
+   {
+    "type": "inferred",
+    "text": "Safety-of-inaction fails for dose: standing still near a source accumulates dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "The inaction-is-safe assumption is violated in radiation fields, which motivates the thesis's explicit exit-dose reserve."
+ },
+ {
+  "id": "P364",
+  "title": "A Survey of Safe Reinforcement Learning and Constrained MDPs: A Technical Survey on Single-Agent and Multi-Agent Safety",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "SafeMARL is young with many open problems",
+    "quote": "While single-agent SafeRL is relatively well-studied, SafeMARL remains a young research area with many open problems ElSayed-Aly et al."
+   },
+   {
+    "type": "limitation",
+    "text": "Lagrangian penalty hard to tune",
+    "quote": "While straightforward, a drawback is that the penalty coefficient λ can be hard to tune"
+   },
+   {
+    "type": "open-problem",
+    "text": "Zero violations, partial observability, decentralized coordination open",
+    "quote": "We identified several open research problems that require further work: from guaranteeing zero violations to handling partial observability, and from fully decentralized safe coordination to safe learning in non-stationary multi-agent environments."
+   }
+  ],
+  "thesis_relevance": "Thesis addresses safe multi-robot coordination under partial observability with near-zero violations, listed here as open."
+ },
+ {
+  "id": "P365",
+  "title": "Fault Tolerant Multi-Agent Learning with Adversarial Budget Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Robustness to agent malfunctions underexplored",
+    "quote": "We study robustness to agent malfunctions in cooperative multi-agent reinforcement learning (MARL), a failure mode that is critical in practice yet underexplored in existing theory."
+   },
+   {
+    "type": "limitation",
+    "text": "Worst-case adversaries induce over-pessimism",
+    "quote": "However, adversaries that act in exact opposition to the agent’s objective often induce overly pessimistic behaviour, causing agents to proceed with excessive caution and degrading performance at higher levels of fault tolerance (Grau-Moya et al., 2018)."
+   },
+   {
+    "type": "limitation",
+    "text": "Guarantees do not extend to deep networks",
+    "quote": "While these guarantees do not extend directly to deep neural network parameterisations"
+   },
+   {
+    "type": "inferred",
+    "text": "Budget here is the adversary's fault budget, not agent resource; no agent self-withdrawal",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Relevant to robustness when a teammate withdraws or exhausts its budget; thesis could train with induced early withdrawals."
+ },
+ {
+  "id": "P366",
+  "title": "Tackling Uncertainties in Multi-Agent Reinforcement Learning through Integration of Agent Termination Dynamics",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Distributional RL in MARL is limited",
+    "quote": "While Distributional Reinforcement Learning has been successfully applied in single-agent settings to address risk and uncertainty, its application in MARL is substantially limited."
+   },
+   {
+    "type": "limitation",
+    "text": "Predicted distributions are wrong early in training",
+    "quote": "However, the predicted distributions are prone to errors at the initial phases of training because the policy has not yet explored and trained enough to predict accurate distributions."
+   },
+   {
+    "type": "limitation",
+    "text": "Credit for an agent's termination cannot be attributed to its own policy alone",
+    "quote": "in a cooperative environment, it is unrealistic to attribute the responsibility of an agent’s termination solely to the corresponding local policy, as the outcome is influenced by the actions of all agents."
+   },
+   {
+    "type": "future-work",
+    "text": "Integrate with constrained MARL with extrinsic constraints",
+    "quote": "The approach can be further be integrated with other constrained MARL approaches to test its robustness in environments with extrinsic safety constraints."
+   }
+  ],
+  "thesis_relevance": "Agent loss/termination as a team-level safety signal relates to robots exhausting dose budgets; credit-assignment point matters for thesis risk sharing."
+ },
+ {
+  "id": "P367",
+  "title": "Learning to Navigate Under Imperfect Perception: Conformalised Segmentation for Safe Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Safe RL assumes hazards perfectly observed",
+    "quote": "However, these approaches assume that hazards are perfectly captured in the agent’s observations, an assumption that rarely holds in practice."
+   },
+   {
+    "type": "limitation",
+    "text": "Uncertainty-aware perception lacks finite-sample guarantees",
+    "quote": "These uncertainty-aware approaches, albeit avoiding overconfident navigation decisions, remain inherently probabilistic: calibrated probabilities or variance estimates serve as useful heuristics but do not provide finite-sample guarantees."
+   },
+   {
+    "type": "future-work",
+    "text": "Multi-agent, partially observable, online calibration",
+    "quote": "Future work will explore extending COPPOL to multi-agent and partially-observable RL agents, also investigating online calibration and adaptive risk estimation to further enhance scalability and operational reliability."
+   }
+  ],
+  "thesis_relevance": "Strongly aligned: hazard field (here dose rate) is estimated, not observed; the thesis is a multi-agent POMDP case with a particle-filter hazard estimate but lacks conformal guarantees."
+ },
+ {
+  "id": "P368",
+  "title": "Safe multi-agent reinforcement learning for bimanual dexterous manipulation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Safe MARL for cooperative multi-robot control scarcely studied",
+    "quote": "While Safe Reinforcement Learning is integral to the robustness of robotic systems, the area of safe multi-agent reinforcement learning (MARL), cooperative control of multiple robots has been scarcely studied."
+   },
+   {
+    "type": "limitation",
+    "text": "Non-stationarity hinders updates satisfying safety constraints",
+    "quote": "However, the non-stationarity inherent in current algorithms hinders the precise updating of strategies to satisfy these safety constraints effectively."
+   }
+  ],
+  "thesis_relevance": "Individual + collective constraints parallel per-robot budgets; candidate baseline (MAC-PAO) beyond MAPPO-Lagrangian."
+ },
+ {
+  "id": "P369",
+  "title": "Safe Reinforcement Learning in Black-Box Environments via Adaptive Shielding",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Most shielding relies on prior knowledge",
+    "quote": "Despite major advances, a common challenge across these approaches is their reliance on some degree of prior knowledge about the environment, task, or safety concern—a strong assumption that is not generally applicable [41]."
+   },
+   {
+    "type": "limitation",
+    "text": "Tabular unsafe-feature recording limited to discrete/low-dim",
+    "quote": "However, the applicability of this approach is limited to discrete environments or extremely lowdimensional spaces."
+   },
+   {
+    "type": "future-work",
+    "text": "Meta-learning for faster activation; uncertainty in state estimation",
+    "quote": "Quantisation could reduce computational demands, enhancing applicability in computationally constrained domains, while using uncertainty quantification [1, 12] in state estimation could yield more robust policies."
+   }
+  ],
+  "thesis_relevance": "Thesis's shield uses physics-based prior knowledge (inverse-square dose model), the opposite design point; ADVICE points to uncertainty in state estimation, which the thesis has."
+ },
+ {
+  "id": "P370",
+  "title": "Safe Model-Based Multi-Agent Mean-Field Reinforcement Learning",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "MAPPO-Lagrangian does not guarantee hard constraints; MACPO expensive",
+    "quote": "MACPO is computationally expensive, while MAPPO-Lagrangian does not guarantee hard constraints for safety."
+   },
+   {
+    "type": "assumption",
+    "text": "Infinitely many homogeneous agents",
+    "quote": "This model assumes the limiting regime of infinitely many agents and homogeneity."
+   },
+   {
+    "type": "future-work",
+    "text": "Safety in search-and-rescue / firefighting robots in confined spaces",
+    "quote": "In the future, we believe that integrating safety considerations in intelligent multi-agent systems will have a crucial impact on various applications, such as autonomous ride-hailing, firefighting robots and drone/robot search-and-rescue operations in complex and confined spaces."
+   }
+  ],
+  "thesis_relevance": "Explicitly states MAPPO-Lagrangian lacks hard guarantees, supporting the thesis's hard mask; mean-field homogeneity does not fit 2-6 robots with unequal budgets."
+ },
+ {
+  "id": "P371",
+  "title": "Provably Learning Nash Policies in Constrained Markov Potential Games",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Strong duality fails in constrained Markov potential games; primal-dual unsafe",
+    "quote": "As we show, in contrast to the single-agent setting, however, CMPGs do not satisfy strong duality, rendering such approaches inapplicable and potentially unsafe."
+   },
+   {
+    "type": "limitation",
+    "text": "Constrained optimization becomes intractable with many agents",
+    "quote": "First, we show that a Nash policy can in principle be recovered by solving a constrained optimization problem, which, however, becomes intractable as the number of agents increases (Section 4)."
+   },
+   {
+    "type": "open-problem",
+    "text": "When primal-dual works in CMPGs",
+    "quote": "An interesting future question could be to understand under which conditions primal-dual methods may work for CMPGs."
+   }
+  ],
+  "thesis_relevance": "Theoretical reason why MAPPO-Lagrangian may misbehave in multi-agent constrained settings, consistent with the thesis's timid result."
+ },
+ {
+  "id": "P372",
+  "title": "Safe Offline Reinforcement Learning with Real-Time Budget Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most safe RL is online with risky violations during training",
+    "quote": "However, most existing works in the literature still focus on the online setting where risky violations of the safety budget are likely to be incurred during training."
+   },
+   {
+    "type": "limitation",
+    "text": "Lagrangian methods sensitive to initialization and learning rate",
+    "quote": "However, this kind of approaches can be sensitive to the initialization and the learning rate of Lagrange multipliers."
+   },
+   {
+    "type": "limitation",
+    "text": "Diffusion planning expensive at inference",
+    "quote": "Inheriting from the Diffuser method, our method would be more computationally expensive during inference than non-planning algorithms, due to the slow iterative trajectory generation of the diffusion model."
+   },
+   {
+    "type": "future-work",
+    "text": "Accelerate diffusion planning",
+    "quote": "In the future, we plan to study the technology for accelerating diffusion planning and explore other trajectory optimization frameworks to further improve the efficiency of TREBI."
+   }
+  ],
+  "thesis_relevance": "Budgets specified at deployment time relate to the thesis's unequal per-robot budgets; single agent."
+ },
+ {
+  "id": "P373",
+  "title": "DePAint: a decentralized safe multi-agent reinforcement learning algorithm considering peak and average constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Safe MARL relatively unexplored",
+    "quote": "The domain of safe multi-agent reinforcement learning (MARL), despite its potential applications in areas ranging from drone delivery and vehicle automation to the development of zero-energy communities, remains relatively unexplored."
+   },
+   {
+    "type": "limitation",
+    "text": "Central critic complexity grows with agents",
+    "quote": "However, as the number of agents increases, the complexity of the central critic’s architecture grows significantly, potentially leading to slower training times and higher memory requirements."
+   },
+   {
+    "type": "future-work",
+    "text": "Natural gradient, variance reduction, asynchronous learning, sparse rewards",
+    "quote": "Moreover, further work can be done to improve upon the algorithm’s performance in environments offering sparse and delayed rewards."
+   }
+  ],
+  "thesis_relevance": "Peak + average constraints per agent resemble per-step dose-rate and cumulative dose limits; decentralized alternative to CTDE MAPPO."
+ },
+ {
+  "id": "P374",
+  "title": "Safe Reinforcement Learning of Dynamic High-Dimensional Robotic Tasks: Navigation, Manipulation, Interaction",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Requires high-performance tracking and perfect perception",
+    "quote": "To ensure safety, we require a high-performance tracking controller and perfect perception e.g., from motion capture."
+   },
+   {
+    "type": "limitation",
+    "text": "Training real robots from scratch impractical",
+    "quote": "While, in principle, it would be possible to use ATACOM to train real robots from scratch, it is still problematic for various reasons."
+   },
+   {
+    "type": "limitation",
+    "text": "Simplified human model",
+    "quote": "Finally, in this work, we use a simplified model for HRI i.e., a simulated human unaware of the robot’s existence."
+   }
+  ],
+  "thesis_relevance": "Safety-by-construction action space depends on known constraints; the thesis's dose constraint depends on an uncertain estimate, which ATACOM does not handle."
+ },
+ {
+  "id": "P375",
+  "title": "On the Robustness of Safe Reinforcement Learning under Observational Perturbations",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Vulnerability of safe RL to observation perturbations unstudied",
+    "quote": "While many recent safe RL methods with deep policies can achieve outstanding constraint satisfaction in noise-free simulation environments, such a concern regarding their vulnerability under adversarial perturbations has not been studied in the safe RL setting."
+   },
+   {
+    "type": "limitation",
+    "text": "Adversarial training expensive and possibly unstable",
+    "quote": "One limitation of this work is that the adversarial training pipeline could be expensive for real-world RL applications because it requires to attack the behavior agents when collecting data."
+   },
+   {
+    "type": "future-work",
+    "text": "Robust training for off-policy safe RL",
+    "quote": "We leave the robust training framework for off-policy safe RL methods as future work."
+   }
+  ],
+  "thesis_relevance": "Thesis's filter errors act as observation perturbations of the belief; supports stress-testing the policy with biased estimates."
+ },
+ {
+  "id": "P376",
+  "title": "DESTA: A Framework for Safe Reinforcement Learning with Markov Games of Intervention",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Unknown-model CMDP remains a challenge",
+    "quote": "Although c-MDP can be solved if the model is known, extending this formalism to settings in which the model is unknown remains a challenge [13]."
+   },
+   {
+    "type": "limitation",
+    "text": "Safety layers do not handle long-term consequences of actions",
+    "quote": "In [17], a safety layer is introduced that acts on top of an RL agent’s possibly unsafe actions to prevent safety violations though their framework does not deal with negative long-term consequences of an action."
+   },
+   {
+    "type": "limitation",
+    "text": "Conservative transformations undermine task performance",
+    "quote": "A significant drawback of these approaches is their conservativeness undermines task performance (the extent of the sub-optimality has yet to be characterised)."
+   }
+  ],
+  "thesis_relevance": "Thesis's exit-dose term is exactly a fix for one-step safety layers ignoring long-term consequences; a learned safety agent could replace the fixed mask."
+ },
+ {
+  "id": "P377",
+  "title": "Projection-Based Constrained Policy Optimization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Lagrangian/FPO need extensive tuning; PDO too conservative",
+    "quote": "However, this incurs the cost of extensive hyperparameter tuning."
+   },
+   {
+    "type": "limitation",
+    "text": "No guarantee when updating a constraint-violating policy",
+    "quote": "Theorem 3.1 does not give the guarantee on updating a constraint-violating policy."
+   },
+   {
+    "type": "future-work",
+    "text": "Fisher-informed projection; expert demonstrations to reduce samples",
+    "quote": "(2) using expert demonstration or other domain knowledge to reduce the sample complexity."
+   }
+  ],
+  "thesis_relevance": "Constraints in expectation only; suggestion to use domain knowledge/demonstrations supports warm-starting MAPPO from the rule-based policy."
+ },
+ {
+  "id": "P378",
+  "title": "Benchmarking Safe Exploration in Deep Reinforcement Learning",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated (title only); P364 quotes it as calling for stronger/better-tuned constrained RL algorithms",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Benchmark origin of PPO-Lagrangian baselines used by the thesis."
+ },
+ {
+  "id": "P379",
+  "title": "Worst Cases Policy Gradients",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Expectation maximization ignores rare catastrophic events",
+    "quote": "Maximizing expectation, however, is not risk-sensitive as it does not explicitly penalize rare occurrences of catastrophic events."
+   },
+   {
+    "type": "future-work",
+    "text": "Heavy-tailed/mixture uncertainty; automatic selection of risk level",
+    "quote": "Modeling uncertainty with heavy-tailed or mixture distributions could be explored in the future. It would also be interesting to see if the automatic selection of α would be possible for completing a maneuver while minimizing risk exposure."
+   }
+  ],
+  "thesis_relevance": "Automatic selection of risk level maps to choosing the thesis's percentile (97th) adaptively."
+ },
+ {
+  "id": "P380",
+  "title": "Lyapunov-based Safe Policy Optimization for Continuous Control",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Lagrangian approach gives no safety guarantee during training",
+    "quote": "Although safety is ensured when the policy converges asymptotically, a major drawback of this approach is that it makes no guarantee with regards to the safety of the policies generated during training."
+   },
+   {
+    "type": "future-work",
+    "text": "Lyapunov properties for stability; model-based extension",
+    "quote": "Future work includes 1) further exploration of Lyapunov function properties to improve training stability and safety, 2) more efficient Lyapunov-based Safe Policy Optimization for Continuous Control use of Lyapunov constraints in constrained policy optimization, and 3) extensions of the Lyapunov-approach to the model-based setting to better utilize the agent’s dynamics."
+   }
+  ],
+  "thesis_relevance": "a-projection safety layer is a learned-cost analogue of the thesis's model-based mask; model-based extension is what the thesis effectively does with the dose model."
+ },
+ {
+  "id": "P381",
+  "title": "Proximal Policy Optimization Algorithms",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Room for scalable, data-efficient, robust methods",
+    "quote": "However, there is room for improvement in developing a method that is scalable (to large models and parallel implementations), data efficient, and robust (i.e., successful on a variety of problems without hyperparameter tuning)."
+   },
+   {
+    "type": "inferred",
+    "text": "No constraint handling",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Base algorithm of MAPPO; no safety gap relevant beyond being the learner."
+ }
+]
