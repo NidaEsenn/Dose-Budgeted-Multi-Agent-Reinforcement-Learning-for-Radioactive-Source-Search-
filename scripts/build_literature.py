@@ -84,7 +84,7 @@ def main(src):
                 hit["clusters"].append(p.get("cluster"))
             hit["topics"] = list(dict.fromkeys((hit.get("topics") or []) + (p.get("topics") or [])))
             hit["relevance"] = max(int(hit.get("relevance") or 1), int(p.get("relevance") or 1))
-            for k in ("doi", "openalex_id", "url", "venue", "cited_by_count"):
+            for k in ("doi", "openalex_id", "s2_id", "arxiv", "url", "venue", "cited_by_count"):
                 hit[k] = hit.get(k) or p.get(k)
         for k in keys:
             if k[1]:
@@ -123,7 +123,7 @@ def main(src):
     with open(f"{OUT}/papers.json", "w") as f:
         json.dump(merged, f, indent=1, ensure_ascii=False)
     cols = ["id", "bibkey", "clusters", "relevance", "year", "authors", "title", "venue", "doi",
-            "openalex_id", "url", "cited_by_count", "topics", "summary", "relation"]
+            "openalex_id", "s2_id", "url", "cited_by_count", "topics", "summary", "relation"]
     with open(f"{OUT}/papers.csv", "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(cols)

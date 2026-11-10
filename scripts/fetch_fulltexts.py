@@ -68,6 +68,15 @@ def candidates(p, rec):
                 if m:
                     urls.insert(0, f"https://arxiv.org/pdf/{m.group(1)}")
     doi = p.get("doi") or ""
+    if p.get("arxiv"):
+        urls.insert(0, f"https://arxiv.org/pdf/{p['arxiv']}")
+    if p.get("s2_id") and not doi:
+        r = get(f"https://api.semanticscholar.org/graph/v1/paper/{p['s2_id']}?fields=openAccessPdf,externalIds")
+        if r is not None and r.ok:
+            j = r.json()
+            u = (j.get("openAccessPdf") or {}).get("url")
+            if u:
+                urls.append(u)
     m = re.search(r"arxiv\.(\d{4}\.\d{4,5})", doi)
     if m:
         urls.insert(0, f"https://arxiv.org/pdf/{m.group(1)}")
