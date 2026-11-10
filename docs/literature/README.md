@@ -2,7 +2,7 @@
 
 234 papers, every one returned by a scholarly database search (OpenAlex and others) with an OpenAlex id or DOI. Summaries are based on titles and abstracts only; read the paper before citing a detail.
 
-**Analysis:** `GAP_ANALYSIS.md` (gaps, recommended framing, checks still owed) and `CLOSEST_WORKS.md` (overlap matrix of the closest works). Raw per-search results: `raw/`.
+**Analysis:** `RESEARCH_GAPS.md` (ideas from all 234 papers' own limitations and future work), `GAP_ANALYSIS.md` (novelty framing) and `CLOSEST_WORKS.md` (overlap matrix of the closest works). Raw per-search results: `raw/`.
 
 Files: `papers.csv` (spreadsheet), `papers.json` (full records), `references.bib` (BibTeX; authors are first author + et al., complete them before submission).
 

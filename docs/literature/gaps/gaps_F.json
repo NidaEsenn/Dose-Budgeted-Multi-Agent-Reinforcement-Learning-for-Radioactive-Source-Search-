@@ -1,0 +1,576 @@
+[
+ {
+  "id": "P205",
+  "title": "Path-Based Sensors: Paths as Sensors, Bayesian Updates, and Shannon Information Gathering",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Robot-destroying hazards are invisible; only survival of a whole path is observed, so the location of destruction is unknown",
+    "quote": "if a robot is destroyed, then we have no idea where, along the path, its destruction has occurred"
+   },
+   {
+    "type": "open-problem",
+    "text": "Losing a robot also loses the information it would have gathered about victims/targets",
+    "quote": "new information about victims is lost whenever a robot is destroyed"
+   },
+   {
+    "type": "inferred",
+    "text": "Hazard is binary (destroy/survive) per path; no cumulative, graded dose budget or ability to withdraw before failure",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest conceptual ancestor of budget-limited robot loss; the thesis replaces binary destruction with a cumulative dose budget, predicted exposure and a withdraw action."
+ },
+ {
+  "id": "P206",
+  "title": "Learning about physical parameters: the importance of model discrepancy",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Ignoring model discrepancy gives biased, overconfident parameter estimates",
+    "quote": "an analysis that does not account for model discrepancy may lead to biased and over-confident parameter estimates and predictions"
+   },
+   {
+    "type": "open-problem",
+    "text": "Discrepancy is confounded with calibration parameters; only meaningful priors resolve it",
+    "quote": "being confounded with calibration parameters, which will only be resolved with meaningful priors"
+   },
+   {
+    "type": "limitation",
+    "text": "GP discrepancy fixes predictions in data range but true parameters need realistic priors",
+    "quote": "only with realistic priors on the model discrepancy do we uncover the true parameter values"
+   }
+  ],
+  "thesis_relevance": "Directly explains the thesis's overconfident filter under spatially correlated model error and suggests a GP discrepancy term in the likelihood."
+ },
+ {
+  "id": "P207",
+  "title": "A decentralized control policy for adaptive information gathering in hazardous environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Hazards at unknown positions cause robots to fail (binary failure model)",
+    "quote": "avoiding hazards at unknown positions that cause the robots to fail"
+   },
+   {
+    "type": "inferred",
+    "text": "Hazards are separate from the targets; in the thesis the target itself is the hazard and exposure is cumulative",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-robot information gathering with robot loss supports the thesis framing, but its hazard is binary and unrelated to the target, not a dose budget tied to the source estimate."
+ },
+ {
+  "id": "P208",
+  "title": "Probabilistic Multi-Robot Gas Source Localization with Uncalibrated Sensors: A Distributed Estimation Approach",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior work assumes homogeneous sensors / simple noise models",
+    "quote": "these approaches often assume homogeneous sensors or rely on simple noise models, which limit their applicability in realistic scenarios"
+   },
+   {
+    "type": "assumption",
+    "text": "Product-of-experts fusion assumes conditional independence between robot observations",
+    "quote": "this formulation assumes followed by normalization, that i=1 conditional independence between robot observations"
+   },
+   {
+    "type": "future-work",
+    "text": "Reduce communication by sending incremental belief updates",
+    "quote": "Future work will focus on improving communication efficiency by reducing the amount of data exchanged between robots"
+   },
+   {
+    "type": "future-work",
+    "text": "Real-world experiments still needed",
+    "quote": "extending the framework to real-world experiments remains an important direction for further validation"
+   }
+  ],
+  "thesis_relevance": "The conditional-independence assumption is exactly what spatially correlated model error breaks, which is the cause of the thesis's filter overconfidence; detector heterogeneity is not modelled in the thesis."
+ },
+ {
+  "id": "P209",
+  "title": "SniffySquad: Patchiness-Aware Gas Source Localization with Multi-Robot Collaboration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing methods rely on simplified plume models and fail in real patchy fields",
+    "quote": "These approaches typically excel in idealized, simulated environments but fall short in real-world gas environments"
+   },
+   {
+    "type": "limitation",
+    "text": "Parametric models ignore stochasticity and fail with obstacles/multiple sources",
+    "quote": "these methods fail under the existence of multiple sources or the inclusion of walls and obstacles"
+   },
+   {
+    "type": "limitation",
+    "text": "Performance drops with distance from source and weak sources",
+    "quote": "when it comes to a distance larger than 70m, we notice that the success rate quickly decreases"
+   },
+   {
+    "type": "inferred",
+    "text": "Role adaptation (explore/exploit) uses a fixed temperature; no safety constraint or exposure cost on robots",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its collaborative role adaptation is a hand-designed counterpart to learned coordination, a possible baseline for whether MAPPO can beat a rule; it has no exposure budget."
+ },
+ {
+  "id": "P210",
+  "title": "Bayesian Decentralized Decision-Making for Multi-Robot Systems: Sample-Efficient Estimation of Event Rates",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "No negative consequences of hazardous events are modelled",
+    "quote": "we do not actually model any negative consequences resulting from event encounters here (i.e., robots always survive events)"
+   },
+   {
+    "type": "limitation",
+    "text": "Belief sharing led to wrong consensus; early biases",
+    "quote": "Additional communication of robot beliefs leads to a significant number of wrong opinions"
+   },
+   {
+    "type": "limitation",
+    "text": "Robots underestimate interarrival times, biasing early decisions",
+    "quote": "Robots tend to underestimate interarrival times, biasing early decisions"
+   },
+   {
+    "type": "open-problem",
+    "text": "Prior selection under uncertain rates needs systematic study",
+    "quote": "A more systematic study is needed to guide prior selection under uncertain event rates"
+   },
+   {
+    "type": "future-work",
+    "text": "More realistic hazards and noise, delayed feedback, sequential tasks",
+    "quote": "Future research should explore further challenges, including a more realistic model of hazards and noise"
+   }
+  ],
+  "thesis_relevance": "Explicitly calls for hazards with consequences and risk-aware sampling; the thesis's cumulative dose budget with consequences is a direct step in that direction."
+ },
+ {
+  "id": "P211",
+  "title": "Multi-source plume tracing via multi-agent reinforcement learning under common UAV-faults",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior RL plume work is single-agent, noise-free, single environment",
+    "quote": "their study focuses on a single-agent framework without noise tolerance and is limited to one training environment"
+   },
+   {
+    "type": "limitation",
+    "text": "Gaussian dispersion model is inaccurate in complex terrain/urban settings",
+    "quote": "GDM has notable limitations, including reduced accuracy in complex terrains and urban environments"
+   },
+   {
+    "type": "limitation",
+    "text": "Source verification out of scope",
+    "quote": "source verification algorithms is outside the scope of this study"
+   },
+   {
+    "type": "inferred",
+    "text": "Agent failures are injected exogenously (battery, hardware), not caused by exposure; no safety constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shows MARL robust to random agent dropout; the thesis instead makes dropout (withdraw / budget exhaustion) endogenous and constrained."
+ },
+ {
+  "id": "P212",
+  "title": "Improved Socialtaxis for information-theoretic source search using cooperative multiple agents in turbulent environments",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Summary only; no stated gaps. Uses connectivity preservation and greedy sequential decisions, no exposure cost",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "A cooperative infotaxis baseline (RBPF, sequential greedy) that the thesis's rule or learned policy could be compared against; none stated."
+ },
+ {
+  "id": "P213",
+  "title": "Searching for a source without gradients: how good is infotaxis and how to beat it",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Exact POMDP solution infeasible; approximate methods do not scale",
+    "quote": "Approximate solution methods exist [14–17], but scalability remains an issue"
+   },
+   {
+    "type": "assumption",
+    "text": "Agent knows the observation model exactly",
+    "quote": "The agent knows how observations are generated (the model)"
+   },
+   {
+    "type": "open-problem",
+    "text": "Effect of dimensionality on infotaxis was unexplored",
+    "quote": "whether infotaxis generalizes well to high dimensional spaces remain vastly unexplored"
+   },
+   {
+    "type": "inferred",
+    "text": "Single agent, no safety/exposure constraint; DRL only beats infotaxis by a small margin",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "The perfect-model assumption is what the thesis shows failing under correlated error; the small DRL margin over infotaxis is a caution for whether learned coordination can beat a rule."
+ },
+ {
+  "id": "P214",
+  "title": "Risk-Aware Path Planning for Unmanned Aerial Systems in a Spreading Wildfire",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Forecast model of inadequate accuracy and sensor conflict create ignorance",
+    "quote": "a computational forecasting agent that uses a fire evolution model of inadequate accuracy"
+   },
+   {
+    "type": "inferred",
+    "text": "Chance constraint is on instantaneous keep-out zone, not a cumulative non-renewable budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Chance-constrained planning under an imperfect hazard model is the single-agent analogue of the thesis's percentile-based safety mask."
+ },
+ {
+  "id": "P215",
+  "title": "PDE solution to UAV/UGV trajectory planning problem by spatio-temporal estimation during wildfires",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Hazard itself threatens robots; paths must avert risk while completing mission",
+    "quote": "wildfires themselves pose risk to the UAVs/UGVs and their paths should be planned to avert the risk as well as complete the mission"
+   },
+   {
+    "type": "inferred",
+    "text": "Validated only in numerical simulation; risk is a field cost, not a cumulative budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Estimate-dependent risk functions in planning support the thesis approach; no budget or multi-robot risk sharing."
+ },
+ {
+  "id": "P216",
+  "title": "Cooperative information-driven source search and estimation for multiple agents",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Summary only; compares non-, passive and negotiated coordination with minimal data sharing; no exposure constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Gives a coordination taxonomy (non/passive/negotiated) useful for framing whether learned coordination beats rule-based coordination; none stated."
+ },
+ {
+  "id": "P217",
+  "title": "Model-based gas source localization strategy for a cooperative multi-robot system",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Summary only; explicitly models dispersion model uncertainty in a PDE-based approach",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "One of few multi-robot works that put model uncertainty into the estimator, a template for inflating thesis filter uncertainty; none stated."
+ },
+ {
+  "id": "P218",
+  "title": "Information-Based Search for an Atmospheric Release Using a Mobile Robot: Algorithm and Experiments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior information-based experiments used smooth sources and known parameters",
+    "quote": "they have assumed to be known dispersion parameters and source strengths"
+   },
+   {
+    "type": "assumption",
+    "text": "Source term assumed constant",
+    "quote": "it is also assumed that the source term is constant"
+   },
+   {
+    "type": "assumption",
+    "text": "Good prior assumed for model parameters",
+    "quote": "It is assumed that a good prior can be provided for those parameters"
+   },
+   {
+    "type": "limitation",
+    "text": "Strength estimate coupled with other unknown parameters",
+    "quote": "The strength estimate can be dependent on several of the unknown parameters due to coupling"
+   },
+   {
+    "type": "future-work",
+    "text": "Outdoor tests with aerial vehicle",
+    "quote": "In the future, a similar configuration will be developed for outdoor tests using an aerial vehicle"
+   }
+  ],
+  "thesis_relevance": "Location-strength coupling mirrors the thesis's position-activity estimate on which dose predictions depend; single robot, no exposure."
+ },
+ {
+  "id": "P219",
+  "title": "Autonomous Multi-Robot Search for a Hazardous Source in a Turbulent Environment",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Particle filter for a static parameter suffers depletion",
+    "quote": "Sequential estimation of the source posterior PDF using the particle filter is problematic when the state (the source parameter vector) is random, but stationary"
+   },
+   {
+    "type": "assumption",
+    "text": "All-to-all communication, no delay/bandwidth limit",
+    "quote": "ignoring the time-delays and bandwidth limitations"
+   },
+   {
+    "type": "future-work",
+    "text": "Distributed estimation and control with realistic networks",
+    "quote": "one could explore distributed, rather than centralised, source parameter estimation and robot control"
+   },
+   {
+    "type": "future-work",
+    "text": "Search with obstacles and known map needs new dispersion model",
+    "quote": "The search in an area with obstacles and known map would be another complementary future research direction"
+   },
+   {
+    "type": "limitation",
+    "text": "Diminishing returns from more robots",
+    "quote": "a diminishing return on increasing the number of platforms in formation"
+   }
+  ],
+  "thesis_relevance": "Particle depletion for a static source is a likely contributor to the thesis's overconfidence; the obstacle-and-map setting it names as future work is the thesis setting."
+ },
+ {
+  "id": "P220",
+  "title": "Multi-agent search for source localization in a turbulent medium",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Summary only; distributed infotaxis maximizing team information gain, no safety constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Information-gain team baseline; none stated."
+ },
+ {
+  "id": "P221",
+  "title": "Bayesian Calibration of Inexact Computer Models",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Calibration parameter left undefined, posterior suboptimally broad",
+    "quote": "This results in an issue, where the posterior of the parameter is suboptimally broad"
+   },
+   {
+    "type": "open-problem",
+    "text": "No accepted alternative existed",
+    "quote": "There has been no generally accepted alternatives to date"
+   }
+  ],
+  "thesis_relevance": "Offers an orthogonal-bias prior that could let the thesis add a discrepancy term without washing out the source-parameter posterior."
+ },
+ {
+  "id": "P222",
+  "title": "A Bayesian approach to improved calibration and prediction of groundwater models with structural error",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Ignoring structural error leads to parameter compensation and overconfident prediction",
+    "quote": "parameter compensation for model structural error leads to biased, overconfident prediction under changing pumping condition"
+   },
+   {
+    "type": "open-problem",
+    "text": "Explicit treatment of structural error is needed where decisions depend on predictions",
+    "quote": "especially in circumstances where subsequent decision‐making and risk analysis require accurate prediction and uncertainty quantification"
+   }
+  ],
+  "thesis_relevance": "Directly supports adding a GP error model so that the thesis's dose predictions (used for safety decisions) are calibrated."
+ },
+ {
+  "id": "P223",
+  "title": "Multi-robot gas leakage source localization based on deep reinforcement learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Single robot struggles in complex environments with turbulence and obstacles",
+    "quote": "Achieving this with a single robot in complex environments, however, remains challenging"
+   },
+   {
+    "type": "inferred",
+    "text": "Reports first-robot success only; no exposure or safety metric",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-robot DRL search with obstacles, but no safety or budget; the thesis adds the constraint."
+ },
+ {
+  "id": "P224",
+  "title": "Odor Source Localization in Obstacle Regions Using Switching Planning Algorithms with a Switching Framework",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Dispersion models are almost impossible to build in complex geometry",
+    "quote": "it is almost impossible to construct the dispersion model of the odor plume in practical situations"
+   },
+   {
+    "type": "open-problem",
+    "text": "Dynamically balancing exploration and exploitation is desired",
+    "quote": "dynamically modifying the robot's balance of emphasis between exploration and exploitation is desired"
+   }
+  ],
+  "thesis_relevance": "The model-building problem in obstacle regions parallels the thesis's model error from obstacle attenuation; a switching rule is another rule-based baseline."
+ },
+ {
+  "id": "P225",
+  "title": "Humanitarian demining for the clearance of landmine-affected areas",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Search strategy under risk has been understudied relative to detector hardware",
+    "quote": "the search strategy itself to decide where to explore and which route to follow has been understudied"
+   },
+   {
+    "type": "limitation",
+    "text": "Operational cost forces agents to abandon the task early",
+    "quote": "The intrinsic operational cost often forces agents to abandon the task before its completion"
+   }
+  ],
+  "thesis_relevance": "Early abandonment under cost is the analogue of the thesis's withdraw action; supports treating withdrawal as a planned decision."
+ },
+ {
+  "id": "P226",
+  "title": "Resilient Active Information Acquisition With Teams of Robots",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Little work robustifies information acquisition against sensor-disabling failures",
+    "quote": "most robotics research places no emphasis on robustifying information acquisition against attacks (or failures)"
+   },
+   {
+    "type": "assumption",
+    "text": "Upper bound on number of attacks known and constant",
+    "quote": "The upper-bound to the number of attacks is assumed known and constant"
+   },
+   {
+    "type": "assumption",
+    "text": "Centralized communication",
+    "quote": "We assume centralized communication"
+   },
+   {
+    "type": "open-problem",
+    "text": "Tightness of the bounds is open",
+    "quote": "the tightness of Theorem 1’s bounds is an open problem"
+   },
+   {
+    "type": "future-work",
+    "text": "Extend to distributed settings",
+    "quote": "Future work includes extending the proposed framework and algorithms to distributed settings"
+   }
+  ],
+  "thesis_relevance": "Planning for losing robots fits the thesis's withdrawals and budget exhaustion; in the thesis, losses are endogenous and predictable from dose rather than adversarial."
+ },
+ {
+  "id": "P227",
+  "title": "Entrotaxis as a strategy for autonomous search and source reconstruction in turbulent conditions",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Single agent; compares only search time and computation, no safety or exposure",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Cheap information objective that could replace costlier infotaxis in the thesis's rule-based policy; none stated."
+ },
+ {
+  "id": "P228",
+  "title": "A review of source term estimation methods for atmospheric dispersion events using static or mobile sensors",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Review ends with current limitations and recommendations (content not in digest)",
+    "quote": "The review is concluded with a discussion on the current limitations of the state of the art and recommendations for future research"
+   }
+  ],
+  "thesis_relevance": "Covers CBR source term estimation including radiological; the specific limitations are not visible in the abstract."
+ },
+ {
+  "id": "P229",
+  "title": "RESCUER: Development of a Modular CBRN Robot for Intervention, Sampling, and Situation Awareness",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Robot contamination is a top concern; requires decontamination design",
+    "quote": "prevention of robot contamination is always of top priority"
+   },
+   {
+    "type": "inferred",
+    "text": "Hardware/system paper; no autonomy or exposure-budget planning",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Gives a real-world motive for limiting robot exposure; it is about hardware, not planning."
+ },
+ {
+  "id": "P230",
+  "title": "Multi-Robot gas-source localization based on reinforcement learning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Early MARL; only strategy sharing vs not, simulated advection-diffusion, no safety",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Early precedent that shared policies help multi-robot search; none stated."
+ },
+ {
+  "id": "P231",
+  "title": "Projected needs for robot-assisted CBRN incidents",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Responders list desirements and known shortcomings of existing systems",
+    "quote": "idealized capabilities that responders expressed interest in or address known shortcomings"
+   }
+  ],
+  "thesis_relevance": "Draws on Fukushima lessons to justify robot exposure limits and early withdrawal; the specific needs are not in the digest."
+ },
+ {
+  "id": "P232",
+  "title": "Unmanned multi-robot CBRNE reconnaissance with mobile manipulation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Environment not known a priori; randomized path planning",
+    "quote": "Unlike in most industrial applications the environment is not known a priori"
+   },
+   {
+    "type": "inferred",
+    "text": "Only preliminary real-world experiments; no autonomous source search or dose accounting",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Field multi-robot CBRNE system without exposure-aware autonomy, a gap the thesis addresses in simulation."
+ }
+]

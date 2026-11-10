@@ -1,0 +1,790 @@
+[
+ {
+  "id": "P001",
+  "title": "Physics-Guided Robotic Radiation Source Localization Along Arbitrary Measurement Paths in Unstructured Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Active search that approaches the source raises robot radiation damage risk",
+    "quote": "However, adaptive planning with active search causes robots to gradually approach the radiation source, which is potentially unsafe and increases the chance of radiation damage to robots"
+   },
+   {
+    "type": "open-problem",
+    "text": "Minimizing robot exposure (ALARP) is a stated challenge of robotic RSL",
+    "quote": "Another challenge of robotic RSL is minimizing radiation exposure for a robot from an As Low As Reasonably Practicable (ALARP) perspective"
+   },
+   {
+    "type": "limitation",
+    "text": "Low-risk path planning is left to the user; method does not plan",
+    "quote": "the low-risk robot path based on this “advanced perception information” is intended to be planned by the user"
+   },
+   {
+    "type": "limitation",
+    "text": "Single ground robot, 2D, single source",
+    "quote": "The proposed RSL framework uses only a single ground robot to estimate the 2D location of the radiation source."
+   },
+   {
+    "type": "limitation",
+    "text": "No multi-source or source-absence handling",
+    "quote": "it is currently restricted to single-source localization and does not account for multisource scenarios or source-absence classification"
+   },
+   {
+    "type": "limitation",
+    "text": "Real experiments only lab scale; no adaptive lookback window",
+    "quote": "experiments with a real radiation source, detector, and robot were conducted only in lab-scale indoor environments"
+   },
+   {
+    "type": "future-work",
+    "text": "Extend to heterogeneous multi-robot teams in 3D",
+    "quote": "The proposed method can be extended to operate with heterogeneous multi-robot teams, including aerial robots, in 3D environments."
+   },
+   {
+    "type": "future-work",
+    "text": "Validate in large-scale environments",
+    "quote": "Demonstrating and validating this method in large-scale practical environments is a remaining challenge for industry-level deployment."
+   },
+   {
+    "type": "future-work",
+    "text": "Multi-source failures (close / imbalanced sources) unresolved",
+    "quote": "In future research, the method for multi-source RSL needs to be enhanced to address failures"
+   },
+   {
+    "type": "inferred",
+    "text": "Dose is treated as a qualitative risk; no quantitative dose budget or exit constraint is enforced",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly motivates the thesis: it names approach-induced robot dose as the core risk and leaves safe path planning and multi-robot teams open, which the thesis' dose-budgeted multi-robot safety layer addresses."
+ },
+ {
+  "id": "P002",
+  "title": "Localizing multiple radiation sources actively with a particle filter",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Weak sources not reliably localized",
+    "quote": "at present, however, the method is unable to reliably localize sources that have a relatively low intensity"
+   },
+   {
+    "type": "limitation",
+    "text": "Weakest source missed; detector directionality neglected",
+    "quote": "The main drawback lies in that the weakest source, S3 , is not found each time."
+   },
+   {
+    "type": "assumption",
+    "text": "Attenuation ignored (air only, short range)",
+    "quote": "the attenuation effect can be ignored"
+   },
+   {
+    "type": "assumption",
+    "text": "Static sources, decay ignored",
+    "quote": "we assume the system to be stationary"
+   },
+   {
+    "type": "limitation",
+    "text": "Needs a priori map, accurate RTK-GNSS, 2D sources; cannot manage attenuation in dense obstacles",
+    "quote": "the inability to manage the radiation attenuation in potentially dense obsta"
+   },
+   {
+    "type": "future-work",
+    "text": "Improve credibility/robustness and platform autonomy (lidar SLAM)",
+    "quote": "additional research has been planned to increase the credibility and robustness of the procedure and to improve the robotic platform autonomy"
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot, no dose accounting; robot exposure not considered at all",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shares the thesis' particle-filter backbone; its ignored attenuation and model-mismatch issues relate to the thesis finding of filter overconfidence under correlated model error, but it has no dose or multi-robot element."
+ },
+ {
+  "id": "P003",
+  "title": "Multi-Agent Deep Reinforcement Learning for Radiation Localization",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Single-agent methods do not extend directly to multi-agent (scalability, non-stationarity, credit assignment)",
+    "quote": "multi-agent frameworks cannot be effectively directly extended from systems designed to be single-agent algorithms for localization tasks due to \"scalability\", \"environment non-stationarity\", and \"credit assignment\" challenges"
+   },
+   {
+    "type": "limitation",
+    "text": "Existing multi-agent methods ignore obstructions/noise and need much more training",
+    "quote": "Current multi-agent methods, while effective, fail to address complex environments where signal-blocking obstructions and signal noise are present, and require a significant increase in training time"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior localization relies on pre-existing environment knowledge",
+    "quote": "rely on pre-existing knowledge of the environment, reducing flexibility"
+   },
+   {
+    "type": "inferred",
+    "text": "No dose budget or safety constraint on agents mentioned",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest MARL predecessor (RAD-TEAM); the thesis adds per-robot hard dose budgets, exit feasibility and a safety layer that RAD-TEAM does not consider."
+ },
+ {
+  "id": "P004",
+  "title": "Real-Time Avoidance of Ionising Radiation Using Layered Costmaps for Mobile Robots",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Robots in nuclear environments do not practice ALARP",
+    "quote": "Robots destined for nuclear environments currently do not practice ALARP."
+   },
+   {
+    "type": "limitation",
+    "text": "Prior dose-avoidance planning assumes full a priori radiation field knowledge",
+    "quote": "they all assume total a priori knowledge of the radiation ﬁeld"
+   },
+   {
+    "type": "assumption",
+    "text": "Constant linear velocity / constant cell traversal time",
+    "quote": "This work assumes a constant linear velocity to simplify demonstration"
+   },
+   {
+    "type": "limitation",
+    "text": "Costmap capped at 0-255 integer values, limits fidelity",
+    "quote": "both the monolithic and individual layers are limited to integer values ranging from 0 to 255 in each cell"
+   },
+   {
+    "type": "open-problem",
+    "text": "Inflation of radiation cost must cope with fluctuating values and gradients",
+    "quote": "for radiation, it must contend with ﬂuctuating values of radiation intensity and adequately account for gradients"
+   },
+   {
+    "type": "open-problem",
+    "text": "Variable speed risky in unknown fields (occluded source surprises)",
+    "quote": "the robot is exposed to a occluded source and accelerates into the region of high radiation before path planning has accounted for the new information"
+   },
+   {
+    "type": "inferred",
+    "text": "Avoidance is soft cost-shaping from interpolated observations; no hard cumulative budget, no uncertainty-aware (percentile) prediction, single robot, not a search task",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis motivation (robots should limit dose) and is a natural soft-cost baseline; the thesis goes further with a hard budget and uncertainty-quantile dose prediction including the exit path."
+ },
+ {
+  "id": "P005",
+  "title": "Proximal Policy Optimization for Radiation Source Search",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Single detector faces weak sources, multiple sources, background and obstructions",
+    "quote": "there are numerous challenges to overcome such as weak source intensity, multiple sources, background radiation, and the presence of obstructions"
+   },
+   {
+    "type": "limitation",
+    "text": "Studied only single detector and single source",
+    "quote": "for a single detector and single source"
+   },
+   {
+    "type": "inferred",
+    "text": "No dose constraint; reward is search time only",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Uses the same 20x20 m randomized environment idea; the thesis extends this line to multiple robots with dose budgets."
+ },
+ {
+  "id": "P006",
+  "title": "Robotic Exploration of an Unknown Nuclear Environment Using Radiation Informed Autonomous Navigation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Broken-down robots fail missions and block routes",
+    "quote": "Broken down robots present a real problem: they not only cause the mission to fail but they can block access routes for future missions."
+   },
+   {
+    "type": "open-problem",
+    "text": "No prior autonomous gamma avoidance capability",
+    "quote": "Until now, such robots have had no autonomous gamma radiation avoidance capabilities."
+   },
+   {
+    "type": "inferred",
+    "text": "Navigation between user-defined waypoints, not active source search; no hard budget or exit guarantee",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivates exit feasibility: a robot stranded by dose blocks future access, which the thesis' reserve-for-exit constraint and withdraw action target."
+ },
+ {
+  "id": "P007",
+  "title": "SACCL: A reinforcement learning-based approach for radiation source localization",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Robotic systems struggle to adapt to unfamiliar complex environments",
+    "quote": "existing robotic systems often struggle to adapt to unfamiliar and complex environments"
+   },
+   {
+    "type": "inferred",
+    "text": "Adaptive speed is tuned for localization, not dose; single agent with no exposure constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Single-agent RL baseline; no dose budgets, so it does not close the thesis gap."
+ },
+ {
+  "id": "P008",
+  "title": "Real-Time Radiological Source Term Estimation for Multiple Sources in Cluttered Environments",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "STE for 3-10 sources remains hard due to overlap",
+    "quote": "STE for larger numbers of sources (i.e., three to ten) remains a challenging problem due to the ambiguity caused by overlapping sources."
+   },
+   {
+    "type": "future-work",
+    "text": "Path planning / measurement selection out of scope",
+    "quote": "the path planning and measurement grid selection problem is outside the scope of this paper but will be considered in future work"
+   },
+   {
+    "type": "future-work",
+    "text": "Absorption parameter uncertainty needs more study",
+    "quote": "Further investigation of the effects of absorption parameter uncertainty is beyond the scope of this work but warrants additional research."
+   },
+   {
+    "type": "limitation",
+    "text": "Requires prior obstacle map; no online update",
+    "quote": "prior knowledge of obstacle locations and dimensions is required, and the algorithm currently offers no mechanism to update these parameters online"
+   },
+   {
+    "type": "limitation",
+    "text": "Discrete measurement grid limits continuously moving detectors",
+    "quote": "because measurements are assumed to lie on a discrete grid, the ability to model continuously moving detectors is limited"
+   },
+   {
+    "type": "limitation",
+    "text": "Single attenuation kernel set; no isotope distinction",
+    "quote": "the algorithm currently uses a single set of attenuation kernels"
+   },
+   {
+    "type": "assumption",
+    "text": "Sources on terrain surface",
+    "quote": "It is assumed that all sources lie on the terrain surface"
+   },
+   {
+    "type": "open-problem",
+    "text": "Activity estimate biased under attenuation mismatch (source-strength under/overshoot)",
+    "quote": "when the true obstacles attenuate more than the particle filter assumes, the particle filter posits that the sources must simply be weaker"
+   },
+   {
+    "type": "inferred",
+    "text": "Large bias caused failed solutions but mismatch was tested only per-obstacle constant, not spatially correlated; no study of posterior calibration",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Strongly relevant: its activity bias under attenuation mismatch is exactly the mechanism by which a filter-based dose prediction becomes unsafe, matching the thesis finding of overconfidence under correlated model error."
+ },
+ {
+  "id": "P009",
+  "title": "An autonomous radiation source detection policy based on deep reinforcement learning with generalized ability in unknown environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "DRL lacks generalization to geometry in unknown environments",
+    "quote": "deep reinforcement learning shows a strong capacity in source detection while still lacking the generalized ability to the geometry in unknown environments"
+   },
+   {
+    "type": "inferred",
+    "text": "Single agent, no dose consideration",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Hierarchical decomposition (explore/localize) parallels a possible withdraw/explore/localize option structure but adds no safety."
+ },
+ {
+  "id": "P010",
+  "title": "Optimization Strategies for Bayesian Source Localization Algorithms",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Objective is fewest measurements; robot dose not an objective or constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Measurement-selection heuristics are useful rule-based baselines; no dose element."
+ },
+ {
+  "id": "P011",
+  "title": "Autonomous Search of Radioactive Sources through Mobile Robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Search affected by velocity, positioning accuracy and number of measurements",
+    "quote": "the robot was affected by the linear velocity, angular velocity, positioning accuracy and the number of measurements"
+   },
+   {
+    "type": "inferred",
+    "text": "Reward drives robot to the source position, maximizing exposure; only weak 37 MBq source tested",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Illustrates the 'navigate to the source' objective that is unsafe at 10-100 TBq, which the thesis' budgeted safety layer replaces."
+ },
+ {
+  "id": "P012",
+  "title": "Mobile Robotic Radiation Surveying With Recursive Bayesian Estimation and Attenuation Modeling",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Real-world complications must be handled: multiple sources, attenuation, isotopes",
+    "quote": "characterization must account for real-world complications, including multiple sources, environmental attenuation, spatial localization, and isotopic identification"
+   },
+   {
+    "type": "open-problem",
+    "text": "Academic solutions fall short of practical deployment",
+    "quote": "the developed solutions fall short of being practically deployable in real facilities"
+   },
+   {
+    "type": "inferred",
+    "text": "Eliminates operator dose but robot dose not budgeted",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the need for attenuation-aware estimation; the thesis' robustness to model error speaks to its deployability gap."
+ },
+ {
+  "id": "P013",
+  "title": "Informative Mobile Robot Exploration for Radiation Source Localization with a Particle Filter",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "PF unreliable far from source / low radiation",
+    "quote": "If the location of the robot is far away from the source or in low radiation area, the particle filter does not guarantee to give an accurate result due to lack of information."
+   },
+   {
+    "type": "assumption",
+    "text": "Isotropic detector, no air attenuation, constant exposure time, error-free GPS",
+    "quote": "We assume that the radiation detector attached to the robot location (xk , yk ) is uniformly directional response and neglect the air attenuation."
+   },
+   {
+    "type": "limitation",
+    "text": "Final phase requires visiting within 1.5 m of the estimate",
+    "quote": "the robot has visited the area within 1.5m around the estimated particles"
+   },
+   {
+    "type": "future-work",
+    "text": "Real-environment tests; GPS error and information loss challenging",
+    "quote": "Future work of this research may include real environment testing using mobile robots, such as UAVs or ground robots."
+   },
+   {
+    "type": "inferred",
+    "text": "Same 20x20 m room size; convergence rule forces approach to source, ignoring dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Same room scale and PF+info-gain approach; its 'visit the estimate' termination is exactly what a dose budget forbids for strong Co-60."
+ },
+ {
+  "id": "P014",
+  "title": "Localization of Ionizing Radiation Sources by Cooperating Micro Aerial Vehicles With Pixel Detectors in Real-Time",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Cooperative MAV localization demonstrated but robot dose and endurance budgets not addressed; low-activity (GBq) sources",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-robot cooperative localization prior; no dose budgets, so the thesis' risk-sharing question remains open."
+ },
+ {
+  "id": "P015",
+  "title": "Double Q-Learning for Radiation Source Detection",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Complex urban background makes detection hard",
+    "quote": "Anomalous radiation source detection in urban environments is challenging due to the complex nature of background radiation."
+   },
+   {
+    "type": "inferred",
+    "text": "Single detector, simulated only, no dose constraint",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Early DRL baseline; does not touch dose or multi-agent safety."
+ },
+ {
+  "id": "P016",
+  "title": "Experiments in unmanned aerial vehicle/unmanned ground vehicle radiation search",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Heterogeneous fusion field-tested but no robot exposure management",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shows multi-robot fusion into one model (like the thesis' shared filter) but no dose budgets."
+ },
+ {
+  "id": "P017",
+  "title": "Cooperation between an unmanned aerial vehicle and an unmanned ground vehicle in highly accurate localization of gamma radiation hotspots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Human operator remains indispensable; UGV survey is the most time-consuming part",
+    "quote": "Although the human operator remains indispensable"
+   },
+   {
+    "type": "inferred",
+    "text": "No dose-aware planning for the UGV",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Role-split cooperation idea relevant to unequal-role / unequal-budget teams, but no dose model."
+ },
+ {
+  "id": "P018",
+  "title": "Radiation Source Localization in GPS-Denied Environments Using Aerial Robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Limited endurance allows very few dwell points; varying pose uncertainty",
+    "quote": "the limited endurance of the vehicle, which entails a very small amount of dwell points, and the fact that GPS-denied localization implies varying uncertainty of the robot's position estimate"
+   },
+   {
+    "type": "inferred",
+    "text": "Budgeted-resource search (endurance) is analogous to a non-renewable dose budget",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Analogous resource-budgeted search (battery rather than dose); supports framing dose as a non-renewable budget."
+ },
+ {
+  "id": "P019",
+  "title": "Information driven search for point sources of gamma radiation",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "No exposure constraint; info-gain controller drives observers toward sources",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Classic info-driven baseline; summary gives no stated gaps."
+ },
+ {
+  "id": "P020",
+  "title": "A controlled search for radioactive point sources",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Multi-observer info-gain control without exposure limits",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-observer Renyi-divergence control is a non-learned coordination baseline the thesis could compare against."
+ },
+ {
+  "id": "P021",
+  "title": "Information driven localisation of a radiological point source",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Optimizes Fisher information only; no dose cost",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Background; no stated gaps."
+ },
+ {
+  "id": "P022",
+  "title": "Deep Reinforcement Learning-Based Path Planning for Radioactive Source Search",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Conventional techniques have adaptability constraints in intricate radioactive environments",
+    "quote": "the adaptability constraints of conventional techniques in intricate radioactive environments"
+   },
+   {
+    "type": "inferred",
+    "text": "Multi-objective reward (length, smoothness, energy) omits robot dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Multi-objective reward omits dose; the thesis adds it as a hard constraint."
+ },
+ {
+  "id": "P023",
+  "title": "Physics-informed radiation multi-source localization with robotic platform",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Requires a predefined path",
+    "quote": "while following a predefined path"
+   },
+   {
+    "type": "inferred",
+    "text": "Path not dose-aware",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Estimator-side only; no planning or dose."
+ },
+ {
+  "id": "P024",
+  "title": "A radioactive source-seeking method based on angle constraint and particle diffusion",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Particle loss during filtering",
+    "quote": "a particle diffusion technology is applied to address particle loss that occurs during filtering"
+   },
+   {
+    "type": "inferred",
+    "text": "Gradient-descent source seeking approaches the source; no dose limit",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Particle-loss/impoverishment issue relates to the thesis' filter overconfidence finding."
+ },
+ {
+  "id": "P025",
+  "title": "A study of robotic search strategy for multi-radiation sources in unknown environments",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "None stated; exploration-exploitation balance without dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "No abstract; no usable stated gaps."
+ },
+ {
+  "id": "P026",
+  "title": "Autonomous exploration for radioactive sources localization based on radiation field reconstruction",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "UGVs must choose next measurement autonomously rather than predefined path",
+    "quote": "the UGVs must have the ability to automatically determine the next radiation measurement location instead of following a predefined path"
+   },
+   {
+    "type": "inferred",
+    "text": "GPR reconstruction gives uncertainty but it is not used for dose-safe planning",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "GPR field uncertainty could feed a dose predictor, an alternative to the thesis' particle-based percentile."
+ },
+ {
+  "id": "P027",
+  "title": "Localizing unknown radiation sources by unscented particle filtering based on divide-and-conquer sampling",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Particle dilution and degradation",
+    "quote": "to solve the problems of particle dilution and particle degradation"
+   },
+   {
+    "type": "assumption",
+    "text": "Circular, extremely thin NaI detector geometry",
+    "quote": "we assume a circular and extremely thin NaI (TI) scintillator detector"
+   }
+  ],
+  "thesis_relevance": "Particle degeneracy fixes are relevant to the thesis' overconfident filter."
+ },
+ {
+  "id": "P028",
+  "title": "Gamma Radiation Source Localization for Micro Aerial Vehicles with a Miniature Single-Detector Compton Event Camera",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Reject outliers",
+    "quote": "Future work should emphasize on rejecting outliers."
+   },
+   {
+    "type": "open-problem",
+    "text": "New motion planning needed for the measurement system",
+    "quote": "a new robotic methodology for motion planning and exploration needs to be developed to accommodate the proposed measurement system’s specifics"
+   },
+   {
+    "type": "limitation",
+    "text": "Needs motion orthogonal to source direction, else singular",
+    "quote": "Otherwise, both the LKF initialization and the LKF correction methods result in singular solutions that fail to provide a full 3D position of the source."
+   },
+   {
+    "type": "limitation",
+    "text": "Few real experiments",
+    "quote": "Only a few experiments were conducted"
+   },
+   {
+    "type": "assumption",
+    "text": "2D variant assumes source on ground",
+    "quote": "we assume that the radiation source is located on the ground"
+   }
+  ],
+  "thesis_relevance": "Directional sensing could localize from a distance and reduce dose; out of scope for the thesis' count-based sensors."
+ },
+ {
+  "id": "P029",
+  "title": "State-of-the-Art Mobile Radiation Detection Systems for Different Scenarios",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Review; no specific gaps stated in abstract",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Background on detectors; none stated."
+ },
+ {
+  "id": "P030",
+  "title": "A Bayesian method to localize lost gamma sources",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "Validate for more source-detector configurations and backgrounds",
+    "quote": "Further studies are required to validate and develop this method for additional source-detector configurations and gamma radiation background conditions."
+   },
+   {
+    "type": "limitation",
+    "text": "Large activity and location errors",
+    "quote": "Estimates on source activity and source locations were within 51% and 29% of actual values"
+   }
+  ],
+  "thesis_relevance": "Large activity error supports the thesis' concern that dose predictions from the estimate are uncertain."
+ },
+ {
+  "id": "P031",
+  "title": "Radiation search operations using scene understanding with autonomous UAV and UGV",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Weaker second source missed from altitude",
+    "quote": "we unexpectedly failed to identify the location of the second radiation source from an altitude of 30m"
+   },
+   {
+    "type": "future-work",
+    "text": "Expand ground search for weaker sources",
+    "quote": "In future work we plan to expand the search from the ground to better detect these weaker sources."
+   },
+   {
+    "type": "future-work",
+    "text": "More complicated tasks, multiple aerial and ground vehicles",
+    "quote": "the possibility of multiple aerial and ground vehicles driving the search effort"
+   },
+   {
+    "type": "limitation",
+    "text": "Not enough aerial data for joint segmentation",
+    "quote": "we do not have enough aerial data for this"
+   },
+   {
+    "type": "inferred",
+    "text": "Max-count destination selection drives UGV to source; no exposure management",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Little direct overlap; shows return-to-start missions but without dose accounting."
+ },
+ {
+  "id": "P032",
+  "title": "Search strategy of a mobile robot for radiation sources in an unknown environment",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Treats robot exposure as harmless",
+    "quote": "it is harmless to expose the robot to an environment contaminated by radiation"
+   },
+   {
+    "type": "open-problem",
+    "text": "Environment map unavailable after an accident",
+    "quote": "once a nuclear accident occurs, the environment would be partially destroyed"
+   }
+  ],
+  "thesis_relevance": "Its assumption that robot exposure is harmless is exactly what the thesis rejects for 10-100 TBq Co-60."
+ },
+ {
+  "id": "P033",
+  "title": "Mobile Sensor Network Control Using Mutual Information Methods and Particle Filters",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Scalability of mutual information to larger networks needs approximations",
+    "quote": "To make the approach scalable to increasing network sizes, single-node and pairwise-node approximations to the mutual information are derived"
+   },
+   {
+    "type": "inferred",
+    "text": "No resource or hazard constraints on sensors",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Distributed MI control on a shared PF is a strong non-learned coordination baseline for the 'can learning beat the rule' question."
+ },
+ {
+  "id": "P034",
+  "title": "Detection and parameter estimation of multiple radioactive sources",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Estimation only from measurements at known locations; no planning or dose",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Background on Bayesian multi-source estimation; none stated."
+ },
+ {
+  "id": "P035",
+  "title": "'Infotaxis' as a strategy for searching without gradients",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Entropy-reduction search with no hazard cost",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Infotaxis baseline; no safety notion."
+ },
+ {
+  "id": "P036",
+  "title": "Experimental implementation of robotic sequential nuclear search",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Weak-source confirmation focus; strong-source dose hazard not considered",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Background; none stated."
+ }
+]

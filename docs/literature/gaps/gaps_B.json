@@ -1,0 +1,659 @@
+[
+ {
+  "id": "P037",
+  "title": "Heterogeneity: A multi-robot radioactive source search technique",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Heterogeneous robots with different radioresistance suggest per-robot exposure tolerance, but no explicit dose budget is visible from the keywords",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Heterogeneous radioresistance maps onto the thesis's open question of unequal per-robot dose budgets; nothing stated by the authors.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P038",
+  "title": "PSOPF-MATD3: A multi-agent collaborative radioactive source search strategy",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Rewards target only search time, group reward and collision avoidance; there is no dose or exposure constraint on agents",
+    "quote": null
+   },
+   {
+    "type": "inferred",
+    "text": "Compared only against other MARL methods (MADDPG, MASAC), not against a rule-based or information-theoretic baseline",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest MARL+PF analogue to the thesis; the thesis adds the hard per-agent dose budget, the safety layer and a rule baseline, which this work lacks."
+ },
+ {
+  "id": "P039",
+  "title": "A heterogeneous robot collaborative search method for radioactive sources",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Heterogeneous team search for emergency response; no gaps visible, but it is related to unequal capabilities and budgets.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P040",
+  "title": "Multi-robot cooperative search for radioactive sources based on particle swarm optimization particle filter",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Source and detector models are simplified theoretical models",
+    "quote": "It is worth noting that the radioactive source diffusion and detector model used in this paper is one of the simplified theoretical models."
+   },
+   {
+    "type": "future-work",
+    "text": "Use more realistic models: dynamic obstacle attenuation coefficients and detector intrinsic-efficiency factors",
+    "quote": "Future research can improve performance by utilizing more realistic models, such as dynamic radiation attenuation coefficients for obstacles"
+   },
+   {
+    "type": "future-work",
+    "text": "Real-robot experiments and integration of reinforcement learning",
+    "quote": "practical experiments using mobile robots equipped with radiation detector modules and incorporating reinforcement learning will be conducted"
+   },
+   {
+    "type": "limitation",
+    "text": "PF particle degeneracy/poverty; more particles cost computation and limit real-time use",
+    "quote": "This limitation restricts the real-time applicability of PFs in certain scenarios."
+   },
+   {
+    "type": "limitation",
+    "text": "PF performance degrades when proposal mismatches a multimodal target distribution",
+    "quote": "if the target distribution exhibits multiple peaks and the proposed distribution fails to accurately capture these peaks, the PF performance will be compromised"
+   },
+   {
+    "type": "inferred",
+    "text": "Search success is declared within a 30-step cap; no dose to robots is accounted for",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Directly supports the thesis finding that the PF is fragile under model error (attenuation mismatch); the thesis adds dose-aware safety and RL, which this paper lists as future work."
+ },
+ {
+  "id": "P041",
+  "title": "A proposal on multi-agent static path planning strategy for minimizing radiation dose",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "No valid multi-agent method existed for dose-minimizing path finding in emergencies",
+    "quote": "no multi-agent method is valid to conduct the mission"
+   },
+   {
+    "type": "inferred",
+    "text": "Static planning with a known radiation field; source location is not uncertain and dose is minimized, not hard-budgeted",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's exit-dose computation (dose-weighted paths) but assumes a known field; the thesis handles an uncertain field via particle-quantile dose predictions."
+ },
+ {
+  "id": "P042",
+  "title": "Multi-robot collaborative radioactive source search based on particle fusion and adaptive step size",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Particle fusion across robots is relevant to the shared-filter design; no gaps visible.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P043",
+  "title": "Target localization using Multi-Agent Deep Reinforcement Learning with Proximal Policy Optimization",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "MAPPO-style baseline for radiation localization with walls; no gaps visible (later work P053 says these methods assume the target always exists and is reachable).",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P044",
+  "title": "Distributed Active Sensing for Multi-Robot Radiation Source Localization via Spatial-Probabilistic Decoupling",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Addresses masking and range ambiguity, i.e. obstacle shielding that confounds estimation; no dose constraint is visible",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Masking ambiguity relates to the thesis's overconfident filter under correlated model error; nothing stated by the authors.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P045",
+  "title": "An Intelligent Multi-Robot Mobile Measurement System for Active Cooperative Radiation Source Localization via Dynamic Voronoi Partitioning",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Handling epistemic uncertainty and false alarms is flagged as a concern (keywords)",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Epistemic-uncertainty handling parallels the thesis's 97th-percentile dose masking; nothing stated by the authors.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P046",
+  "title": "Multi-robot Collaborative Source Searching Method Based on Information Exploration and Exploitation",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Title only; no gaps.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P047",
+  "title": "Multi-robot autonomous search for radioactive leakage source based on a CPE-Infotaxis method during nuclear emergency rescue",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Multi-robot Infotaxis is vulnerable to radiation-induced sensor failures that corrupt shared beliefs",
+    "quote": "remains vulnerable to radiation-induced sensor failures that introduce false information and corrupt shared beliefs"
+   },
+   {
+    "type": "open-problem",
+    "text": "Minimizing radiation exposure is critical in emergency response",
+    "quote": "minimizing radiation exposure is critical"
+   },
+   {
+    "type": "inferred",
+    "text": "Exposure is mentioned as motivation but is not modeled as a constraint; only search efficiency is reported",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's motivation and points to an extra failure mode, radiation-damaged sensors corrupting the shared particle filter, that the thesis does not model."
+ },
+ {
+  "id": "P048",
+  "title": "RADRON: Cooperative Localization of Ionizing Radiation Sources by MAVs With Compton Cameras",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Cooperative localization and tracking of a moving source had not been addressed",
+    "quote": "cooperative localization and tracking of a moving ionizing radiation source has not been tackled in the existing literature"
+   },
+   {
+    "type": "limitation",
+    "text": "Poor initialization can prevent convergence",
+    "quote": "a poor initial hypothesis may prevent the subsequent estimation and tracking method from converging"
+   },
+   {
+    "type": "assumption",
+    "text": "Point source on the surface with uniform spatial distribution of radiation",
+    "quote": "The radioactive object is assumed to be a point source located on the surface of the environment, with a uniform spatial distribution of radiation."
+   },
+   {
+    "type": "assumption",
+    "text": "Target dynamics are not modeled (track-by-detection)",
+    "quote": "we do not model the dynamics of the target in the estimation process"
+   },
+   {
+    "type": "inferred",
+    "text": "Weak 2 GBq source; dose to the vehicles is not considered",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its initialization-sensitivity finding echoes the thesis's overconfident filter; with no dose budget and a weak source, it is complementary rather than overlapping."
+ },
+ {
+  "id": "P049",
+  "title": "HAMSAR: A Hierarchical Adaptive Multi-UAV Framework for Radiation Source Search in Unknown Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing exploration methods prioritize geometric coverage and ignore online radiation cues",
+    "quote": "Existing exploration methods primarily prioritize geometric map coverage while neglecting online radiation intensity cues"
+   },
+   {
+    "type": "open-problem",
+    "text": "Communication constraints and noisy measurements make multi-UAV search hard",
+    "quote": "challenging due to communication constraints, noisy radiation intensity measurements, and uncertain source evidence"
+   },
+   {
+    "type": "inferred",
+    "text": "No exposure or dose constraint on the UAVs",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Coordination by auction-based task allocation is an alternative to learned coordination; the thesis assumes perfect communication and adds dose budgets."
+ },
+ {
+  "id": "P050",
+  "title": "Radiation source estimation using a connectivity-aware decentralized multi-mobile sensor system",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Low-level signals are sparse, intermittent and time-varying",
+    "quote": "Low-level radiation signals are sparse, intermittent, and highly time-varying"
+   },
+   {
+    "type": "open-problem",
+    "text": "Exploration without wireless infrastructure requires connectivity-aware search",
+    "quote": "to enable successful exploration in environments lacking wireless communication infrastructure"
+   },
+   {
+    "type": "inferred",
+    "text": "Low-level sources only; the strong-source dose regime is not considered",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "The communication constraint is a gap in the thesis (which shares one filter); this paper's regime is the opposite of the thesis's (low-level vs. TBq)."
+ },
+ {
+  "id": "P051",
+  "title": "Radiation source multi-agent search by drones",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "A single UAV's GM detector has short range, limiting search over large areas",
+    "quote": "Due to the short range of the GM detector of a single unmanned aerial vehicle, the effectiveness of searching for a radiation source over large areas is limited"
+   },
+   {
+    "type": "inferred",
+    "text": "Results are preliminary numerical experiments only",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivates multi-agent search generally; no dose or safety element."
+ },
+ {
+  "id": "P052",
+  "title": "Radioactive sources search method based on multi-robot and Voronoi partition",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Voronoi partition is a candidate rule-based coordination baseline; no gaps visible.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P053",
+  "title": "Adaptive target localization under uncertainty using Multi-Agent Deep Reinforcement Learning with knowledge transfer",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior MADRL methods ignore target non-existence or unreachability",
+    "quote": "these works have the assumption that the target always exists and is always reachable"
+   },
+   {
+    "type": "assumption",
+    "text": "Agents communicate, share information and store past observations",
+    "quote": "It is assumed that agents can communicate and share information, as well as store previously collected observations."
+   },
+   {
+    "type": "limitation",
+    "text": "Single-agent approaches scale poorly to multi-agent settings",
+    "quote": "has drawbacks in terms of scalability when extrapolated to multi-agent settings"
+   },
+   {
+    "type": "future-work",
+    "text": "Multi-target localization",
+    "quote": "Future directions could extend the current approach to handle multi-target localization"
+   },
+   {
+    "type": "future-work",
+    "text": "Mobile targets",
+    "quote": "a promising direction would be to expand the method to handle mobile targets"
+   },
+   {
+    "type": "inferred",
+    "text": "Resource conservation (idling agents that cannot contribute) is discussed, but there is no exposure budget or safety guarantee",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its idle/conserve action is the closest analogue to the thesis's withdraw action, but it has no hard per-agent safety constraint, which the thesis supplies."
+ },
+ {
+  "id": "P054",
+  "title": "Autonomous localization of multiple ionizing radiation sources using miniature single-layer Compton cameras onboard a group of MAVs",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "The method relies on Compton events, which are a small fraction of detections",
+    "quote": "The proposed method relies heavily on the occurrence of the Compton scattering effect."
+   },
+   {
+    "type": "future-work",
+    "text": "Combine direction-based Compton and intensity-based methods",
+    "quote": "A potential direction for future work involves combining the direction-based Compton camera approach with intensity-based methods."
+   },
+   {
+    "type": "assumption",
+    "text": "Sources lie on the terrain surface",
+    "quote": "we assume that the sources of ionizing radiation are located somewhere on the terrain's surface"
+   },
+   {
+    "type": "assumption",
+    "text": "Centralized planning with available communication",
+    "quote": "We assume that the communication between MAVs is available and utilize a centralized approach"
+   },
+   {
+    "type": "future-work",
+    "text": "Test with more or distributed sources and faster MAVs",
+    "quote": "The proposed method should be further tested with additional (or even distributed) radiation sources"
+   },
+   {
+    "type": "limitation",
+    "text": "The weakest source was not localized precisely",
+    "quote": "The least active source was not precisely localized."
+   }
+  ],
+  "thesis_relevance": "Its centralized planning with assumed communication matches the thesis's shared-filter assumption; it has no dose budget, so the gap is complementary."
+ },
+ {
+  "id": "P055",
+  "title": "Enhancing radioactive environment exploration with bio-inspired swarm robotics: Lévy flight vs stigmergy",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Swarm exploration baselines; no gaps visible.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P056",
+  "title": "Distributed collaboration: Cognitive difference and collaborative decision for multi-robot radioactive source search",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Robots' beliefs diverge in distributed search (cognitive difference), which a single shared belief hides",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Relevant if the thesis relaxes its shared-filter assumption to per-robot beliefs; nothing stated by the authors.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P057",
+  "title": "Multi-robot Cooperative Search for Radioactive Sources Based on Improved Particle Swarm Optimization",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Particle degradation in PF-based source estimation",
+    "quote": "mitigating particle degradation"
+   },
+   {
+    "type": "inferred",
+    "text": "No dose or exposure modeling; evaluation covers accuracy and search time only",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Infotaxis+DWA multi-robot baseline; supports PF degeneracy as a recurring issue."
+ },
+ {
+  "id": "P058",
+  "title": "Multiagent Deep Reinforcement Learning With Demonstration Cloning for Target Localization",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Classical methods are environment-specific and infeasible when the environment changes",
+    "quote": "such methods are designed for specific environments, and hence are deemed infeasible if the environment changes"
+   },
+   {
+    "type": "limitation",
+    "text": "Prior DRL is single-agent or for non-complex environments",
+    "quote": "such methods are either designed for single-agent systems or for noncomplex environments"
+   },
+   {
+    "type": "assumption",
+    "text": "The sparse-reward variant depends on the availability of expert demonstrations",
+    "quote": "subject to the availability of Expert Demonstrations"
+   }
+  ],
+  "thesis_relevance": "Demonstration cloning suggests a route for the thesis: warm-start MAPPO from the 84%-success rule policy to escape timid or poor learned policies."
+ },
+ {
+  "id": "P059",
+  "title": "Sequential Deployment of Mobile Radiation Sensor Network Using Reinforcement Learning in Radioactive Source Search",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Deployment is subject to physical and financial constraints and changing conditions",
+    "quote": "sensor network deployment is a complex process imposed on physical and financial constraints and dynamically varying conditions"
+   }
+  ],
+  "thesis_relevance": "RL sensor placement under resource constraints; it touches on resource limits but has no dose budget."
+ },
+ {
+  "id": "P060",
+  "title": "An automated heterogeneous robotic system for radiation surveys: Design and field testing",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior multi-robot systems were not thoroughly tested",
+    "quote": "The multi-robot system, however, was not subjected to thorough testing"
+   },
+   {
+    "type": "limitation",
+    "text": "The simple localization finds only one maximum and is unsuitable for multi-source scenarios",
+    "quote": "the simple localization technique detects one maximum only, thus being unsuitable for multi-source or areal contamination scenarios"
+   },
+   {
+    "type": "limitation",
+    "text": "Methods ignore obstacles",
+    "quote": "A drawback of the method consists in ignoring potential obstacles."
+   },
+   {
+    "type": "assumption",
+    "text": "Radiation must be detectable but not hazardous to the electronics",
+    "quote": "the radiation intensities have to be well detectable yet not hazardous for the electronics"
+   },
+   {
+    "type": "limitation",
+    "text": "The system is not ready to run without an operator",
+    "quote": "the system has not yet been fully prepared to operate in real-world conditions without operator intervention"
+   },
+   {
+    "type": "future-work",
+    "text": "Information-driven localization and UGV obstacle avoidance",
+    "quote": "Our future research will be directed towards employing information-driven localization and fitting the UGV with an obstacle avoidance system."
+   },
+   {
+    "type": "limitation",
+    "text": "Coarse aerial maps cannot distinguish a strong source from multiple sources or areal contamination",
+    "quote": "it is virtually impossible to distinguish between a strong source, multiple radionuclides, and non-point areal contamination"
+   }
+  ],
+  "thesis_relevance": "Its explicit assumption that the radiation is not hazardous to electronics is exactly what the thesis removes, by treating robot dose as a hard budget for high-activity sources."
+ },
+ {
+  "id": "P061",
+  "title": "Search and Localization of a Weak Source with a Multi-robot Formation",
+  "evidence": "summary",
+  "stated_gaps": [],
+  "thesis_relevance": "Weak-source formation search under communication constraints; no gaps visible.",
+  "note": "none stated (summary only; no author text available)"
+ },
+ {
+  "id": "P062",
+  "title": "Towards Expendable Robot Teaming in Extreme Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Research challenges for expendable robot teams in extreme (nuclear) environments",
+    "quote": "we briefly discuss related research challenges and directions"
+   },
+   {
+    "type": "inferred",
+    "text": "Treats robots as expendable, the opposite of preserving robots via a budget with a reserve for exit",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Gives the conceptual counterpoint for the thesis's risk-sharing question: when a robot should be sacrificed versus conserved."
+ },
+ {
+  "id": "P063",
+  "title": "Identification of low-level point radioactive sources using a sensor network",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Ghost-source problem in existing estimation methods",
+    "quote": "minimizes the ghost-source problem of current estimation methods"
+   },
+   {
+    "type": "limitation",
+    "text": "High-intensity sources cannot be safely handled in lab tests and are emulated",
+    "quote": "emulate high intensity ones that cannot be easily and safely handled in laboratory experiments"
+   }
+  ],
+  "thesis_relevance": "Supports the thesis's reliance on simulation for TBq sources; static sensors only."
+ },
+ {
+  "id": "P064",
+  "title": "Identification of Low-Level Point Radiation Sources Using a Sensor Network",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Ghost-source problem",
+    "quote": "minimizes the ghost-source problem of current estimation methods"
+   },
+   {
+    "type": "limitation",
+    "text": "High-intensity sources cannot be safely handled in the lab",
+    "quote": "emulate high intensity ones that cannot be easily and safely handled in laboratory experiments"
+   }
+  ],
+  "thesis_relevance": "Same as P063: the validation gap for strong sources supports simulation-based study."
+ },
+ {
+  "id": "P065",
+  "title": "Distributed Decision Making for Electromagnetic Radiation Source Localization Using MADRL",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "The localized proportion converges to only 56.5%, showing MAPPO-family methods struggle in complex urban settings",
+    "quote": "the proportion of successfully localized target radiation sources converging to 56.5%"
+   }
+  ],
+  "thesis_relevance": "Electromagnetic, not ionizing radiation; its weak absolute MAPPO performance is consistent with the thesis's difficulty in beating a rule baseline."
+ },
+ {
+  "id": "P066",
+  "title": "Multi-Robot Radiation Reconnaissance in the Chornobyl NPP Exclusion Zone",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Integrating systems from different manufacturers into one system",
+    "quote": "to tackle the challenge of integrating systems from different manufacturers into a unified system"
+   },
+   {
+    "type": "inferred",
+    "text": "A predefined carrier route with threshold stops; no autonomous dose-budget reasoning",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "A field heterogeneous system; its threshold-triggered stops are a crude form of dose awareness."
+ },
+ {
+  "id": "P067",
+  "title": "Radiation Surveys in Active Nuclear Facilities with Heterogeneous Collaborative Mobile Robots",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Where to move obstacles is open",
+    "quote": "a high-level open question remains: where should these objects be moved to?"
+   },
+   {
+    "type": "limitation",
+    "text": "Fault tolerance gets little attention at the system level",
+    "quote": "Fault tolerance and adaptive behaviors have been well-investigated on a component level but receive little attention at the system level in robotics."
+   },
+   {
+    "type": "limitation",
+    "text": "Multi-robot map sharing is not fully integrated",
+    "quote": "Another aspect that has not been fully addressed is the ability of the Magni system to collaborate using 3D maps"
+   },
+   {
+    "type": "limitation",
+    "text": "Significant obstacles remain before deployment",
+    "quote": "there are significant obstacles to overcome before they will be used for this purpose"
+   }
+  ],
+  "thesis_relevance": "Routine low-level surveys; little overlap except for system-level fault tolerance."
+ },
+ {
+  "id": "P068",
+  "title": "Machine learning for localization of radioactive sources via a distributed sensor network",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "ML is effective only when representative features can be acquired",
+    "quote": "applying machine learning would only be effective when representative features for the application can be acquired"
+   }
+  ],
+  "thesis_relevance": "Static network, supervised learning; marginal."
+ },
+ {
+  "id": "P069",
+  "title": "Localization of a radioactive source in an urban environment using Bayesian Metropolis methods",
+  "evidence": "full text",
+  "stated_gaps": [],
+  "thesis_relevance": "The digest text is garbled (encoding failure), so no gaps can be extracted; it is relevant to Bayesian estimation with uncertain material cross-sections.",
+  "note": "none stated (full-text extraction garbled)"
+ },
+ {
+  "id": "P070",
+  "title": "Nuclear threat detection with mobile distributed sensor networks",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Detector positions are known in real time from GPS",
+    "quote": "The detectors' positions are known in real-time as these are continuously reported from GPS data"
+   }
+  ],
+  "thesis_relevance": "Marginal; it is about urban detection, not robot safety."
+ },
+ {
+  "id": "P071",
+  "title": "Smart radiation sensor management",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "future-work",
+    "text": "3D mapping; tradeoffs among time, map confidence and prior knowledge; online world-model updates",
+    "quote": "exploring and characterizing the tradeoffs between time efficiency, map confidence level, and utilization of prior knowledge information"
+   }
+  ],
+  "thesis_relevance": "An early statement of the time/confidence tradeoff, which the thesis extends to a three-way safety/success/time tradeoff."
+ },
+ {
+  "id": "P072",
+  "title": "Radioactive source detection by sensor networks",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Computation grows quadratically with the number of nodes",
+    "quote": "The complexity appears quadratic in the number of nodes"
+   },
+   {
+    "type": "limitation",
+    "text": "Adding sensors near the detection limit gives subproportional sensitivity gains",
+    "quote": "near the detection limit, increasing the number of sensors can accrue subproportional network sensitivity"
+   }
+  ],
+  "thesis_relevance": "Diminishing returns with more sensors hints at the thesis's team-size question (2-6 robots)."
+ }
+]

@@ -1,0 +1,562 @@
+[
+ {
+  "id": "P164",
+  "title": "When Information is Worth the Risk: Behavioral Valuation for Hazardous Robotic Exploration",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Standard informative planning treats path cost via deterministic budgets or expected costs, not catastrophic, survival-coupled failure.",
+    "quote": "standard informative planning often treats path cost through deterministic budgets, expected costs, or task-specific risk models."
+   },
+   {
+    "type": "open-problem",
+    "text": "Prior risk-aware methods regulate risk through constraints/penalties; valuation of when information is worth the risk is not isolated.",
+    "quote": "These methods explicitly regulate risk, but primarily through constraints, penalties, or risk measures."
+   },
+   {
+    "type": "future-work",
+    "text": "Varying the Prelec beta parameter to enlarge the valuation family is left for future study.",
+    "quote": "varying 𝛽 would enlarge the valuation family by shifting the weighting function and is left for future study."
+   },
+   {
+    "type": "inferred",
+    "text": "Single-agent, grid-world study with a fixed, known physical risk model; no multi-robot coordination, no cumulative (non-binary) exposure budget, no exit requirement.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis framing that exposure truncates future sensing; the thesis extends it to teams with cumulative dose budgets and a risk model that itself depends on an uncertain source estimate."
+ },
+ {
+  "id": "P165",
+  "title": "Cooperative Risk-Aware Exploration in Heterogeneous Multi-Robot Systems Using Algorithmic Altruism",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "How risk should be distributed across heterogeneous team members is a central open question.",
+    "quote": "effective deployment requires deciding not only where robots should gather information, but also how risk should be distributed across heterogeneous team members."
+   },
+   {
+    "type": "limitation",
+    "text": "Selfish per-robot optimization gives inefficient collective outcomes.",
+    "quote": "when robots optimize only their individual utilities, the resulting behaviors may lead to inefficient collective outcomes"
+   },
+   {
+    "type": "limitation",
+    "text": "Without joint concavity, equilibrium only coordinatewise optimal.",
+    "quote": "without joint concavity, the equilibrium guarantee is limited to coordinatewise optimality."
+   },
+   {
+    "type": "future-work",
+    "text": "Richer dynamics, partially known or learned hazard fields, larger teams with communication constraints.",
+    "quote": "Future work will extend the framework to richer robot dynamics, partially known or learned hazard fields, and larger teams with communication constraints."
+   },
+   {
+    "type": "future-work",
+    "text": "Adaptive relatedness weights depending on remaining energy, health, mission context.",
+    "quote": "study adaptive relatedness weights that depend not only on fixed agent value, but also on mission context, remaining energy, robot health, or task-critical capabilities."
+   },
+   {
+    "type": "assumption",
+    "text": "Hazard field is known (red contours denote the known hazard field).",
+    "quote": "Red contours denote the known hazard field."
+   }
+  ],
+  "thesis_relevance": "Directly points to the thesis open question on unequal budgets and risk sharing: the thesis has an unknown, estimate-dependent hazard and remaining-dose-dependent roles, which is exactly the stated future work (learned hazard fields, weights depending on remaining resource)."
+ },
+ {
+  "id": "P166",
+  "title": "Risk-averse traversal of graphs with stochastic and correlated edge costs for safe global planetary mobility",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "CTP-like work assumes known, independent edge blockage probabilities.",
+    "quote": "This work assumes known and independent edge blockage probabilities, which is common with most CTP-like problems."
+   },
+   {
+    "type": "limitation",
+    "text": "Dynamic (nested) CVaR measures lack intuitive interpretation.",
+    "quote": "dynamic risk measures generally lack the intuitive interpretation of static risk measures"
+   },
+   {
+    "type": "open-problem",
+    "text": "Representation of traversability uncertainty in higher dimensions is open.",
+    "quote": "it is an open problem in adaptive mobility for unknown field environments and finding the best approach falls outside the scope of the current paper."
+   },
+   {
+    "type": "limitation",
+    "text": "Offline exact solver; an online depth-limited variant would sacrifice optimality.",
+    "quote": "An ‘online’ variant of the algorithm, which limits the search tree depth and accepts multiple queries during a single traverse trial"
+   },
+   {
+    "type": "assumption",
+    "text": "Observed edges keep their cost for the rest of the traverse.",
+    "quote": "We assume that observed stochastic edges maintain their actual cost until the end of the traverse"
+   },
+   {
+    "type": "inferred",
+    "text": "Single agent, single objective (cost) with no cumulative hard budget; correlated costs are handled, which is relevant to correlated model error in dose prediction.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports using a static tail-risk measure (thesis uses a 97th-percentile dose bound) and highlights that correlated uncertainty matters, which echoes the thesis finding of filter overconfidence under correlated model error."
+ },
+ {
+  "id": "P167",
+  "title": "A Hough transform approach to safety-aware scalar field mapping using Gaussian Processes",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Field-mapping methods optimize efficiency but ignore exposure risk.",
+    "quote": "These methods aim to optimize the mapping efficiency but do not consider risks related to exposure to high field intensity."
+   },
+   {
+    "type": "limitation",
+    "text": "Standard GP planners lack explicit safety constraints.",
+    "quote": "standard GP-based planners do not explicitly incorporate safety constraints imposed by potentially hazardous highintensity regions."
+   },
+   {
+    "type": "limitation",
+    "text": "Early-stage vulnerability: first measurements may fall in hazardous zones before the model learns.",
+    "quote": "early-stage vulnerability is evident, as initial measurements may fall within hazardous zones before the GP model sufficiently learns the field structure."
+   },
+   {
+    "type": "limitation",
+    "text": "Simple geometric hazard shapes may fail with irregular boundaries; no bound on safe-set error.",
+    "quote": "may falter in complex environments with irregular hazard boundaries."
+   },
+   {
+    "type": "limitation",
+    "text": "Hand-tuned kernel hyperparameters.",
+    "quote": "which are tuned in this work by hand."
+   },
+   {
+    "type": "limitation",
+    "text": "Safety constraints make prediction error converge to non-zero value (safety vs accuracy trade-off).",
+    "quote": "Due to avoidance constraints, the prediction error converges to a bounded non-zero value"
+   },
+   {
+    "type": "future-work",
+    "text": "More flexible hazard representations; dynamic fields with moving source.",
+    "quote": "extending the framework to dynamic scalar fields where the field source follows a motion plan remains an open challenge."
+   },
+   {
+    "type": "inferred",
+    "text": "Safety is an instantaneous intensity threshold, not a cumulative dose budget; single robot; light field, not gamma.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its early-stage vulnerability (safety predicted from an immature model) is the same issue the thesis faces with an uncertain particle filter; the thesis's cumulative-dose plus exit-dose mask generalises its instantaneous threshold."
+ },
+ {
+  "id": "P168",
+  "title": "Bi-objective trail-planning for a robot team orienteering in a hazardous environment",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Arc survival probabilities are known and static.",
+    "quote": "The arc survival probability map ω : E → (0, 1] is known, static over the course of the mission"
+   },
+   {
+    "type": "limitation",
+    "text": "Offline planning only, due to lack of communication.",
+    "quote": "We focus on the offline setting, owing to the lack of communication with/between robots after the mission executes."
+   },
+   {
+    "type": "limitation",
+    "text": "ACO has no guarantee to find the Pareto set; survival heuristic is myopic.",
+    "quote": "myopic because it does not consider survivability of arcs later in the trail."
+   },
+   {
+    "type": "future-work",
+    "text": "Online version adapting to observed failures.",
+    "quote": "tackle the online version with ACO, where the robots adapt their planned trails during the mission, in response to observed failures of robots"
+   },
+   {
+    "type": "future-work",
+    "text": "Heterogeneous teams, fuel/battery constraints, non-binary damage states, non-independent survival, risk metrics beyond expectation.",
+    "quote": "(v) non-binary surviving states of the robots due to various levels of damage; (vi) non-independent events of robots surviving arc-traversals; (vii) risk metrics different from the expected value"
+   },
+   {
+    "type": "future-work",
+    "text": "Learn uncertain survival probabilities from data; continuous space with obstacles.",
+    "quote": "one could path-plan for robots in a continuous space with obstacles."
+   }
+  ],
+  "thesis_relevance": "Several listed extensions (online adaptation, non-binary damage i.e. accumulated dose, correlated survival, non-expectation risk metrics, continuous space with obstacles) are what the thesis setting already contains."
+ },
+ {
+  "id": "P169",
+  "title": "Eclares: Energy-Aware Clarity-Driven Ergodic Search",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Battery-constrained coverage methods assume simple models or are expensive.",
+    "quote": "current coverage methods dealing with battery capacity constraints either assume simple robot and battery models or are computationally expensive."
+   },
+   {
+    "type": "limitation",
+    "text": "Reachability-based methods are offline and suffer curse of dimensionality.",
+    "quote": "they are mostly used offline, suffer from curse of dimensionality, and are computationally expensive."
+   },
+   {
+    "type": "limitation",
+    "text": "Decoupling of return trajectory from information collection is suboptimal.",
+    "quote": "the decoupling used in Eclars can lead to a suboptimal solution, since the b2b trajectory is not optimized for information collection"
+   },
+   {
+    "type": "future-work",
+    "text": "Environmental disturbances and multi-agent extension.",
+    "quote": "Other future directions include considering environmental disturbances and extension of the proposed method to multi-agent exploration scenarios."
+   },
+   {
+    "type": "inferred",
+    "text": "Energy consumption is deterministic/known via dynamics; the return-cost is not estimate-dependent, unlike predicted exit dose.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its return-to-base filter is a single-agent analogue of the thesis safety layer; the thesis is the multi-agent extension where return cost is uncertain and depends on the belief."
+ },
+ {
+  "id": "P170",
+  "title": "Distributed Multi-robot Online Sampling with Budget Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Orienteering-style work assumes predetermined rewards.",
+    "quote": "The main limitation of this line of research is that it assumes that rewards are predetermined in advance."
+   },
+   {
+    "type": "limitation",
+    "text": "Adaptive multi-agent sampling methods ignore travel limits.",
+    "quote": "These works, however, do not explicitly incorporate limits on the distance traveled by robots."
+   },
+   {
+    "type": "assumption",
+    "text": "Robots can exchange limited info at long range.",
+    "quote": "Our communication model assumes that robots can exchange limited information (such as locations) at long range."
+   },
+   {
+    "type": "future-work",
+    "text": "Estimate other robots' plans; field tests.",
+    "quote": "In the future, we intend to incorporate the estimation of other robots’ plans into our method and to test the proposed method on the field."
+   },
+   {
+    "type": "inferred",
+    "text": "Coordination benefit is largest when budgets are tight and teams small.",
+    "quote": "this is not the case when the number of robots is smaller or the budget is tight, and in such cases coordination is key."
+   }
+  ],
+  "thesis_relevance": "Its finding that coordination matters most under tight budgets and small teams supports the thesis question of whether learned coordination can beat a rule in the 2-6 robot, tight-dose regime."
+ },
+ {
+  "id": "P171",
+  "title": "Valuing Attrition in a Fleet of Robots Used as Path-Based Sensors for Gathering Information in a Communications Restricted Environment",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior work assumed an infinite number of agents.",
+    "quote": "In the past, related work solving this problem has assumed an infinite number of agents."
+   },
+   {
+    "type": "limitation",
+    "text": "Small fleets do not collect enough information to steer agents away from hazards.",
+    "quote": "Small sized fleets, in our case 10 or less agents, do not meet a threshold of collected information necessary to direct agents away from hazards."
+   },
+   {
+    "type": "inferred",
+    "text": "Binary loss model and centralized planning; no cumulative exposure budget or withdrawal option.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Its weakness for small fleets (<=10) is exactly the thesis regime (2-6 robots); the thesis avoids losing robots altogether via a dose mask and withdraw action instead of learning hazards from attrition."
+ },
+ {
+  "id": "P172",
+  "title": "Hierarchical Motion Planning Under Probabilistic Temporal Tasks and Safe-Return Constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "State-dependent safety is restrictive; safety may depend on ability to return.",
+    "quote": "it has serious drawbacks in scenarios where safety depends on whether the system can follow a certain strategy to return to the safe states"
+   },
+   {
+    "type": "assumption",
+    "text": "Model is a known MDP with labelling features.",
+    "quote": "we assume the model as a known MDP with labelling features"
+   },
+   {
+    "type": "limitation",
+    "text": "Computational complexity is the bottleneck; validations are small.",
+    "quote": "the computational complexity remains to be the bottleneck and most validations are performed on systems with small number of states."
+   },
+   {
+    "type": "limitation",
+    "text": "Optimality gap of hierarchical method not quantified.",
+    "quote": "The exact gap between them is not quantified in this work and remains part of our ongoing research."
+   },
+   {
+    "type": "open-problem",
+    "text": "Formal handling of uncertainty for complex tasks remains challenging.",
+    "quote": "A formal consideration of this uncertainty when planning for general complex tasks remains challenging."
+   },
+   {
+    "type": "future-work",
+    "text": "Online adaptation of policies.",
+    "quote": "Future work includes online adaptation of the hierarchical policies."
+   }
+  ],
+  "thesis_relevance": "Provides formal grounding for the thesis exit-dose reserve (a safe-return constraint), and the thesis closes part of its gap by computing return feasibility online from a belief rather than a known MDP, though without its formal guarantee."
+ },
+ {
+  "id": "P173",
+  "title": "Reconstructing a Spatial Field with an Autonomous Robot Under a Budget Constraint",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Phenomenon modeled by a Gaussian Process.",
+    "quote": "Starting from the assumption that the phenomenon being measured can be modeled by a Gaussian Process"
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot with a stochastic travel budget and a required final site; decides when to end the mission, like the thesis withdraw action, but no multi-robot or hazard-dependent budget.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "A single-robot precedent for deciding when to end the mission and reach a final site before a budget runs out; the thesis extends this to multiple robots whose budget use depends on the estimate."
+ },
+ {
+  "id": "P174",
+  "title": "Optimization-Based Robot Team Exploration Considering Attrition and Communication Constraints",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Optimal exploration under failure is NP-hard, requiring ILP formulation.",
+    "quote": "Optimal exploration is NP-hard, so we apply a constraint-based approach"
+   },
+   {
+    "type": "inferred",
+    "text": "Offline ILP with known failure probabilities; paths only within 50% of optimum; no online belief update.",
+    "quote": "this formulation produces paths within 50% of a theoretical optimum"
+   }
+  ],
+  "thesis_relevance": "Shows the value of making sure at least one robot returns with the information; the thesis ensures every robot can return within its dose budget, with a policy that runs online."
+ },
+ {
+  "id": "P175",
+  "title": "Heterogeneous Vehicle Routing and Teaming with Gaussian Distributed Energy Uncertainty",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Few SVRP works consider energy uncertainty or justify its distribution.",
+    "quote": "few previous works in SVRP consider energy uncertainty or provide theoretical support for their assumed energy distribution."
+   },
+   {
+    "type": "limitation",
+    "text": "Chance constraints can be over-conservative or infeasible under wide variance, and ignore failures and recourse.",
+    "quote": "if the variance of the probability distribution is large, this can result in over-conservatism or no feasible solution"
+   },
+   {
+    "type": "assumption",
+    "text": "Edge energy costs Gaussian and independent; capabilities additive.",
+    "quote": "Assume the energy cost to traverse an edge is Gaussian distributed bkij ∼ N (µkij , σkij ) and independent with different k, i, or j."
+   },
+   {
+    "type": "future-work",
+    "text": "Other uncertainty types such as time; real-vehicle validation.",
+    "quote": "In future work, we intend to model other uncertainty categories (e.g. time uncertainty)"
+   }
+  ],
+  "thesis_relevance": "Its observation that chance constraints become over-conservative under wide uncertainty mirrors the thesis safety/success trade-off and the timid behavior of MAPPO-Lagrangian; the thesis violates its independence assumption since dose errors are spatially correlated."
+ },
+ {
+  "id": "P176",
+  "title": "A unified framework for operational range estimation of mobile robots operating on a single discharge to avoid complete immobilization",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Existing works assume a known mission profile.",
+    "quote": "Most of the aforementioned works either consider the mission profile to be known a priori"
+   },
+   {
+    "type": "limitation",
+    "text": "No prior model estimates the maximal operational range.",
+    "quote": "none of them could estimate the maximal operational range of the robot given some a priori known information about the execution of the mission."
+   },
+   {
+    "type": "assumption",
+    "text": "First-order energy model only; higher-order left to future work.",
+    "quote": "For the scope of this work, we retained only the first order approximation and will investigate the complex counterparts in future works."
+   },
+   {
+    "type": "future-work",
+    "text": "Inverse problem: optimize the mission profile given a fixed energy budget.",
+    "quote": "we intend to solve the inverse problem of optimizing the mission profile given a fixed energy budget"
+   },
+   {
+    "type": "inferred",
+    "text": "Single-discharge, non-renewable budget is analogous to non-renewable dose budget; online estimate update outperformed offline (93.87% vs 82.97%).",
+    "quote": "The online model estimates operational range with an average accuracy of 93.87%, while the offline model attains 82.97%."
+   }
+  ],
+  "thesis_relevance": "Its stated inverse problem (planning a mission under a fixed non-renewable budget) is what the thesis does for dose, and its online-beats-offline result supports updating the dose prediction online."
+ },
+ {
+  "id": "P177",
+  "title": "Multi-UAV resource constrained online monitoring of large-scale spatio-temporal environment with homing guarantee",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior approaches don't guarantee homing.",
+    "quote": "none of these approaches guarantee “homing”, i.e., ensuring that the robots return to the base station upon exhaustion of available budget"
+   },
+   {
+    "type": "limitation",
+    "text": "Weights of conflicting objectives arbitrarily chosen in prior work.",
+    "quote": "the weights of the constituent objectives were arbitrarily chosen."
+   },
+   {
+    "type": "assumption",
+    "text": "Others assume perfect, always-connected communication.",
+    "quote": "they assume that communication channels are perfect and always connected."
+   },
+   {
+    "type": "limitation",
+    "text": "Cost function is only a surrogate.",
+    "quote": "Ours is just a surrogate function which helps to apply multi objective optimization to informative path planning domain."
+   },
+   {
+    "type": "future-work",
+    "text": "Coordination to avoid overlapping observations; uncertainty in resource use, disturbances and failures.",
+    "quote": "uncertainty in resource utilization, robot motion, external disturbances (like wind etc.) and robot failures could be considered to incorporate robust planning over longer horizons."
+   }
+  ],
+  "thesis_relevance": "Its stated future work (uncertain resource use, team coordination) is what the thesis addresses: homing reserved under uncertain, estimate-dependent dose, plus learned team coordination."
+ },
+ {
+  "id": "P178",
+  "title": "The Team Surviving Orienteers problem: routing teams of robots in uncertain environments with survival constraints",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Greedy path selection does not anticipate impact on later paths.",
+    "quote": "does not anticipate its impact on later paths."
+   },
+   {
+    "type": "limitation",
+    "text": "Complexity grows unfavorably for multi-visit variants.",
+    "quote": "It is important to note that the complexity results change unfavorably."
+   },
+   {
+    "type": "future-work",
+    "text": "Online re-planning reacting to robot failure.",
+    "quote": "an on-line version of this algorithm would react to knowledge of robot failure and re-plan the paths without exposing the surviving robots to more risk."
+   },
+   {
+    "type": "inferred",
+    "text": "Survival probabilities are known and independent per edge; risk is binary loss, not cumulative dose; offline.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "The thesis supplies its stated online, reactive version, in continuous space, with per-robot survival handled as a hard cumulative budget rather than a probability threshold."
+ },
+ {
+  "id": "P179",
+  "title": "The Matroid Team Surviving Orienteers problem: Constrained routing of heterogeneous teams with risky traversal",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Heterogeneous teams handled via matroid constraints and a per-robot survival threshold; offline, with known risk; approximation only.",
+    "quote": "the probabilities that each robot survives to its destination are above a given threshold"
+   }
+  ],
+  "thesis_relevance": "A per-robot survival-to-destination threshold is the offline, probabilistic analogue of the thesis per-robot exit-dose reserve; heterogeneity relates to the thesis unequal-budget question."
+ },
+ {
+  "id": "P180",
+  "title": "A Multi-robot Control Policy for Information Gathering in the Presence of Unknown Hazards",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Hazards are estimated online jointly with events, and gradient following trades information vs failure; failure is binary, with no budget or return requirement.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "The closest precursor to joint estimation of target and hazard online; in the thesis the hazard is the source itself, so the two estimates are coupled through the filter."
+ },
+ {
+  "id": "P181",
+  "title": "Collaborative Exploration by Energy-Constrained Mobile Robots",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Theory for trees with energy bounding edges and required return to root; no uncertainty or hazard-dependent cost.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Gives theoretical background for teams needing to return to base under per-agent budgets, but its deterministic graph setting is far from the thesis."
+ },
+ {
+  "id": "P182",
+  "title": "Energy-Constrained Resilient Multirobot Coverage Control",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most coverage work ignores energy constraints.",
+    "quote": "most of the existing work does not consider the energy constraints of the robots during the coverage task."
+   },
+   {
+    "type": "limitation",
+    "text": "Prior work ignores network disruption from robot departure.",
+    "quote": "they do not consider the network disruption caused by robot departure for battery recharging."
+   },
+   {
+    "type": "assumption",
+    "text": "Known dynamics; charging station handles multiple robots simultaneously.",
+    "quote": "we assume that the recharging station can handle multiple robots simultaneously."
+   },
+   {
+    "type": "future-work",
+    "text": "Further complications deferred.",
+    "quote": "We defer those complications to our future work."
+   },
+   {
+    "type": "inferred",
+    "text": "Staggers departures so robots with similar energy do not leave together; relevant to coordinating withdrawals so the team does not collapse at once.",
+    "quote": "We restrict robots with the same energy levels from clustering together to ensure that they do not leave the network simultaneously."
+   }
+  ],
+  "thesis_relevance": "Points to an issue the thesis has not covered: coordinating when robots withdraw so the team keeps enough sensing (staggered exits); the thesis has no recharge, so departures are permanent."
+ },
+ {
+  "id": "P183",
+  "title": "Energy-constrained multi-robot exploration for autonomous map building",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Battery is renewable at discovered charging stations; deterministic dynamics; frontier-based, no belief-dependent cost.",
+    "quote": "the unknown environment has a set of charging stations that the robots must discover and visit often to recharge their battery"
+   }
+  ],
+  "thesis_relevance": "A contrast case: its resource can be recharged, whereas the thesis dose budget is non-renewable, so recursive-feasibility ideas apply only to the exit reserve."
+ }
+]

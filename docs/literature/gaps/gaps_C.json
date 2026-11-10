@@ -1,0 +1,855 @@
+[
+ {
+  "id": "P073",
+  "title": "Robotics in Ionizing Radiation Environments: Vulnerabilities, Hardening, and Future Directions",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "No standardized radiation testing protocols or radiation-robotics datasets.",
+    "quote": "Key research gaps include standardized testing protocols, limited radiation‐robotics datasets, mixed‐field qualification"
+   },
+   {
+    "type": "open-problem",
+    "text": "Need system-level validation linking component degradation to mission performance.",
+    "quote": "the need for system‐level validation linking component degradation to mission performance"
+   },
+   {
+    "type": "inferred",
+    "text": "Review treats dose as hardware degradation but not as a planning/decision constraint for autonomous teams.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports the thesis framing that cumulative dose is a mission-level limit; the thesis links a dose budget to mission success, a partial answer to the 'component degradation to mission performance' gap."
+ },
+ {
+  "id": "P074",
+  "title": "Radiation Aware Navigation and Planning for Mobile Robot Exploration of Unknown Hazardous Nuclear Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Conventional navigation is geometry-centric and ignores radiation exposure.",
+    "quote": "Conventional navigation frameworks remain largely geometry-centric and do not explicitly account for radiation exposure"
+   },
+   {
+    "type": "inferred",
+    "text": "Single robot, minimises dose (soft objective) rather than enforcing a hard dose budget with guaranteed exit; uses an emulated field (ultrasonic beacons) rather than real gamma sources.",
+    "quote": null
+   },
+   {
+    "type": "inferred",
+    "text": "Field estimated with GPR without explicit source/activity inference, so planning risk under estimate uncertainty is not bounded.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest single-robot analogue (dose-minimising exploration with online field estimate); the thesis extends to multi-robot, hard per-robot budgets and percentile-based exit reserves."
+ },
+ {
+  "id": "P075",
+  "title": "Development and Deployment of Radiation-Tolerant Remotely-Control System in Fukushima Daiichi NPS",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Highly integrated controllers fail early under radiation, limiting robot lifespan.",
+    "quote": "the controller which is functionally important tends to fail relatively early"
+   },
+   {
+    "type": "assumption",
+    "text": "Failure attributed to semiconductor integration level (assumed, not proven).",
+    "quote": "This is assumed to be due to the high integration of the semiconductors used in the controller."
+   },
+   {
+    "type": "inferred",
+    "text": "Teleoperated, long-duration task; no autonomy or dose-budget planning.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Gives real-world evidence that cumulative dose sets robot lifespan, motivating a hard non-renewable dose budget; does not address planning."
+ },
+ {
+  "id": "P076",
+  "title": "Research on Radiation Damage and Reinforcement of Control and Sensing Systems in Nuclear Robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Transformers and controllers are damaged above about 170 Gy; sensors above 1300 Gy.",
+    "quote": "At doses exceeding 170 Gy, transformers and controllers also show radiation damage."
+   },
+   {
+    "type": "inferred",
+    "text": "Shielding evaluated only by simulation (Super MC); no link to task-level dose allocation.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supplies component dose thresholds useful to justify the budget value; no planning gap closed."
+ },
+ {
+  "id": "P077",
+  "title": "Multi-objective path planning for mobile robot in nuclear accident environment based on improved ant colony optimization with modified A*",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "assumption",
+    "text": "Static environment with a known two-layer cost map (Monte Carlo dose).",
+    "quote": "in a static nuclear accident environment"
+   },
+   {
+    "type": "inferred",
+    "text": "Dose is one weighted objective; no hard cumulative budget, single robot, source field assumed known.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Typical known-field dose-weighted planner; the thesis replaces the known map with a particle-filter estimate and a hard budget constraint."
+ },
+ {
+  "id": "P078",
+  "title": "Radiation tolerance of a small COTS single board computer for mobile robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "UP Core SBC fails at about 111 Gy due to power management circuitry.",
+    "quote": "The units were found to fail on average after 111.1 ± 5.5 Gy, due to faults in the on-board power management circuitry."
+   },
+   {
+    "type": "future-work",
+    "text": "Shielding could extend operational lifetime.",
+    "quote": "with scope to use shielding to enhance operational lifetime"
+   }
+  ],
+  "thesis_relevance": "Gives a concrete onboard-computer TID limit (~100 Gy) for budget calibration; the thesis' 0.1 Gy modeled limit is far more conservative and should be justified against such numbers."
+ },
+ {
+  "id": "P233",
+  "title": "RICA: A Tracked Robot for Sampling and Radiological Characterization in the Nuclear Field",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Digest gives no explicit limitation; teleoperated single robot for source location and activity measurement.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Field system that locates sources and measures activity; shows the operational need but no autonomous or multi-robot gap is stated."
+ },
+ {
+  "id": "P079",
+  "title": "gamma Ray irradiation test of control system of nuclear emergency rescue robot",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Control system and comms survive 100 Gy; failure dose found beyond that.",
+    "quote": "The result showed the control system and communication link survived under 100Gy"
+   },
+   {
+    "type": "future-work",
+    "text": "Design a control system that survives 100 Gy.",
+    "quote": "it is possible to design a control system that can survive under 100Gy"
+   }
+  ],
+  "thesis_relevance": "Another ~100 Gy system-level threshold supporting a finite per-robot dose budget."
+ },
+ {
+  "id": "P080",
+  "title": "Emergency response to the nuclear accident at the Fukushima Daiichi Nuclear Power Plants using mobile rescue robots",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Robust wireless communication was not possible in reactor buildings; wired comms needed.",
+    "quote": "robust wireless communication would not be possible in the reactor buildings"
+   },
+   {
+    "type": "assumption",
+    "text": "Radiation tolerance checked for an assumed environment dose rate.",
+    "quote": "in the assumed environment (100 mGy/h)"
+   },
+   {
+    "type": "inferred",
+    "text": "Single teleoperated robot; mission duration bounded by dose tolerance with a fixed safety margin rather than adaptive budgeting.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Highlights communication limits that challenge the thesis' assumption of a shared (centralised) particle filter; also shows real practice uses fixed dose margins."
+ },
+ {
+  "id": "P081",
+  "title": "Extreme Total Ionizing Dose Survival of a COTS Artix-7 FPGA Under Prolonged Gamma Irradiation",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Most studies use unpowered devices at high dose rates; low-dose-rate (ELDRS) behaviour unexplored.",
+    "quote": "most studies irradiate unpowered devices at high dose rates, leaving Enhanced Low Dose Rate Sensitivity (ELDRS) behavior largely unexplored"
+   },
+   {
+    "type": "limitation",
+    "text": "Peripheral failures are misattributed to the FPGA, underestimating silicon tolerance.",
+    "quote": "the resulting power-rail collapse or communication loss is often misattributed to the FPGA fabric"
+   },
+   {
+    "type": "limitation",
+    "text": "No microscopic defect isolation, no concurrent high-dose-rate cross-testing.",
+    "quote": "A limitation of this study is the lack of microscopic defect isolation within the degraded I/O blocks and the absence of concurrent high-dose-rate cross-testing."
+   },
+   {
+    "type": "future-work",
+    "text": "Lower dose rates; use telemetry features for early fault detection / predictive maintenance.",
+    "quote": "use them as features for early fault detection to enhance predictive maintenance"
+   },
+   {
+    "type": "inferred",
+    "text": "Failure depends on dose rate, not only cumulative dose, so a single cumulative-dose budget is a simplification.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Points out that damage depends on dose rate as well as total dose, an assumption the thesis' scalar cumulative-dose budget ignores (could be noted as a limitation)."
+ },
+ {
+  "id": "P082",
+  "title": "Radiation-Aware Path Planning Framework for Mobile Robots in Dynamic Hazardous Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Results only valid under tested simulation conditions.",
+    "quote": "under the tested simulation conditions"
+   },
+   {
+    "type": "inferred",
+    "text": "Field is a known, physically parameterised dose map; no source uncertainty, no hard budget, single robot.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Known-field dose-minimising planner; thesis addresses the unknown-source, hard-budget, multi-robot case."
+ },
+ {
+  "id": "P083",
+  "title": "Design, protection, perception and planning of mobile robots in nuclear power plants",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Summary only; review covers source localization and multi-robot collaboration but no gaps given.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Review touches source localization and multi-robot collaboration, the thesis' intersection, but stated gaps are not available."
+ },
+ {
+  "id": "P084",
+  "title": "Research on key technology and application progress of rescue robot in nuclear accident emergency situation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Review of trends and key technical parameters; no explicit gaps in abstract.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "General motivation only."
+ },
+ {
+  "id": "P085",
+  "title": "A Dynamic Nuclear Radiation Environment Path Planning Method Based on an Improved Ant Colony Algorithm",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Traditional minimum-dose planners are non-optimal when the dose field changes dynamically.",
+    "quote": "the distribution of radiation doses in the environment changes dynamically, making the cumulative radiation dose of paths planned by traditional methods nonoptimal"
+   },
+   {
+    "type": "inferred",
+    "text": "Field assumed known at each segment; no estimation uncertainty or hard budget.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Dynamic-field planning gap is related; the thesis' field changes through the belief rather than physically, and adds a hard budget."
+ },
+ {
+  "id": "P086",
+  "title": "A Real-Time Path Planning Algorithm in Radiation Environments Based on an Improved A* Combined with the Dynamic Window Approach",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Highly uncertain radiation field and unknown obstacles challenge traditional planners.",
+    "quote": "the highly uncertain radiation field and the frequent emergence of unknown obstacles during such incidents pose significant challenges for traditional path planning methods"
+   },
+   {
+    "type": "inferred",
+    "text": "Uncertainty is named but dose is a weighted cost term; no probabilistic dose constraint.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "States the uncertain-field problem the thesis tackles with a particle-filter-based 97th-percentile dose prediction."
+ },
+ {
+  "id": "P087",
+  "title": "Assessment of Radiation Tolerance of Flash Memory by gamma-Ray Irradiation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Flash memory needed to boot has low radiation tolerance, limiting microcontroller lifetime.",
+    "quote": "the flash memory needed to boot the microcontroller had particularly low-radiation tolerance"
+   }
+  ],
+  "thesis_relevance": "Hardware dose limit evidence only."
+ },
+ {
+  "id": "P088",
+  "title": "Irradiation of Commercial Equipment for Robotic Applications in a Highly Ionizing Radiation Field",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Reports TID failure levels at various dose rates; no limitation stated.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Hardware data for budget calibration only."
+ },
+ {
+  "id": "P089",
+  "title": "The effect of ionizing radiation on robotic trajectory movement and electronic components",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Active electronics are radiation-susceptible, causing unexpected failures and early termination.",
+    "quote": "It can lead to unexpected failures and early termination of the robotic operation."
+   },
+   {
+    "type": "inferred",
+    "text": "Degradation of motion/trajectory before outright failure suggests dose affects behaviour gradually, not only at a hard threshold.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Supports modelling a hard dose budget, but also hints that a graded degradation model could be more realistic than a single cutoff."
+ },
+ {
+  "id": "P090",
+  "title": "The search for orphan radioactive source based on GPR-PRM method",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Single robot, simulated rooms; GPR field reconstruction without explicit dose budget for the searching robot.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Closest source-search analogue in this cluster (single robot, obstacles, shielding); thesis adds team coordination and per-robot dose budgets."
+ },
+ {
+  "id": "P091",
+  "title": "Impact of gamma radiation on 8051 microcontroller performance",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Ionizing radiation degrades I&C performance leading to inaccurate results; device works to about 0.6 kGy.",
+    "quote": "the adverse environment of ionizing radiation affects the performance of the I&C system and it leads to inaccurate and incomprehensible results"
+   }
+  ],
+  "thesis_relevance": "Hardware data only."
+ },
+ {
+  "id": "P234",
+  "title": "Modular Robots for Enabling Operations in Unstructured Extreme Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Nuclear robots still fail tasks due to informational and physical uncertainty, worsened by time constraints from high radiation.",
+    "quote": "still suffer from task failures caused by informational and physical uncertainty of the highly unstructured nature of the environment and exasperated by the time constraints imposed by high radiation levels"
+   }
+  ],
+  "thesis_relevance": "Directly names the coupling of uncertainty and radiation-imposed time limits that the thesis' dose budget plus belief-based safety layer addresses."
+ },
+ {
+  "id": "P092",
+  "title": "Path planning in nuclear facility decommissioning: Research status, challenges, and opportunities",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most techniques assume static environments.",
+    "quote": "The inherent weakness of the techniques described above is that they are applied to the static environment without considering the dynamics observed during nuclear decommissioning."
+   },
+   {
+    "type": "assumption",
+    "text": "Walking speed assumed constant.",
+    "quote": "the walking speed was not considered as it was assumed constant"
+   },
+   {
+    "type": "limitation",
+    "text": "Uncertainty in build-up factor reduces point-kernel dose accuracy.",
+    "quote": "there are uncertainties in determining the build-up factor"
+   },
+   {
+    "type": "limitation",
+    "text": "Multi-worker planning neglects individual information.",
+    "quote": "Less memory is required, but the individual information about the workers is neglected."
+   },
+   {
+    "type": "future-work",
+    "text": "Develop algorithms for dynamic environments via better sampling, node adding, heuristics; hybrid approaches.",
+    "quote": "we recommend improved research and development of novel nucleardecommissioning algorithms that target optimal performance in dynamic environments"
+   },
+   {
+    "type": "open-problem",
+    "text": "Gaps in transferring algorithms from other industries.",
+    "quote": "we observed gaps in the development and application of the algorithms from other industries for path planning purposes"
+   },
+   {
+    "type": "inferred",
+    "text": "No learning-based or multi-agent methods with per-agent dose limits reviewed.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Names neglect of individual worker information in multi-agent dose planning and lack of methods from other fields; the thesis' per-robot budgets with MARL directly address both."
+ },
+ {
+  "id": "P093",
+  "title": "Gamma-Induced Image Degradation Analysis of Robot Vision Sensor for Autonomous Inspection of Nuclear Sites",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Gamma-induced noise makes camera data unreliable for visual odometry.",
+    "quote": "radiated images cannot be used for visual odometry as handcrafted features are no longer repeatable"
+   },
+   {
+    "type": "open-problem",
+    "text": "Fukushima robots had autonomy and failure-recovery limitations.",
+    "quote": "these robots had their own limitations centering around autonomous navigation and failure recovery"
+   },
+   {
+    "type": "future-work",
+    "text": "Capture dark images between cycles; measure dark current, read noise; monitor sensor temperature.",
+    "quote": "The dark images may be captured between the radiation cycles in the future experiment."
+   },
+   {
+    "type": "inferred",
+    "text": "Robot localisation degrades with dose rate; the thesis assumes perfect robot localisation near strong sources.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Shows that localisation sensors degrade near strong sources, an unmodelled effect in the thesis (perfect self-localisation assumed); could be listed as a limitation."
+ },
+ {
+  "id": "P094",
+  "title": "Metaheuristic minimum dose path planning for nuclear power plant decommissioning",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Known-field minimum-dose paths; no uncertainty or budget constraint.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Baseline-type known-map dose planner."
+ },
+ {
+  "id": "P095",
+  "title": "Path Planning for Nuclear Emergency Robot in Radiation Environment with Uneven Terrain",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Treats extremely high dose-rate areas as impassable (hard dose-rate threshold) rather than budgeting cumulative dose.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Dose-rate keep-out masking resembles the thesis' safety layer, which instead masks on predicted cumulative dose plus exit dose."
+ },
+ {
+  "id": "P096",
+  "title": "Use of Gaussian process regression for radiation mapping of a nuclear reactor with a mobile robot",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Prior interpolation methods cannot cope with irregular, noisy, low-count robot data.",
+    "quote": "they are unable to cope well with irregularly spaced, noisy, low count data"
+   },
+   {
+    "type": "assumption",
+    "text": "Many methods assume point sources and a known or estimated number of sources.",
+    "quote": "typically involves the approximation of solely point radiation sources using methods that either assume a predefined number of m ­ easurements16,18 or require 17,21 the estimation of the number of sources"
+   },
+   {
+    "type": "limitation",
+    "text": "Non-point sources introduce errors into maps.",
+    "quote": "there are examples of non-point source radioactivity that can be found during surveys of nuclear facilities, which will introduce errors into any interpolated radiation map, if not considered"
+   },
+   {
+    "type": "limitation",
+    "text": "GPR scales O(n^3), limiting it to post-survey analysis.",
+    "quote": "A significant drawback of GPR is the computation time required, scaling poorly (O(n3 )) with the number of observations, which limits this technique to post-survey analysis for large datasets."
+   },
+   {
+    "type": "assumption",
+    "text": "Radiation field assumed time invariant.",
+    "quote": "It was assumed the radiation field was time invariant"
+   },
+   {
+    "type": "limitation",
+    "text": "GPR confidence depends on length scale and sampling pattern; kernel may create point-source artifacts.",
+    "quote": "this confidence is heavily linked to the length scale of the interpolation and where observations have been made"
+   },
+   {
+    "type": "future-work",
+    "text": "Investigate detector height effect.",
+    "quote": "Future work will investigate the effect of adjusting the height of the radiation detector during the survey."
+   }
+  ],
+  "thesis_relevance": "Its warnings on model-dependent confidence and non-point sources echo the thesis finding that the particle filter is overconfident under spatially correlated model error."
+ },
+ {
+  "id": "P097",
+  "title": "The Use of Robots to Respond to Nuclear Accidents: Applying the Lessons of the Past to the Fukushima Daiichi Nuclear Power Station",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Historical review; no explicit gaps in abstract.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivation only."
+ },
+ {
+  "id": "P098",
+  "title": "Radiation Tolerance Testing Methodology of Robotic Manipulator Prior to Nuclear Waste Handling",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most off-the-shelf industrial robots have not been tested in radiation.",
+    "quote": "most off-the-shelf industrial robots have not been tested in a radiation environment"
+   },
+   {
+    "type": "limitation",
+    "text": "Hardware-level signals hard to access in industrial robots.",
+    "quote": "such hardware level signals are often difficult to access in industrial robots"
+   },
+   {
+    "type": "future-work",
+    "text": "Monte Carlo (Geant4) damage simulation; rad-tolerant encoder replacements; micro-shielding.",
+    "quote": "Future work should consider alternate radiation-tolerant replacements for optical encoders, and also examine methods of micro-shielding of vulnerable components"
+   },
+   {
+    "type": "assumption",
+    "text": "Point-source assumption for trajectory design.",
+    "quote": "The robot’s end-effector trajectory was planned to follow an arc-trajectory of radius 1 m from the assumed point source."
+   },
+   {
+    "type": "inferred",
+    "text": "Real-time dosimetry needed because time to failure cannot be predicted, supporting onboard dose tracking.",
+    "quote": "the time to failure could not be predicted"
+   }
+  ],
+  "thesis_relevance": "Supports onboard real-time dose accounting (as in the thesis budget) and the treatment of components as consumable."
+ },
+ {
+  "id": "P099",
+  "title": "An improved A* algorithm for searching the minimum dose path in nuclear facilities",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Known-field worker path planning in simulation; no uncertainty.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Baseline-type planner only."
+ },
+ {
+  "id": "P100",
+  "title": "Radiation imaging using a compact Compton camera mounted on a crawler robot inside reactor buildings of Fukushima Daiichi Nuclear Power Station",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Teleoperated imaging; no autonomous planning or dose budgeting; Compton camera gives directional data unlike scalar counters assumed in the thesis.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Suggests directional sensing as an alternative sensor model; outside thesis scope."
+ },
+ {
+  "id": "P101",
+  "title": "Study of radiation effects in electronics of a hexapod robotic platform",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "High doses limit platform operational time.",
+    "quote": "robots will be exposed to high doses which limits the platform’s operational time"
+   },
+   {
+    "type": "open-problem",
+    "text": "Trade-off between shielding and robot capability/payload.",
+    "quote": "The tradeoff between shielding and capabilities of the robot can be made to achieve specific tasks during a required time period."
+   }
+  ],
+  "thesis_relevance": "Frames dose as limiting operational time, i.e. a budget; heterogeneous shielding could justify unequal budgets in the thesis."
+ },
+ {
+  "id": "P102",
+  "title": "A review of ground-based robotic systems for the characterization of nuclear environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Requirements differ per site; harsh environments challenge robust platforms; development is costly.",
+    "quote": "the detailed characteristics of a given harsh environment can pose significant challenges even for the most robust of platforms"
+   }
+  ],
+  "thesis_relevance": "General motivation only."
+ },
+ {
+  "id": "P103",
+  "title": "Nuclear Radiation Degradation Study on HD Camera Based on CMOS Image Sensor at Different Dose Rates",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Camera degradation grows with dose rate; SNR falls faster at high rates.",
+    "quote": "the higher the dose rate is, the worse the radiation effect will be"
+   }
+  ],
+  "thesis_relevance": "Dose-rate-dependent sensor degradation; unmodelled in the thesis."
+ },
+ {
+  "id": "P104",
+  "title": "Grid-based RRT* for minimum dose walking path-planning in complex radioactive environments",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Known-field minimum-dose path for workers; grid resolution sensitivity noted elsewhere (P092).",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Baseline-type planner only."
+ },
+ {
+  "id": "P105",
+  "title": "DL-RRT* algorithm for least dose path Re-planning in dynamic radioactive environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "open-problem",
+    "text": "Workers must avoid sources and sustain low exposure in dynamic environments.",
+    "quote": "One of the most challenging safety precautions for workers in dynamic, radioactive environments is avoiding radiation sources and sustaining low exposure."
+   },
+   {
+    "type": "inferred",
+    "text": "Radiation field assumed known when re-planning; no budget constraint or uncertainty.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Re-planning idea parallels per-step re-evaluation in the thesis safety layer, but with known fields."
+ },
+ {
+  "id": "P106",
+  "title": "Range-Finding Sensor Degradation in Gamma Radiation Environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Sensors fail abruptly or change transfer function with dose; large part-to-part variation.",
+    "quote": "Significant part-to-part variation in radiation response is shown for both the sonar and IR sensor."
+   },
+   {
+    "type": "inferred",
+    "text": "Obstacle sensing degrades silently, so navigation models assuming nominal sensing are optimistic.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Part-to-part variation argues for per-robot (possibly unequal, uncertain) dose budgets."
+ },
+ {
+  "id": "P107",
+  "title": "Emergency response by robots to Fukushima-Daiichi accident: summary and lessons learned",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Previously developed disaster robots could not work when the accident occurred.",
+    "quote": "could not work when the Fukushima‐Daiichi accident occurred"
+   },
+   {
+    "type": "open-problem",
+    "text": "Organization, operation scheme and systemization were the main lessons.",
+    "quote": "organization and operation scheme, and systemization were major lessons learned"
+   }
+  ],
+  "thesis_relevance": "Operational/organizational lesson; little direct thesis link."
+ },
+ {
+  "id": "P108",
+  "title": "Robotic control vehicle for measuring radiation in Fukushima Daiichi Nuclear Power Plant",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Pinhole gamma camera requires target distance.",
+    "quote": "the γ-cam needs to know the distance to the targets"
+   },
+   {
+    "type": "inferred",
+    "text": "Operator exposure reduced via shielded box; robots teleoperated, no autonomy.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivation only."
+ },
+ {
+  "id": "P109",
+  "title": "Radiation Hardened LIDAR Sensor: Conceptual Design, Testing, and Performance Evaluation",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Standard silicon electronics including LIDAR fail quickly in gamma radiation.",
+    "quote": "Standard silicon-based electronics including LIDAR fail quickly in gamma radiation"
+   },
+   {
+    "type": "future-work",
+    "text": "Radiation testing trials still to be done.",
+    "quote": "Future work (such as radiation testing trials) is discussed and defined."
+   }
+  ],
+  "thesis_relevance": "Sensor survivability near strong sources; thesis assumes working navigation sensors."
+ },
+ {
+  "id": "P110",
+  "title": "Development and Application of Robotics for Decommissioning of Fukushima Daiichi NPS by IRID",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Review of IRID robots; no explicit gaps.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivation only."
+ },
+ {
+  "id": "P111",
+  "title": "Optimal path planning in a real-world radioactive environment: A comparative study of A-star and Dijkstra algorithms",
+  "evidence": "full text",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most dose-path models are simulation-based and do not represent real environments.",
+    "quote": "most existing models are based on simulations that do not accurately represent real-world environments"
+   },
+   {
+    "type": "limitation",
+    "text": "Only a subset of nodes considered; others could change results.",
+    "quote": "Thus, the other nodes that were not considered may potentially alter the obtained results."
+   },
+   {
+    "type": "future-work",
+    "text": "Integrate real-time radiation data into planning.",
+    "quote": "Integration of real-time data: Developing methods for incorporating real-time radiation data into path-planning algorithms"
+   },
+   {
+    "type": "future-work",
+    "text": "Dynamic path planning for changing conditions.",
+    "quote": "Dynamic path planning: Examining the possibility of implementing dynamic path planning"
+   },
+   {
+    "type": "future-work",
+    "text": "Use machine learning / AI for path planning.",
+    "quote": "Leverage advancements in machine learning and artificial intelligence to develop more sophisticated and efficient path-planning algorithms"
+   }
+  ],
+  "thesis_relevance": "Its future-work items (real-time data, dynamic planning, ML) are what the thesis does, though the thesis remains simulation-only, the limitation this paper criticises."
+ },
+ {
+  "id": "P112",
+  "title": "Probabilistic roadmap method for path-planning in radioactive environment of nuclear facilities",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Known-field dose-minimising PRM; no uncertainty or budget.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Baseline-type planner only."
+ },
+ {
+  "id": "P113",
+  "title": "Dynamic minimum dose path-searching method for virtual nuclear facilities",
+  "evidence": "summary",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "Virtual (simulated) facility, known field.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Baseline-type planner only."
+ },
+ {
+  "id": "P114",
+  "title": "Robots in the nuclear industry: a review of technologies and applications",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Most robots are highly specialised, produced by specialist companies.",
+    "quote": "The majority are highly specialised and are frequently produced by specialist nuclear engineering companies."
+   }
+  ],
+  "thesis_relevance": "Motivation only."
+ },
+ {
+  "id": "P115",
+  "title": "Practical design of robots operating in radiation environments",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "limitation",
+    "text": "Rad-hard components have few functions, high cost, long delivery.",
+    "quote": "These robots require special components that usually have few functions, high costs and long delivery times."
+   },
+   {
+    "type": "assumption",
+    "text": "Radiation lifetime of COTS ICs is random; must be estimated statistically; user accepts operational risk.",
+    "quote": "If the radiation lifetime is random, then the radiation lifetime of the sorted IC components can be estimated statistically. Here, the robot user decides the operation based on this lifetime."
+   },
+   {
+    "type": "inferred",
+    "text": "Supports treating the dose limit itself as uncertain (random lifetime), not a fixed 0.1 Gy.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Suggests the dose budget is stochastic per robot; the thesis uses a fixed deterministic limit, a possible extension (chance constraint on lifetime)."
+ },
+ {
+  "id": "P116",
+  "title": "The Use of Robotics and Automation in Nuclear Decommissioning",
+  "evidence": "abstract",
+  "stated_gaps": [
+   {
+    "type": "inferred",
+    "text": "none stated. Review; no explicit gaps in abstract.",
+    "quote": null
+   }
+  ],
+  "thesis_relevance": "Motivation only."
+ }
+]
