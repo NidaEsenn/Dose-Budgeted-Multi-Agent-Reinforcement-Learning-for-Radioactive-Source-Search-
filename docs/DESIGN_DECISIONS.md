@@ -498,3 +498,35 @@ Episode length in the first updates went from ~9 to 35–74 steps.
 Note: with potential shaping the logged return includes the constant
 `−Φ(s₀) = initial error / 5 m` per episode; compare success, violations and
 time, not raw return, across shaping modes.
+
+## D26 — Dose-calibration test of the safety layer (FORMULATION Q2/Q4)
+
+`scripts/calibration_test.py`, reference rule (greedy + reserve, q = 0.97,
+32 particles), 300 test missions, 18,633 robot decisions
+(`docs/results/calibration_dose.json`, `docs/figures/calibration_dose.png`).
+At each decision the safety layer's 32 particle predictions of
+(next-step + exit dose) are compared with the true value.
+
+| Subset | n | P(true > q97), nominal 3 % | P(true > q90), nominal 10 % | P(true > q50), nominal 50 % | P(true > max of 32), nominal 3 % |
+|---|---|---|---|---|---|
+| all decisions | 18,633 | **18.0 %** [17.4, 18.5] | 25.2 % | 51.7 % | 13.9 % |
+| near the limit (dose + q97 > ½ budget) | 581 | **17.2 %** [14.4, 20.5] | 24.6 % | 50.8 % | 12.6 % |
+| first 6 steps | 6,857 | 12.7 % | 19.9 % | 49.8 % | 9.4 % |
+| later steps | 11,776 | **21.0 %** | 28.3 % | 52.8 % | 16.4 % |
+
+Findings.
+1. **The predictive dose distribution is about 6× too narrow at the 97th
+   percentile.** The median is unbiased (≈ 50 %), but both tails are hit
+   far too often (U-shaped rank histogram), which is classic overconfidence.
+2. **It gets worse as evidence accumulates** (12.7 % early → 21.0 % later). This
+   fits the suspected cause: the filter treats spatially correlated model
+   errors as independent, so each extra reading overstates the evidence.
+3. **Why violations are still only 4.3 %:** when the truth exceeds the 97th
+   percentile, it does so by a small factor (95th percentile of truth / q97 =
+   1.24), and most decisions are far from the budget. The 4.3 % therefore comes
+   from slack, not from a calibrated 3 % per decision. A dose-model error
+   (Q1), stronger sources or tighter budgets could remove that slack.
+4. Implication for the method: a calibration-aware safety layer has a clear
+   target. Inflating the prediction by about 1.25×, tempering the likelihood
+   by the effective number of independent readings, or adjusting the quantile
+   online from observed exceedances should bring P(true > q) close to 1 − q.
