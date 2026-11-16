@@ -530,3 +530,30 @@ Findings.
    target. Inflating the prediction by about 1.25×, tempering the likelihood
    by the effective number of independent readings, or adjusting the quantile
    online from observed exceedances should bring P(true > q) close to 1 − q.
+
+## D27 — P1 pilot results (HPC): learned vs rule on the same 1000 test missions
+
+Current rules (withdraw on, potential shaping, 0.1 Gy, 10–100 TBq). Learned
+policies: 3 training seeds × 1000 test missions each, deterministic actions.
+Rules: the same 1000 test missions (`docs/results/p1_rule_*_1000.json`).
+
+| Method | Success | Violations | Stranded | Wrong declaration | Steps | Team dose (Gy) |
+|---|---|---|---|---|---|---|
+| greedy, no safety layer | 86.2 % | 30.4 % | 16.5 % | 13.4 % | 15.3 | 0.126 |
+| **greedy + reserve layer (q = 0.97)** | **84.6 %** [82.2, 86.7] | **4.2 %** [3.1, 5.6] | 1.3 % | 12.3 % | 17.4 | 0.101 |
+| MAPPO (no constraint), pooled | 80.7 % (77.9–84.8 by seed) | 19.0 % | 5.5 % | 8.0 % | 25.4 | 0.109 |
+| **MAPPO-Lagrangian B**, pooled | **79.6 %** (78.0–81.9) | **4.3 %** (3.2–4.9) | 0.7 % | 6.7 % | 22.7 | 0.100 |
+| MAPPO + reserve layer | pending (still training) | | | | | |
+
+Findings.
+1. **MAPPO-Lagrangian is no longer timid.** Under the earlier rules (no withdraw)
+   it reached 10 % success; now it reaches 79.6 % at 4.3 % violations, and its
+   multipliers stay small (λ ≤ 0.1). The likely cause is the withdraw action plus
+   the outcome-only reward: a robot can approach and still leave in time.
+   The earlier "price-based safety becomes timid" finding must be stated as
+   "timid without an exit option".
+2. **No learned method beats the rule yet.** At the same violation rate (≈ 4.2–4.3 %)
+   the rule is 5 points more successful and finishes in fewer steps.
+3. **The learned team declares wrongly less often** (6.7 % vs 12.3 %) and strands
+   fewer robots (0.7 % vs 1.3 %), but takes longer.
+4. Decision pending on MAPPO + reserve (tasks 4–6) and the headroom test (FORMULATION Q6).
