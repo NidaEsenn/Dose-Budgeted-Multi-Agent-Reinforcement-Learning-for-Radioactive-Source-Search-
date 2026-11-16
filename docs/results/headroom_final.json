@@ -1,0 +1,75 @@
+{
+ "stage": "final",
+ "n": 1000,
+ "seed_base": 10000000,
+ "results": {
+  "baseline:greedy+withdraw,beta=0.3,crowd_penalty=1.0,wd_quantile=0.97": {
+   "success_rate": 0.832,
+   "success_ci": [
+    0.8075669791195391,
+    0.8538920532460522
+   ],
+   "violation_rate": 0.046,
+   "violation_ci": [
+    0.03466249276326498,
+    0.06081220394161907
+   ],
+   "stranded_rate": 0.019,
+   "wrong_declare_rate": 0.137,
+   "steps_mean": 17.363,
+   "team_dose_mean": 0.10316761271346538,
+   "withdraw_rate": 0.463
+  },
+  "baseline:greedy+withdraw_oracle": {
+   "success_rate": 0.852,
+   "success_ci": [
+    0.828644950702635,
+    0.8726610113235342
+   ],
+   "violation_rate": 0.0,
+   "violation_ci": [
+    2.168404344971009e-19,
+    0.0038267584855551234
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.126,
+   "steps_mean": 15.992,
+   "team_dose_mean": 0.11098942628393602,
+   "withdraw_rate": 0.299
+  },
+  "baseline:greedy+withdraw_oracle,beta=0.0": {
+   "success_rate": 0.834,
+   "success_ci": [
+    0.8096691971622607,
+    0.8557745281693885
+   ],
+   "violation_rate": 0.0,
+   "violation_ci": [
+    2.168404344971009e-19,
+    0.0038267584855551234
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.137,
+   "steps_mean": 16.83,
+   "team_dose_mean": 0.11409656129354605,
+   "withdraw_rate": 0.345
+  },
+  "baseline:greedy+withdraw_oracle,beta=0.3": {
+   "success_rate": 0.836,
+   "success_ci": [
+    0.8117726060331938,
+    0.857655812264513
+   ],
+   "violation_rate": 0.0,
+   "violation_ci": [
+    2.168404344971009e-19,
+    0.0038267584855551234
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.142,
+   "steps_mean": 16.087,
+   "team_dose_mean": 0.11226464882705618,
+   "withdraw_rate": 0.344
+  }
+ }
+}
