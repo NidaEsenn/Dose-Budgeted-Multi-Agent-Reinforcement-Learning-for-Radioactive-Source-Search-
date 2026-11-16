@@ -219,3 +219,54 @@ plt.close(fig)
 json.dump(dict(seed=SEED, robot=r, allowed_step=int(log[ka]["t"]), withdraw_step=int(log[kw]["t"]),
                steps=ep["steps"], success=ep["success"], violation=ep["any_violation"], dose=ep["dose"]),
           open("docs/figures/alg_figures_mission.json", "w"), indent=1)
+
+# ------------------------------------------------------------------ one-slide overview: estimate -> decide -> check
+fig = plt.figure(figsize=(16, 4.6), dpi=200)
+gs = fig.add_gridspec(1, 3, width_ratios=[1.15, 1.0, 1.0], wspace=0.16)
+# (1) particle filter: start and end snapshots of the same mission (docs/figures/particles.png, make_figures_midterm.py)
+pimg = plt.imread("docs/figures/particles.png")
+Hh, Ww = pimg.shape[:2]
+third = Ww // 3
+crop = lambda k: pimg[int(Hh * 0.09):, k * third + 8:(k + 1) * third - 8]
+sub = gs[0].subgridspec(1, 2, wspace=0.06)
+for j, (k, lab) in enumerate([(0, "start: everywhere"), (2, "end: on the source ★")]):
+    a = fig.add_subplot(sub[j]); a.imshow(crop(k)); a.axis("off")
+    a.set_title(lab, fontsize=12.5, color=INK)
+fig.text(0.125, 0.97, "① Estimate: shared guess (particle filter)", fontsize=15, fontweight="bold", color=BLUE, va="top")
+
+# (2) decide: shared policy, safety mask, actions
+a = fig.add_subplot(gs[1]); a.axis("off"); a.set_xlim(0, 10); a.set_ylim(0, 10)
+
+
+def bx(x, y, w, h, t, col, fc, fs=12, bold=True):
+    a.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.04,rounding_size=0.3", fc=fc, ec=col, lw=2))
+    a.text(x + w / 2, y + h / 2, t, ha="center", va="center", fontsize=fs, color=INK, fontweight="bold" if bold else "normal")
+
+
+def ar(p0, p1, col=MUTED, ls="-"):
+    a.add_patch(FancyArrowPatch(p0, p1, arrowstyle="-|>", mutation_scale=14, color=col, lw=1.8, linestyle=ls))
+
+
+for i, y in enumerate([7.3, 4.6, 1.9]):
+    bx(0.0, y, 2.4, 1.6, f"robot {i + 1}\nown view", BLUE, LIGHT, fs=10.5, bold=False)
+    ar((2.4, y + 0.8), (3.4, 5.4))
+bx(3.4, 4.0, 2.6, 2.8, "shared\npolicy", BLUE, "#DCE8F6", fs=13)
+ar((6.0, 5.4), (6.6, 5.4))
+bx(6.6, 4.0, 3.3, 2.8, "move ↑↓←→\nstay\nwithdraw", INK, LIGHT, fs=11.5)
+bx(3.4, 0.6, 6.5, 2.1, "trained with a critic that\nsees everything (training only)", GREY, "#EEF0F3", fs=10, bold=False)
+ar((4.7, 2.7), (4.7, 4.0), col=GREY, ls="--")
+fig.text(0.415, 0.97, "② Decide: greedy rule or MAPPO", fontsize=15, fontweight="bold", color=INK, va="top")
+
+# (3) check: the withdraw decision of the robot above
+a = fig.add_subplot(gs[2])
+rr = log[kw]; used = rr["dose"][r]; tot = used + rr["samp"][r]; qv = used + rr["qv"][r]; Bd = core.budget[0, r]
+a.hist(tot, bins=np.linspace(0, max(Bd * 1.25, tot.max() * 1.05), 26), color=BLUE, alpha=0.85, ec="white")
+yl = a.get_ylim()[1]
+a.axvline(Bd, color=RED, lw=2.4, ls="--"); a.text(Bd, yl * 0.97, " budget 0.1 Gy", color=RED, fontsize=11.5, va="top", fontweight="bold")
+a.axvline(qv, color=ORANGE, lw=3); a.text(qv, yl * 0.80, " 97th pct", color=ORANGE, fontsize=11.5, va="top", ha="left", fontweight="bold")
+a.set_xlabel("used + next step + way out (Gy), 32 samples", fontsize=11.5); a.set_yticks([])
+a.spines["left"].set_visible(False)
+a.text(0.70, 0.42, "over budget\n→ WITHDRAW", transform=a.transAxes, ha="right", fontsize=13.5, fontweight="bold", color=RED)
+fig.text(0.665, 0.97, "③ Check: keep enough dose to get home", fontsize=15, fontweight="bold", color=ORANGE, va="top")
+fig.savefig("docs/figures/alg_overview.png", bbox_inches="tight", pad_inches=0.1)
+plt.close(fig)
