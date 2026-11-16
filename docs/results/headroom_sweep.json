@@ -189,6 +189,244 @@
    "steps_mean": 17.67,
    "team_dose_mean": 0.09965964494278402,
    "withdraw_rate": 0.35
+  },
+  "baseline:greedy+withdraw,beta=0.3,crowd_penalty=1.0,wd_quantile=0.97": {
+   "success_rate": 0.8266666666666667,
+   "success_ci": [
+    0.7797738592974309,
+    0.8652993995025323
+   ],
+   "violation_rate": 0.03666666666666667,
+   "violation_ci": [
+    0.02059530516285303,
+    0.06445384817189295
+   ],
+   "stranded_rate": 0.006666666666666667,
+   "wrong_declare_rate": 0.12666666666666668,
+   "steps_mean": 19.03,
+   "team_dose_mean": 0.09526803297544345,
+   "withdraw_rate": 0.4266666666666667
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=0.0,wd_quantile=0.9": {
+   "success_rate": 0.7333333333333333,
+   "success_ci": [
+    0.680572605868549,
+    0.7801940075599961
+   ],
+   "violation_rate": 0.06333333333333334,
+   "violation_ci": [
+    0.040916882383915276,
+    0.09679131248552161
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "wrong_declare_rate": 0.21666666666666667,
+   "steps_mean": 17.986666666666668,
+   "team_dose_mean": 0.11489803351609505,
+   "withdraw_rate": 0.3433333333333333
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=0.0,wd_quantile=0.97": {
+   "success_rate": 0.7133333333333334,
+   "success_ci": [
+    0.6597183711272249,
+    0.7615539611503023
+   ],
+   "violation_rate": 0.04,
+   "violation_ci": [
+    0.023027321487942308,
+    0.06860421203864003
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.2,
+   "steps_mean": 17.81,
+   "team_dose_mean": 0.10704562709380099,
+   "withdraw_rate": 0.45
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=0.5,wd_quantile=0.9": {
+   "success_rate": 0.7866666666666666,
+   "success_ci": [
+    0.7368372921361543,
+    0.8292474043617724
+   ],
+   "violation_rate": 0.04666666666666667,
+   "violation_ci": [
+    0.027998933682334012,
+    0.07679736022792105
+   ],
+   "stranded_rate": 0.016666666666666666,
+   "wrong_declare_rate": 0.18,
+   "steps_mean": 17.186666666666667,
+   "team_dose_mean": 0.09838436056232665,
+   "withdraw_rate": 0.3233333333333333
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=0.5,wd_quantile=0.97": {
+   "success_rate": 0.8033333333333333,
+   "success_ci": [
+    0.7546412316550143,
+    0.8443553658020945
+   ],
+   "violation_rate": 0.023333333333333334,
+   "violation_ci": [
+    0.011347660299125234,
+    0.04737197226827532
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.14333333333333334,
+   "steps_mean": 17.063333333333333,
+   "team_dose_mean": 0.09326401452210831,
+   "withdraw_rate": 0.41
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=1.0,wd_quantile=0.9": {
+   "success_rate": 0.8233333333333334,
+   "success_ci": [
+    0.7761675879076233,
+    0.8623232907005036
+   ],
+   "violation_rate": 0.06,
+   "violation_ci": [
+    0.038286369524692054,
+    0.09283944515290843
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "wrong_declare_rate": 0.15,
+   "steps_mean": 16.576666666666668,
+   "team_dose_mean": 0.09856922397497613,
+   "withdraw_rate": 0.31666666666666665
+  },
+  "baseline:greedy+withdraw,beta=1.0,crowd_penalty=1.0,wd_quantile=0.97": {
+   "success_rate": 0.8166666666666667,
+   "success_ci": [
+    0.7689713823226987,
+    0.8563547359017554
+   ],
+   "violation_rate": 0.03666666666666667,
+   "violation_ci": [
+    0.02059530516285303,
+    0.06445384817189295
+   ],
+   "stranded_rate": 0.01,
+   "wrong_declare_rate": 0.13666666666666666,
+   "steps_mean": 18.043333333333333,
+   "team_dose_mean": 0.09411549778797318,
+   "withdraw_rate": 0.4166666666666667
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=0.0,wd_quantile=0.9": {
+   "success_rate": 0.73,
+   "success_ci": [
+    0.6770882626256942,
+    0.7770959706110145
+   ],
+   "violation_rate": 0.05,
+   "violation_ci": [
+    0.03053164062934728,
+    0.08084703347274415
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "wrong_declare_rate": 0.20666666666666667,
+   "steps_mean": 18.033333333333335,
+   "team_dose_mean": 0.11440041499478161,
+   "withdraw_rate": 0.2733333333333333
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=0.0,wd_quantile=0.97": {
+   "success_rate": 0.7266666666666667,
+   "success_ci": [
+    0.6736074258805683,
+    0.7739944271643041
+   ],
+   "violation_rate": 0.03,
+   "violation_ci": [
+    0.01586185380943231,
+    0.05602253914164096
+   ],
+   "stranded_rate": 0.006666666666666667,
+   "wrong_declare_rate": 0.20666666666666667,
+   "steps_mean": 19.39666666666667,
+   "team_dose_mean": 0.11089745568366949,
+   "withdraw_rate": 0.38
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=0.5,wd_quantile=0.9": {
+   "success_rate": 0.82,
+   "success_ci": [
+    0.7725668011129554,
+    0.859341697303335
+   ],
+   "violation_rate": 0.06666666666666667,
+   "violation_ci": [
+    0.043567515545158274,
+    0.10072305951611496
+   ],
+   "stranded_rate": 0.016666666666666666,
+   "wrong_declare_rate": 0.15666666666666668,
+   "steps_mean": 15.983333333333333,
+   "team_dose_mean": 0.09812571704129036,
+   "withdraw_rate": 0.24333333333333335
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=0.5,wd_quantile=0.97": {
+   "success_rate": 0.8,
+   "success_ci": [
+    0.7510710762322137,
+    0.8413431410330587
+   ],
+   "violation_rate": 0.043333333333333335,
+   "violation_ci": [
+    0.025496448084407246,
+    0.07271746563401146
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.14666666666666667,
+   "steps_mean": 17.91,
+   "team_dose_mean": 0.09459550544483203,
+   "withdraw_rate": 0.39666666666666667
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=1.0,wd_quantile=0.9": {
+   "success_rate": 0.82,
+   "success_ci": [
+    0.7725668011129554,
+    0.859341697303335
+   ],
+   "violation_rate": 0.06333333333333334,
+   "violation_ci": [
+    0.040916882383915276,
+    0.09679131248552161
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "wrong_declare_rate": 0.16,
+   "steps_mean": 15.526666666666667,
+   "team_dose_mean": 0.10136605104582787,
+   "withdraw_rate": 0.23666666666666666
+  },
+  "baseline:greedy+withdraw,beta=3.0,crowd_penalty=1.0,wd_quantile=0.97": {
+   "success_rate": 0.7933333333333333,
+   "success_ci": [
+    0.743944983244025,
+    0.8353044736375745
+   ],
+   "violation_rate": 0.043333333333333335,
+   "violation_ci": [
+    0.025496448084407246,
+    0.07271746563401146
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.15333333333333332,
+   "steps_mean": 17.753333333333334,
+   "team_dose_mean": 0.09474220670893752,
+   "withdraw_rate": 0.38333333333333336
+  },
+  "baseline:greedy+withdraw_oracle": {
+   "success_rate": 0.82,
+   "success_ci": [
+    0.7725668011129554,
+    0.859341697303335
+   ],
+   "violation_rate": 0.0,
+   "violation_ci": [
+    8.673617379884035e-19,
+    0.012642971224546034
+   ],
+   "stranded_rate": 0.0,
+   "wrong_declare_rate": 0.16,
+   "steps_mean": 18.41,
+   "team_dose_mean": 0.10164911489375515,
+   "withdraw_rate": 0.2633333333333333
   }
  }
 }
