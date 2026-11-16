@@ -16,8 +16,18 @@ echo "[$(date)] task ${SLURM_ARRAY_TASK_ID}: ${LINE}"
 # Requeue before the wall-clock limit; training resumes from checkpoints/latest.pt (FR-INF-03).
 trap 'echo "[$(date)] time limit near, requeueing"; scontrol requeue ${SLURM_JOB_ID}; exit 0' USR1
 
-source "${CONDA_PREFIX:-$HOME/miniconda3}/etc/profile.d/conda.sh" 2>/dev/null || true
-conda activate radsearch 2>/dev/null || true
+# Python environment. By default the job uses the environment it was submitted from
+# (sbatch exports the submitting shell's PATH). Optional overrides:
+#   RADSEARCH_MODULE=anaconda3/2024.06   module to load first
+#   RADSEARCH_ENV=radsearch              conda env to activate
+if [ -n "${RADSEARCH_MODULE:-}" ]; then module load "${RADSEARCH_MODULE}"; fi
+if [ -n "${RADSEARCH_ENV:-}" ]; then
+  source "${CONDA_PREFIX:-$HOME/miniconda3}/etc/profile.d/conda.sh" 2>/dev/null || true
+  conda activate "${RADSEARCH_ENV}"
+fi
+echo "python: $(command -v python)"
+python -c "import radsearch, torch, numba; print('torch', torch.__version__, '| numba', numba.__version__)" \
+  || { echo "radsearch is not importable in this environment - check the module/conda env"; exit 1; }
 export NUMBA_NUM_THREADS=${SLURM_CPUS_PER_TASK} OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
 export WANDB_MODE=${WANDB_MODE:-offline}
 
