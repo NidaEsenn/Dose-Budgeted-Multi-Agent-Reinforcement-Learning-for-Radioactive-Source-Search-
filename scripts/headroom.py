@@ -33,6 +33,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--best", default=None, help="final: spec of the tuned rule")
+    ap.add_argument("--resume", action="store_true", help="keep finished specs already in --out")
     a = ap.parse_args()
     if a.stage == "sweep":
         specs = [f"baseline:greedy+withdraw,beta={b},crowd_penalty={c},wd_quantile={q}"
@@ -44,6 +45,12 @@ def main():
                  "baseline:greedy+withdraw_oracle,beta=0.0", "baseline:greedy+withdraw_oracle,beta=0.3"]
         n, base = 1000, TEST_SEED_BASE
     res = {}
+    if a.resume:
+        import os
+        if os.path.exists(a.out):
+            res = json.load(open(a.out))["results"]
+            specs = [s for s in specs if s not in res]
+            print(f"resuming: {len(res)} done, {len(specs)} to go", flush=True)
     with cf.ProcessPoolExecutor(a.workers) as ex:
         for spec, m in ex.map(one, specs, [n] * len(specs), [base] * len(specs)):
             res[spec] = m
