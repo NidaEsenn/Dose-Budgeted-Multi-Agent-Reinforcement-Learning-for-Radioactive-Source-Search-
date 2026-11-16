@@ -1,0 +1,75 @@
+{
+ "stage": "sweep",
+ "n": 300,
+ "seed_base": 20000000,
+ "results": {
+  "baseline:greedy+withdraw,beta=0.0,crowd_penalty=0.0,wd_quantile=0.9": {
+   "success_rate": 0.7233333333333334,
+   "success_ci": [
+    0.6701300560341223,
+    0.7708894168189138
+   ],
+   "violation_rate": 0.06,
+   "violation_ci": [
+    0.038286369524692054,
+    0.09283944515290843
+   ],
+   "stranded_rate": 0.013333333333333334,
+   "wrong_declare_rate": 0.19666666666666666,
+   "steps_mean": 18.356666666666666,
+   "team_dose_mean": 0.11568846643351972,
+   "withdraw_rate": 0.41
+  },
+  "baseline:greedy+withdraw,beta=0.0,crowd_penalty=0.0,wd_quantile=0.97": {
+   "success_rate": 0.7133333333333334,
+   "success_ci": [
+    0.6597183711272249,
+    0.7615539611503023
+   ],
+   "violation_rate": 0.04666666666666667,
+   "violation_ci": [
+    0.027998933682334012,
+    0.07679736022792105
+   ],
+   "stranded_rate": 0.006666666666666667,
+   "wrong_declare_rate": 0.22,
+   "steps_mean": 19.816666666666666,
+   "team_dose_mean": 0.10553430100491983,
+   "withdraw_rate": 0.45
+  },
+  "baseline:greedy+withdraw,beta=0.0,crowd_penalty=0.5,wd_quantile=0.9": {
+   "success_rate": 0.81,
+   "success_ci": [
+    0.7617962081751881,
+    0.8503651496655933
+   ],
+   "violation_rate": 0.05,
+   "violation_ci": [
+    0.03053164062934728,
+    0.08084703347274415
+   ],
+   "stranded_rate": 0.006666666666666667,
+   "wrong_declare_rate": 0.15333333333333332,
+   "steps_mean": 16.8,
+   "team_dose_mean": 0.09502493504878175,
+   "withdraw_rate": 0.35
+  },
+  "baseline:greedy+withdraw,beta=0.0,crowd_penalty=0.5,wd_quantile=0.97": {
+   "success_rate": 0.8,
+   "success_ci": [
+    0.7510710762322137,
+    0.8413431410330587
+   ],
+   "violation_rate": 0.04666666666666667,
+   "violation_ci": [
+    0.027998933682334012,
+    0.07679736022792105
+   ],
+   "stranded_rate": 0.006666666666666667,
+   "wrong_declare_rate": 0.16,
+   "steps_mean": 17.936666666666667,
+   "team_dose_mean": 0.09355070866672716,
+   "withdraw_rate": 0.44333333333333336
+  }
+ }
+}
