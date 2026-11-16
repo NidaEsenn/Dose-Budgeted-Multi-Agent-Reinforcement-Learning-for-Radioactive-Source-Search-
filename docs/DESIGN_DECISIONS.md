@@ -557,3 +557,29 @@ Findings.
 3. **The learned team declares wrongly less often** (6.7 % vs 12.3 %) and strands
    fewer robots (0.7 % vs 1.3 %), but takes longer.
 4. Decision pending on MAPPO + reserve (tasks 4–6) and the headroom test (FORMULATION Q6).
+
+## D28 — Headroom test (FORMULATION Q6): how much better can the rule get?
+
+*Date: 2026-11-16 · Script: `scripts/headroom.py` · Results: `docs/results/headroom_sweep.json`, `headroom_final.json`*
+
+**Sweep** (300 validation missions, seeds 20,000,000+): 24 greedy settings
+(β ∈ {0, 0.3, 1, 3} × crowd penalty ∈ {0, 0.5, 1} × q ∈ {0.9, 0.97}) plus the oracle reserve
+(safety layer that uses the true dose; not deployable). Best with violations ≤ 5 %:
+β = 0.3, crowd 1.0, q = 0.97 (82.7 % / 3.7 %). The crowd penalty matters most (none: 71–74 % success).
+
+**Final** (same 1,000 test missions as P1):
+
+| Policy | Success | Violations | Wrong declarations |
+|---|---|---|---|
+| Reference rule (β 1, crowd 0.5, q 0.97) | 84.6 % [82.2, 86.7] | 4.2 % [3.1, 5.6] | 12.3 % |
+| Tuned rule (β 0.3, crowd 1.0, q 0.97) | 83.2 % [80.8, 85.4] | 4.6 % [3.5, 6.1] | 13.7 % |
+| Oracle reserve (reference greedy) | 85.2 % [82.9, 87.3] | 0.0 % [0.0, 0.4] | 12.6 % |
+
+**Findings / decisions**
+1. Tuning the rule gives no gain on test: the reference is already at the top of the rule family.
+2. **Headroom is in safety, not success:** with an exact dose prediction the same rule keeps its
+   success and has zero violations. A calibration-aware safety layer can at best remove the ~4 %
+   failures at no cost in success — this supports it as the main method.
+3. **Success is capped near 85 % by wrong declarations (~13 %), even with the oracle.** Gains in
+   success must come from the estimate/declaration, not from the safety layer. The learned team's
+   lower wrong-declaration rate (6.7 %, D27) is the most promising lead for learning.
