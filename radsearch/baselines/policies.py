@@ -167,14 +167,15 @@ class GreedyInfoPolicy:
 
 
 def make_baseline(name: str, **kw):
-    """``name`` may end in ``+withdraw`` (posterior-quantile reserve rule) or
-    ``+withdraw_mean``; keys ``wd_margin``, ``wd_quantile`` configure it."""
+    """``name`` may end in ``+withdraw`` (posterior-quantile reserve rule),
+    ``+withdraw_mean`` or ``+withdraw_oracle`` (true dose: clairvoyant upper bound,
+    not deployable); keys ``wd_margin``, ``wd_quantile`` configure it."""
     name = name.lower()
     if "+withdraw" in name:
         from ..shield import ReserveWithdraw
         base_name, wd = name.split("+", 1)
         wkw = {k[3:]: kw.pop(k) for k in list(kw) if k.startswith("wd_")}
-        mode = "mean" if wd == "withdraw_mean" else "quantile"
+        mode = {"withdraw_mean": "mean", "withdraw_oracle": "oracle"}.get(wd, "quantile")
         return ReserveWithdraw(make_baseline(base_name, **kw), mode=mode, **wkw)
     if name == "random":
         return RandomPolicy(**kw)

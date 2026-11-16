@@ -118,7 +118,13 @@ class ReserveWithdraw:
 
     def predicted(self, core):
         """(B,N,5) predicted step+exit dose for every candidate move."""
-        if self.mode == "mean":
+        if self.mode == "oracle":
+            # clairvoyant upper bound (headroom test, FORMULATION Q6): the TRUE field
+            cfg = core.cfg
+            step = np.stack([P.step_dose(core.true_dose_rate(b, core._cell_xy).reshape(cfg.width, cfg.height),
+                                         cfg.step_time) for b in range(core.B)])
+            tot = (step + core.exit_true)[:, None]
+        elif self.mode == "mean":
             step, exitc = core.estimated_fields()
             tot = (step + exitc)[:, None]                                    # (B,1,W,H)
         else:
